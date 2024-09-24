@@ -10,7 +10,7 @@ import (
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/utils"
 	"github.com/pkg/errors"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/keys"
 )
 
 func create(conf *createConfig) error {
