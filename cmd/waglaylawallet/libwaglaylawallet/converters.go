@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 
 	"github.com/waglayla/waglaylad/app/appmessage"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionid"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
