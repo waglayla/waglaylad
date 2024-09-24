@@ -7,6 +7,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/domain/consensus"
 	"github.com/waglayla/waglaylad/domain/consensus/model"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
@@ -19,7 +20,6 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/pow"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
 	"github.com/waglayla/waglaylad/util/difficulty"
-	"github.com/pkg/errors"
 )
 
 // TestPOW tests the validation of the block's POW.
@@ -102,7 +102,7 @@ func TestPOW(t *testing.T) {
 		}
 		random := rand.New(rand.NewSource(0))
 		// Difficulty is too high on mainnet to actually mine.
-		if consensusConfig.Name != "pyrin-mainnet" {
+		if consensusConfig.Name != "waglayla-mainnet" {
 			mining.SolveBlock(validBlock, random)
 			err = tc.ValidateAndInsertBlock(validBlock, true)
 			if err != nil {

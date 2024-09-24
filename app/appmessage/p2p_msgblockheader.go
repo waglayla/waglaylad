@@ -30,7 +30,7 @@ const MaxNumParentBlocks = 255
 // BaseBlockHeaderPayload + up to MaxNumParentBlocks hashes of parent blocks
 const MaxBlockHeaderPayload = BaseBlockHeaderPayload + (MaxNumParentBlocks * externalapi.DomainHashSize)
 
-// MsgBlockHeader defines information about a block and is used in the pyrin
+// MsgBlockHeader defines information about a block and is used in the waglayla
 // block (MsgBlock) and headers (MsgHeader) messages.
 type MsgBlockHeader struct {
 	baseMessage

@@ -14,9 +14,9 @@ RUN go mod download
 
 COPY . .
 
-WORKDIR /go/src/github.com/waglayla/waglaylad/cmd/pyrinctl
+WORKDIR /go/src/github.com/waglayla/waglaylad/cmd/waglaylactl
 
-RUN GOOS=linux go build -a -installsuffix cgo -o pyrinctl .
+RUN GOOS=linux go build -a -installsuffix cgo -o waglaylactl .
 
 # --- multistage docker build: stage #2: runtime image
 FROM alpine
@@ -24,7 +24,7 @@ WORKDIR /app
 
 RUN apk add --no-cache ca-certificates tini
 
-COPY --from=build /go/src/github.com/waglayla/waglaylad/cmd/pyrinctl/pyrinctl /app/
+COPY --from=build /go/src/github.com/waglayla/waglaylad/cmd/waglaylactl/waglaylactl /app/
 
 USER nobody
 ENTRYPOINT [ "/sbin/tini", "--" ]

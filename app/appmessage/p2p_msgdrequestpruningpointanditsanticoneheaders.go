@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestPruningPointAndItsAnticone represents a pyrin RequestPruningPointAndItsAnticone message
+// MsgRequestPruningPointAndItsAnticone represents a waglayla RequestPruningPointAndItsAnticone message
 type MsgRequestPruningPointAndItsAnticone struct {
 	baseMessage
 }

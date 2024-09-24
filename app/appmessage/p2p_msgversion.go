@@ -22,7 +22,7 @@ const MaxUserAgentLen = 256
 // DefaultUserAgent for appmessage in the stack
 var DefaultUserAgent = fmt.Sprintf("/waglaylad:%s/", version.Version())
 
-// MsgVersion implements the Message interface and represents a pyrin version
+// MsgVersion implements the Message interface and represents a waglayla version
 // message. It is used for a peer to advertise itself as soon as an outbound
 // connection is made. The remote peer then uses this information along with
 // its own to negotiate. The remote peer must then respond with a version
@@ -78,7 +78,7 @@ func (msg *MsgVersion) Command() MessageCommand {
 	return CmdVersion
 }
 
-// NewMsgVersion returns a new pyrin version message that conforms to the
+// NewMsgVersion returns a new waglayla version message that conforms to the
 // Message interface using the passed parameters and defaults for the remaining
 // fields.
 func NewMsgVersion(addr *NetAddress, id *id.ID, network string,

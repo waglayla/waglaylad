@@ -4,7 +4,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgIBDBlockLocator represents a pyrin ibdBlockLocator message
+// MsgIBDBlockLocator represents a waglayla ibdBlockLocator message
 type MsgIBDBlockLocator struct {
 	baseMessage
 	TargetHash         *externalapi.DomainHash
@@ -16,7 +16,7 @@ func (msg *MsgIBDBlockLocator) Command() MessageCommand {
 	return CmdIBDBlockLocator
 }
 
-// NewMsgIBDBlockLocator returns a new pyrin ibdBlockLocator message
+// NewMsgIBDBlockLocator returns a new waglayla ibdBlockLocator message
 func NewMsgIBDBlockLocator(targetHash *externalapi.DomainHash,
 	blockLocatorHashes []*externalapi.DomainHash) *MsgIBDBlockLocator {
 

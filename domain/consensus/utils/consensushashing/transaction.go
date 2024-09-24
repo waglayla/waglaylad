@@ -5,11 +5,11 @@ import (
 
 	"github.com/waglayla/waglaylad/domain/consensus/utils/serialization"
 
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/hashes"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 	"github.com/waglayla/waglaylad/util/binaryserializer"
-	"github.com/pkg/errors"
 )
 
 // txEncoding is a bitmask defining which transaction fields we
@@ -129,7 +129,7 @@ func serializeTransaction(w io.Writer, tx *externalapi.DomainTransaction, encodi
 	return nil
 }
 
-// writeTransactionInput encodes ti to the pyrin protocol encoding for a transaction
+// writeTransactionInput encodes ti to the waglayla protocol encoding for a transaction
 // input to w.
 func writeTransactionInput(w io.Writer, ti *externalapi.DomainTransactionInput, encodingFlags txEncoding) error {
 	err := writeOutpoint(w, &ti.PreviousOutpoint)

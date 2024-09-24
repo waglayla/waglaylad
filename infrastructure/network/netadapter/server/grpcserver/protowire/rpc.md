@@ -459,7 +459,7 @@ See: SubmitBlockRequestMessage
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| payAddress | [string](#string) |  | Which pyrin address should the coinbase block reward transaction pay into |
+| payAddress | [string](#string) |  | Which waglayla address should the coinbase block reward transaction pay into |
 | extraData | [string](#string) |  |  |
 
 

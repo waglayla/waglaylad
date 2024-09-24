@@ -3,6 +3,7 @@ package transactionvalidator
 import (
 	"math"
 
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/domain/consensus/model"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
@@ -10,7 +11,6 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
-	"github.com/pkg/errors"
 )
 
 // IsFinalizedTransaction determines whether or not a transaction is finalized.
@@ -150,7 +150,7 @@ func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.Doma
 		// output values of the input transactions must not be negative
 		// or more than the max allowed per transaction. All amounts in
 		// a transaction are in a unit value known as a leor. One
-		// pyrin is a quantity of leor as defined by the
+		// waglayla is a quantity of leor as defined by the
 		// LeorPerPyrin constant.
 		totalLeorIn, err = v.checkEntryAmounts(utxoEntry, totalLeorIn)
 		if err != nil {

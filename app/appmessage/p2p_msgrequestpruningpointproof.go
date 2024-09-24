@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestPruningPointProof represents a pyrin RequestPruningPointProof message
+// MsgRequestPruningPointProof represents a waglayla RequestPruningPointProof message
 type MsgRequestPruningPointProof struct {
 	baseMessage
 }

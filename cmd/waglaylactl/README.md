@@ -1,6 +1,6 @@
-# pyrinctl
+# waglaylactl
 
-pyrinctl is an RPC client for waglaylad
+waglaylactl is an RPC client for waglaylad
 
 ## Requirements
 
@@ -23,7 +23,7 @@ $ go version
 
 ```bash
 $ git clone https://github.com/waglayla/waglaylad
-$ cd waglaylad/cmd/pyrinctl
+$ cd waglaylad/cmd/waglaylactl
 $ go install .
 ```
 
@@ -41,13 +41,13 @@ $ kaspctl --help
 But the minimum configuration needed to run it is:
 
 ```bash
-$ pyrinctl <REQUEST_JSON>
+$ waglaylactl <REQUEST_JSON>
 ```
 
 For example:
 
 ```
-$ pyrinctl '{"getBlockDagInfoRequest":{}}'
+$ waglaylactl '{"getBlockDagInfoRequest":{}}'
 ```
 
 For a list of all available requests check out the [RPC documentation](infrastructure/network/netadapter/server/grpcserver/protowire/rpc.md)

@@ -4,7 +4,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgIBDBlockLocatorHighestHash represents a pyrin BlockLocatorHighestHash message
+// MsgIBDBlockLocatorHighestHash represents a waglayla BlockLocatorHighestHash message
 type MsgIBDBlockLocatorHighestHash struct {
 	baseMessage
 	HighestHash *externalapi.DomainHash

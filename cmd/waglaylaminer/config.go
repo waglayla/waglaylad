@@ -9,22 +9,22 @@ import (
 
 	"github.com/waglayla/waglaylad/infrastructure/config"
 
-	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
+	"github.com/waglayla/waglaylad/util"
 
-	"github.com/waglayla/waglaylad/version"
 	"github.com/jessevdk/go-flags"
+	"github.com/waglayla/waglaylad/version"
 )
 
 const (
-	defaultLogFilename          = "pyrinminer.log"
-	defaultErrLogFilename       = "pyrinminer_err.log"
+	defaultLogFilename          = "waglaylaminer.log"
+	defaultErrLogFilename       = "waglaylaminer_err.log"
 	defaultTargetBlockRateRatio = 2.0
 )
 
 var (
 	// Default configuration options
-	defaultAppDir     = util.AppDir("pyrinminer", false)
+	defaultAppDir     = util.AppDir("waglaylaminer", false)
 	defaultLogFile    = filepath.Join(defaultAppDir, defaultLogFilename)
 	defaultErrLogFile = filepath.Join(defaultAppDir, defaultErrLogFilename)
 	defaultRPCServer  = "localhost"

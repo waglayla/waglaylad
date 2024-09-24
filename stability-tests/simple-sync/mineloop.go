@@ -3,12 +3,12 @@ package main
 import (
 	"time"
 
+	"github.com/pkg/errors"
 	"github.com/waglayla/go-secp256k1"
 	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/waglayla/waglaylad/stability-tests/common"
 	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
 	"github.com/waglayla/waglaylad/util"
-	"github.com/pkg/errors"
 )
 
 func mineLoop(syncerRPCClient, syncedRPCClient *rpc.Client) error {
@@ -32,7 +32,7 @@ func mineLoop(syncerRPCClient, syncedRPCClient *rpc.Client) error {
 		err = mineBlock(syncerRPCClient.Address(), miningAddr)
 		if err != nil {
 			// Ignore error and instead check that the block count changed correctly.
-			// TODO: Fix the race condition in pyrinminer so it won't panic (proper shutdown handler)
+			// TODO: Fix the race condition in waglaylaminer so it won't panic (proper shutdown handler)
 			log.Warnf("mineBlock returned an err: %s", err)
 		}
 
@@ -129,8 +129,8 @@ func areTipsAreEqual(resultA, resultB *appmessage.GetBlockDAGInfoResponseMessage
 }
 
 func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
-	pyrinMinerCmd, err := common.StartCmd("MINER",
-		"pyrinminer",
+	waglaylaMinerCmd, err := common.StartCmd("MINER",
+		"waglaylaminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", syncerRPCAddress,
 		"--mine-when-not-synced",
@@ -140,5 +140,5 @@ func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
 	if err != nil {
 		return err
 	}
-	return errors.Wrapf(pyrinMinerCmd.Wait(), "error with command '%s'", pyrinMinerCmd)
+	return errors.Wrapf(waglaylaMinerCmd.Wait(), "error with command '%s'", waglaylaMinerCmd)
 }

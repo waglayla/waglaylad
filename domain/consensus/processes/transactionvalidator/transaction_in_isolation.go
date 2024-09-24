@@ -1,12 +1,12 @@
 package transactionvalidator
 
 import (
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
-	"github.com/pkg/errors"
 )
 
 // ValidateTransactionInIsolation validates the parts of the transaction that can be validated context-free
@@ -67,7 +67,7 @@ func (v *transactionValidator) checkTransactionAmountRanges(tx *externalapi.Doma
 	// output must not be negative or more than the max allowed per
 	// transaction. Also, the total of all outputs must abide by the same
 	// restrictions. All amounts in a transaction are in a unit value known
-	// as a leor. One pyrin is a quantity of leor as defined by the
+	// as a leor. One waglayla is a quantity of leor as defined by the
 	// LeorPerPyrin constant.
 	var totalLeor uint64
 	for _, txOut := range tx.Outputs {

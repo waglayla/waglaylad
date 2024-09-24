@@ -5,9 +5,9 @@ import (
 	"os/exec"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/domain/dagconfig"
 	"github.com/waglayla/waglaylad/infrastructure/logger"
-	"github.com/pkg/errors"
 )
 
 // StartCmd runs a command as a separate process.
@@ -28,5 +28,5 @@ func StartCmd(name string, args ...string) (*exec.Cmd, error) {
 
 // NetworkCliArgumentFromNetParams returns the waglaylad command line argument that starts the given network.
 func NetworkCliArgumentFromNetParams(params *dagconfig.Params) string {
-	return fmt.Sprintf("--%s", strings.TrimPrefix(params.Name, "pyrin-"))
+	return fmt.Sprintf("--%s", strings.TrimPrefix(params.Name, "waglayla-"))
 }

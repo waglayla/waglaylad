@@ -4,7 +4,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestBlockLocator implements the Message interface and represents a pyrin
+// MsgRequestBlockLocator implements the Message interface and represents a waglayla
 // RequestBlockLocator message. It is used to request a block locator between low
 // and high hash.
 // The locator is returned via a locator message (MsgBlockLocator).

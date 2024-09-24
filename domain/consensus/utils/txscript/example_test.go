@@ -15,7 +15,7 @@ import (
 	"github.com/waglayla/waglaylad/util"
 )
 
-// This example demonstrates creating a script which pays to a pyrin address.
+// This example demonstrates creating a script which pays to a waglayla address.
 // It also prints the created script hex and uses the DisasmString function to
 // display the disassembled script.
 func ExamplePayToAddrScript() {
@@ -23,7 +23,7 @@ func ExamplePayToAddrScript() {
 	// which is useful to ensure the accuracy of the address and determine
 	// the address type. It is also required for the upcoming call to
 	// PayToAddrScript.
-	addressStr := "pyrin:qqj9fg59mptxkr9j0y53j5mwurcmda5mtza9n6v9pm9uj8h0wgk6u9aj94505"
+	addressStr := "waglayla:qqj9fg59mptxkr9j0y53j5mwurcmda5mtza9n6v9pm9uj8h0wgk6u9aj94505"
 	address, err := util.DecodeAddress(addressStr, util.Bech32PrefixPyrin)
 	if err != nil {
 		fmt.Println(err)
@@ -72,5 +72,5 @@ func ExampleExtractScriptPubKeyAddress() {
 
 	// Output:
 	// Script Class: pubkey
-	// Address: pyrin:qzy6cf82zzah2xh5jwtz8nx9u4gdj6zzke8gljs0v055ksmnl424uyf26y6h8
+	// Address: waglayla:qzy6cf82zzah2xh5jwtz8nx9u4gdj6zzke8gljs0v055ksmnl424uyf26y6h8
 }

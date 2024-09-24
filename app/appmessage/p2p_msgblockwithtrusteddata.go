@@ -6,7 +6,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgBlockWithTrustedData represents a pyrin BlockWithTrustedData message
+// MsgBlockWithTrustedData represents a waglayla BlockWithTrustedData message
 type MsgBlockWithTrustedData struct {
 	baseMessage
 

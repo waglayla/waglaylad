@@ -150,7 +150,7 @@ message SubmitBlockResponseMessage{
 //
 // See: SubmitBlockRequestMessage
 message GetBlockTemplateRequestMessage{
-  // Which pyrin address should the coinbase block reward transaction pay into
+  // Which waglayla address should the coinbase block reward transaction pay into
   string payAddress = 1;
   string extraData = 2;
 }

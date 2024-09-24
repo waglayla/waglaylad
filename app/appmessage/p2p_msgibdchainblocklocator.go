@@ -4,7 +4,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgIBDChainBlockLocator implements the Message interface and represents a pyrin
+// MsgIBDChainBlockLocator implements the Message interface and represents a waglayla
 // locator message. It is used to find the blockLocator of a peer that is
 // syncing with you.
 type MsgIBDChainBlockLocator struct {
@@ -18,7 +18,7 @@ func (msg *MsgIBDChainBlockLocator) Command() MessageCommand {
 	return CmdIBDChainBlockLocator
 }
 
-// NewMsgIBDChainBlockLocator returns a new pyrin locator message that conforms to
+// NewMsgIBDChainBlockLocator returns a new waglayla locator message that conforms to
 // the Message interface. See MsgBlockLocator for details.
 func NewMsgIBDChainBlockLocator(locatorHashes []*externalapi.DomainHash) *MsgIBDChainBlockLocator {
 	return &MsgIBDChainBlockLocator{

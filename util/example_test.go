@@ -58,7 +58,7 @@ func ExampleNewAmount() {
 	// Output: 1 PYI
 	// 0.01234567 PYI
 	// 0 PYI
-	// invalid pyrin amount
+	// invalid waglayla amount
 }
 
 func ExampleAmount_unitConversions() {

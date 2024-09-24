@@ -8,6 +8,7 @@ import (
 
 	"github.com/waglayla/waglaylad/version"
 
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/waglayla/waglaylad/cmd/waglaylaminer/templatemanager"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
@@ -15,7 +16,6 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/pow"
 	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 	"github.com/waglayla/waglaylad/util"
-	"github.com/pkg/errors"
 )
 
 var hashesTried uint64
@@ -189,7 +189,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 
 func templatesLoop(client *minerClient, miningAddr util.Address, errChan chan error) {
 	getBlockTemplate := func() {
-		template, err := client.GetBlockTemplate(miningAddr.String(), "pyrinminer-"+version.Version())
+		template, err := client.GetBlockTemplate(miningAddr.String(), "waglaylaminer-"+version.Version())
 		if nativeerrors.Is(err, router.ErrTimeout) {
 			log.Warnf("Got timeout while requesting block template from %s: %s", client.Address(), err)
 			reconnectErr := client.Reconnect()

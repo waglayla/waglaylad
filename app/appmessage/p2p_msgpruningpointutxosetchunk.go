@@ -2,7 +2,7 @@ package appmessage
 
 import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-// MsgPruningPointUTXOSetChunk represents a pyrin PruningPointUTXOSetChunk message
+// MsgPruningPointUTXOSetChunk represents a waglayla PruningPointUTXOSetChunk message
 type MsgPruningPointUTXOSetChunk struct {
 	baseMessage
 	OutpointAndUTXOEntryPairs []*OutpointAndUTXOEntryPair

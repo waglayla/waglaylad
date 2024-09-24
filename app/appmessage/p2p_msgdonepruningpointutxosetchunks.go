@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgDonePruningPointUTXOSetChunks represents a pyrin DonePruningPointUTXOSetChunks message
+// MsgDonePruningPointUTXOSetChunks represents a waglayla DonePruningPointUTXOSetChunks message
 type MsgDonePruningPointUTXOSetChunks struct {
 	baseMessage
 }

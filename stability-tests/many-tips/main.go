@@ -2,10 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/waglayla/go-secp256k1"
-	"github.com/waglayla/waglaylad/app/appmessage"
-	"github.com/waglayla/waglaylad/domain/consensus/utils/mining"
-	"github.com/waglayla/waglaylad/util"
 	"math/rand"
 	"os"
 	"os/exec"
@@ -15,11 +11,16 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/waglayla/go-secp256k1"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/mining"
+	"github.com/waglayla/waglaylad/util"
+
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/stability-tests/common"
 	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
 	"github.com/waglayla/waglaylad/util/panics"
 	"github.com/waglayla/waglaylad/util/profiling"
-	"github.com/pkg/errors"
 )
 
 const rpcAddress = "localhost:9000"
@@ -226,8 +227,8 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	}
 	numOfBlocksBeforeMining := dagInfo.BlockCount
 
-	pyrinMinerCmd, err := common.StartCmd("MINER",
-		"pyrinminer",
+	waglaylaMinerCmd, err := common.StartCmd("MINER",
+		"waglaylaminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", rpcAddress,
 		"--mine-when-not-synced",
@@ -240,8 +241,8 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	startMiningTime := time.Now()
 	shutdown := uint64(0)
 
-	spawn("pyrin-miner-Cmd.Wait", func() {
-		err := pyrinMinerCmd.Wait()
+	spawn("waglayla-miner-Cmd.Wait", func() {
+		err := waglaylaMinerCmd.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&shutdown) == 0 {
 				panics.Exit(log, fmt.Sprintf("minerCmd closed unexpectedly: %s.", err))
@@ -283,7 +284,7 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	numOfAddedBlocks := dagInfo.BlockCount - numOfBlocksBeforeMining
 	log.Infof("Added %d blocks to reach this.", numOfAddedBlocks)
 	atomic.StoreUint64(&shutdown, 1)
-	killWithSigterm(pyrinMinerCmd, "pyrinMinerCmd")
+	killWithSigterm(waglaylaMinerCmd, "waglaylaMinerCmd")
 	return nil
 }
 

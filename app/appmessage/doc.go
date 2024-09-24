@@ -1,30 +1,30 @@
 /*
-Package appmessage implements the pyrin appmessage protocol.
+Package appmessage implements the waglayla appmessage protocol.
 
 At a high level, this package provides support for marshalling and unmarshalling
-supported pyrin messages to and from the appmessage. This package does not deal
+supported waglayla messages to and from the appmessage. This package does not deal
 with the specifics of message handling such as what to do when a message is
 received. This provides the caller with a high level of flexibility.
 
 # Pyrin Message Overview
 
-The pyrin protocol consists of exchanging messages between peers. Each
+The waglayla protocol consists of exchanging messages between peers. Each
 message is preceded by a header which identifies information about it such as
-which pyrin network it is a part of, its type, how big it is, and a checksum
+which waglayla network it is a part of, its type, how big it is, and a checksum
 to verify validity. All encoding and decoding of message headers is handled by
 this package.
 
-To accomplish this, there is a generic interface for pyrin messages named
+To accomplish this, there is a generic interface for waglayla messages named
 Message which allows messages of any type to be read, written, or passed around
 through channels, functions, etc. In addition, concrete implementations of most
-of the currently supported pyrin messages are provided. For these supported
+of the currently supported waglayla messages are provided. For these supported
 messages, all of the details of marshalling and unmarshalling to and from the
-appmessage using pyrin encoding are handled so the caller doesn't have to concern
+appmessage using waglayla encoding are handled so the caller doesn't have to concern
 themselves with the specifics.
 
 # Message Interaction
 
-The following provides a quick summary of how the pyrin messages are intended
+The following provides a quick summary of how the waglayla messages are intended
 to interact with one another. As stated above, these interactions are not
 directly handled by this package.
 
@@ -48,7 +48,7 @@ interactions in no particular order.
 # Common Parameters
 
 There are several common parameters that arise when using this package to read
-and write pyrin messages. The following sections provide a quick overview of
+and write waglayla messages. The following sections provide a quick overview of
 these parameters so the next sections can build on them.
 
 # Protocol Version
@@ -62,8 +62,8 @@ negotiated.
 
 # Pyrin Network
 
-The pyrin network is a magic number which is used to identify the start of a
-message and which pyrin network the message applies to. This package provides
+The waglayla network is a magic number which is used to identify the start of a
+message and which waglayla network the message applies to. This package provides
 the following constants:
 
 	appmessage.Mainnet
@@ -73,8 +73,8 @@ the following constants:
 
 # Determining Message Type
 
-As discussed in the pyrin message overview section, this package reads
-and writes pyrin messages using a generic interface named Message. In
+As discussed in the waglayla message overview section, this package reads
+and writes waglayla messages using a generic interface named Message. In
 order to determine the actual concrete type of the message, use a type
 switch or type assertion. An example of a type switch follows:
 
@@ -91,12 +91,12 @@ switch or type assertion. An example of a type switch follows:
 
 # Reading Messages
 
-In order to unmarshall pyrin messages from the appmessage, use the ReadMessage
+In order to unmarshall waglayla messages from the appmessage, use the ReadMessage
 function. It accepts any io.Reader, but typically this will be a net.Conn to
-a remote node running a pyrin peer. Example syntax is:
+a remote node running a waglayla peer. Example syntax is:
 
-	// Reads and validates the next pyrin message from conn using the
-	// protocol version pver and the pyrin network waglayla. The returns
+	// Reads and validates the next waglayla message from conn using the
+	// protocol version pver and the waglayla network waglayla. The returns
 	// are a appmessage.Message, a []byte which contains the unmarshalled
 	// raw payload, and a possible error.
 	msg, rawPayload, err := appmessage.ReadMessage(conn, pver, waglayla)
@@ -106,16 +106,16 @@ a remote node running a pyrin peer. Example syntax is:
 
 # Writing Messages
 
-In order to marshall pyrin messages to the appmessage, use the WriteMessage
+In order to marshall waglayla messages to the appmessage, use the WriteMessage
 function. It accepts any io.Writer, but typically this will be a net.Conn to
-a remote node running a pyrin peer. Example syntax to request addresses
+a remote node running a waglayla peer. Example syntax to request addresses
 from a remote peer is:
 
-	// Create a new getaddr pyrin message.
+	// Create a new getaddr waglayla message.
 	msg := appmessage.NewMsgRequestAddresses()
 
-	// Writes a pyrin message msg to conn using the protocol version
-	// pver, and the pyrin network waglayla. The return is a possible
+	// Writes a waglayla message msg to conn using the protocol version
+	// pver, and the waglayla network waglayla. The return is a possible
 	// error.
 	err := appmessage.WriteMessage(conn, msg, pver, waglayla)
 	if err != nil {

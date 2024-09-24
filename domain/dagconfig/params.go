@@ -210,15 +210,15 @@ func (p *Params) PruningDepth() uint64 {
 // MainnetParams defines the network parameters for the main Pyrin network.
 var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "pyrin-mainnet",
+	Name:        "waglayla-mainnet",
 	Net:         appmessage.Mainnet,
 	RPCPort:     "13110",
 	DefaultPort: "13111",
 	DNSSeeds: []string{
-		"seeder1-mainnet.pyrin.network",
-		"seeder2-mainnet.pyrin.network",
-		"seeder3-mainnet.pyrin.network",
-		"seeder4-mainnet.pyrin.network",
+		"seeder1-mainnet.waglayla.network",
+		"seeder2-mainnet.waglayla.network",
+		"seeder3-mainnet.waglayla.network",
+		"seeder4-mainnet.waglayla.network",
 	},
 
 	// DAG parameters
@@ -282,12 +282,12 @@ var MainnetParams = Params{
 // TestnetParams defines the network parameters for the test Pyrin network.
 var TestnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "pyrin-testnet-10",
+	Name:        "waglayla-testnet-10",
 	Net:         appmessage.Testnet,
 	RPCPort:     "16210",
 	DefaultPort: "16211",
 	DNSSeeds: []string{
-		"seeder1.pyrintestnet.network",
+		"seeder1.waglaylatestnet.network",
 	},
 
 	// DAG parameters
@@ -352,7 +352,7 @@ var TestnetParams = Params{
 // just turn into another public testnet.
 var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "pyrin-simnet",
+	Name:        "waglayla-simnet",
 	Net:         appmessage.Simnet,
 	RPCPort:     "16510",
 	DefaultPort: "16511",
@@ -412,7 +412,7 @@ var SimnetParams = Params{
 // DevnetParams defines the network parameters for the development Pyrin network.
 var DevnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "pyrin-devnet",
+	Name:        "waglayla-devnet",
 	Net:         appmessage.Devnet,
 	RPCPort:     "16610",
 	DefaultPort: "16611",

@@ -1,10 +1,10 @@
 package protowire
 
 import (
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
 	"github.com/waglayla/waglaylad/util/mstime"
-	"github.com/pkg/errors"
 )
 
 func (x *PyipadMessage_Version) toAppMessage() (appmessage.Message, error) {
@@ -25,7 +25,7 @@ func (x *VersionMessage) toAppMessage() (appmessage.Message, error) {
 	}
 
 	subnetworkID, err := x.SubnetworkId.toDomain()
-	//  Full pyrin nodes set SubnetworkId==nil
+	//  Full waglayla nodes set SubnetworkId==nil
 	if err != nil && !errors.Is(err, errorNil) {
 		return nil, err
 	}

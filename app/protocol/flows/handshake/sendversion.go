@@ -1,22 +1,22 @@
 package handshake
 
 import (
+	"github.com/pkg/errors"
 	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/waglayla/waglaylad/app/protocol/common"
 	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
 	"github.com/waglayla/waglaylad/infrastructure/logger"
 	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 	"github.com/waglayla/waglaylad/version"
-	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
-	// ourselves to other pyrin peers.
+	// ourselves to other waglayla peers.
 	userAgentName = "waglaylad"
 
 	// userAgentVersion is the user agent version and is used to help
-	// identify ourselves to other pyrin peers.
+	// identify ourselves to other waglayla peers.
 	userAgentVersion = version.Version()
 
 	// defaultServices describes the default services that are supported by

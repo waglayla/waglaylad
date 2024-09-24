@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgTrustedData represents a pyrin TrustedData message
+// MsgTrustedData represents a waglayla TrustedData message
 type MsgTrustedData struct {
 	baseMessage
 

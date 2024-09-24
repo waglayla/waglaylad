@@ -8,7 +8,7 @@ import (
 // be in a single RequestRelayBlocks message.
 const MaxRequestRelayBlocksHashes = MaxInvPerMsg
 
-// MsgRequestRelayBlocks implements the Message interface and represents a pyrin
+// MsgRequestRelayBlocks implements the Message interface and represents a waglayla
 // RequestRelayBlocks message. It is used to request blocks as part of the block
 // relay protocol.
 type MsgRequestRelayBlocks struct {
@@ -22,7 +22,7 @@ func (msg *MsgRequestRelayBlocks) Command() MessageCommand {
 	return CmdRequestRelayBlocks
 }
 
-// NewMsgRequestRelayBlocks returns a new pyrin RequestRelayBlocks message that conforms to
+// NewMsgRequestRelayBlocks returns a new waglayla RequestRelayBlocks message that conforms to
 // the Message interface. See MsgRequestRelayBlocks for details.
 func NewMsgRequestRelayBlocks(hashes []*externalapi.DomainHash) *MsgRequestRelayBlocks {
 	return &MsgRequestRelayBlocks{

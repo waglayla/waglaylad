@@ -21,8 +21,8 @@ waglaylad.db
 # Real binaries, build with `go build .`
 waglaylad
 cmd/gencerts/gencerts
-cmd/pyrinctl/pyrinctl
-cmd/kasminer/pyrinminer
+cmd/waglaylactl/waglaylactl
+cmd/kasminer/waglaylaminer
 *.exe
 *.exe~
 

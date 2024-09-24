@@ -8,7 +8,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgTransactionNotFound defines a pyrin TransactionNotFound message which is sent in response to
+// MsgTransactionNotFound defines a waglayla TransactionNotFound message which is sent in response to
 // a RequestTransactions message if any of the requested data in not available on the peer.
 type MsgTransactionNotFound struct {
 	baseMessage
@@ -21,7 +21,7 @@ func (msg *MsgTransactionNotFound) Command() MessageCommand {
 	return CmdTransactionNotFound
 }
 
-// NewMsgTransactionNotFound returns a new pyrin transactionsnotfound message that conforms to the
+// NewMsgTransactionNotFound returns a new waglayla transactionsnotfound message that conforms to the
 // Message interface. See MsgTransactionNotFound for details.
 func NewMsgTransactionNotFound(id *externalapi.DomainTransactionID) *MsgTransactionNotFound {
 	return &MsgTransactionNotFound{

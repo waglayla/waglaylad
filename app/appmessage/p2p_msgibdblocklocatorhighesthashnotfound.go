@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgIBDBlockLocatorHighestHashNotFound represents a pyrin BlockLocatorHighestHashNotFound message
+// MsgIBDBlockLocatorHighestHashNotFound represents a waglayla BlockLocatorHighestHashNotFound message
 type MsgIBDBlockLocatorHighestHashNotFound struct {
 	baseMessage
 }

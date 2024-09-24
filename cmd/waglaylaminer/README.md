@@ -1,4 +1,4 @@
-# pyrinminer
+# waglaylaminer
 
 Pyrinminer is a CPU-based miner for waglaylad
 
@@ -23,7 +23,7 @@ $ go version
 
 ```bash
 $ git clone https://github.com/waglayla/waglaylad
-$ cd waglaylad/cmd/pyrinminer
+$ cd waglaylad/cmd/waglaylaminer
 $ go install .
 ```
 
@@ -33,13 +33,13 @@ $ go install .
   
 ## Usage
 
-The full pyrinminer configuration options can be seen with:
+The full waglaylaminer configuration options can be seen with:
 
 ```bash
-$ pyrinminer --help
+$ waglaylaminer --help
 ```
 
 But the minimum configuration needed to run it is:
 ```bash
-$ pyrinminer --miningaddr=<YOUR_MINING_ADDRESS>
+$ waglaylaminer --miningaddr=<YOUR_MINING_ADDRESS>
 ```

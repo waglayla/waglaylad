@@ -1,8 +1,8 @@
 package protowire
 
 import (
-	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
+	"github.com/waglayla/waglaylad/app/appmessage"
 )
 
 func (x *PyipadMessage_RequestAddresses) toAppMessage() (appmessage.Message, error) {
@@ -17,7 +17,7 @@ func (x *RequestAddressesMessage) toAppMessage() (appmessage.Message, error) {
 		return nil, errors.Wrapf(errorNil, "RequestAddressesMessage is nil")
 	}
 	subnetworkID, err := x.SubnetworkId.toDomain()
-	//  Full pyrin nodes set SubnetworkId==nil
+	//  Full waglayla nodes set SubnetworkId==nil
 	if err != nil && !errors.Is(err, errorNil) {
 		return nil, err
 	}

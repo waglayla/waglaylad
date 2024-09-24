@@ -4,7 +4,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestPruningPointUTXOSet represents a pyrin RequestPruningPointUTXOSet message
+// MsgRequestPruningPointUTXOSet represents a waglayla RequestPruningPointUTXOSet message
 type MsgRequestPruningPointUTXOSet struct {
 	baseMessage
 	PruningPointHash *externalapi.DomainHash

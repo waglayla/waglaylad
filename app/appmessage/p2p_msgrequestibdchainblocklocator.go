@@ -4,7 +4,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestIBDChainBlockLocator implements the Message interface and represents a pyrin
+// MsgRequestIBDChainBlockLocator implements the Message interface and represents a waglayla
 // IBDRequestChainBlockLocator message. It is used to request a block locator between low
 // and high hash.
 // The locator is returned via a locator message (MsgIBDChainBlockLocator).

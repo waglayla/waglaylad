@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgPruningPoints represents a pyrin PruningPoints message
+// MsgPruningPoints represents a waglayla PruningPoints message
 type MsgPruningPoints struct {
 	baseMessage
 

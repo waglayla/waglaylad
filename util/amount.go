@@ -8,17 +8,17 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 )
 
 // AmountUnit describes a method of converting an Amount to something
-// other than the base unit of a pyrin. The value of the AmountUnit
+// other than the base unit of a waglayla. The value of the AmountUnit
 // is the exponent component of the decadic multiple to convert from
-// an amount in pyrin to an amount counted in units.
+// an amount in waglayla to an amount counted in units.
 type AmountUnit int
 
-// These constants define various units used when describing a pyrin
+// These constants define various units used when describing a waglayla
 // monetary amount.
 const (
 	AmountMegaPYI  AmountUnit = 6
@@ -51,8 +51,8 @@ func (u AmountUnit) String() string {
 	}
 }
 
-// Amount represents the base pyrin monetary unit (colloquially referred
-// to as a `Leor'). A single Amount is equal to 1e-8 of a pyrin.
+// Amount represents the base waglayla monetary unit (colloquially referred
+// to as a `Leor'). A single Amount is equal to 1e-8 of a waglayla.
 type Amount uint64
 
 // round converts a floating point number, which may or may not be representable
@@ -67,8 +67,8 @@ func round(f float64) Amount {
 }
 
 // NewAmount creates an Amount from a floating point value representing
-// some value in pyrin. NewAmount errors if f is NaN or +-Infinity, but
-// does not check that the amount is within the total amount of pyrin
+// some value in waglayla. NewAmount errors if f is NaN or +-Infinity, but
+// does not check that the amount is within the total amount of waglayla
 // producible as f may not refer to an amount at a single moment in time.
 //
 // NewAmount is for specifically for converting PYI to Leor.
@@ -85,14 +85,14 @@ func NewAmount(f float64) (Amount, error) {
 	case math.IsInf(f, 1):
 		fallthrough
 	case math.IsInf(f, -1):
-		return 0, errors.New("invalid pyrin amount")
+		return 0, errors.New("invalid waglayla amount")
 	}
 
 	return round(f * constants.LeorPerPyrin), nil
 }
 
-// ToUnit converts a monetary amount counted in pyrin base units to a
-// floating point value representing an amount of pyrin.
+// ToUnit converts a monetary amount counted in waglayla base units to a
+// floating point value representing an amount of waglayla.
 func (a Amount) ToUnit(u AmountUnit) float64 {
 	return float64(a) / math.Pow10(int(u+8))
 }
@@ -102,7 +102,7 @@ func (a Amount) ToPYI() float64 {
 	return a.ToUnit(AmountPYI)
 }
 
-// Format formats a monetary amount counted in pyrin base units as a
+// Format formats a monetary amount counted in waglayla base units as a
 // string for a given unit. The conversion will succeed for any unit,
 // however, known units will be formated with an appended label describing
 // the units with SI notation, or "Leor" for the base unit.
@@ -118,7 +118,7 @@ func (a Amount) String() string {
 
 // MulF64 multiplies an Amount by a floating point value. While this is not
 // an operation that must typically be done by a full node or wallet, it is
-// useful for services that build on top of pyrin (for example, calculating
+// useful for services that build on top of waglayla (for example, calculating
 // a fee by multiplying by a percentage).
 func (a Amount) MulF64(f float64) Amount {
 	return round(float64(a) * f)

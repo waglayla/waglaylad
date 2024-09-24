@@ -29,7 +29,7 @@ type opcode struct {
 	opfunc func(*parsedOpcode, *Engine) error
 }
 
-// These constants are the values of the pyrin script opcodes.
+// These constants are the values of the waglayla script opcodes.
 const (
 	Op0                   = 0x00 // 0
 	OpFalse               = 0x00 // 0 - AKA Op0

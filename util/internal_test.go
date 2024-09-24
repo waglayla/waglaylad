@@ -46,21 +46,21 @@ func TstAddressScriptHash(prefix Bech32Prefix, hash [32]byte) *AddressScriptHash
 }
 
 // TstAddressSAddr returns the expected script address bytes for
-// P2PK pyrin addresses.
+// P2PK waglayla addresses.
 func TstAddressSAddrP2PK(addr string) []byte {
 	_, decoded, _, _ := bech32.Decode(addr)
 	return decoded[:PublicKeySize]
 }
 
 // TstAddressSAddr returns the expected script address bytes for
-// ECDSA P2PK pyrin addresses.
+// ECDSA P2PK waglayla addresses.
 func TstAddressSAddrP2PKECDSA(addr string) []byte {
 	_, decoded, _, _ := bech32.Decode(addr)
 	return decoded[:PublicKeySizeECDSA]
 }
 
 // TstAddressSAddrP2SH returns the expected script address bytes for
-// P2SH pyrin addresses.
+// P2SH waglayla addresses.
 func TstAddressSAddrP2SH(addr string) []byte {
 	_, decoded, _, _ := bech32.Decode(addr)
 	return decoded[:32]

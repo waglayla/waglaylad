@@ -8,7 +8,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestAnticone implements the Message interface and represents a pyrin
+// MsgRequestAnticone implements the Message interface and represents a waglayla
 // RequestHeaders message. It is used to request the set past(ContextHash) \cap anticone(BlockHash)
 type MsgRequestAnticone struct {
 	baseMessage
@@ -22,7 +22,7 @@ func (msg *MsgRequestAnticone) Command() MessageCommand {
 	return CmdRequestAnticone
 }
 
-// NewMsgRequestAnticone returns a new pyrin RequestPastDiff message that conforms to the
+// NewMsgRequestAnticone returns a new waglayla RequestPastDiff message that conforms to the
 // Message interface using the passed parameters and defaults for the remaining
 // fields.
 func NewMsgRequestAnticone(blockHash, contextHash *externalapi.DomainHash) *MsgRequestAnticone {
