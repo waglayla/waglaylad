@@ -1,4 +1,4 @@
-package libpyrinwallet
+package libwaglaylawallet
 
 const (
 	// ExternalKeychain is the key chain that is used to create receive addresses
