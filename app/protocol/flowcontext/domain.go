@@ -1,7 +1,7 @@
 package flowcontext
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain"
+	"github.com/waglayla/waglaylad/domain"
 )
 
 // Domain returns the Domain object associated to the flow context.

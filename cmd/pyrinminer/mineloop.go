@@ -6,15 +6,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/version"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinminer/templatemanager"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/pow"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/cmd/pyrinminer/templatemanager"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/pow"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
 )
 
@@ -177,7 +177,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 		}
 		if !isSynced && !mineWhenNotSynced {
 			if shouldLog {
-				log.Warnf("pyipad is not synced. Skipping current block template")
+				log.Warnf("waglaylad is not synced. Skipping current block template")
 			}
 			time.Sleep(sleepTimeWhenNotSynced)
 			continue

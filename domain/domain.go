@@ -5,15 +5,15 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensusreference"
+	"github.com/waglayla/waglaylad/domain/consensusreference"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager"
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager/mempool"
-	"github.com/Pyrinpyi/pyipad/domain/prefixmanager"
-	"github.com/Pyrinpyi/pyipad/domain/prefixmanager/prefix"
-	infrastructuredatabase "github.com/Pyrinpyi/pyipad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/miningmanager"
+	"github.com/waglayla/waglaylad/domain/miningmanager/mempool"
+	"github.com/waglayla/waglaylad/domain/prefixmanager"
+	"github.com/waglayla/waglaylad/domain/prefixmanager/prefix"
+	infrastructuredatabase "github.com/waglayla/waglaylad/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

@@ -1,11 +1,11 @@
 package daablocksstore
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/database/binaryserialization"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/lrucache"
-	"github.com/Pyrinpyi/pyipad/util/staging"
+	"github.com/waglayla/waglaylad/domain/consensus/database/binaryserialization"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/lrucache"
+	"github.com/waglayla/waglaylad/util/staging"
 )
 
 var daaScoreBucketName = []byte("daa-score")

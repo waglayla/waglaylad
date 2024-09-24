@@ -2,8 +2,8 @@ package server
 
 import (
 	"context"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/version"
 )
 
 func (s *server) GetVersion(_ context.Context, _ *pb.GetVersionRequest) (*pb.GetVersionResponse, error) {

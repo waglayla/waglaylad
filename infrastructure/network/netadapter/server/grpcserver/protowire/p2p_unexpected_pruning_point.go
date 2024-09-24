@@ -1,6 +1,6 @@
 package protowire
 
-import "github.com/Pyrinpyi/pyipad/app/appmessage"
+import "github.com/waglayla/waglaylad/app/appmessage"
 
 func (x *PyipadMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.MsgUnexpectedPruningPoint{}, nil

@@ -1,12 +1,12 @@
 package daa
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/pow"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/rpcclient"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/pow"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/infrastructure/network/rpcclient"
+	"github.com/waglayla/waglaylad/stability-tests/common"
 	"math"
 	"math/rand"
 	"os"
@@ -180,7 +180,7 @@ func runDAATest(t *testing.T, testName string, runDuration time.Duration,
 	t.Logf("DAA TEST STARTED: %s", testName)
 	defer t.Logf("DAA TEST FINISHED: %s", testName)
 
-	tearDownpyipad := common.RunpyipadForTesting(t, "pyipad-daa-test", rpcAddress)
+	tearDownpyipad := common.RunpyipadForTesting(t, "waglaylad-daa-test", rpcAddress)
 	defer tearDownpyipad()
 
 	rpcClient, err := rpcclient.NewRPCClient(rpcAddress)

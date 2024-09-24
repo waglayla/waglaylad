@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 )
 
 // AddressRandomize implement addressRandomizer interface

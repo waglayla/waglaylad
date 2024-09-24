@@ -1,6 +1,6 @@
 package model
 
-import "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
 // GHOSTDAGDataStore represents a store of BlockGHOSTDAGData
 type GHOSTDAGDataStore interface {

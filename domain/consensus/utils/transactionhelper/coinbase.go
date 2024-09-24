@@ -1,8 +1,8 @@
 package transactionhelper
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
 )
 
 // CoinbaseTransactionIndex is the index of the coinbase transaction in every block

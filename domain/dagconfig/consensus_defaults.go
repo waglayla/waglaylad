@@ -3,7 +3,7 @@ package dagconfig
 import (
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 )
 
 // The documentation refers to the following constants which aren't explicated in the code:

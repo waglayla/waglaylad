@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/util"
 
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/version"
 
 	"github.com/pkg/errors"
 
 	_ "net/http/pprof"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/signal"
-	"github.com/Pyrinpyi/pyipad/util/panics"
-	"github.com/Pyrinpyi/pyipad/util/profiling"
+	"github.com/waglayla/waglaylad/infrastructure/os/signal"
+	"github.com/waglayla/waglaylad/util/panics"
+	"github.com/waglayla/waglaylad/util/profiling"
 )
 
 func main() {

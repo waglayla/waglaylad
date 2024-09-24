@@ -1,9 +1,9 @@
 package consensusstatemanager
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 )
 
 func (csm *consensusStateManager) updateVirtual(stagingArea *model.StagingArea, newBlockHash *externalapi.DomainHash,

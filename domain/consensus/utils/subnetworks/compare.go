@@ -3,7 +3,7 @@ package subnetworks
 import (
 	"bytes"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // Less returns true iff id a is less than id b

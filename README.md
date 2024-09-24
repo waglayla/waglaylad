@@ -1,11 +1,11 @@
 
-pyipad
+waglaylad
 ====
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/Pyrinpyi/pyipad)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/waglayla/waglaylad)
 
-pyipad is the reference full node Pyrin implementation written in Go (golang).
+waglaylad is the reference full node Pyrin implementation written in Go (golang).
 (Fork of https://github.com/kaspanet/kaspad)
 
 ## What is pyrin
@@ -29,26 +29,26 @@ Go 1.18 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install pyipad including all dependencies:
+- Run the following commands to obtain and install waglaylad including all dependencies:
 
 ```bash
-$ git clone https://github.com/Pyrinpyi/pyipad
-$ cd pyipad
+$ git clone https://github.com/waglayla/waglaylad
+$ cd waglaylad
 $ go install . ./cmd/...
 ```
 
-- pyipad (and utilities) should now be installed in `$(go env GOPATH)/bin`. If you did
+- waglaylad (and utilities) should now be installed in `$(go env GOPATH)/bin`. If you did
   not already add the bin directory to your system path during Go installation,
   you are encouraged to do so now.
 
 
 ## Getting Started
 
-pyipad has several configuration options available to tweak how it runs, but all
+waglaylad has several configuration options available to tweak how it runs, but all
 of the basic operations work with zero configuration.
 
 ```bash
-$ pyipad
+$ waglaylad
 ```
 
 ## Discord
@@ -56,13 +56,13 @@ Join our discord server using the following link: https://discord.gg/sFSASsgx
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/Pyrinpyi/pyipad/issues)
+The [integrated github issue tracker](https://github.com/waglayla/waglaylad/issues)
 is used for this project.
 
 ## Documentation
 
-The [documentation](https://github.com/Pyrinpyi/docs) is a work-in-progress
+The [documentation](https://github.com/waglayla/docs) is a work-in-progress
 
 ## License
 
-pyipad is licensed under the copyfree [ISC License](https://choosealicense.com/licenses/isc/).
+waglaylad is licensed under the copyfree [ISC License](https://choosealicense.com/licenses/isc/).

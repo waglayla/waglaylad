@@ -1,12 +1,12 @@
 package integration
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 	"testing"
 )
 
 func TestVirtualSelectedParentBlueScoreAndVirtualDAAScore(t *testing.T) {
-	// Setup a single pyipad instance
+	// Setup a single waglaylad instance
 	harnessParams := &harnessParams{
 		p2pAddress:              p2pAddress1,
 		rpcAddress:              rpcAddress1,
@@ -14,11 +14,11 @@ func TestVirtualSelectedParentBlueScoreAndVirtualDAAScore(t *testing.T) {
 		miningAddressPrivateKey: miningAddress1PrivateKey,
 		utxoIndex:               true,
 	}
-	pyipad, teardown := setupHarness(t, harnessParams)
+	waglaylad, teardown := setupHarness(t, harnessParams)
 	defer teardown()
 
 	// Make sure that the initial selected parent blue score is 0
-	response, err := pyipad.rpcClient.GetVirtualSelectedParentBlueScore()
+	response, err := waglaylad.rpcClient.GetVirtualSelectedParentBlueScore()
 	if err != nil {
 		t.Fatalf("Error getting virtual selected parent blue score: %s", err)
 	}
@@ -29,7 +29,7 @@ func TestVirtualSelectedParentBlueScoreAndVirtualDAAScore(t *testing.T) {
 
 	// Register to virtual selected parent blue score changes
 	onVirtualSelectedParentBlueScoreChangedChan := make(chan *appmessage.VirtualSelectedParentBlueScoreChangedNotificationMessage)
-	err = pyipad.rpcClient.RegisterForVirtualSelectedParentBlueScoreChangedNotifications(
+	err = waglaylad.rpcClient.RegisterForVirtualSelectedParentBlueScoreChangedNotifications(
 		func(notification *appmessage.VirtualSelectedParentBlueScoreChangedNotificationMessage) {
 			onVirtualSelectedParentBlueScoreChangedChan <- notification
 		})
@@ -40,7 +40,7 @@ func TestVirtualSelectedParentBlueScoreAndVirtualDAAScore(t *testing.T) {
 
 	// Register to virtual DAA score changes
 	onVirtualDaaScoreChangedChan := make(chan *appmessage.VirtualDaaScoreChangedNotificationMessage)
-	err = pyipad.rpcClient.RegisterForVirtualDaaScoreChangedNotifications(
+	err = waglaylad.rpcClient.RegisterForVirtualDaaScoreChangedNotifications(
 		func(notification *appmessage.VirtualDaaScoreChangedNotificationMessage) {
 			onVirtualDaaScoreChangedChan <- notification
 		})
@@ -52,7 +52,7 @@ func TestVirtualSelectedParentBlueScoreAndVirtualDAAScore(t *testing.T) {
 	// report correct values
 	const blockAmountToMine = 100
 	for i := 0; i < blockAmountToMine; i++ {
-		mineNextBlock(t, pyipad)
+		mineNextBlock(t, waglaylad)
 		blueScoreChangedNotification := <-onVirtualSelectedParentBlueScoreChangedChan
 		if blueScoreChangedNotification.VirtualSelectedParentBlueScore != 1+uint64(i) {
 			t.Fatalf("Unexpected virtual selected parent blue score. Want: %d, got: %d",
@@ -66,7 +66,7 @@ func TestVirtualSelectedParentBlueScoreAndVirtualDAAScore(t *testing.T) {
 	}
 
 	// Make sure that the blue score after all that mining is as expected
-	response, err = pyipad.rpcClient.GetVirtualSelectedParentBlueScore()
+	response, err = waglaylad.rpcClient.GetVirtualSelectedParentBlueScore()
 	if err != nil {
 		t.Fatalf("Error getting virtual selected parent blue score: %s", err)
 	}

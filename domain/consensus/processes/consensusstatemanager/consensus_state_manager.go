@@ -1,8 +1,8 @@
 package consensusstatemanager
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // consensusStateManager manages the node's consensus state

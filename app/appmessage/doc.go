@@ -96,10 +96,10 @@ function. It accepts any io.Reader, but typically this will be a net.Conn to
 a remote node running a pyrin peer. Example syntax is:
 
 	// Reads and validates the next pyrin message from conn using the
-	// protocol version pver and the pyrin network Pyrinpyi. The returns
+	// protocol version pver and the pyrin network waglayla. The returns
 	// are a appmessage.Message, a []byte which contains the unmarshalled
 	// raw payload, and a possible error.
-	msg, rawPayload, err := appmessage.ReadMessage(conn, pver, Pyrinpyi)
+	msg, rawPayload, err := appmessage.ReadMessage(conn, pver, waglayla)
 	if err != nil {
 		// Log and handle the error
 	}
@@ -115,9 +115,9 @@ from a remote peer is:
 	msg := appmessage.NewMsgRequestAddresses()
 
 	// Writes a pyrin message msg to conn using the protocol version
-	// pver, and the pyrin network Pyrinpyi. The return is a possible
+	// pver, and the pyrin network waglayla. The return is a possible
 	// error.
-	err := appmessage.WriteMessage(conn, msg, pver, Pyrinpyi)
+	err := appmessage.WriteMessage(conn, msg, pver, waglayla)
 	if err != nil {
 		// Log and handle the error
 	}

@@ -4,17 +4,17 @@ import (
 	"math/big"
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/blockheader"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/blockheader"
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/merkle"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/merkle"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/util/mstime"
 )
 
 type blockBuilder struct {

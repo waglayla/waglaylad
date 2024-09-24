@@ -1,9 +1,9 @@
 package testutils
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
 	"github.com/pkg/errors"
 )
 

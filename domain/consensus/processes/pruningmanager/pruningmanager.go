@@ -3,15 +3,15 @@ package pruningmanager
 import (
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/multiset"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/virtual"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/util/staging"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/multiset"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/virtual"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/util/staging"
 	"github.com/pkg/errors"
 )
 
@@ -694,7 +694,7 @@ func (pm *pruningManager) pruningPointCandidate(stagingArea *model.StagingArea) 
 }
 
 // validateUTXOSetFitsCommitment makes sure that the calculated UTXOSet of the new pruning point fits the commitment.
-// This is a sanity test, to make sure that pyipad doesn't store, and subsequently sends syncing peers the wrong UTXOSet.
+// This is a sanity test, to make sure that waglaylad doesn't store, and subsequently sends syncing peers the wrong UTXOSet.
 func (pm *pruningManager) validateUTXOSetFitsCommitment(stagingArea *model.StagingArea, pruningPointHash *externalapi.DomainHash) error {
 	onEnd := logger.LogAndMeasureExecutionTime(log, "pruningManager.validateUTXOSetFitsCommitment")
 	defer onEnd()

@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 )
 
 func TestMain(m *testing.M) {

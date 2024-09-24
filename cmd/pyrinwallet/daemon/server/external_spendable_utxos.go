@@ -3,10 +3,10 @@ package server
 import (
 	"context"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/util"
 )
 
 func (s *server) GetExternalSpendableUTXOs(_ context.Context, request *pb.GetExternalSpendableUTXOsRequest) (*pb.GetExternalSpendableUTXOsResponse, error) {

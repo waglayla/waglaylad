@@ -1,7 +1,7 @@
 package utxolrucache
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // LRUCache is a least-recently-used cache for UTXO entries

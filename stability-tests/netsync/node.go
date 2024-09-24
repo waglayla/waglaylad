@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus"
 	"os/exec"
 	"strings"
 	"sync/atomic"
 	"syscall"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/mine"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
-	"github.com/Pyrinpyi/pyipad/util"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common/mine"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/util"
+	"github.com/waglayla/waglaylad/util/panics"
 	"github.com/pkg/errors"
 )
 
@@ -30,7 +30,7 @@ func startNode(name string, rpcAddress, listen, connect, profilePort, dataDir st
 	log.Infof("Data directory for %s is %s", name, dataDir)
 
 	args := []string{
-		"pyipad",
+		"waglaylad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
 		"--logdir", dataDir,
@@ -119,7 +119,7 @@ func setupNodeWithRPC(name, listen, rpcListen, connect, profilePort, dataDir str
 func setupSyncee() (*rpc.Client, func(), error) {
 	const syncedProfilePort = "6061"
 
-	synceeDataDir, err := useDirOrCreateTemp(activeConfig().SynceeDataDirectory, "syncee-pyipad-data-dir")
+	synceeDataDir, err := useDirOrCreateTemp(activeConfig().SynceeDataDirectory, "syncee-waglaylad-data-dir")
 	if err != nil {
 		return nil, nil, err
 	}
@@ -131,7 +131,7 @@ func setupSyncee() (*rpc.Client, func(), error) {
 func setupSyncer() (*rpc.Client, func(), error) {
 	const syncerProfilePort = "6062"
 
-	syncerDataDir, err := useDirOrCreateTemp(activeConfig().SyncerDataDirectory, "syncer-pyipad-data-dir")
+	syncerDataDir, err := useDirOrCreateTemp(activeConfig().SyncerDataDirectory, "syncer-waglaylad-data-dir")
 	if err != nil {
 		return nil, nil, err
 	}

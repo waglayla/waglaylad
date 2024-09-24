@@ -1,9 +1,9 @@
 package mempool
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 )
 
 func (mp *mempool) handleNewBlockTransactions(blockTransactions []*externalapi.DomainTransaction) (

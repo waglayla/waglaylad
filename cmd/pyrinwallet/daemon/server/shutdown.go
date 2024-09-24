@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
 )
 
 func (s *server) Shutdown(ctx context.Context, request *pb.ShutdownRequest) (*pb.ShutdownResponse, error) {

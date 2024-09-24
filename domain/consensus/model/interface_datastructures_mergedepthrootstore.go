@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // MergeDepthRootStore represents a store for merge depth roots

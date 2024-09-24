@@ -3,7 +3,7 @@ package subnetworks
 import (
 	"encoding/hex"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // FromString creates a DomainSubnetworkID from the given byte slice

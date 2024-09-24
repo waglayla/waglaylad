@@ -7,8 +7,8 @@ package blocklogger
 import (
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/util/mstime"
 )
 
 // BlockLogger is a type tracking the amount of blocks/headers/transactions to log the time it took to receive them

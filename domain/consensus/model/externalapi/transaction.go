@@ -224,7 +224,7 @@ func NewDomainOutpoint(id *DomainTransactionID, index uint32) *DomainOutpoint {
 	}
 }
 
-// ScriptPublicKey represents a pyipad ScriptPublicKey
+// ScriptPublicKey represents a waglaylad ScriptPublicKey
 type ScriptPublicKey struct {
 	Script  []byte
 	Version uint16
@@ -260,7 +260,7 @@ func NewScriptPublicKeyFromString(ScriptPublicKeyString string) *ScriptPublicKey
 	return &ScriptPublicKey{Script: script, Version: version}
 }
 
-// DomainTransactionOutput represents a pyipad transaction output
+// DomainTransactionOutput represents a waglaylad transaction output
 type DomainTransactionOutput struct {
 	Value           uint64
 	ScriptPublicKey *ScriptPublicKey

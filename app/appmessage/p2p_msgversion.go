@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/version"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
+	"github.com/waglayla/waglaylad/util/mstime"
 )
 
 // MaxUserAgentLen is the maximum allowed length for the user agent field in a
@@ -20,7 +20,7 @@ import (
 const MaxUserAgentLen = 256
 
 // DefaultUserAgent for appmessage in the stack
-var DefaultUserAgent = fmt.Sprintf("/pyipad:%s/", version.Version())
+var DefaultUserAgent = fmt.Sprintf("/waglaylad:%s/", version.Version())
 
 // MsgVersion implements the Message interface and represents a pyrin version
 // message. It is used for a peer to advertise itself as soon as an outbound

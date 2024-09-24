@@ -4,13 +4,13 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/util/math"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/util/math"
 
-	"github.com/Pyrinpyi/pyipad/util/difficulty"
+	"github.com/waglayla/waglaylad/util/difficulty"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // DifficultyManager provides a method to resolve the

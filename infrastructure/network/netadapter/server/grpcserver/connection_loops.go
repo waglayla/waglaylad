@@ -1,8 +1,8 @@
 package grpcserver
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 	"github.com/davecgh/go-spew/spew"
 	"io"
 	"os"
@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server/grpcserver/protowire"
 )
 
 func (c *gRPCConnection) connectionLoops() error {

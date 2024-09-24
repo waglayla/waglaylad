@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/Pyrinpyi/go-secp256k1"
+	"github.com/waglayla/go-secp256k1"
 	"lukechampine.com/blake3"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 )
 
 // An opcode defines the information related to a txscript opcode. opfunc, if

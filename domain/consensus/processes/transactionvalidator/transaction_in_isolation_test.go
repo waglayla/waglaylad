@@ -3,13 +3,13 @@ package transactionvalidator_test
 import (
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 	"github.com/pkg/errors"
 )
 

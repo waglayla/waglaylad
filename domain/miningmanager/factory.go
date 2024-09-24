@@ -1,10 +1,10 @@
 package miningmanager
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensusreference"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager/blocktemplatebuilder"
-	mempoolpkg "github.com/Pyrinpyi/pyipad/domain/miningmanager/mempool"
+	"github.com/waglayla/waglaylad/domain/consensusreference"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/miningmanager/blocktemplatebuilder"
+	mempoolpkg "github.com/waglayla/waglaylad/domain/miningmanager/mempool"
 	"sync"
 	"time"
 )

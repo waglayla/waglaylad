@@ -2,25 +2,25 @@ package server
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/version"
 	"net"
 	"os"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/util/txmass"
+	"github.com/waglayla/waglaylad/util/txmass"
 
-	"github.com/Pyrinpyi/pyipad/util/profiling"
+	"github.com/waglayla/waglaylad/util/profiling"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/keys"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/rpcclient"
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/signal"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/infrastructure/network/rpcclient"
+	"github.com/waglayla/waglaylad/infrastructure/os/signal"
+	"github.com/waglayla/waglaylad/util/panics"
 	"github.com/pkg/errors"
 
 	"google.golang.org/grpc"

@@ -1,8 +1,8 @@
 package serialization
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/multiset"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/multiset"
 )
 
 // MultisetToDBMultiset converts Multiset to DbMultiset

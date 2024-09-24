@@ -3,9 +3,9 @@ package addressexchange
 import (
 	"math/rand"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 // SendAddressesContext is the interface for the context needed for the SendAddresses flow.

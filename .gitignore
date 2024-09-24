@@ -2,7 +2,7 @@
 *~
 
 # Databases
-pyipad.db
+waglaylad.db
 *-shm
 *-wal
 
@@ -19,7 +19,7 @@ pyipad.db
 *.test
 
 # Real binaries, build with `go build .`
-pyipad
+waglaylad
 cmd/gencerts/gencerts
 cmd/pyrinctl/pyrinctl
 cmd/kasminer/pyrinminer

@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
 )
 
 // RenderDAGToDot is a helper function for debugging tests.

@@ -3,14 +3,14 @@ package rpccontext
 import (
 	"sync"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/utxoindex"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/utxoindex"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 
@@ -21,7 +21,7 @@ type NotificationManager struct {
 	params    *dagconfig.Params
 }
 
-// UTXOsChangedNotificationAddress represents a pyipad address.
+// UTXOsChangedNotificationAddress represents a waglaylad address.
 // This type is meant to be used in UTXOsChanged notifications
 type UTXOsChangedNotificationAddress struct {
 	Address               string

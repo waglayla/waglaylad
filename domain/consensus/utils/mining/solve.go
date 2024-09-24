@@ -4,8 +4,8 @@ import (
 	"math"
 	"math/rand"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/pow"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/pow"
 	"github.com/pkg/errors"
 )
 

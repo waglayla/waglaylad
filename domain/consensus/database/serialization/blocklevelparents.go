@@ -1,7 +1,7 @@
 package serialization
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // DbBlockLevelParentsToDomainBlockLevelParents converts a DbBlockLevelParents to a BlockLevelParents

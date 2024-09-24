@@ -1,7 +1,7 @@
 package serialization
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
 )
 
 // DomainBlockRelationsToDbBlockRelations converts model.BlockRelations to DbBlockRelations

@@ -1,7 +1,7 @@
 package ldb
 
 import (
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
 	"github.com/pkg/errors"
 	"github.com/syndtr/goleveldb/leveldb"
 	ldbErrors "github.com/syndtr/goleveldb/leveldb/errors"

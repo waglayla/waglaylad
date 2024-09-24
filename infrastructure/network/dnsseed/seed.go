@@ -12,15 +12,15 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	pb2 "github.com/Pyrinpyi/pyipad/infrastructure/network/dnsseed/pb"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	pb2 "github.com/waglayla/waglaylad/infrastructure/network/dnsseed/pb"
 	"google.golang.org/grpc"
 
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/util/mstime"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 )
 
 const (

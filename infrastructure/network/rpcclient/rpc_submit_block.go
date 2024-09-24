@@ -1,8 +1,8 @@
 package rpcclient
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 func (c *RPCClient) submitBlock(block *externalapi.DomainBlock, allowNonDAABlocks bool) (appmessage.RejectReason, error) {

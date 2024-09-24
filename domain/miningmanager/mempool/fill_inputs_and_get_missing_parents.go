@@ -1,11 +1,11 @@
 package mempool
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager/mempool/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/miningmanager/mempool/model"
 	"github.com/pkg/errors"
 )
 

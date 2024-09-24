@@ -1,6 +1,6 @@
 package subnetworks
 
-import "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
 var (
 	// SubnetworkIDNative is the default subnetwork ID which is used for transactions without related payload data

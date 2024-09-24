@@ -3,12 +3,12 @@ package standalone
 import (
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 // Routes holds the incoming and outgoing routes of a connection created by MinimalNetAdapter

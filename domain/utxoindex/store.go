@@ -3,10 +3,10 @@ package utxoindex
 import (
 	"encoding/binary"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/database/binaryserialization"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/domain/consensus/database/binaryserialization"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

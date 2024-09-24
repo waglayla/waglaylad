@@ -3,8 +3,8 @@ package ruleerrors
 import (
 	"fmt"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 	"github.com/pkg/errors"
 )
 

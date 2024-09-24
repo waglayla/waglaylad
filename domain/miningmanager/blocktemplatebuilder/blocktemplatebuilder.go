@@ -4,18 +4,18 @@ import (
 	"math"
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/processes/coinbasemanager"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/merkle"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
-	"github.com/Pyrinpyi/pyipad/domain/consensusreference"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/domain/consensus/processes/coinbasemanager"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/merkle"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/waglaylad/domain/consensusreference"
+	"github.com/waglayla/waglaylad/util/mstime"
 
-	"github.com/Pyrinpyi/pyipad/util/difficulty"
+	"github.com/waglayla/waglaylad/util/difficulty"
 
-	consensusexternalapi "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
-	miningmanagerapi "github.com/Pyrinpyi/pyipad/domain/miningmanager/model"
+	consensusexternalapi "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
+	miningmanagerapi "github.com/waglayla/waglaylad/domain/miningmanager/model"
 	"github.com/pkg/errors"
 )
 
@@ -152,7 +152,7 @@ func (btb *blockTemplateBuilder) BuildBlockTemplate(
 		if err != nil {
 			// mempool.RemoveTransactions might return errors in situations that are perfectly fine in this context.
 			// TODO: Once the mempool invariants are clear, this should be converted back `return nil, err`:
-			// https://github.com/Pyrinpyi/pyipad/issues/1553
+			// https://github.com/waglayla/waglaylad/issues/1553
 			log.Criticalf("Error from mempool.RemoveTransactions: %+v", err)
 			log.Criticalf("Error from mempool.RemoveInvalidTransactions: %+v", err)
 		}

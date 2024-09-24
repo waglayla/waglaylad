@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 )
 
 func TestCalcDeflationaryPeriodBlockSubsidy(t *testing.T) {

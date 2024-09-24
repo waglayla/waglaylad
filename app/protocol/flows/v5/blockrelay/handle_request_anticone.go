@@ -3,13 +3,13 @@ package blockrelay
 import (
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/app/protocol/protocolerrors"
-	"github.com/Pyrinpyi/pyipad/domain"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/app/protocol/protocolerrors"
+	"github.com/waglayla/waglaylad/domain"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 // RequestAnticoneContext is the interface for the context needed for the HandleRequestHeaders flow.

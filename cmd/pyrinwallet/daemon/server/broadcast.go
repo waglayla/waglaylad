@@ -2,13 +2,13 @@ package server
 
 import (
 	"context"
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet/serialization"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/rpcclient"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"time"
 )

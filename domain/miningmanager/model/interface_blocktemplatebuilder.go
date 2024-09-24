@@ -1,7 +1,7 @@
 package model
 
 import (
-	consensusexternalapi "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	consensusexternalapi "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // BlockTemplateBuilder builds block templates for miners to consume

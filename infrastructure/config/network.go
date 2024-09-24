@@ -3,13 +3,13 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"math/big"
 	"os"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/util/difficulty"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/util/difficulty"
 	"github.com/jessevdk/go-flags"
 	"github.com/pkg/errors"
 )

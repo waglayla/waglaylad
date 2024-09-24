@@ -12,7 +12,7 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/util"
 )
 
 // TestAppDataDir tests the API for AppDir to ensure it gives expected

@@ -3,12 +3,12 @@ package ghostdag2
 import (
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/util/difficulty"
+	"github.com/waglayla/waglaylad/util/difficulty"
 
 	"math/big"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 type ghostdagHelper struct {

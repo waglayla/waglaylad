@@ -3,7 +3,7 @@ package rpcclient
 import (
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 )
 
 // SubmitTransaction sends an RPC request respective to the function's name and returns the RPC server's response

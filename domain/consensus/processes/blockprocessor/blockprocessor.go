@@ -3,10 +3,10 @@ package blockprocessor
 import (
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/processes/blockprocessor/blocklogger"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/processes/blockprocessor/blocklogger"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 )
 
 // blockProcessor is responsible for processing incoming blocks

@@ -3,12 +3,12 @@ package rpccontext
 import (
 	"encoding/hex"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/utxoindex"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/utxoindex"
 )
 
 // ConvertUTXOOutpointEntryPairsToUTXOsByAddressesEntries converts

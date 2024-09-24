@@ -1,6 +1,6 @@
 package server
 
-import "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
 type walletUTXO struct {
 	Outpoint  *externalapi.DomainOutpoint

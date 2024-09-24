@@ -5,7 +5,7 @@
 package util
 
 import (
-	"github.com/Pyrinpyi/pyipad/util/bech32"
+	"github.com/waglayla/waglaylad/util/bech32"
 	"github.com/pkg/errors"
 )
 

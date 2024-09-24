@@ -3,7 +3,7 @@ package reachabilitymanager
 import (
 	"math"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
 	"github.com/pkg/errors"
 )
 

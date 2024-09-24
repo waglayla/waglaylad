@@ -4,18 +4,18 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 )
 
 func TestDoubleSpends(t *testing.T) {

@@ -3,13 +3,13 @@ package coinbasemanager
 import (
 	"math"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/hashset"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/hashset"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

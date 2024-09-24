@@ -1,6 +1,6 @@
 package model
 
-import "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
 // DAGTopologyManager exposes methods for querying relationships
 // between blocks in the DAG

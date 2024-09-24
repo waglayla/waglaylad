@@ -1,9 +1,9 @@
 package protowire
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
+	"github.com/waglayla/waglaylad/util/mstime"
 	"github.com/pkg/errors"
 )
 

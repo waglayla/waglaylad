@@ -5,9 +5,9 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/protocolerrors"
+	"github.com/waglayla/waglaylad/app/protocol/protocolerrors"
 )
 
 var (

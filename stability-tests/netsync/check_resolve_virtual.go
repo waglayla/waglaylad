@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
 	"github.com/pkg/errors"
 	"time"
 )

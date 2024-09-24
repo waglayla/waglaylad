@@ -3,7 +3,7 @@ package mempoollimits
 import (
 	"path/filepath"
 
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common"
 	"github.com/jessevdk/go-flags"
 )
 
@@ -21,7 +21,7 @@ var (
 type configFlags struct {
 	LogLevel         string `long:"loglevel" description:"Set log level {trace, debug, info, warn, error, critical}"`
 	Profile          string `long:"profile" description:"Enable HTTP profiling on given port -- NOTE port must be between 1024 and 65536"`
-	pyipadRPCAddress string `long:"rpc-address" description:"RPC address of the pyipad node"`
+	pyipadRPCAddress string `long:"rpc-address" description:"RPC address of the waglaylad node"`
 }
 
 var cfg *configFlags

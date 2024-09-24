@@ -1,8 +1,8 @@
 package model
 
-import "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-// SyncManager exposes functions to support sync between pyipad nodes
+// SyncManager exposes functions to support sync between waglaylad nodes
 type SyncManager interface {
 	GetHashesBetween(stagingArea *StagingArea, lowHash, highHash *externalapi.DomainHash, maxBlocks uint64) (
 		hashes []*externalapi.DomainHash, actualHighHash *externalapi.DomainHash, err error)

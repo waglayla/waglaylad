@@ -5,7 +5,7 @@
 package appmessage
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // MsgRequestAnticone implements the Message interface and represents a pyrin

@@ -1,17 +1,17 @@
 package rpc
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/protocol"
-	"github.com/Pyrinpyi/pyipad/app/rpc/rpccontext"
-	"github.com/Pyrinpyi/pyipad/domain"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/utxoindex"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/connmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/protocol"
+	"github.com/waglayla/waglaylad/app/rpc/rpccontext"
+	"github.com/waglayla/waglaylad/domain"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/utxoindex"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/connmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 	"github.com/pkg/errors"
 )
 

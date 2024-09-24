@@ -1,13 +1,13 @@
 package rpccontext
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/protocol"
-	"github.com/Pyrinpyi/pyipad/domain"
-	"github.com/Pyrinpyi/pyipad/domain/utxoindex"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/connmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/app/protocol"
+	"github.com/waglayla/waglaylad/domain"
+	"github.com/waglayla/waglaylad/domain/utxoindex"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/connmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 )
 
 // Context represents the RPC context

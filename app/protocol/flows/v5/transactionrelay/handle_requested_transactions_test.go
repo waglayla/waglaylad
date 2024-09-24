@@ -3,20 +3,20 @@ package transactionrelay_test
 import (
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/flowcontext"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/transactionrelay"
+	"github.com/waglayla/waglaylad/app/protocol/flowcontext"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/transactionrelay"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain"
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager/mempool"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/domain/miningmanager/mempool"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/util/panics"
 	"github.com/pkg/errors"
 )
 

@@ -4,10 +4,10 @@ import (
 	"os"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
-	"github.com/Pyrinpyi/pyipad/util/panics"
-	"github.com/Pyrinpyi/pyipad/util/profiling"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/util/panics"
+	"github.com/waglayla/waglaylad/util/profiling"
 	"github.com/pkg/errors"
 )
 

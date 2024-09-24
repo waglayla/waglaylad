@@ -1,7 +1,7 @@
 package appmessage
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // MaxInvPerTxInvMsg is the maximum number of hashes that can

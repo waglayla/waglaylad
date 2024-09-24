@@ -3,15 +3,15 @@ package consensusstatemanager
 import (
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/merkle"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/merkle"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
 	"github.com/pkg/errors"
 )
 

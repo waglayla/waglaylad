@@ -3,14 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/utils"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/utils"
 	"os"
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/client"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/keys"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/client"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
 	"github.com/pkg/errors"
 )
 

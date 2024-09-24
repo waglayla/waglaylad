@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
 )
 
 func TestTransactionCloseErrors(t *testing.T) {

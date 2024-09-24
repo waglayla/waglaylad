@@ -1,8 +1,8 @@
 package serialization
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionid"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionid"
 )
 
 // DbTransactionIDToDomainTransactionID converts DbTransactionId to DomainTransactionID

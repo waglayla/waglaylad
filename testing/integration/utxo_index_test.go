@@ -4,19 +4,19 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionid"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionid"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/util"
 )
 
 func TestUTXOIndex(t *testing.T) {
-	// Setup a single pyipad instance
+	// Setup a single waglaylad instance
 	harnessParams := &harnessParams{
 		p2pAddress:              p2pAddress1,
 		rpcAddress:              rpcAddress1,
@@ -24,17 +24,17 @@ func TestUTXOIndex(t *testing.T) {
 		miningAddressPrivateKey: miningAddress1PrivateKey,
 		utxoIndex:               true,
 	}
-	pyipad, teardown := setupHarness(t, harnessParams)
+	waglaylad, teardown := setupHarness(t, harnessParams)
 	defer teardown()
 
 	// skip the first block because it's paying to genesis script,
 	// which contains no outputs
-	mineNextBlock(t, pyipad)
+	mineNextBlock(t, waglaylad)
 
 	// Register for UTXO changes
 	const blockAmountToMine = 100
 	onUTXOsChangedChan := make(chan *appmessage.UTXOsChangedNotificationMessage, blockAmountToMine)
-	err := pyipad.rpcClient.RegisterForUTXOsChangedNotifications([]string{miningAddress1}, func(
+	err := waglaylad.rpcClient.RegisterForUTXOsChangedNotifications([]string{miningAddress1}, func(
 		notification *appmessage.UTXOsChangedNotificationMessage) {
 
 		onUTXOsChangedChan <- notification
@@ -45,17 +45,17 @@ func TestUTXOIndex(t *testing.T) {
 
 	// Mine some blocks
 	for i := 0; i < blockAmountToMine; i++ {
-		mineNextBlock(t, pyipad)
+		mineNextBlock(t, waglaylad)
 	}
 
 	//check if rewards corrosponds to circulating supply.
-	getCoinSupplyResponse, err := pyipad.rpcClient.GetCoinSupply()
+	getCoinSupplyResponse, err := waglaylad.rpcClient.GetCoinSupply()
 	if err != nil {
 		t.Fatalf("Error Retriving Coin supply: %s", err)
 	}
 
 	rewardsMinedLeor := uint64(blockAmountToMine * constants.LeorPerPyrin * 17)
-	getBlockCountResponse, err := pyipad.rpcClient.GetBlockCount()
+	getBlockCountResponse, err := waglaylad.rpcClient.GetBlockCount()
 	if err != nil {
 		t.Fatalf("Error Retriving BlockCount: %s", err)
 	}
@@ -88,14 +88,14 @@ func TestUTXOIndex(t *testing.T) {
 	const transactionAmountToSpend = 5
 	for i := 0; i < transactionAmountToSpend; i++ {
 		rpcTransaction := buildTransactionForUTXOIndexTest(t, notificationEntries[i])
-		_, err = pyipad.rpcClient.SubmitTransaction(rpcTransaction, false)
+		_, err = waglaylad.rpcClient.SubmitTransaction(rpcTransaction, false)
 		if err != nil {
 			t.Fatalf("Error submitting transaction: %s", err)
 		}
 	}
 
 	// Mine a block to include the above transactions
-	mineNextBlock(t, pyipad)
+	mineNextBlock(t, waglaylad)
 
 	// Make sure this block removed the UTXOs we spent
 	notification := <-onUTXOsChangedChan
@@ -127,7 +127,7 @@ func TestUTXOIndex(t *testing.T) {
 
 	// Get all the UTXOs and make sure the response is equivalent
 	// to the data collected via notifications
-	utxosByAddressesResponse, err := pyipad.rpcClient.GetUTXOsByAddresses([]string{miningAddress1})
+	utxosByAddressesResponse, err := waglaylad.rpcClient.GetUTXOsByAddresses([]string{miningAddress1})
 	if err != nil {
 		t.Fatalf("Failed to get UTXOs: %s", err)
 	}

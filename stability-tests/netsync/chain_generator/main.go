@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/mine"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common/mine"
 	"github.com/pkg/errors"
 )
 

@@ -1,9 +1,9 @@
 package integration
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/mining"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/mining"
 	"math/rand"
 	"os"
 	"reflect"
@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 )
 
 func TestIBD(t *testing.T) {

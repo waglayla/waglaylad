@@ -6,10 +6,10 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet/serialization"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
 	"github.com/pkg/errors"
 )
 

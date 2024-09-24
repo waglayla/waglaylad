@@ -3,7 +3,7 @@ package protowire
 import (
 	"math"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

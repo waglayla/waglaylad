@@ -1,7 +1,7 @@
 #!/bin/bash
-rm -rf /tmp/pyipad-temp
+rm -rf /tmp/waglaylad-temp
 
-pyipad --simnet --appdir=/tmp/pyipad-temp --profile=6061 &
+waglaylad --simnet --appdir=/tmp/waglaylad-temp --profile=6061 &
 pyipad_PID=$!
 
 sleep 1
@@ -15,7 +15,7 @@ wait $pyipad_PID
 pyipad_EXIT_CODE=$?
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "pyipad exit code: $pyipad_EXIT_CODE"
+echo "waglaylad exit code: $pyipad_EXIT_CODE"
 
 if [ $TEST_EXIT_CODE -eq 0 ] && [ $pyipad_EXIT_CODE -eq 0 ]; then
   echo "orphans test: PASSED"

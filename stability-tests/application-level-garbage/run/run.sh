@@ -1,7 +1,7 @@
 #!/bin/bash
-rm -rf /tmp/pyipad-temp
+rm -rf /tmp/waglaylad-temp
 
-pyipad --devnet --appdir=/tmp/pyipad-temp --profile=6061 --loglevel=debug &
+waglaylad --devnet --appdir=/tmp/waglaylad-temp --profile=6061 --loglevel=debug &
 pyipad_PID=$!
 pyipad_KILLED=0
 function killpyipadIfNotKilled() {
@@ -23,7 +23,7 @@ pyipad_KILLED=1
 pyipad_EXIT_CODE=$?
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "pyipad exit code: $pyipad_EXIT_CODE"
+echo "waglaylad exit code: $pyipad_EXIT_CODE"
 
 if [ $TEST_EXIT_CODE -eq 0 ] && [ $pyipad_EXIT_CODE -eq 0 ]; then
   echo "application-level-garbage test: PASSED"

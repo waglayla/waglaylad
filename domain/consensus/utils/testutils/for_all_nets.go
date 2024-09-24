@@ -3,8 +3,8 @@ package testutils
 import (
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 )
 
 // ForAllNets runs the passed testFunc with all available networks

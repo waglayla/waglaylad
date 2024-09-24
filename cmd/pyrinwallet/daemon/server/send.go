@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
 )
 
 func (s *server) Send(_ context.Context, request *pb.SendRequest) (*pb.SendResponse, error) {

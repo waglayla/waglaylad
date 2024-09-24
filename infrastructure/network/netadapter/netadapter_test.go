@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 // routerInitializerForTest returns new RouterInitializer which simply sets

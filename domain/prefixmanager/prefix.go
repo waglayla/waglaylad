@@ -1,8 +1,8 @@
 package prefixmanager
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/prefixmanager/prefix"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/domain/prefixmanager/prefix"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
 )
 
 var activePrefixKey = database.MakeBucket(nil).Key([]byte("active-prefix"))

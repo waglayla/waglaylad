@@ -2,11 +2,11 @@ dagconfig
 ========
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/Pyrinpyi/pyipad/dagconfig)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/waglayla/waglaylad/dagconfig)
 
 Package dagconfig defines DAG configuration parameters for the standard
-pyipad networks and provides the ability for callers to define their own custom
-pyipad networks.
+waglaylad networks and provides the ability for callers to define their own custom
+waglaylad networks.
 
 ## Sample Use
 
@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/Pyrinpyi/pyipad/util"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/util"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 )
 
 var testnet = flag.Bool("testnet", false, "operate on the testnet Pyrin network")

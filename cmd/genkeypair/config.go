@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/config"
 	"github.com/jessevdk/go-flags"
 )
 

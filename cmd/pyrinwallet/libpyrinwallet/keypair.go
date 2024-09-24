@@ -5,10 +5,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/Pyrinpyi/go-secp256k1"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet/bip32"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/go-secp256k1"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/bip32"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
 )
 

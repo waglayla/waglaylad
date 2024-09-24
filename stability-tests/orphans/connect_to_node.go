@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/standalone"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/standalone"
 )
 
 func connectToNode() *standalone.Routes {

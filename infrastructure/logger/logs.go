@@ -39,7 +39,7 @@ import (
 	"runtime"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/util/mstime"
 )
 
 // Logger is a subsystem logger for a Backend.

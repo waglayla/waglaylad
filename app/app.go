@@ -7,17 +7,17 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database/ldb"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/execenv"
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/limits"
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/signal"
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/winservice"
-	"github.com/Pyrinpyi/pyipad/util/panics"
-	"github.com/Pyrinpyi/pyipad/util/profiling"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/db/database/ldb"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/os/execenv"
+	"github.com/waglayla/waglaylad/infrastructure/os/limits"
+	"github.com/waglayla/waglaylad/infrastructure/os/signal"
+	"github.com/waglayla/waglaylad/infrastructure/os/winservice"
+	"github.com/waglayla/waglaylad/util/panics"
+	"github.com/waglayla/waglaylad/util/profiling"
+	"github.com/waglayla/waglaylad/version"
 )
 
 const (
@@ -32,7 +32,7 @@ var desiredLimits = &limits.DesiredLimits{
 
 var serviceDescription = &winservice.ServiceDescription{
 	Name:        "pyipadsvc",
-	DisplayName: "pyipad Service",
+	DisplayName: "waglaylad Service",
 	Description: "Downloads and stays synchronized with the Pyrin blockDAG and " +
 		"provides DAG services to applications.",
 }
@@ -41,7 +41,7 @@ type pyipadApp struct {
 	cfg *config.Config
 }
 
-// StartApp starts the pyipad app, and blocks until it finishes running
+// StartApp starts the waglaylad app, and blocks until it finishes running
 func StartApp() error {
 	execenv.Initialize(desiredLimits)
 
@@ -125,12 +125,12 @@ func (app *pyipadApp) main(startedChan chan<- struct{}) error {
 	// Create componentManager and start it.
 	componentManager, err := NewComponentManager(app.cfg, databaseContext, interrupt)
 	if err != nil {
-		log.Errorf("Unable to start pyipad: %+v", err)
+		log.Errorf("Unable to start waglaylad: %+v", err)
 		return err
 	}
 
 	defer func() {
-		log.Infof("Gracefully shutting down pyipad...")
+		log.Infof("Gracefully shutting down waglaylad...")
 
 		shutdownDone := make(chan struct{})
 		go func() {
@@ -145,7 +145,7 @@ func (app *pyipadApp) main(startedChan chan<- struct{}) error {
 		case <-time.After(shutdownTimeout):
 			log.Criticalf("Graceful shutdown timed out %s. Terminating...", shutdownTimeout)
 		}
-		log.Infof("pyipad shutdown complete")
+		log.Infof("waglaylad shutdown complete")
 	}()
 
 	componentManager.Start()

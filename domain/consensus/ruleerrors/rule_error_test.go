@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 func TestNewErrMissingTxOut(t *testing.T) {

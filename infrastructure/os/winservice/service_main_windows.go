@@ -1,7 +1,7 @@
 package winservice
 
 import (
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/config"
 	"github.com/btcsuite/winsvc/svc"
 )
 

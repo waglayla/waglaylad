@@ -3,15 +3,15 @@ package ping
 import (
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flowcontext"
+	"github.com/waglayla/waglaylad/app/protocol/common"
+	"github.com/waglayla/waglaylad/app/protocol/flowcontext"
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/app/protocol/protocolerrors"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/util/random"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/app/protocol/protocolerrors"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/util/random"
 )
 
 // SendPingsContext is the interface for the context needed for the SendPings flow.

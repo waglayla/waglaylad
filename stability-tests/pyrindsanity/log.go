@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/util/panics"
 )
 
 var (

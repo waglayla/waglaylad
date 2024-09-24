@@ -1,11 +1,11 @@
 package blockrelay
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/domain"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/domain"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 // SendVirtualSelectedParentInvContext is the interface for the context needed for the SendVirtualSelectedParentInv flow.

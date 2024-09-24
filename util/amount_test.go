@@ -8,7 +8,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 )
 
 func TestAmountCreation(t *testing.T) {

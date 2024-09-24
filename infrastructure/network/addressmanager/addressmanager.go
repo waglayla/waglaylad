@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/util/mstime"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

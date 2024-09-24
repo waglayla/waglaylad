@@ -3,14 +3,14 @@ package mempool
 import (
 	"sync"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
-	"github.com/Pyrinpyi/pyipad/domain/consensusreference"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensusreference"
 	"github.com/pkg/errors"
 
-	miningmanagermodel "github.com/Pyrinpyi/pyipad/domain/miningmanager/model"
+	miningmanagermodel "github.com/waglayla/waglaylad/domain/miningmanager/model"
 )
 
 type mempool struct {

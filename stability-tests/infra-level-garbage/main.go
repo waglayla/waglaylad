@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/util/profiling"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/util/profiling"
 )
 
 const timeout = 5 * time.Second

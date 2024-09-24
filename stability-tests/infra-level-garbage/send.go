@@ -5,7 +5,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
+	"github.com/waglayla/waglaylad/app/protocol/common"
 	"github.com/pkg/errors"
 )
 

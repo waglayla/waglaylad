@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/infrastructure/config"
 )
 
 const (

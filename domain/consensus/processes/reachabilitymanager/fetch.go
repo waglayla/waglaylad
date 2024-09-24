@@ -1,10 +1,10 @@
 package reachabilitymanager
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/database"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/reachabilitydata"
+	"github.com/waglayla/waglaylad/domain/consensus/database"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/reachabilitydata"
 	"github.com/pkg/errors"
 )
 

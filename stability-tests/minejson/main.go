@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/mine"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
-	"github.com/Pyrinpyi/pyipad/util/panics"
-	"github.com/Pyrinpyi/pyipad/util/profiling"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common/mine"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/util/panics"
+	"github.com/waglayla/waglaylad/util/profiling"
 	"github.com/pkg/errors"
 )
 

@@ -1,14 +1,14 @@
 ARG PYIPAD_IMAGE
 ARG PYIPADMINER_IMAGE
 
-FROM ${PYIPAD_IMAGE} as pyipad
+FROM ${PYIPAD_IMAGE} as waglaylad
 FROM ${PYIPADMINER_IMAGE} as pyrinminer
 
 FROM golang:1.19-alpine
 
-RUN mkdir -p /go/src/github.com/Pyrinpyi/pyipad
+RUN mkdir -p /go/src/github.com/waglayla/waglaylad
 
-WORKDIR /go/src/github.com/Pyrinpyi/pyipad
+WORKDIR /go/src/github.com/waglayla/waglaylad
 
 RUN apk add bash build-base git
 
@@ -19,11 +19,11 @@ RUN go mod download
 
 COPY . .
 
-COPY --from=pyipad /app/ /app/
+COPY --from=waglaylad /app/ /app/
 COPY --from=pyrinminer /app/ /app/
 ENV PATH="/app:${PATH}"
 
-WORKDIR /go/src/github.com/Pyrinpyi/pyipad/stability-tests
+WORKDIR /go/src/github.com/waglayla/waglaylad/stability-tests
 
 RUN go install ./...
 

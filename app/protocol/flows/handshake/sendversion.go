@@ -1,19 +1,19 @@
 package handshake
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/protocol/common"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/version"
 	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
 	// ourselves to other pyrin peers.
-	userAgentName = "pyipad"
+	userAgentName = "waglaylad"
 
 	// userAgentVersion is the user agent version and is used to help
 	// identify ourselves to other pyrin peers.

@@ -3,10 +3,10 @@ package pastmediantimemanager
 import (
 	"sort"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/sorters"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/sorters"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

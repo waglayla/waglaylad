@@ -6,15 +6,15 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/util"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // shortened versions of SigHash types to fit in single line of test case

@@ -8,11 +8,11 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/util"
 )
 
 // This example demonstrates creating a script which pays to a pyrin address.

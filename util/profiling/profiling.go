@@ -2,7 +2,7 @@ package profiling
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 	"net"
 	"net/http"
 	"os"
@@ -12,7 +12,7 @@ import (
 	// Required for profiling
 	_ "net/http/pprof"
 
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/util/panics"
 	"runtime"
 	"runtime/pprof"
 )

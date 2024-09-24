@@ -3,8 +3,8 @@ package grpcserver
 import (
 	"context"
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server"
+	"github.com/waglayla/waglaylad/util/panics"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"

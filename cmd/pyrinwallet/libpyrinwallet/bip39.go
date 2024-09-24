@@ -3,8 +3,8 @@ package libpyrinwallet
 import (
 	"fmt"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet/bip32"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/bip32"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 	"github.com/pkg/errors"
 	"github.com/tyler-smith/go-bip39"
 )

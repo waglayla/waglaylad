@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/mine"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/stability-tests/common/mine"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/util/panics"
 )
 
 // log is a logger that is initialized with no output filters. This

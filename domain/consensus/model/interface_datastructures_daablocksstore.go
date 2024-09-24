@@ -1,6 +1,6 @@
 package model
 
-import "github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+import "github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
 // DAABlocksStore represents a store of ???
 type DAABlocksStore interface {

@@ -4,18 +4,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/util/mstime"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/domain"
+	"github.com/waglayla/waglaylad/domain"
 
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/connmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/connmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
 )
 
 // OnNewBlockTemplateHandler is a handler function that's triggered when a new block template is available

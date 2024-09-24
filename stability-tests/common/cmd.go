@@ -5,8 +5,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 
@@ -26,7 +26,7 @@ func StartCmd(name string, args ...string) (*exec.Cmd, error) {
 	return cmd, nil
 }
 
-// NetworkCliArgumentFromNetParams returns the pyipad command line argument that starts the given network.
+// NetworkCliArgumentFromNetParams returns the waglaylad command line argument that starts the given network.
 func NetworkCliArgumentFromNetParams(params *dagconfig.Params) string {
 	return fmt.Sprintf("--%s", strings.TrimPrefix(params.Name, "pyrin-"))
 }

@@ -8,14 +8,14 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/util/network"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/util/network"
 
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/util"
 )
 
 // These variables are the DAG proof-of-work limit parameters for each default
@@ -174,7 +174,7 @@ type Params struct {
 	// CoinbasePayloadScriptPublicKeyMaxLength is the maximum allowed script public key in the coinbase's payload
 	CoinbasePayloadScriptPublicKeyMaxLength uint8
 
-	// PruningProofM is the 'm' constant in the pruning proof. For more details see: https://github.com/Pyrinpyi/research/issues/3
+	// PruningProofM is the 'm' constant in the pruning proof. For more details see: https://github.com/waglayla/research/issues/3
 	PruningProofM uint64
 
 	// DeflationaryPhaseDaaScore is the DAA score after which the monetary policy switches

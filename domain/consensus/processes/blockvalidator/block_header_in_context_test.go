@@ -5,16 +5,16 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/blockheader"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/blockheader"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/ruleerrors"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/ruleerrors"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
 )
 
 func TestValidateMedianTime(t *testing.T) {

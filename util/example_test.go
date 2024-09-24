@@ -5,9 +5,9 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/Pyrinpyi/pyipad/util/difficulty"
+	"github.com/waglayla/waglaylad/util/difficulty"
 
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/util"
 )
 
 func ExampleAmount() {

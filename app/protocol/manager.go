@@ -5,20 +5,20 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
+	"github.com/waglayla/waglaylad/app/protocol/common"
 
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/domain"
+	"github.com/waglayla/waglaylad/domain"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/flowcontext"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/connmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/app/protocol/flowcontext"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/connmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 )
 
 // Manager manages the p2p protocol

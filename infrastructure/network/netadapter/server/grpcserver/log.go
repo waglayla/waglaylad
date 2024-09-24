@@ -5,8 +5,8 @@
 package grpcserver
 
 import (
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/util/panics"
 )
 
 var log = logger.RegisterSubSystem("TXMP")

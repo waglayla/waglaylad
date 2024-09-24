@@ -3,14 +3,14 @@ package integration
 import (
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 )
 
 func TestVirtualSelectedParentChain(t *testing.T) {
-	// Setup a couple of pyipad instances
+	// Setup a couple of waglaylad instances
 	pyipad1, pyipad2, _, teardown := standardSetup(t)
 	defer teardown()
 

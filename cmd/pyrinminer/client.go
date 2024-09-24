@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/rpcclient"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"time"
 )

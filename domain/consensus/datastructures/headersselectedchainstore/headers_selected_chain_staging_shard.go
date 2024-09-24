@@ -1,9 +1,9 @@
 package headersselectedchainstore
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/database/binaryserialization"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/database/binaryserialization"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 type headersSelectedChainStagingShard struct {

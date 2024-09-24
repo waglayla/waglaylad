@@ -1,12 +1,12 @@
 package rpchandlers
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/rpc/rpccontext"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/rpc/rpccontext"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/util"
 )
 
 // HandleGetMempoolEntriesByAddresses handles the respectively named RPC command

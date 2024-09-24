@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"unicode"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server/grpcserver/protowire"
 )
 
 // protobuf generates the command types with two types:

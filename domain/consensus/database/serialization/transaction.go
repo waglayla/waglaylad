@@ -3,7 +3,7 @@ package serialization
 import (
 	"math"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

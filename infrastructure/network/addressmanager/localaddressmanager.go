@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

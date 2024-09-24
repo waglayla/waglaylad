@@ -13,7 +13,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-// SetLimits raises some process limits to values which allow pyipad and
+// SetLimits raises some process limits to values which allow waglaylad and
 // associated utilities to run.
 func SetLimits(desiredLimits *DesiredLimits) error {
 	var rLimit syscall.Rlimit

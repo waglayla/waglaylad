@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/go-secp256k1"
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/mining"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/go-secp256k1"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/mining"
+	"github.com/waglayla/waglaylad/util"
 	"math/rand"
 	"os"
 	"os/exec"
@@ -15,10 +15,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
-	"github.com/Pyrinpyi/pyipad/util/panics"
-	"github.com/Pyrinpyi/pyipad/util/profiling"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/util/panics"
+	"github.com/waglayla/waglaylad/util/profiling"
 	"github.com/pkg/errors"
 )
 
@@ -102,14 +102,14 @@ func realMain() error {
 
 func startNode() (teardown func(), err error) {
 	log.Infof("Starting node")
-	dataDir, err := common.TempDir("pyipad-datadir")
+	dataDir, err := common.TempDir("waglaylad-datadir")
 	if err != nil {
 		panic(errors.Wrapf(err, "Error in Tempdir"))
 	}
-	log.Infof("pyipad datadir: %s", dataDir)
+	log.Infof("waglaylad datadir: %s", dataDir)
 
-	pyipadCmd, err := common.StartCmd("pyipad",
-		"pyipad",
+	pyipadCmd, err := common.StartCmd("waglaylad",
+		"waglaylad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
 		"--logdir", dataDir,
@@ -131,7 +131,7 @@ func startNode() (teardown func(), err error) {
 				panics.Exit(log, fmt.Sprintf("pyipadCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
 			}
 			if !strings.Contains(err.Error(), "signal: killed") {
-				// TODO: Panic here and check why sometimes pyipad closes ungracefully
+				// TODO: Panic here and check why sometimes waglaylad closes ungracefully
 				log.Errorf("pyipadCmd closed with an error: %s. See logs at: %s", err, dataDir)
 			}
 		}

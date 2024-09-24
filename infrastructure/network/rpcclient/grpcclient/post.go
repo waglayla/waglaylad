@@ -1,8 +1,8 @@
 package grpcclient
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server/grpcserver/protowire"
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/encoding/protojson"
 )

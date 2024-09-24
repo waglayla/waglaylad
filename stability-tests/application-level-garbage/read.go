@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/stability-tests/common"
 	"github.com/pkg/errors"
 )
 

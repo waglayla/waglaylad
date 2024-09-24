@@ -9,10 +9,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database/ldb"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/db/database/ldb"
+	"github.com/waglayla/waglaylad/util/mstime"
 )
 
 func newAddressManagerForTest(t *testing.T, testName string) (addressManager *AddressManager, teardown func()) {

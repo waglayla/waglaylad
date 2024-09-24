@@ -5,13 +5,13 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server/grpcserver/protowire"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server"
 	"google.golang.org/grpc"
 )
 

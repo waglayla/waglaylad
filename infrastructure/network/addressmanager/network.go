@@ -7,7 +7,7 @@ package addressmanager
 import (
 	"net"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 )
 
 var (

@@ -7,7 +7,7 @@ package dagconfig
 import (
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 )
 
 // TestGenesisBlock tests the genesis block of the main network for validity by

@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
 )
 
 type balancesType struct{ available, pending uint64 }

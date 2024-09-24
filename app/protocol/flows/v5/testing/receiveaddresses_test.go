@@ -4,14 +4,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/addressexchange"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/addressexchange"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 type fakeReceiveAddressesContext struct{}

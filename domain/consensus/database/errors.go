@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/Pyrinpyi/pyipad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/db/database"
 )
 
 // ErrNotFound denotes that the requested item was not

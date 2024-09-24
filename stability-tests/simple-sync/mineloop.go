@@ -3,11 +3,11 @@ package main
 import (
 	"time"
 
-	"github.com/Pyrinpyi/go-secp256k1"
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common/rpc"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/go-secp256k1"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/stability-tests/common"
+	"github.com/waglayla/waglaylad/stability-tests/common/rpc"
+	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
 )
 

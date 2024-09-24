@@ -3,12 +3,12 @@ package ready
 import (
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/protocol/common"
 
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	"github.com/Pyrinpyi/pyipad/app/protocol/protocolerrors"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	"github.com/waglayla/waglaylad/app/protocol/protocolerrors"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

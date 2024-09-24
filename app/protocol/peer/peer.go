@@ -4,13 +4,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
-	mathUtil "github.com/Pyrinpyi/pyipad/util/math"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
+	mathUtil "github.com/waglayla/waglaylad/util/math"
+	"github.com/waglayla/waglaylad/util/mstime"
 )
 
 // Peer holds data about a peer.

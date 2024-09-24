@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/stability-tests/common"
 	"github.com/pkg/errors"
 )
 
@@ -23,7 +23,7 @@ func (cf commandFailure) String() string {
 
 func commandLoop(argsChan <-chan []string) ([]commandFailure, error) {
 	failures := make([]commandFailure, 0)
-	dataDirectoryPath, err := common.TempDir("pyipadsanity-pyipad-datadir")
+	dataDirectoryPath, err := common.TempDir("pyipadsanity-waglaylad-datadir")
 	if err != nil {
 		return nil, errors.Wrapf(err, "error creating temp dir")
 	}
@@ -40,9 +40,9 @@ func commandLoop(argsChan <-chan []string) ([]commandFailure, error) {
 			return nil, err
 		}
 
-		cmd := exec.Command("pyipad", args...)
-		cmd.Stdout = common.NewLogWriter(log, logger.LevelTrace, "pyipad-STDOUT")
-		cmd.Stderr = common.NewLogWriter(log, logger.LevelWarn, "pyipad-STDERR")
+		cmd := exec.Command("waglaylad", args...)
+		cmd.Stdout = common.NewLogWriter(log, logger.LevelTrace, "waglaylad-STDOUT")
+		cmd.Stderr = common.NewLogWriter(log, logger.LevelWarn, "waglaylad-STDERR")
 
 		log.Infof("Running `%s`", cmd)
 		errChan := make(chan error)

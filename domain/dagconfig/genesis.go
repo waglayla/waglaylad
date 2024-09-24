@@ -7,11 +7,11 @@ package dagconfig
 import (
 	"math/big"
 
-	"github.com/Pyrinpyi/go-muhash"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/blockheader"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/transactionhelper"
+	"github.com/waglayla/go-muhash"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/blockheader"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/transactionhelper"
 )
 
 var genesisTxOuts = []*externalapi.DomainTransactionOutput{}

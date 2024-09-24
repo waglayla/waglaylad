@@ -1,7 +1,7 @@
 package hashes
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // ToStrings converts a slice of hashes into a slice of the corresponding strings

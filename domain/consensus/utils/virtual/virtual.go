@@ -1,8 +1,8 @@
 package virtual
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // ContainsOnlyVirtualGenesis returns whether the given block hashes contain only the virtual

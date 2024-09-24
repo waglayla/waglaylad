@@ -1,16 +1,16 @@
 package v5
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flowcontext"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/addressexchange"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/blockrelay"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/ping"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/rejects"
-	"github.com/Pyrinpyi/pyipad/app/protocol/flows/v5/transactionrelay"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/protocol/common"
+	"github.com/waglayla/waglaylad/app/protocol/flowcontext"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/addressexchange"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/blockrelay"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/ping"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/rejects"
+	"github.com/waglayla/waglaylad/app/protocol/flows/v5/transactionrelay"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 type protocolManager interface {

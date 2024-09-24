@@ -1,6 +1,6 @@
 # pyrinctl
 
-pyrinctl is an RPC client for pyipad
+pyrinctl is an RPC client for waglaylad
 
 ## Requirements
 
@@ -19,11 +19,11 @@ Go 1.19 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install pyipad including all dependencies:
+- Run the following commands to obtain and install waglaylad including all dependencies:
 
 ```bash
-$ git clone https://github.com/Pyrinpyi/pyipad
-$ cd pyipad/cmd/pyrinctl
+$ git clone https://github.com/waglayla/waglaylad
+$ cd waglaylad/cmd/pyrinctl
 $ go install .
 ```
 

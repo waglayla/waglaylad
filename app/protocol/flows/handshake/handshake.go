@@ -3,18 +3,18 @@ package handshake
 import (
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/domain"
+	"github.com/waglayla/waglaylad/domain"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
-	"github.com/Pyrinpyi/pyipad/app/protocol/protocolerrors"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/app/protocol/common"
+	"github.com/waglayla/waglaylad/app/protocol/protocolerrors"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

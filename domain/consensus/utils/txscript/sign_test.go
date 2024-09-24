@@ -8,16 +8,16 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 
-	"github.com/Pyrinpyi/go-secp256k1"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/go-secp256k1"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/util"
 )
 
 func mkGetKey(keys map[string]*secp256k1.SchnorrKeyPair) KeyDB {

@@ -27,8 +27,8 @@ variable (either directly, or hidden in a library call).
 		"fmt"
 		"log"
 
-		"github.com/Pyrinpyi/pyipad/util"
-		"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+		"github.com/waglayla/waglaylad/util"
+		"github.com/waglayla/waglaylad/domain/dagconfig"
 	)
 
 	var testnet = flag.Bool("testnet", false, "operate on the testnet Pyrin network")

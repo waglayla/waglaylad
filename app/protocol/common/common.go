@@ -3,8 +3,8 @@ package common
 import (
 	"time"
 
-	peerpkg "github.com/Pyrinpyi/pyipad/app/protocol/peer"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	peerpkg "github.com/waglayla/waglaylad/app/protocol/peer"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 
 	"github.com/pkg/errors"
 )

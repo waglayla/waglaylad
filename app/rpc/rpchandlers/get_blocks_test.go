@@ -5,18 +5,18 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/app/rpc/rpccontext"
-	"github.com/Pyrinpyi/pyipad/app/rpc/rpchandlers"
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/testapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/hashes"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/rpc/rpccontext"
+	"github.com/waglayla/waglaylad/app/rpc/rpchandlers"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/testapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/hashes"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/domain/miningmanager"
+	"github.com/waglayla/waglaylad/infrastructure/config"
 )
 
 type fakeDomain struct {

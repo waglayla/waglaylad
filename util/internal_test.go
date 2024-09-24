@@ -12,7 +12,7 @@ interface. The functions are only exported while the tests are being run.
 package util
 
 import (
-	"github.com/Pyrinpyi/pyipad/util/bech32"
+	"github.com/waglayla/waglaylad/util/bech32"
 )
 
 // TstAppDataDir makes the internal appDir function available to the test

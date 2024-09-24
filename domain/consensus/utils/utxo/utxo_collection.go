@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 type utxoCollection map[externalapi.DomainOutpoint]externalapi.UTXOEntry

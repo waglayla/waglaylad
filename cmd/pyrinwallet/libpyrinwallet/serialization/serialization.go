@@ -3,9 +3,9 @@ package serialization
 import (
 	"math"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet/serialization/protoserialization"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/subnetworks"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization/protoserialization"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/proto"
 )

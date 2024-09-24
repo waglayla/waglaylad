@@ -3,8 +3,8 @@ package serialization
 import (
 	"io"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/util/binaryserializer"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/util/binaryserializer"
 	"github.com/pkg/errors"
 )
 

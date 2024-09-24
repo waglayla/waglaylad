@@ -5,10 +5,10 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/limits"
+	"github.com/waglayla/waglaylad/infrastructure/os/limits"
 )
 
-// Initialize initializes the execution environment required to run pyipad
+// Initialize initializes the execution environment required to run waglaylad
 func Initialize(desiredLimits *limits.DesiredLimits) {
 	// Use all processor cores.
 	runtime.GOMAXPROCS(runtime.NumCPU())

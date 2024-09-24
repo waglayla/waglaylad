@@ -4,25 +4,25 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 
-	"github.com/Pyrinpyi/pyipad/domain/miningmanager/mempool"
+	"github.com/waglayla/waglaylad/domain/miningmanager/mempool"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol"
-	"github.com/Pyrinpyi/pyipad/app/rpc"
-	"github.com/Pyrinpyi/pyipad/domain"
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/utxoindex"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	infrastructuredatabase "github.com/Pyrinpyi/pyipad/infrastructure/db/database"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/addressmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/connmanager"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
-	"github.com/Pyrinpyi/pyipad/util/panics"
+	"github.com/waglayla/waglaylad/app/protocol"
+	"github.com/waglayla/waglaylad/app/rpc"
+	"github.com/waglayla/waglaylad/domain"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/utxoindex"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	infrastructuredatabase "github.com/waglayla/waglaylad/infrastructure/db/database"
+	"github.com/waglayla/waglaylad/infrastructure/network/addressmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/connmanager"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
+	"github.com/waglayla/waglaylad/util/panics"
 )
 
-// ComponentManager is a wrapper for all the pyipad services
+// ComponentManager is a wrapper for all the waglaylad services
 type ComponentManager struct {
 	cfg               *config.Config
 	addressManager    *addressmanager.AddressManager
@@ -34,14 +34,14 @@ type ComponentManager struct {
 	started, shutdown int32
 }
 
-// Start launches all the pyipad services.
+// Start launches all the waglaylad services.
 func (a *ComponentManager) Start() {
 	// Already started?
 	if atomic.AddInt32(&a.started, 1) != 1 {
 		return
 	}
 
-	log.Trace("Starting pyipad")
+	log.Trace("Starting waglaylad")
 
 	err := a.netAdapter.Start()
 	if err != nil {
@@ -51,15 +51,15 @@ func (a *ComponentManager) Start() {
 	a.connectionManager.Start()
 }
 
-// Stop gracefully shuts down all the pyipad services.
+// Stop gracefully shuts down all the waglaylad services.
 func (a *ComponentManager) Stop() {
 	// Make sure this only happens once.
 	if atomic.AddInt32(&a.shutdown, 1) != 1 {
-		log.Infof("pyipad is already in the process of shutting down")
+		log.Infof("waglaylad is already in the process of shutting down")
 		return
 	}
 
-	log.Warnf("pyipad shutting down")
+	log.Warnf("waglaylad shutting down")
 
 	a.connectionManager.Stop()
 

@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/hashes"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/hashes"
 )
 
 func BenchmarkMatrix_HeavyHash(b *testing.B) {

@@ -1,8 +1,8 @@
 package rpcclient
 
 import (
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 )
 
 type rpcRouter struct {

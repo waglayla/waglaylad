@@ -1,8 +1,8 @@
 package reachabilitymanager
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 func (rt *reachabilityManager) stageData(stagingArea *model.StagingArea, blockHash *externalapi.DomainHash, data model.ReachabilityData) {

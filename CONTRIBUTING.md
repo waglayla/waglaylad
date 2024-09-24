@@ -1,11 +1,11 @@
-# Contributing to pyipad
+# Contributing to waglaylad
 
-Any contribution to pyipad is very welcome.
+Any contribution to waglaylad is very welcome.
 
 ## Getting started
 
-If you want to start contributing to pyipad and don't know where to start, you can pick an issue from
-the [list](https://github.com/Pyrinpyi/pyipad/issues).
+If you want to start contributing to waglaylad and don't know where to start, you can pick an issue from
+the [list](https://github.com/waglayla/waglaylad/issues).
 
 If you want to make a big change it's better to discuss it first by opening an issue or talk about it in
 [Discord](https://discord.gg/WmGhhzk) to avoid duplicate work.

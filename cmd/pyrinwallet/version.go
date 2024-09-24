@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/version"
 	"os"
 	"path/filepath"
 	"strings"

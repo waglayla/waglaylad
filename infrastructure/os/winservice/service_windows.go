@@ -7,9 +7,9 @@ package winservice
 import (
 	"fmt"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/os/signal"
-	"github.com/Pyrinpyi/pyipad/version"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/os/signal"
+	"github.com/waglayla/waglaylad/version"
 	"github.com/btcsuite/winsvc/eventlog"
 	"github.com/btcsuite/winsvc/svc"
 )
@@ -51,7 +51,7 @@ func (s *Service) Start() error {
 
 // Execute is the main entry point the winsvc package calls when receiving
 // information from the Windows service control manager. It launches the
-// long-running pyipadMain (which is the real meat of pyipad), handles service
+// long-running pyipadMain (which is the real meat of waglaylad), handles service
 // change requests, and notifies the service control manager of changes.
 func (s *Service) Execute(args []string, r <-chan svc.ChangeRequest, changes chan<- svc.Status) (bool, uint32) {
 	// Service start is pending.
@@ -60,7 +60,7 @@ func (s *Service) Execute(args []string, r <-chan svc.ChangeRequest, changes cha
 
 	// Start pyipadMain in a separate goroutine so the service can start
 	// quickly. Shutdown (along with a potential error) is reported via
-	// doneChan. startedChan is notified once pyipad is started so this can
+	// doneChan. startedChan is notified once waglaylad is started so this can
 	// be properly logged
 	doneChan := make(chan error)
 	startedChan := make(chan struct{})
@@ -108,7 +108,7 @@ loop:
 	return false, 0
 }
 
-// logServiceStart logs information about pyipad when the main server has
+// logServiceStart logs information about waglaylad when the main server has
 // been started to the Windows event log.
 func (s *Service) logServiceStart() {
 	var message string

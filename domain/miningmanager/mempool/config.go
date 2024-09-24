@@ -3,11 +3,11 @@ package mempool
 import (
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/constants"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 
-	"github.com/Pyrinpyi/pyipad/util"
+	"github.com/waglayla/waglaylad/util"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 )
 
 const (

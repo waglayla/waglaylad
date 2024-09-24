@@ -3,16 +3,16 @@ package standalone
 import (
 	"sync"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/common"
-	"github.com/Pyrinpyi/pyipad/util/mstime"
+	"github.com/waglayla/waglaylad/app/protocol/common"
+	"github.com/waglayla/waglaylad/util/mstime"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter"
 
 	"github.com/pkg/errors"
 )

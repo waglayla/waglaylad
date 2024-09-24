@@ -1,6 +1,6 @@
 package rpcclient
 
-import "github.com/Pyrinpyi/pyipad/app/appmessage"
+import "github.com/waglayla/waglaylad/app/appmessage"
 
 // GetCoinSupply sends an RPC request respective to the function's name and returns the RPC server's response
 func (c *RPCClient) GetCoinSupply() (*appmessage.GetCoinSupplyResponseMessage, error) {

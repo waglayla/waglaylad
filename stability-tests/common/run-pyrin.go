@@ -2,22 +2,22 @@ package common
 
 import (
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 	"os"
 	"sync/atomic"
 	"syscall"
 	"testing"
 )
 
-// RunpyipadForTesting runs pyipad for testing purposes
+// RunpyipadForTesting runs waglaylad for testing purposes
 func RunpyipadForTesting(t *testing.T, testName string, rpcAddress string) func() {
 	appDir, err := TempDir(testName)
 	if err != nil {
 		t.Fatalf("TempDir: %s", err)
 	}
 
-	pyipadRunCommand, err := StartCmd("pyipad",
-		"pyipad",
+	pyipadRunCommand, err := StartCmd("waglaylad",
+		"waglaylad",
 		NetworkCliArgumentFromNetParams(&dagconfig.DevnetParams),
 		"--appdir", appDir,
 		"--rpclisten", rpcAddress,
@@ -26,14 +26,14 @@ func RunpyipadForTesting(t *testing.T, testName string, rpcAddress string) func(
 	if err != nil {
 		t.Fatalf("StartCmd: %s", err)
 	}
-	t.Logf("pyipad started with --appdir=%s", appDir)
+	t.Logf("waglaylad started with --appdir=%s", appDir)
 
 	isShutdown := uint64(0)
 	go func() {
 		err := pyipadRunCommand.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&isShutdown) == 0 {
-				panic(fmt.Sprintf("pyipad closed unexpectedly: %s. See logs at: %s", err, appDir))
+				panic(fmt.Sprintf("waglaylad closed unexpectedly: %s. See logs at: %s", err, appDir))
 			}
 		}
 	}()
@@ -48,6 +48,6 @@ func RunpyipadForTesting(t *testing.T, testName string, rpcAddress string) func(
 			t.Fatalf("RemoveAll: %s", err)
 		}
 		atomic.StoreUint64(&isShutdown, 1)
-		t.Logf("pyipad stopped")
+		t.Logf("waglaylad stopped")
 	}
 }

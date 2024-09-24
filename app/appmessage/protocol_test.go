@@ -33,7 +33,7 @@ func TestServiceFlagStringer(t *testing.T) {
 	}
 }
 
-// TestPyrinpyiNetStringer tests the stringized output for Pyrinpyi net types.
+// TestPyrinpyiNetStringer tests the stringized output for waglayla net types.
 func TestPyrinpyiStringer(t *testing.T) {
 	tests := []struct {
 		in   PyrinpyiNet

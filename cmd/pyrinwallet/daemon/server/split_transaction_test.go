@@ -3,21 +3,21 @@ package server
 import (
 	"testing"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/keys"
-	"github.com/Pyrinpyi/pyipad/util/txmass"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
+	"github.com/waglayla/waglaylad/util/txmass"
 
-	"github.com/Pyrinpyi/pyipad/domain/dagconfig"
+	"github.com/waglayla/waglaylad/domain/dagconfig"
 
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/consensushashing"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/txscript"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/utxo"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet"
-	"github.com/Pyrinpyi/pyipad/domain/consensus"
-	"github.com/Pyrinpyi/pyipad/domain/consensus/utils/testutils"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/domain/consensus"
+	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
 )
 
 func TestEstimateMassAfterSignatures(t *testing.T) {

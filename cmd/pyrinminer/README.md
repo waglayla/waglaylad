@@ -1,6 +1,6 @@
 # pyrinminer
 
-Pyrinminer is a CPU-based miner for pyipad
+Pyrinminer is a CPU-based miner for waglaylad
 
 ## Requirements
 
@@ -19,11 +19,11 @@ Go 1.19 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install pyipad including all dependencies:
+- Run the following commands to obtain and install waglaylad including all dependencies:
 
 ```bash
-$ git clone https://github.com/Pyrinpyi/pyipad
-$ cd pyipad/cmd/pyrinminer
+$ git clone https://github.com/waglayla/waglaylad
+$ cd waglaylad/cmd/pyrinminer
 $ go install .
 ```
 

@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/app/protocol/protocolerrors"
+	"github.com/waglayla/waglaylad/app/protocol/protocolerrors"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

@@ -5,9 +5,9 @@ import (
 	"sort"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
+	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

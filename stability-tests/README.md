@@ -1,5 +1,5 @@
 # Stability-Test Tools
-This package provides some higher-level tests for pyipad.  
+This package provides some higher-level tests for waglaylad.  
 These are tests that are beyond the scope of unit-tests, and some of them might take long time to run.
 
 # Running

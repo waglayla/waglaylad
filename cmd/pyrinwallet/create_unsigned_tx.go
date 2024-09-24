@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/utils"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/utils"
 	"os"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/client"
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/client"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
 )
 
 func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {

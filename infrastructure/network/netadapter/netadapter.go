@@ -4,12 +4,12 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/Pyrinpyi/pyipad/app/appmessage"
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/id"
-	routerpkg "github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/router"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server"
-	"github.com/Pyrinpyi/pyipad/infrastructure/network/netadapter/server/grpcserver"
+	"github.com/waglayla/waglaylad/app/appmessage"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/id"
+	routerpkg "github.com/waglayla/waglaylad/infrastructure/network/netadapter/router"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server"
+	"github.com/waglayla/waglaylad/infrastructure/network/netadapter/server/grpcserver"
 	"github.com/pkg/errors"
 )
 

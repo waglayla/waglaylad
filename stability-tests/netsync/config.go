@@ -3,8 +3,8 @@ package main
 import (
 	"path/filepath"
 
-	"github.com/Pyrinpyi/pyipad/infrastructure/config"
-	"github.com/Pyrinpyi/pyipad/stability-tests/common"
+	"github.com/waglayla/waglaylad/infrastructure/config"
+	"github.com/waglayla/waglaylad/stability-tests/common"
 
 	"github.com/jessevdk/go-flags"
 )

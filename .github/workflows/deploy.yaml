@@ -38,8 +38,8 @@ jobs:
         # `-s -w` strips the binary to produce smaller size binaries
         run: |
           go build -v -ldflags="-s -w -extldflags=-static" -tags netgo,osusergo -o ./bin/ . ./cmd/...
-          archive="bin/pyipad-${{ github.event.release.tag_name }}-linux.zip"
-          asset_name="pyipad-${{ github.event.release.tag_name }}-linux.zip"
+          archive="bin/waglaylad-${{ github.event.release.tag_name }}-linux.zip"
+          asset_name="waglaylad-${{ github.event.release.tag_name }}-linux.zip"
           zip -r "${archive}" ./bin/*
           echo "archive=${archive}" >> $GITHUB_ENV
           echo "asset_name=${asset_name}" >> $GITHUB_ENV
@@ -49,8 +49,8 @@ jobs:
         shell: bash
         run: |
           go build -v -ldflags="-s -w" -o bin/ . ./cmd/...
-          archive="bin/pyipad-${{ github.event.release.tag_name }}-win64.zip"
-          asset_name="pyipad-${{ github.event.release.tag_name }}-win64.zip"
+          archive="bin/waglaylad-${{ github.event.release.tag_name }}-win64.zip"
+          asset_name="waglaylad-${{ github.event.release.tag_name }}-win64.zip"
           powershell "Compress-Archive bin/* \"${archive}\""
           echo "archive=${archive}" >> $GITHUB_ENV
           echo "asset_name=${asset_name}" >> $GITHUB_ENV
@@ -59,8 +59,8 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           go build -v -ldflags="-s -w" -o ./bin/ . ./cmd/...
-          archive="bin/pyipad-${{ github.event.release.tag_name }}-osx.zip"
-          asset_name="pyipad-${{ github.event.release.tag_name }}-osx.zip"
+          archive="bin/waglaylad-${{ github.event.release.tag_name }}-osx.zip"
+          asset_name="waglaylad-${{ github.event.release.tag_name }}-osx.zip"
           zip -r "${archive}" ./bin/*
           echo "archive=${archive}" >> $GITHUB_ENV
           echo "asset_name=${asset_name}" >> $GITHUB_ENV

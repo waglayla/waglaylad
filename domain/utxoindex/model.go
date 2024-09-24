@@ -1,7 +1,7 @@
 package utxoindex
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // ScriptPublicKeyString is a script public key represented as a string

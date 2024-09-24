@@ -5,7 +5,7 @@
 package blocktemplatebuilder
 
 import (
-	"github.com/Pyrinpyi/pyipad/infrastructure/logger"
+	"github.com/waglayla/waglaylad/infrastructure/logger"
 )
 
 var log = logger.RegisterSubSystem("BLTB")

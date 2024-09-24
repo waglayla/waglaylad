@@ -1,7 +1,7 @@
 package transactionid
 
 import (
-	"github.com/Pyrinpyi/pyipad/domain/consensus/model/externalapi"
+	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 )
 
 // FromBytes creates a DomainTransactionID from the given byte slice

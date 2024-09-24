@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/server"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/server"
 
 	"github.com/pkg/errors"
 
-	"github.com/Pyrinpyi/pyipad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
 	"google.golang.org/grpc"
 )
 
