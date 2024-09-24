@@ -3,7 +3,7 @@ package libpyrinwallet
 import (
 	"fmt"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/bip32"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/bip32"
 	"github.com/waglayla/waglaylad/domain/dagconfig"
 	"github.com/pkg/errors"
 	"github.com/tyler-smith/go-bip39"
