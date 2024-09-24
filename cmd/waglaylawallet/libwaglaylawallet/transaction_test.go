@@ -1,4 +1,4 @@
-package libpyrinwallet_test
+package libwaglaylawallet_test
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 	"github.com/waglayla/waglaylad/util"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/domain/consensus"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
