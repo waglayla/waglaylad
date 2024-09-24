@@ -5,7 +5,7 @@
 package txscript
 
 import (
-	"github.com/waglayla/go-secp256k1"
+	"github.com/Pyrinpyi/go-secp256k1"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 	"github.com/pkg/errors"
