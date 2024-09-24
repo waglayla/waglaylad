@@ -1,7 +1,7 @@
 package multiset
 
 import (
-	"github.com/waglayla/go-muhash"
+	"github.com/Pyrinpyi/go-muhash"
 	"github.com/waglayla/waglaylad/domain/consensus/model"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
