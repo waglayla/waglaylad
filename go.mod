@@ -1,4 +1,4 @@
-module github.com/waglayla/waglaylad
+module github.com/waglayla/waglaylad v0.1.1
 
 go 1.18
 
