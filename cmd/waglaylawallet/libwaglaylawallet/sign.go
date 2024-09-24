@@ -1,8 +1,8 @@
-package libpyrinwallet
+package libwaglaylawallet
 
 import (
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/bip32"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/bip32"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
