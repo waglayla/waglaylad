@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
