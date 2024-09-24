@@ -7,7 +7,7 @@ package dagconfig
 import (
 	"math/big"
 
-	"github.com/waglayla/go-muhash"
+	"github.com/Pyrinpyi/go-muhash"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/blockheader"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
