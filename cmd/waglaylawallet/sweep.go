@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/waglayla/go-secp256k1"
+	"github.com/Pyrinpyi/go-secp256k1"
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/client"
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
