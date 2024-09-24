@@ -1,4 +1,4 @@
-package libpyrinwallet
+package libwaglaylawallet
 
 import (
 	"fmt"

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/domain/consensusreference"
 	"github.com/waglayla/waglaylad/domain/miningmanager/model"
 	"github.com/waglayla/waglaylad/util"
@@ -885,7 +885,7 @@ func generateNewCoinbase(addressPrefix util.Bech32Prefix, op opType) (*externala
 			ExtraData:       nil,
 		}, nil
 	}
-	_, publicKey, err := libpyrinwallet.CreateKeyPair(op == opECDSA)
+	_, publicKey, err := libwaglaylawallet.CreateKeyPair(op == opECDSA)
 	if err != nil {
 		return nil, err
 	}

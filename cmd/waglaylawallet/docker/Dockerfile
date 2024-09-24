@@ -14,8 +14,8 @@ RUN go mod download
 
 COPY . .
 
-WORKDIR /go/src/github.com/waglayla/waglaylad/cmd/pyrinwallet
-RUN GOOS=linux go build -a -installsuffix cgo -o pyrinwallet .
+WORKDIR /go/src/github.com/waglayla/waglaylad/cmd/waglaylawallet
+RUN GOOS=linux go build -a -installsuffix cgo -o waglaylawallet .
 
 # --- multistage docker build: stage #2: runtime image
 FROM alpine
@@ -23,7 +23,7 @@ WORKDIR /app
 
 RUN apk add --no-cache ca-certificates tini
 
-COPY --from=build /go/src/github.com/waglayla/waglaylad/cmd/pyrinwallet/pyrinwallet /app/
+COPY --from=build /go/src/github.com/waglayla/waglaylad/cmd/waglaylawallet/waglaylawallet /app/
 
 USER nobody
 ENTRYPOINT [ "/sbin/tini", "--" ]

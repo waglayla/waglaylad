@@ -3,9 +3,9 @@ package server
 import (
 	"context"
 	"github.com/waglayla/waglaylad/app/appmessage"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 	"github.com/waglayla/waglaylad/infrastructure/network/rpcclient"
@@ -39,7 +39,7 @@ func (s *server) broadcast(transactions [][]byte, isDomain bool) ([]string, erro
 				return nil, err
 			}
 		} else if !isDomain { //default in proto3 is false
-			tx, err = libpyrinwallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
+			tx, err = libwaglaylawallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
 			if err != nil {
 				return nil, err
 			}

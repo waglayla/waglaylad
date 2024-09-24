@@ -15,8 +15,8 @@ import (
 
 	"github.com/waglayla/waglaylad/util/profiling"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/keys"
 	"github.com/waglayla/waglaylad/domain/dagconfig"
 	"github.com/waglayla/waglaylad/infrastructure/network/rpcclient"
 	"github.com/waglayla/waglaylad/infrastructure/os/signal"
@@ -55,7 +55,7 @@ type server struct {
 // Currently, set to 100MB
 const MaxDaemonSendMsgSize = 100_000_000
 
-// Start starts the pyrinwalletd server
+// Start starts the waglaylawalletd server
 func Start(params *dagconfig.Params, listen, rpcServer string, keysFilePath string, profile string, timeout uint32) error {
 	initLog(defaultLogFile, defaultErrLogFile)
 

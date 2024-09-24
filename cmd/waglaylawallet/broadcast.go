@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/client"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/client"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
 	"github.com/pkg/errors"
 )
 

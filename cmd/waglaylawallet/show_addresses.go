@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/client"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/client"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
 )
 
 func showAddresses(conf *showAddressesConfig) error {

@@ -3,7 +3,7 @@ package serialization
 import (
 	"math"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization/protoserialization"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization/protoserialization"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"

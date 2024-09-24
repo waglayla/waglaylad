@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/keys"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/pkg/errors"
 )
 
@@ -48,7 +48,7 @@ func sign(conf *signConfig) error {
 	updatedPartiallySignedTransactions := make([][]byte, len(partiallySignedTransactions))
 	for i, partiallySignedTransaction := range partiallySignedTransactions {
 		updatedPartiallySignedTransactions[i], err =
-			libpyrinwallet.Sign(conf.NetParams(), privateKeys, partiallySignedTransaction, keysFile.ECDSA)
+			libwaglaylawallet.Sign(conf.NetParams(), privateKeys, partiallySignedTransaction, keysFile.ECDSA)
 		if err != nil {
 			return err
 		}
@@ -57,7 +57,7 @@ func sign(conf *signConfig) error {
 	areAllTransactionsFullySigned := true
 	for _, updatedPartiallySignedTransaction := range updatedPartiallySignedTransactions {
 		// This is somewhat redundant to check all transactions, but we do that just-in-case
-		isFullySigned, err := libpyrinwallet.IsTransactionFullySigned(updatedPartiallySignedTransaction)
+		isFullySigned, err := libwaglaylawallet.IsTransactionFullySigned(updatedPartiallySignedTransaction)
 		if err != nil {
 			return err
 		}

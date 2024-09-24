@@ -5,13 +5,13 @@ import (
 	"sort"
 	"time"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 
 	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-var keyChains = []uint8{libpyrinwallet.ExternalKeychain, libpyrinwallet.InternalKeychain}
+var keyChains = []uint8{libwaglaylawallet.ExternalKeychain, libwaglaylawallet.InternalKeychain}
 
 type walletAddressSet map[string]*walletAddress
 
@@ -198,7 +198,7 @@ func (s *server) updateAddressesAndLastUsedIndexes(requestedAddressSet walletAdd
 
 		s.addressSet[entry.Address] = walletAddress
 
-		if walletAddress.keyChain == libpyrinwallet.ExternalKeychain {
+		if walletAddress.keyChain == libwaglaylawallet.ExternalKeychain {
 			if walletAddress.index > lastUsedExternalIndex {
 				lastUsedExternalIndex = walletAddress.index
 			}

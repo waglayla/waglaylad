@@ -8,8 +8,8 @@ import (
 	"github.com/waglayla/go-secp256k1"
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/client"
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libpyrinwallet"
-	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization"
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/utils"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
@@ -33,7 +33,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	publicKeybytes, err := libpyrinwallet.PublicKeyFromPrivateKey(privateKeyBytes)
+	publicKeybytes, err := libwaglaylawallet.PublicKeyFromPrivateKey(privateKeyBytes)
 	if err != nil {
 		return err
 	}
@@ -64,7 +64,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	UTXOs, err := libpyrinwallet.PyrinwalletdUTXOsTolibpyrinwalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
+	UTXOs, err := libwaglaylawallet.PyrinwalletdUTXOsTolibwaglaylawalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
 	if err != nil {
 		return err
 	}
@@ -140,7 +140,7 @@ func newDummyTransaction() *externalapi.DomainTransaction {
 
 func createSplitTransactionsWithSchnorrPrivteKey(
 	params *dagconfig.Params,
-	selectedUTXOs []*libpyrinwallet.UTXO,
+	selectedUTXOs []*libwaglaylawallet.UTXO,
 	toAddress util.Address,
 	feePerInput int) ([]*externalapi.DomainTransaction, error) {
 

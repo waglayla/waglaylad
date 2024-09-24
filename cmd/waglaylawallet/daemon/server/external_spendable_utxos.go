@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/waglayla/waglaylad/app/appmessage"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/util"
 )
 
@@ -46,7 +46,7 @@ func (s *server) selectExternalSpendableUTXOs(externalUTXOs *appmessage.GetUTXOs
 		if !isExternalUTXOSpendable(entry, daaScore, maturity) {
 			continue
 		}
-		selectedExternalUtxos = append(selectedExternalUtxos, libpyrinwallet.AppMessageUTXOToPyrinwalletdUTXO(entry))
+		selectedExternalUtxos = append(selectedExternalUtxos, libwaglaylawallet.AppMessageUTXOToPyrinwalletdUTXO(entry))
 	}
 
 	return selectedExternalUtxos, nil

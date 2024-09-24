@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/utils"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/utils"
 
 	"github.com/waglayla/waglaylad/domain/dagconfig"
 	"github.com/waglayla/waglaylad/util"
@@ -22,7 +22,7 @@ import (
 )
 
 var (
-	defaultAppDir = util.AppDir("pyrinwallet", false)
+	defaultAppDir = util.AppDir("waglaylawallet", false)
 )
 
 // LastVersion is the most up to date file format version

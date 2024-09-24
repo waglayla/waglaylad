@@ -12,7 +12,7 @@ func main() {
 		panic(err)
 	}
 
-	privateKey, publicKey, err := libpyrinwallet.CreateKeyPair(false)
+	privateKey, publicKey, err := libwaglaylawallet.CreateKeyPair(false)
 	if err != nil {
 		panic(err)
 	}

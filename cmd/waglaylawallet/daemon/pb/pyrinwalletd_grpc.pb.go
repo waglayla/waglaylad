@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v4.25.2
-// source: pyrinwalletd.proto
+// source: waglaylawalletd.proto
 
 package pb
 
@@ -36,98 +36,98 @@ type PyrinwalletdClient interface {
 	GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error)
 }
 
-type pyrinwalletdClient struct {
+type waglaylawalletdClient struct {
 	cc grpc.ClientConnInterface
 }
 
 func NewPyrinwalletdClient(cc grpc.ClientConnInterface) PyrinwalletdClient {
-	return &pyrinwalletdClient{cc}
+	return &waglaylawalletdClient{cc}
 }
 
-func (c *pyrinwalletdClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
+func (c *waglaylawalletdClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
 	out := new(GetBalanceResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/GetBalance", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/GetBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error) {
+func (c *waglaylawalletdClient) GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error) {
 	out := new(GetExternalSpendableUTXOsResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/GetExternalSpendableUTXOs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/GetExternalSpendableUTXOs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error) {
+func (c *waglaylawalletdClient) CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error) {
 	out := new(CreateUnsignedTransactionsResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/CreateUnsignedTransactions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/CreateUnsignedTransactions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) ShowAddresses(ctx context.Context, in *ShowAddressesRequest, opts ...grpc.CallOption) (*ShowAddressesResponse, error) {
+func (c *waglaylawalletdClient) ShowAddresses(ctx context.Context, in *ShowAddressesRequest, opts ...grpc.CallOption) (*ShowAddressesResponse, error) {
 	out := new(ShowAddressesResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/ShowAddresses", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/ShowAddresses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) NewAddress(ctx context.Context, in *NewAddressRequest, opts ...grpc.CallOption) (*NewAddressResponse, error) {
+func (c *waglaylawalletdClient) NewAddress(ctx context.Context, in *NewAddressRequest, opts ...grpc.CallOption) (*NewAddressResponse, error) {
 	out := new(NewAddressResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/NewAddress", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/NewAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
+func (c *waglaylawalletdClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
+func (c *waglaylawalletdClient) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
 	out := new(BroadcastResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/Broadcast", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/Broadcast", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
+func (c *waglaylawalletdClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
 	out := new(SendResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/Send", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/Send", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error) {
+func (c *waglaylawalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error) {
 	out := new(SignResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/Sign", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/Sign", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *pyrinwalletdClient) GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error) {
+func (c *waglaylawalletdClient) GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error) {
 	out := new(GetVersionResponse)
-	err := c.cc.Invoke(ctx, "/pyrinwalletd.pyrinwalletd/GetVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/waglaylawalletd.waglaylawalletd/GetVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -210,7 +210,7 @@ func _Pyrinwalletd_GetBalance_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/GetBalance",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/GetBalance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).GetBalance(ctx, req.(*GetBalanceRequest))
@@ -228,7 +228,7 @@ func _Pyrinwalletd_GetExternalSpendableUTXOs_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/GetExternalSpendableUTXOs",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/GetExternalSpendableUTXOs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).GetExternalSpendableUTXOs(ctx, req.(*GetExternalSpendableUTXOsRequest))
@@ -246,7 +246,7 @@ func _Pyrinwalletd_CreateUnsignedTransactions_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/CreateUnsignedTransactions",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/CreateUnsignedTransactions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).CreateUnsignedTransactions(ctx, req.(*CreateUnsignedTransactionsRequest))
@@ -264,7 +264,7 @@ func _Pyrinwalletd_ShowAddresses_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/ShowAddresses",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/ShowAddresses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).ShowAddresses(ctx, req.(*ShowAddressesRequest))
@@ -282,7 +282,7 @@ func _Pyrinwalletd_NewAddress_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/NewAddress",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/NewAddress",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).NewAddress(ctx, req.(*NewAddressRequest))
@@ -300,7 +300,7 @@ func _Pyrinwalletd_Shutdown_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/Shutdown",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).Shutdown(ctx, req.(*ShutdownRequest))
@@ -318,7 +318,7 @@ func _Pyrinwalletd_Broadcast_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/Broadcast",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/Broadcast",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).Broadcast(ctx, req.(*BroadcastRequest))
@@ -336,7 +336,7 @@ func _Pyrinwalletd_Send_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/Send",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/Send",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).Send(ctx, req.(*SendRequest))
@@ -354,7 +354,7 @@ func _Pyrinwalletd_Sign_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/Sign",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/Sign",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).Sign(ctx, req.(*SignRequest))
@@ -372,7 +372,7 @@ func _Pyrinwalletd_GetVersion_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pyrinwalletd.pyrinwalletd/GetVersion",
+		FullMethod: "/waglaylawalletd.waglaylawalletd/GetVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PyrinwalletdServer).GetVersion(ctx, req.(*GetVersionRequest))
@@ -384,7 +384,7 @@ func _Pyrinwalletd_GetVersion_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Pyrinwalletd_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pyrinwalletd.pyrinwalletd",
+	ServiceName: "waglaylawalletd.waglaylawalletd",
 	HandlerType: (*PyrinwalletdServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -429,5 +429,5 @@ var Pyrinwalletd_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "pyrinwalletd.proto",
+	Metadata: "waglaylawalletd.proto",
 }

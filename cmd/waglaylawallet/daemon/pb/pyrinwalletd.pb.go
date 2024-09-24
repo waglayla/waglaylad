@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v4.25.2
-// source: pyrinwalletd.proto
+// source: waglaylawalletd.proto
 
 package pb
 
@@ -29,7 +29,7 @@ type GetBalanceRequest struct {
 func (x *GetBalanceRequest) Reset() {
 	*x = GetBalanceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[0]
+		mi := &file_waglaylawalletd_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -42,7 +42,7 @@ func (x *GetBalanceRequest) String() string {
 func (*GetBalanceRequest) ProtoMessage() {}
 
 func (x *GetBalanceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[0]
+	mi := &file_waglaylawalletd_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *GetBalanceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetBalanceRequest.ProtoReflect.Descriptor instead.
 func (*GetBalanceRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{0}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{0}
 }
 
 type GetBalanceResponse struct {
@@ -71,7 +71,7 @@ type GetBalanceResponse struct {
 func (x *GetBalanceResponse) Reset() {
 	*x = GetBalanceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[1]
+		mi := &file_waglaylawalletd_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -84,7 +84,7 @@ func (x *GetBalanceResponse) String() string {
 func (*GetBalanceResponse) ProtoMessage() {}
 
 func (x *GetBalanceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[1]
+	mi := &file_waglaylawalletd_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -97,7 +97,7 @@ func (x *GetBalanceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetBalanceResponse.ProtoReflect.Descriptor instead.
 func (*GetBalanceResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{1}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetBalanceResponse) GetAvailable() uint64 {
@@ -134,7 +134,7 @@ type AddressBalances struct {
 func (x *AddressBalances) Reset() {
 	*x = AddressBalances{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[2]
+		mi := &file_waglaylawalletd_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -147,7 +147,7 @@ func (x *AddressBalances) String() string {
 func (*AddressBalances) ProtoMessage() {}
 
 func (x *AddressBalances) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[2]
+	mi := &file_waglaylawalletd_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -160,7 +160,7 @@ func (x *AddressBalances) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressBalances.ProtoReflect.Descriptor instead.
 func (*AddressBalances) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{2}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AddressBalances) GetAddress() string {
@@ -199,7 +199,7 @@ type CreateUnsignedTransactionsRequest struct {
 func (x *CreateUnsignedTransactionsRequest) Reset() {
 	*x = CreateUnsignedTransactionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[3]
+		mi := &file_waglaylawalletd_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -212,7 +212,7 @@ func (x *CreateUnsignedTransactionsRequest) String() string {
 func (*CreateUnsignedTransactionsRequest) ProtoMessage() {}
 
 func (x *CreateUnsignedTransactionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[3]
+	mi := &file_waglaylawalletd_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -225,7 +225,7 @@ func (x *CreateUnsignedTransactionsRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CreateUnsignedTransactionsRequest.ProtoReflect.Descriptor instead.
 func (*CreateUnsignedTransactionsRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{3}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateUnsignedTransactionsRequest) GetAddress() string {
@@ -274,7 +274,7 @@ type CreateUnsignedTransactionsResponse struct {
 func (x *CreateUnsignedTransactionsResponse) Reset() {
 	*x = CreateUnsignedTransactionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[4]
+		mi := &file_waglaylawalletd_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *CreateUnsignedTransactionsResponse) String() string {
 func (*CreateUnsignedTransactionsResponse) ProtoMessage() {}
 
 func (x *CreateUnsignedTransactionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[4]
+	mi := &file_waglaylawalletd_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *CreateUnsignedTransactionsResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CreateUnsignedTransactionsResponse.ProtoReflect.Descriptor instead.
 func (*CreateUnsignedTransactionsResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{4}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateUnsignedTransactionsResponse) GetUnsignedTransactions() [][]byte {
@@ -319,7 +319,7 @@ type ShowAddressesRequest struct {
 func (x *ShowAddressesRequest) Reset() {
 	*x = ShowAddressesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[5]
+		mi := &file_waglaylawalletd_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -332,7 +332,7 @@ func (x *ShowAddressesRequest) String() string {
 func (*ShowAddressesRequest) ProtoMessage() {}
 
 func (x *ShowAddressesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[5]
+	mi := &file_waglaylawalletd_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -345,7 +345,7 @@ func (x *ShowAddressesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShowAddressesRequest.ProtoReflect.Descriptor instead.
 func (*ShowAddressesRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{5}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{5}
 }
 
 type ShowAddressesResponse struct {
@@ -359,7 +359,7 @@ type ShowAddressesResponse struct {
 func (x *ShowAddressesResponse) Reset() {
 	*x = ShowAddressesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[6]
+		mi := &file_waglaylawalletd_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -372,7 +372,7 @@ func (x *ShowAddressesResponse) String() string {
 func (*ShowAddressesResponse) ProtoMessage() {}
 
 func (x *ShowAddressesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[6]
+	mi := &file_waglaylawalletd_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -385,7 +385,7 @@ func (x *ShowAddressesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShowAddressesResponse.ProtoReflect.Descriptor instead.
 func (*ShowAddressesResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{6}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ShowAddressesResponse) GetAddress() []string {
@@ -404,7 +404,7 @@ type NewAddressRequest struct {
 func (x *NewAddressRequest) Reset() {
 	*x = NewAddressRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[7]
+		mi := &file_waglaylawalletd_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -417,7 +417,7 @@ func (x *NewAddressRequest) String() string {
 func (*NewAddressRequest) ProtoMessage() {}
 
 func (x *NewAddressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[7]
+	mi := &file_waglaylawalletd_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -430,7 +430,7 @@ func (x *NewAddressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewAddressRequest.ProtoReflect.Descriptor instead.
 func (*NewAddressRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{7}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{7}
 }
 
 type NewAddressResponse struct {
@@ -444,7 +444,7 @@ type NewAddressResponse struct {
 func (x *NewAddressResponse) Reset() {
 	*x = NewAddressResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[8]
+		mi := &file_waglaylawalletd_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -457,7 +457,7 @@ func (x *NewAddressResponse) String() string {
 func (*NewAddressResponse) ProtoMessage() {}
 
 func (x *NewAddressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[8]
+	mi := &file_waglaylawalletd_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -470,7 +470,7 @@ func (x *NewAddressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewAddressResponse.ProtoReflect.Descriptor instead.
 func (*NewAddressResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{8}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *NewAddressResponse) GetAddress() string {
@@ -492,7 +492,7 @@ type BroadcastRequest struct {
 func (x *BroadcastRequest) Reset() {
 	*x = BroadcastRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[9]
+		mi := &file_waglaylawalletd_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -505,7 +505,7 @@ func (x *BroadcastRequest) String() string {
 func (*BroadcastRequest) ProtoMessage() {}
 
 func (x *BroadcastRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[9]
+	mi := &file_waglaylawalletd_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -518,7 +518,7 @@ func (x *BroadcastRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastRequest.ProtoReflect.Descriptor instead.
 func (*BroadcastRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{9}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *BroadcastRequest) GetIsDomain() bool {
@@ -546,7 +546,7 @@ type BroadcastResponse struct {
 func (x *BroadcastResponse) Reset() {
 	*x = BroadcastResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[10]
+		mi := &file_waglaylawalletd_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -559,7 +559,7 @@ func (x *BroadcastResponse) String() string {
 func (*BroadcastResponse) ProtoMessage() {}
 
 func (x *BroadcastResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[10]
+	mi := &file_waglaylawalletd_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -572,7 +572,7 @@ func (x *BroadcastResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastResponse.ProtoReflect.Descriptor instead.
 func (*BroadcastResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{10}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *BroadcastResponse) GetTxIDs() []string {
@@ -591,7 +591,7 @@ type ShutdownRequest struct {
 func (x *ShutdownRequest) Reset() {
 	*x = ShutdownRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[11]
+		mi := &file_waglaylawalletd_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -604,7 +604,7 @@ func (x *ShutdownRequest) String() string {
 func (*ShutdownRequest) ProtoMessage() {}
 
 func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[11]
+	mi := &file_waglaylawalletd_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -617,7 +617,7 @@ func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownRequest.ProtoReflect.Descriptor instead.
 func (*ShutdownRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{11}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{11}
 }
 
 type ShutdownResponse struct {
@@ -629,7 +629,7 @@ type ShutdownResponse struct {
 func (x *ShutdownResponse) Reset() {
 	*x = ShutdownResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[12]
+		mi := &file_waglaylawalletd_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -642,7 +642,7 @@ func (x *ShutdownResponse) String() string {
 func (*ShutdownResponse) ProtoMessage() {}
 
 func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[12]
+	mi := &file_waglaylawalletd_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -655,7 +655,7 @@ func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
 func (*ShutdownResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{12}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{12}
 }
 
 type Outpoint struct {
@@ -670,7 +670,7 @@ type Outpoint struct {
 func (x *Outpoint) Reset() {
 	*x = Outpoint{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[13]
+		mi := &file_waglaylawalletd_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -683,7 +683,7 @@ func (x *Outpoint) String() string {
 func (*Outpoint) ProtoMessage() {}
 
 func (x *Outpoint) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[13]
+	mi := &file_waglaylawalletd_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -696,7 +696,7 @@ func (x *Outpoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Outpoint.ProtoReflect.Descriptor instead.
 func (*Outpoint) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{13}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *Outpoint) GetTransactionId() string {
@@ -726,7 +726,7 @@ type UtxosByAddressesEntry struct {
 func (x *UtxosByAddressesEntry) Reset() {
 	*x = UtxosByAddressesEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[14]
+		mi := &file_waglaylawalletd_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -739,7 +739,7 @@ func (x *UtxosByAddressesEntry) String() string {
 func (*UtxosByAddressesEntry) ProtoMessage() {}
 
 func (x *UtxosByAddressesEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[14]
+	mi := &file_waglaylawalletd_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -752,7 +752,7 @@ func (x *UtxosByAddressesEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UtxosByAddressesEntry.ProtoReflect.Descriptor instead.
 func (*UtxosByAddressesEntry) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{14}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *UtxosByAddressesEntry) GetAddress() string {
@@ -788,7 +788,7 @@ type ScriptPublicKey struct {
 func (x *ScriptPublicKey) Reset() {
 	*x = ScriptPublicKey{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[15]
+		mi := &file_waglaylawalletd_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -801,7 +801,7 @@ func (x *ScriptPublicKey) String() string {
 func (*ScriptPublicKey) ProtoMessage() {}
 
 func (x *ScriptPublicKey) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[15]
+	mi := &file_waglaylawalletd_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -814,7 +814,7 @@ func (x *ScriptPublicKey) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScriptPublicKey.ProtoReflect.Descriptor instead.
 func (*ScriptPublicKey) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{15}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ScriptPublicKey) GetVersion() uint32 {
@@ -845,7 +845,7 @@ type UtxoEntry struct {
 func (x *UtxoEntry) Reset() {
 	*x = UtxoEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[16]
+		mi := &file_waglaylawalletd_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -858,7 +858,7 @@ func (x *UtxoEntry) String() string {
 func (*UtxoEntry) ProtoMessage() {}
 
 func (x *UtxoEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[16]
+	mi := &file_waglaylawalletd_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -871,7 +871,7 @@ func (x *UtxoEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UtxoEntry.ProtoReflect.Descriptor instead.
 func (*UtxoEntry) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{16}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *UtxoEntry) GetAmount() uint64 {
@@ -913,7 +913,7 @@ type GetExternalSpendableUTXOsRequest struct {
 func (x *GetExternalSpendableUTXOsRequest) Reset() {
 	*x = GetExternalSpendableUTXOsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[17]
+		mi := &file_waglaylawalletd_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -926,7 +926,7 @@ func (x *GetExternalSpendableUTXOsRequest) String() string {
 func (*GetExternalSpendableUTXOsRequest) ProtoMessage() {}
 
 func (x *GetExternalSpendableUTXOsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[17]
+	mi := &file_waglaylawalletd_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -939,7 +939,7 @@ func (x *GetExternalSpendableUTXOsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetExternalSpendableUTXOsRequest.ProtoReflect.Descriptor instead.
 func (*GetExternalSpendableUTXOsRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{17}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetExternalSpendableUTXOsRequest) GetAddress() string {
@@ -960,7 +960,7 @@ type GetExternalSpendableUTXOsResponse struct {
 func (x *GetExternalSpendableUTXOsResponse) Reset() {
 	*x = GetExternalSpendableUTXOsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[18]
+		mi := &file_waglaylawalletd_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -973,7 +973,7 @@ func (x *GetExternalSpendableUTXOsResponse) String() string {
 func (*GetExternalSpendableUTXOsResponse) ProtoMessage() {}
 
 func (x *GetExternalSpendableUTXOsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[18]
+	mi := &file_waglaylawalletd_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -986,7 +986,7 @@ func (x *GetExternalSpendableUTXOsResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetExternalSpendableUTXOsResponse.ProtoReflect.Descriptor instead.
 func (*GetExternalSpendableUTXOsResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{18}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetExternalSpendableUTXOsResponse) GetEntries() []*UtxosByAddressesEntry {
@@ -1013,7 +1013,7 @@ type SendRequest struct {
 func (x *SendRequest) Reset() {
 	*x = SendRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[19]
+		mi := &file_waglaylawalletd_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1026,7 +1026,7 @@ func (x *SendRequest) String() string {
 func (*SendRequest) ProtoMessage() {}
 
 func (x *SendRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[19]
+	mi := &file_waglaylawalletd_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1039,7 +1039,7 @@ func (x *SendRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendRequest.ProtoReflect.Descriptor instead.
 func (*SendRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{19}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *SendRequest) GetToAddress() string {
@@ -1096,7 +1096,7 @@ type SendResponse struct {
 func (x *SendResponse) Reset() {
 	*x = SendResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[20]
+		mi := &file_waglaylawalletd_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1109,7 +1109,7 @@ func (x *SendResponse) String() string {
 func (*SendResponse) ProtoMessage() {}
 
 func (x *SendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[20]
+	mi := &file_waglaylawalletd_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1122,7 +1122,7 @@ func (x *SendResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendResponse.ProtoReflect.Descriptor instead.
 func (*SendResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{20}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *SendResponse) GetTxIDs() []string {
@@ -1152,7 +1152,7 @@ type SignRequest struct {
 func (x *SignRequest) Reset() {
 	*x = SignRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[21]
+		mi := &file_waglaylawalletd_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1165,7 +1165,7 @@ func (x *SignRequest) String() string {
 func (*SignRequest) ProtoMessage() {}
 
 func (x *SignRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[21]
+	mi := &file_waglaylawalletd_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1178,7 +1178,7 @@ func (x *SignRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignRequest.ProtoReflect.Descriptor instead.
 func (*SignRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{21}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *SignRequest) GetUnsignedTransactions() [][]byte {
@@ -1206,7 +1206,7 @@ type SignResponse struct {
 func (x *SignResponse) Reset() {
 	*x = SignResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[22]
+		mi := &file_waglaylawalletd_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1219,7 +1219,7 @@ func (x *SignResponse) String() string {
 func (*SignResponse) ProtoMessage() {}
 
 func (x *SignResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[22]
+	mi := &file_waglaylawalletd_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1232,7 +1232,7 @@ func (x *SignResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignResponse.ProtoReflect.Descriptor instead.
 func (*SignResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{22}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *SignResponse) GetSignedTransactions() [][]byte {
@@ -1251,7 +1251,7 @@ type GetVersionRequest struct {
 func (x *GetVersionRequest) Reset() {
 	*x = GetVersionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[23]
+		mi := &file_waglaylawalletd_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1264,7 +1264,7 @@ func (x *GetVersionRequest) String() string {
 func (*GetVersionRequest) ProtoMessage() {}
 
 func (x *GetVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[23]
+	mi := &file_waglaylawalletd_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1277,7 +1277,7 @@ func (x *GetVersionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVersionRequest.ProtoReflect.Descriptor instead.
 func (*GetVersionRequest) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{23}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{23}
 }
 
 type GetVersionResponse struct {
@@ -1291,7 +1291,7 @@ type GetVersionResponse struct {
 func (x *GetVersionResponse) Reset() {
 	*x = GetVersionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pyrinwalletd_proto_msgTypes[24]
+		mi := &file_waglaylawalletd_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1304,7 +1304,7 @@ func (x *GetVersionResponse) String() string {
 func (*GetVersionResponse) ProtoMessage() {}
 
 func (x *GetVersionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pyrinwalletd_proto_msgTypes[24]
+	mi := &file_waglaylawalletd_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1317,7 +1317,7 @@ func (x *GetVersionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVersionResponse.ProtoReflect.Descriptor instead.
 func (*GetVersionResponse) Descriptor() ([]byte, []int) {
-	return file_pyrinwalletd_proto_rawDescGZIP(), []int{24}
+	return file_waglaylawalletd_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetVersionResponse) GetVersion() string {
@@ -1327,9 +1327,9 @@ func (x *GetVersionResponse) GetVersion() string {
 	return ""
 }
 
-var File_pyrinwalletd_proto protoreflect.FileDescriptor
+var File_waglaylawalletd_proto protoreflect.FileDescriptor
 
-var file_pyrinwalletd_proto_rawDesc = []byte{
+var file_waglaylawalletd_proto_rawDesc = []byte{
 	0x0a, 0x12, 0x70, 0x79, 0x72, 0x69, 0x6e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x64, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c, 0x70, 0x79, 0x72, 0x69, 0x6e, 0x77, 0x61, 0x6c, 0x6c, 0x65,
 	0x74, 0x64, 0x22, 0x13, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65,
@@ -1525,71 +1525,71 @@ var file_pyrinwalletd_proto_rawDesc = []byte{
 }
 
 var (
-	file_pyrinwalletd_proto_rawDescOnce sync.Once
-	file_pyrinwalletd_proto_rawDescData = file_pyrinwalletd_proto_rawDesc
+	file_waglaylawalletd_proto_rawDescOnce sync.Once
+	file_waglaylawalletd_proto_rawDescData = file_waglaylawalletd_proto_rawDesc
 )
 
-func file_pyrinwalletd_proto_rawDescGZIP() []byte {
-	file_pyrinwalletd_proto_rawDescOnce.Do(func() {
-		file_pyrinwalletd_proto_rawDescData = protoimpl.X.CompressGZIP(file_pyrinwalletd_proto_rawDescData)
+func file_waglaylawalletd_proto_rawDescGZIP() []byte {
+	file_waglaylawalletd_proto_rawDescOnce.Do(func() {
+		file_waglaylawalletd_proto_rawDescData = protoimpl.X.CompressGZIP(file_waglaylawalletd_proto_rawDescData)
 	})
-	return file_pyrinwalletd_proto_rawDescData
+	return file_waglaylawalletd_proto_rawDescData
 }
 
-var file_pyrinwalletd_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
-var file_pyrinwalletd_proto_goTypes = []interface{}{
-	(*GetBalanceRequest)(nil),                  // 0: pyrinwalletd.GetBalanceRequest
-	(*GetBalanceResponse)(nil),                 // 1: pyrinwalletd.GetBalanceResponse
-	(*AddressBalances)(nil),                    // 2: pyrinwalletd.AddressBalances
-	(*CreateUnsignedTransactionsRequest)(nil),  // 3: pyrinwalletd.CreateUnsignedTransactionsRequest
-	(*CreateUnsignedTransactionsResponse)(nil), // 4: pyrinwalletd.CreateUnsignedTransactionsResponse
-	(*ShowAddressesRequest)(nil),               // 5: pyrinwalletd.ShowAddressesRequest
-	(*ShowAddressesResponse)(nil),              // 6: pyrinwalletd.ShowAddressesResponse
-	(*NewAddressRequest)(nil),                  // 7: pyrinwalletd.NewAddressRequest
-	(*NewAddressResponse)(nil),                 // 8: pyrinwalletd.NewAddressResponse
-	(*BroadcastRequest)(nil),                   // 9: pyrinwalletd.BroadcastRequest
-	(*BroadcastResponse)(nil),                  // 10: pyrinwalletd.BroadcastResponse
-	(*ShutdownRequest)(nil),                    // 11: pyrinwalletd.ShutdownRequest
-	(*ShutdownResponse)(nil),                   // 12: pyrinwalletd.ShutdownResponse
-	(*Outpoint)(nil),                           // 13: pyrinwalletd.Outpoint
-	(*UtxosByAddressesEntry)(nil),              // 14: pyrinwalletd.UtxosByAddressesEntry
-	(*ScriptPublicKey)(nil),                    // 15: pyrinwalletd.ScriptPublicKey
-	(*UtxoEntry)(nil),                          // 16: pyrinwalletd.UtxoEntry
-	(*GetExternalSpendableUTXOsRequest)(nil),   // 17: pyrinwalletd.GetExternalSpendableUTXOsRequest
-	(*GetExternalSpendableUTXOsResponse)(nil),  // 18: pyrinwalletd.GetExternalSpendableUTXOsResponse
-	(*SendRequest)(nil),                        // 19: pyrinwalletd.SendRequest
-	(*SendResponse)(nil),                       // 20: pyrinwalletd.SendResponse
-	(*SignRequest)(nil),                        // 21: pyrinwalletd.SignRequest
-	(*SignResponse)(nil),                       // 22: pyrinwalletd.SignResponse
-	(*GetVersionRequest)(nil),                  // 23: pyrinwalletd.GetVersionRequest
-	(*GetVersionResponse)(nil),                 // 24: pyrinwalletd.GetVersionResponse
+var file_waglaylawalletd_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_waglaylawalletd_proto_goTypes = []interface{}{
+	(*GetBalanceRequest)(nil),                  // 0: waglaylawalletd.GetBalanceRequest
+	(*GetBalanceResponse)(nil),                 // 1: waglaylawalletd.GetBalanceResponse
+	(*AddressBalances)(nil),                    // 2: waglaylawalletd.AddressBalances
+	(*CreateUnsignedTransactionsRequest)(nil),  // 3: waglaylawalletd.CreateUnsignedTransactionsRequest
+	(*CreateUnsignedTransactionsResponse)(nil), // 4: waglaylawalletd.CreateUnsignedTransactionsResponse
+	(*ShowAddressesRequest)(nil),               // 5: waglaylawalletd.ShowAddressesRequest
+	(*ShowAddressesResponse)(nil),              // 6: waglaylawalletd.ShowAddressesResponse
+	(*NewAddressRequest)(nil),                  // 7: waglaylawalletd.NewAddressRequest
+	(*NewAddressResponse)(nil),                 // 8: waglaylawalletd.NewAddressResponse
+	(*BroadcastRequest)(nil),                   // 9: waglaylawalletd.BroadcastRequest
+	(*BroadcastResponse)(nil),                  // 10: waglaylawalletd.BroadcastResponse
+	(*ShutdownRequest)(nil),                    // 11: waglaylawalletd.ShutdownRequest
+	(*ShutdownResponse)(nil),                   // 12: waglaylawalletd.ShutdownResponse
+	(*Outpoint)(nil),                           // 13: waglaylawalletd.Outpoint
+	(*UtxosByAddressesEntry)(nil),              // 14: waglaylawalletd.UtxosByAddressesEntry
+	(*ScriptPublicKey)(nil),                    // 15: waglaylawalletd.ScriptPublicKey
+	(*UtxoEntry)(nil),                          // 16: waglaylawalletd.UtxoEntry
+	(*GetExternalSpendableUTXOsRequest)(nil),   // 17: waglaylawalletd.GetExternalSpendableUTXOsRequest
+	(*GetExternalSpendableUTXOsResponse)(nil),  // 18: waglaylawalletd.GetExternalSpendableUTXOsResponse
+	(*SendRequest)(nil),                        // 19: waglaylawalletd.SendRequest
+	(*SendResponse)(nil),                       // 20: waglaylawalletd.SendResponse
+	(*SignRequest)(nil),                        // 21: waglaylawalletd.SignRequest
+	(*SignResponse)(nil),                       // 22: waglaylawalletd.SignResponse
+	(*GetVersionRequest)(nil),                  // 23: waglaylawalletd.GetVersionRequest
+	(*GetVersionResponse)(nil),                 // 24: waglaylawalletd.GetVersionResponse
 }
-var file_pyrinwalletd_proto_depIdxs = []int32{
-	2,  // 0: pyrinwalletd.GetBalanceResponse.addressBalances:type_name -> pyrinwalletd.AddressBalances
-	13, // 1: pyrinwalletd.UtxosByAddressesEntry.outpoint:type_name -> pyrinwalletd.Outpoint
-	16, // 2: pyrinwalletd.UtxosByAddressesEntry.utxoEntry:type_name -> pyrinwalletd.UtxoEntry
-	15, // 3: pyrinwalletd.UtxoEntry.scriptPublicKey:type_name -> pyrinwalletd.ScriptPublicKey
-	14, // 4: pyrinwalletd.GetExternalSpendableUTXOsResponse.Entries:type_name -> pyrinwalletd.UtxosByAddressesEntry
-	0,  // 5: pyrinwalletd.pyrinwalletd.GetBalance:input_type -> pyrinwalletd.GetBalanceRequest
-	17, // 6: pyrinwalletd.pyrinwalletd.GetExternalSpendableUTXOs:input_type -> pyrinwalletd.GetExternalSpendableUTXOsRequest
-	3,  // 7: pyrinwalletd.pyrinwalletd.CreateUnsignedTransactions:input_type -> pyrinwalletd.CreateUnsignedTransactionsRequest
-	5,  // 8: pyrinwalletd.pyrinwalletd.ShowAddresses:input_type -> pyrinwalletd.ShowAddressesRequest
-	7,  // 9: pyrinwalletd.pyrinwalletd.NewAddress:input_type -> pyrinwalletd.NewAddressRequest
-	11, // 10: pyrinwalletd.pyrinwalletd.Shutdown:input_type -> pyrinwalletd.ShutdownRequest
-	9,  // 11: pyrinwalletd.pyrinwalletd.Broadcast:input_type -> pyrinwalletd.BroadcastRequest
-	19, // 12: pyrinwalletd.pyrinwalletd.Send:input_type -> pyrinwalletd.SendRequest
-	21, // 13: pyrinwalletd.pyrinwalletd.Sign:input_type -> pyrinwalletd.SignRequest
-	23, // 14: pyrinwalletd.pyrinwalletd.GetVersion:input_type -> pyrinwalletd.GetVersionRequest
-	1,  // 15: pyrinwalletd.pyrinwalletd.GetBalance:output_type -> pyrinwalletd.GetBalanceResponse
-	18, // 16: pyrinwalletd.pyrinwalletd.GetExternalSpendableUTXOs:output_type -> pyrinwalletd.GetExternalSpendableUTXOsResponse
-	4,  // 17: pyrinwalletd.pyrinwalletd.CreateUnsignedTransactions:output_type -> pyrinwalletd.CreateUnsignedTransactionsResponse
-	6,  // 18: pyrinwalletd.pyrinwalletd.ShowAddresses:output_type -> pyrinwalletd.ShowAddressesResponse
-	8,  // 19: pyrinwalletd.pyrinwalletd.NewAddress:output_type -> pyrinwalletd.NewAddressResponse
-	12, // 20: pyrinwalletd.pyrinwalletd.Shutdown:output_type -> pyrinwalletd.ShutdownResponse
-	10, // 21: pyrinwalletd.pyrinwalletd.Broadcast:output_type -> pyrinwalletd.BroadcastResponse
-	20, // 22: pyrinwalletd.pyrinwalletd.Send:output_type -> pyrinwalletd.SendResponse
-	22, // 23: pyrinwalletd.pyrinwalletd.Sign:output_type -> pyrinwalletd.SignResponse
-	24, // 24: pyrinwalletd.pyrinwalletd.GetVersion:output_type -> pyrinwalletd.GetVersionResponse
+var file_waglaylawalletd_proto_depIdxs = []int32{
+	2,  // 0: waglaylawalletd.GetBalanceResponse.addressBalances:type_name -> waglaylawalletd.AddressBalances
+	13, // 1: waglaylawalletd.UtxosByAddressesEntry.outpoint:type_name -> waglaylawalletd.Outpoint
+	16, // 2: waglaylawalletd.UtxosByAddressesEntry.utxoEntry:type_name -> waglaylawalletd.UtxoEntry
+	15, // 3: waglaylawalletd.UtxoEntry.scriptPublicKey:type_name -> waglaylawalletd.ScriptPublicKey
+	14, // 4: waglaylawalletd.GetExternalSpendableUTXOsResponse.Entries:type_name -> waglaylawalletd.UtxosByAddressesEntry
+	0,  // 5: waglaylawalletd.waglaylawalletd.GetBalance:input_type -> waglaylawalletd.GetBalanceRequest
+	17, // 6: waglaylawalletd.waglaylawalletd.GetExternalSpendableUTXOs:input_type -> waglaylawalletd.GetExternalSpendableUTXOsRequest
+	3,  // 7: waglaylawalletd.waglaylawalletd.CreateUnsignedTransactions:input_type -> waglaylawalletd.CreateUnsignedTransactionsRequest
+	5,  // 8: waglaylawalletd.waglaylawalletd.ShowAddresses:input_type -> waglaylawalletd.ShowAddressesRequest
+	7,  // 9: waglaylawalletd.waglaylawalletd.NewAddress:input_type -> waglaylawalletd.NewAddressRequest
+	11, // 10: waglaylawalletd.waglaylawalletd.Shutdown:input_type -> waglaylawalletd.ShutdownRequest
+	9,  // 11: waglaylawalletd.waglaylawalletd.Broadcast:input_type -> waglaylawalletd.BroadcastRequest
+	19, // 12: waglaylawalletd.waglaylawalletd.Send:input_type -> waglaylawalletd.SendRequest
+	21, // 13: waglaylawalletd.waglaylawalletd.Sign:input_type -> waglaylawalletd.SignRequest
+	23, // 14: waglaylawalletd.waglaylawalletd.GetVersion:input_type -> waglaylawalletd.GetVersionRequest
+	1,  // 15: waglaylawalletd.waglaylawalletd.GetBalance:output_type -> waglaylawalletd.GetBalanceResponse
+	18, // 16: waglaylawalletd.waglaylawalletd.GetExternalSpendableUTXOs:output_type -> waglaylawalletd.GetExternalSpendableUTXOsResponse
+	4,  // 17: waglaylawalletd.waglaylawalletd.CreateUnsignedTransactions:output_type -> waglaylawalletd.CreateUnsignedTransactionsResponse
+	6,  // 18: waglaylawalletd.waglaylawalletd.ShowAddresses:output_type -> waglaylawalletd.ShowAddressesResponse
+	8,  // 19: waglaylawalletd.waglaylawalletd.NewAddress:output_type -> waglaylawalletd.NewAddressResponse
+	12, // 20: waglaylawalletd.waglaylawalletd.Shutdown:output_type -> waglaylawalletd.ShutdownResponse
+	10, // 21: waglaylawalletd.waglaylawalletd.Broadcast:output_type -> waglaylawalletd.BroadcastResponse
+	20, // 22: waglaylawalletd.waglaylawalletd.Send:output_type -> waglaylawalletd.SendResponse
+	22, // 23: waglaylawalletd.waglaylawalletd.Sign:output_type -> waglaylawalletd.SignResponse
+	24, // 24: waglaylawalletd.waglaylawalletd.GetVersion:output_type -> waglaylawalletd.GetVersionResponse
 	15, // [15:25] is the sub-list for method output_type
 	5,  // [5:15] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -1597,13 +1597,13 @@ var file_pyrinwalletd_proto_depIdxs = []int32{
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_pyrinwalletd_proto_init() }
-func file_pyrinwalletd_proto_init() {
-	if File_pyrinwalletd_proto != nil {
+func init() { file_waglaylawalletd_proto_init() }
+func file_waglaylawalletd_proto_init() {
+	if File_waglaylawalletd_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_pyrinwalletd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetBalanceRequest); i {
 			case 0:
 				return &v.state
@@ -1615,7 +1615,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetBalanceResponse); i {
 			case 0:
 				return &v.state
@@ -1627,7 +1627,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddressBalances); i {
 			case 0:
 				return &v.state
@@ -1639,7 +1639,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUnsignedTransactionsRequest); i {
 			case 0:
 				return &v.state
@@ -1651,7 +1651,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUnsignedTransactionsResponse); i {
 			case 0:
 				return &v.state
@@ -1663,7 +1663,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShowAddressesRequest); i {
 			case 0:
 				return &v.state
@@ -1675,7 +1675,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShowAddressesResponse); i {
 			case 0:
 				return &v.state
@@ -1687,7 +1687,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NewAddressRequest); i {
 			case 0:
 				return &v.state
@@ -1699,7 +1699,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NewAddressResponse); i {
 			case 0:
 				return &v.state
@@ -1711,7 +1711,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BroadcastRequest); i {
 			case 0:
 				return &v.state
@@ -1723,7 +1723,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BroadcastResponse); i {
 			case 0:
 				return &v.state
@@ -1735,7 +1735,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownRequest); i {
 			case 0:
 				return &v.state
@@ -1747,7 +1747,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownResponse); i {
 			case 0:
 				return &v.state
@@ -1759,7 +1759,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Outpoint); i {
 			case 0:
 				return &v.state
@@ -1771,7 +1771,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UtxosByAddressesEntry); i {
 			case 0:
 				return &v.state
@@ -1783,7 +1783,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ScriptPublicKey); i {
 			case 0:
 				return &v.state
@@ -1795,7 +1795,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UtxoEntry); i {
 			case 0:
 				return &v.state
@@ -1807,7 +1807,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetExternalSpendableUTXOsRequest); i {
 			case 0:
 				return &v.state
@@ -1819,7 +1819,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetExternalSpendableUTXOsResponse); i {
 			case 0:
 				return &v.state
@@ -1831,7 +1831,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendRequest); i {
 			case 0:
 				return &v.state
@@ -1843,7 +1843,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendResponse); i {
 			case 0:
 				return &v.state
@@ -1855,7 +1855,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SignRequest); i {
 			case 0:
 				return &v.state
@@ -1867,7 +1867,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SignResponse); i {
 			case 0:
 				return &v.state
@@ -1879,7 +1879,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVersionRequest); i {
 			case 0:
 				return &v.state
@@ -1891,7 +1891,7 @@ func file_pyrinwalletd_proto_init() {
 				return nil
 			}
 		}
-		file_pyrinwalletd_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_waglaylawalletd_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVersionResponse); i {
 			case 0:
 				return &v.state
@@ -1908,18 +1908,18 @@ func file_pyrinwalletd_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_pyrinwalletd_proto_rawDesc,
+			RawDescriptor: file_waglaylawalletd_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_pyrinwalletd_proto_goTypes,
-		DependencyIndexes: file_pyrinwalletd_proto_depIdxs,
-		MessageInfos:      file_pyrinwalletd_proto_msgTypes,
+		GoTypes:           file_waglaylawalletd_proto_goTypes,
+		DependencyIndexes: file_waglaylawalletd_proto_depIdxs,
+		MessageInfos:      file_waglaylawalletd_proto_msgTypes,
 	}.Build()
-	File_pyrinwalletd_proto = out.File
-	file_pyrinwalletd_proto_rawDesc = nil
-	file_pyrinwalletd_proto_goTypes = nil
-	file_pyrinwalletd_proto_depIdxs = nil
+	File_waglaylawalletd_proto = out.File
+	file_waglaylawalletd_proto_rawDesc = nil
+	file_waglaylawalletd_proto_goTypes = nil
+	file_waglaylawalletd_proto_depIdxs = nil
 }

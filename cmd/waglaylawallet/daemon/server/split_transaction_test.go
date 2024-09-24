@@ -3,9 +3,9 @@ package server
 import (
 	"testing"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/keys"
 	"github.com/waglayla/waglaylad/util/txmass"
 
 	"github.com/waglayla/waglaylad/domain/dagconfig"
@@ -15,7 +15,7 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/txscript"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/domain/consensus"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/testutils"
 )
@@ -43,17 +43,17 @@ func TestEstimateMassAfterSignatures(t *testing.T) {
 			t.Fatalf("Error from estimateMassAfterSignatures: %s", err)
 		}
 
-		signedTxStep1Bytes, err := libpyrinwallet.Sign(params, mnemonics[:1], unsignedTransactionBytes, false)
+		signedTxStep1Bytes, err := libwaglaylawallet.Sign(params, mnemonics[:1], unsignedTransactionBytes, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		signedTxStep2Bytes, err := libpyrinwallet.Sign(params, mnemonics[1:2], signedTxStep1Bytes, false)
+		signedTxStep2Bytes, err := libwaglaylawallet.Sign(params, mnemonics[1:2], signedTxStep1Bytes, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		extractedSignedTx, err := libpyrinwallet.ExtractTransaction(signedTxStep2Bytes, false)
+		extractedSignedTx, err := libwaglaylawallet.ExtractTransaction(signedTxStep2Bytes, false)
 		if err != nil {
 			t.Fatalf("ExtractTransaction: %+v", err)
 		}
@@ -83,12 +83,12 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 	publicKeys := make([]string, numKeys)
 	for i := 0; i < numKeys; i++ {
 		var err error
-		mnemonics[i], err = libpyrinwallet.CreateMnemonic()
+		mnemonics[i], err = libwaglaylawallet.CreateMnemonic()
 		if err != nil {
 			t.Fatalf("CreateMnemonic: %+v", err)
 		}
 
-		publicKeys[i], err = libpyrinwallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
+		publicKeys[i], err = libwaglaylawallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
 		if err != nil {
 			t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 		}
@@ -96,7 +96,7 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 
 	const minimumSignatures = 2
 	path := "m/1/2/3"
-	address, err := libpyrinwallet.Address(params, publicKeys, minimumSignatures, path, false)
+	address, err := libwaglaylawallet.Address(params, publicKeys, minimumSignatures, path, false)
 	if err != nil {
 		t.Fatalf("Address: %+v", err)
 	}
@@ -128,7 +128,7 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 
 	block1Tx := block1.Transactions[0]
 	block1TxOut := block1Tx.Outputs[0]
-	selectedUTXOs := []*libpyrinwallet.UTXO{
+	selectedUTXOs := []*libwaglaylawallet.UTXO{
 		{
 			Outpoint: &externalapi.DomainOutpoint{
 				TransactionID: *consensushashing.TransactionID(block1.Transactions[0]),
@@ -139,8 +139,8 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 		},
 	}
 
-	unsignedTransaction, err := libpyrinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-		[]*libpyrinwallet.Payment{{
+	unsignedTransaction, err := libwaglaylawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+		[]*libwaglaylawallet.Payment{{
 			Address: address,
 			Amount:  10,
 		}}, selectedUTXOs)

@@ -3,8 +3,8 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/constants"
 	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
@@ -68,17 +68,17 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 		return nil, err
 	}
 
-	payments := []*libpyrinwallet.Payment{{
+	payments := []*libwaglaylawallet.Payment{{
 		Address: toAddress,
 		Amount:  spendValue,
 	}}
 	if changeLeor > 0 {
-		payments = append(payments, &libpyrinwallet.Payment{
+		payments = append(payments, &libwaglaylawallet.Payment{
 			Address: changeAddress,
 			Amount:  changeLeor,
 		})
 	}
-	unsignedTransaction, err := libpyrinwallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
+	unsignedTransaction, err := libwaglaylawallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
 		s.keysFile.MinimumSignatures,
 		payments, selectedUTXOs)
 	if err != nil {
@@ -93,9 +93,9 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 }
 
 func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uint64, fromAddresses []*walletAddress) (
-	selectedUTXOs []*libpyrinwallet.UTXO, totalReceived uint64, changeLeor uint64, err error) {
+	selectedUTXOs []*libwaglaylawallet.UTXO, totalReceived uint64, changeLeor uint64, err error) {
 
-	selectedUTXOs = []*libpyrinwallet.UTXO{}
+	selectedUTXOs = []*libwaglaylawallet.UTXO{}
 	totalValue := uint64(0)
 
 	dagInfo, err := s.rpcClient.GetBlockDAGInfo()
@@ -117,7 +117,7 @@ func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uin
 			}
 		}
 
-		selectedUTXOs = append(selectedUTXOs, &libpyrinwallet.UTXO{
+		selectedUTXOs = append(selectedUTXOs, &libwaglaylawallet.UTXO{
 			Outpoint:       utxo.Outpoint,
 			UTXOEntry:      utxo.UTXOEntry,
 			DerivationPath: s.walletAddressPath(utxo.address),

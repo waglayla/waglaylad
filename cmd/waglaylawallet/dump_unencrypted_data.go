@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/utils"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/keys"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/utils"
 
 	"github.com/pkg/errors"
 )
@@ -36,7 +36,7 @@ func dumpUnencryptedData(conf *dumpUnencryptedDataConfig) error {
 	mnemonicPublicKeys := make(map[string]struct{})
 	for i, mnemonic := range mnemonics {
 		fmt.Printf("Mnemonic #%d:\n%s\n\n", i+1, mnemonic)
-		publicKey, err := libpyrinwallet.MasterPublicKeyFromMnemonic(conf.NetParams(), mnemonic, len(keysFile.ExtendedPublicKeys) > 1)
+		publicKey, err := libwaglaylawallet.MasterPublicKeyFromMnemonic(conf.NetParams(), mnemonic, len(keysFile.ExtendedPublicKeys) > 1)
 		if err != nil {
 			return err
 		}

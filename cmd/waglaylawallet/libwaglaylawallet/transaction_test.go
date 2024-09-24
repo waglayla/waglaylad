@@ -43,12 +43,12 @@ func TestMultisig(t *testing.T) {
 			publicKeys := make([]string, numKeys)
 			for i := 0; i < numKeys; i++ {
 				var err error
-				mnemonics[i], err = libpyrinwallet.CreateMnemonic()
+				mnemonics[i], err = libwaglaylawallet.CreateMnemonic()
 				if err != nil {
 					t.Fatalf("CreateMnemonic: %+v", err)
 				}
 
-				publicKeys[i], err = libpyrinwallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
+				publicKeys[i], err = libwaglaylawallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
 				if err != nil {
 					t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 				}
@@ -56,7 +56,7 @@ func TestMultisig(t *testing.T) {
 
 			const minimumSignatures = 2
 			path := "m/1/2/3"
-			address, err := libpyrinwallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
+			address, err := libwaglaylawallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
 			if err != nil {
 				t.Fatalf("Address: %+v", err)
 			}
@@ -92,7 +92,7 @@ func TestMultisig(t *testing.T) {
 
 			block1Tx := block1.Transactions[0]
 			block1TxOut := block1Tx.Outputs[0]
-			selectedUTXOs := []*libpyrinwallet.UTXO{
+			selectedUTXOs := []*libwaglaylawallet.UTXO{
 				{
 					Outpoint: &externalapi.DomainOutpoint{
 						TransactionID: *consensushashing.TransactionID(block1.Transactions[0]),
@@ -103,8 +103,8 @@ func TestMultisig(t *testing.T) {
 				},
 			}
 
-			unsignedTransaction, err := libpyrinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-				[]*libpyrinwallet.Payment{{
+			unsignedTransaction, err := libwaglaylawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+				[]*libwaglaylawallet.Payment{{
 					Address: address,
 					Amount:  10,
 				}}, selectedUTXOs)
@@ -112,7 +112,7 @@ func TestMultisig(t *testing.T) {
 				t.Fatalf("CreateUnsignedTransactions: %+v", err)
 			}
 
-			isFullySigned, err := libpyrinwallet.IsTransactionFullySigned(unsignedTransaction)
+			isFullySigned, err := libwaglaylawallet.IsTransactionFullySigned(unsignedTransaction)
 			if err != nil {
 				t.Fatalf("IsTransactionFullySigned: %+v", err)
 			}
@@ -121,17 +121,17 @@ func TestMultisig(t *testing.T) {
 				t.Fatalf("Transaction is not expected to be signed")
 			}
 
-			_, err = libpyrinwallet.ExtractTransaction(unsignedTransaction, ecdsa)
+			_, err = libwaglaylawallet.ExtractTransaction(unsignedTransaction, ecdsa)
 			if err == nil || !strings.Contains(err.Error(), fmt.Sprintf("missing %d signatures", minimumSignatures)) {
 				t.Fatal("Unexpectedly succeed to extract a valid transaction out of unsigned transaction")
 			}
 
-			signedTxStep1, err := libpyrinwallet.Sign(params, mnemonics[:1], unsignedTransaction, ecdsa)
+			signedTxStep1, err := libwaglaylawallet.Sign(params, mnemonics[:1], unsignedTransaction, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			isFullySigned, err = libpyrinwallet.IsTransactionFullySigned(signedTxStep1)
+			isFullySigned, err = libwaglaylawallet.IsTransactionFullySigned(signedTxStep1)
 			if err != nil {
 				t.Fatalf("IsTransactionFullySigned: %+v", err)
 			}
@@ -140,22 +140,22 @@ func TestMultisig(t *testing.T) {
 				t.Fatalf("Transaction is not expected to be fully signed")
 			}
 
-			signedTxStep2, err := libpyrinwallet.Sign(params, mnemonics[1:2], signedTxStep1, ecdsa)
+			signedTxStep2, err := libwaglaylawallet.Sign(params, mnemonics[1:2], signedTxStep1, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			extractedSignedTxStep2, err := libpyrinwallet.ExtractTransaction(signedTxStep2, ecdsa)
+			extractedSignedTxStep2, err := libwaglaylawallet.ExtractTransaction(signedTxStep2, ecdsa)
 			if err != nil {
 				t.Fatalf("ExtractTransaction: %+v", err)
 			}
 
-			signedTxOneStep, err := libpyrinwallet.Sign(params, mnemonics[:2], unsignedTransaction, ecdsa)
+			signedTxOneStep, err := libwaglaylawallet.Sign(params, mnemonics[:2], unsignedTransaction, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			extractedSignedTxOneStep, err := libpyrinwallet.ExtractTransaction(signedTxOneStep, ecdsa)
+			extractedSignedTxOneStep, err := libwaglaylawallet.ExtractTransaction(signedTxOneStep, ecdsa)
 			if err != nil {
 				t.Fatalf("ExtractTransaction: %+v", err)
 			}
@@ -198,12 +198,12 @@ func TestP2PK(t *testing.T) {
 			publicKeys := make([]string, numKeys)
 			for i := 0; i < numKeys; i++ {
 				var err error
-				mnemonics[i], err = libpyrinwallet.CreateMnemonic()
+				mnemonics[i], err = libwaglaylawallet.CreateMnemonic()
 				if err != nil {
 					t.Fatalf("CreateMnemonic: %+v", err)
 				}
 
-				publicKeys[i], err = libpyrinwallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], false)
+				publicKeys[i], err = libwaglaylawallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], false)
 				if err != nil {
 					t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 				}
@@ -211,7 +211,7 @@ func TestP2PK(t *testing.T) {
 
 			const minimumSignatures = 1
 			path := "m/1/2/3"
-			address, err := libpyrinwallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
+			address, err := libwaglaylawallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
 			if err != nil {
 				t.Fatalf("Address: %+v", err)
 			}
@@ -253,7 +253,7 @@ func TestP2PK(t *testing.T) {
 
 			block1Tx := block1.Transactions[0]
 			block1TxOut := block1Tx.Outputs[0]
-			selectedUTXOs := []*libpyrinwallet.UTXO{
+			selectedUTXOs := []*libwaglaylawallet.UTXO{
 				{
 					Outpoint: &externalapi.DomainOutpoint{
 						TransactionID: *consensushashing.TransactionID(block1.Transactions[0]),
@@ -264,8 +264,8 @@ func TestP2PK(t *testing.T) {
 				},
 			}
 
-			unsignedTransaction, err := libpyrinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-				[]*libpyrinwallet.Payment{{
+			unsignedTransaction, err := libwaglaylawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+				[]*libwaglaylawallet.Payment{{
 					Address: address,
 					Amount:  10,
 				}}, selectedUTXOs)
@@ -273,7 +273,7 @@ func TestP2PK(t *testing.T) {
 				t.Fatalf("CreateUnsignedTransactions: %+v", err)
 			}
 
-			isFullySigned, err := libpyrinwallet.IsTransactionFullySigned(unsignedTransaction)
+			isFullySigned, err := libwaglaylawallet.IsTransactionFullySigned(unsignedTransaction)
 			if err != nil {
 				t.Fatalf("IsTransactionFullySigned: %+v", err)
 			}
@@ -282,17 +282,17 @@ func TestP2PK(t *testing.T) {
 				t.Fatalf("Transaction is not expected to be signed")
 			}
 
-			_, err = libpyrinwallet.ExtractTransaction(unsignedTransaction, ecdsa)
+			_, err = libwaglaylawallet.ExtractTransaction(unsignedTransaction, ecdsa)
 			if err == nil || !strings.Contains(err.Error(), "missing signature") {
 				t.Fatal("Unexpectedly succeed to extract a valid transaction out of unsigned transaction")
 			}
 
-			signedTx, err := libpyrinwallet.Sign(params, mnemonics, unsignedTransaction, ecdsa)
+			signedTx, err := libwaglaylawallet.Sign(params, mnemonics, unsignedTransaction, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			tx, err := libpyrinwallet.ExtractTransaction(signedTx, ecdsa)
+			tx, err := libwaglaylawallet.ExtractTransaction(signedTx, ecdsa)
 			if err != nil {
 				t.Fatalf("ExtractTransaction: %+v", err)
 			}
@@ -330,12 +330,12 @@ func TestMaxLeor(t *testing.T) {
 		publicKeys := make([]string, numKeys)
 		for i := 0; i < numKeys; i++ {
 			var err error
-			mnemonics[i], err = libpyrinwallet.CreateMnemonic()
+			mnemonics[i], err = libwaglaylawallet.CreateMnemonic()
 			if err != nil {
 				t.Fatalf("CreateMnemonic: %+v", err)
 			}
 
-			publicKeys[i], err = libpyrinwallet.MasterPublicKeyFromMnemonic(&cfg.Params, mnemonics[i], false)
+			publicKeys[i], err = libwaglaylawallet.MasterPublicKeyFromMnemonic(&cfg.Params, mnemonics[i], false)
 			if err != nil {
 				t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 			}
@@ -343,7 +343,7 @@ func TestMaxLeor(t *testing.T) {
 
 		const minimumSignatures = 1
 		path := "m/1/2/3"
-		address, err := libpyrinwallet.Address(params, publicKeys, minimumSignatures, path, false)
+		address, err := libwaglaylawallet.Address(params, publicKeys, minimumSignatures, path, false)
 		if err != nil {
 			t.Fatalf("Address: %+v", err)
 		}
@@ -407,7 +407,7 @@ func TestMaxLeor(t *testing.T) {
 		txOut2 := fundingBlock3.Transactions[0].Outputs[0]
 		txOut3 := fundingBlock4.Transactions[0].Outputs[0]
 		txOut4 := block1.Transactions[0].Outputs[0]
-		selectedUTXOsForTxWithLargeInputAmount := []*libpyrinwallet.UTXO{
+		selectedUTXOsForTxWithLargeInputAmount := []*libwaglaylawallet.UTXO{
 			{
 				Outpoint: &externalapi.DomainOutpoint{
 					TransactionID: *consensushashing.TransactionID(fundingBlock2.Transactions[0]),
@@ -426,8 +426,8 @@ func TestMaxLeor(t *testing.T) {
 			},
 		}
 
-		unsignedTxWithLargeInputAmount, err := libpyrinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-			[]*libpyrinwallet.Payment{{
+		unsignedTxWithLargeInputAmount, err := libwaglaylawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+			[]*libwaglaylawallet.Payment{{
 				Address: address,
 				Amount:  10,
 			}}, selectedUTXOsForTxWithLargeInputAmount)
@@ -435,12 +435,12 @@ func TestMaxLeor(t *testing.T) {
 			t.Fatalf("CreateUnsignedTransactions: %+v", err)
 		}
 
-		signedTxWithLargeInputAmount, err := libpyrinwallet.Sign(params, mnemonics, unsignedTxWithLargeInputAmount, false)
+		signedTxWithLargeInputAmount, err := libwaglaylawallet.Sign(params, mnemonics, unsignedTxWithLargeInputAmount, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		txWithLargeInputAmount, err := libpyrinwallet.ExtractTransaction(signedTxWithLargeInputAmount, false)
+		txWithLargeInputAmount, err := libwaglaylawallet.ExtractTransaction(signedTxWithLargeInputAmount, false)
 		if err != nil {
 			t.Fatalf("ExtractTransaction: %+v", err)
 		}
@@ -458,7 +458,7 @@ func TestMaxLeor(t *testing.T) {
 			t.Fatalf("Transaction wasn't accepted in the DAG")
 		}
 
-		selectedUTXOsForTxWithLargeInputAndOutputAmount := []*libpyrinwallet.UTXO{
+		selectedUTXOsForTxWithLargeInputAndOutputAmount := []*libwaglaylawallet.UTXO{
 			{
 				Outpoint: &externalapi.DomainOutpoint{
 					TransactionID: *consensushashing.TransactionID(fundingBlock4.Transactions[0]),
@@ -477,8 +477,8 @@ func TestMaxLeor(t *testing.T) {
 			},
 		}
 
-		unsignedTxWithLargeInputAndOutputAmount, err := libpyrinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-			[]*libpyrinwallet.Payment{{
+		unsignedTxWithLargeInputAndOutputAmount, err := libwaglaylawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+			[]*libwaglaylawallet.Payment{{
 				Address: address,
 				Amount:  22e6 * constants.LeorPerPyrin,
 			}}, selectedUTXOsForTxWithLargeInputAndOutputAmount)
@@ -486,12 +486,12 @@ func TestMaxLeor(t *testing.T) {
 			t.Fatalf("CreateUnsignedTransactions: %+v", err)
 		}
 
-		signedTxWithLargeInputAndOutputAmount, err := libpyrinwallet.Sign(params, mnemonics, unsignedTxWithLargeInputAndOutputAmount, false)
+		signedTxWithLargeInputAndOutputAmount, err := libwaglaylawallet.Sign(params, mnemonics, unsignedTxWithLargeInputAndOutputAmount, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		txWithLargeInputAndOutputAmount, err := libpyrinwallet.ExtractTransaction(signedTxWithLargeInputAndOutputAmount, false)
+		txWithLargeInputAndOutputAmount, err := libwaglaylawallet.ExtractTransaction(signedTxWithLargeInputAndOutputAmount, false)
 		if err != nil {
 			t.Fatalf("ExtractTransaction: %+v", err)
 		}

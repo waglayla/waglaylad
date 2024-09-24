@@ -1,4 +1,4 @@
-package libpyrinwallet
+package libwaglaylawallet
 
 import (
 	"encoding/hex"
@@ -10,10 +10,10 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/utxo"
 )
 
-// PyrinwalletdUTXOsTolibpyrinwalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libpyrinwallet.UTXO
-func PyrinwalletdUTXOsTolibpyrinwalletUTXOs(pyrinwalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
-	UTXOs := make([]*UTXO, len(pyrinwalletdUtxoEntires))
-	for i, entry := range pyrinwalletdUtxoEntires {
+// PyrinwalletdUTXOsTolibwaglaylawalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libwaglaylawallet.UTXO
+func PyrinwalletdUTXOsTolibwaglaylawalletUTXOs(waglaylawalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
+	UTXOs := make([]*UTXO, len(waglaylawalletdUtxoEntires))
+	for i, entry := range waglaylawalletdUtxoEntires {
 		script, err := hex.DecodeString(entry.UtxoEntry.ScriptPublicKey.ScriptPublicKey)
 		if err != nil {
 			return nil, err

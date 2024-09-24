@@ -3,9 +3,9 @@ package server
 import (
 	"context"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
 )
 
 func (s *server) Sign(_ context.Context, request *pb.SignRequest) (*pb.SignResponse, error) {
@@ -26,7 +26,7 @@ func (s *server) signTransactions(unsignedTransactions [][]byte, password string
 	}
 	signedTransactions := make([][]byte, len(unsignedTransactions))
 	for i, unsignedTransaction := range unsignedTransactions {
-		signedTransaction, err := libpyrinwallet.Sign(s.params, mnemonics, unsignedTransaction, s.keysFile.ECDSA)
+		signedTransaction, err := libwaglaylawallet.Sign(s.params, mnemonics, unsignedTransaction, s.keysFile.ECDSA)
 		if err != nil {
 			return nil, err
 		}

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package protoserialization;
 
-option go_package = "github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/serialization/protoserialization";
+option go_package = "github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/serialization/protoserialization";
 
 message PartiallySignedTransaction{
   TransactionMessage tx = 1;

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/util"
 	"github.com/pkg/errors"
 )
@@ -33,12 +33,12 @@ func (s *server) changeAddress(useExisting bool, fromAddresses []*walletAddress)
 		walletAddr = &walletAddress{
 			index:         internalIndex,
 			cosignerIndex: s.keysFile.CosignerIndex,
-			keyChain:      libpyrinwallet.InternalKeychain,
+			keyChain:      libwaglaylawallet.InternalKeychain,
 		}
 	}
 
 	path := s.walletAddressPath(walletAddr)
-	address, err := libpyrinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+	address, err := libwaglaylawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -58,10 +58,10 @@ func (s *server) ShowAddresses(_ context.Context, request *pb.ShowAddressesReque
 		walletAddr := &walletAddress{
 			index:         i,
 			cosignerIndex: s.keysFile.CosignerIndex,
-			keyChain:      libpyrinwallet.ExternalKeychain,
+			keyChain:      libwaglaylawallet.ExternalKeychain,
 		}
 		path := s.walletAddressPath(walletAddr)
-		address, err := libpyrinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+		address, err := libwaglaylawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 		if err != nil {
 			return nil, err
 		}
@@ -92,10 +92,10 @@ func (s *server) NewAddress(_ context.Context, request *pb.NewAddressRequest) (*
 	walletAddr := &walletAddress{
 		index:         s.keysFile.LastUsedExternalIndex(),
 		cosignerIndex: s.keysFile.CosignerIndex,
-		keyChain:      libpyrinwallet.ExternalKeychain,
+		keyChain:      libwaglaylawallet.ExternalKeychain,
 	}
 	path := s.walletAddressPath(walletAddr)
-	address, err := libpyrinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+	address, err := libwaglaylawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 	if err != nil {
 		return nil, err
 	}
@@ -105,7 +105,7 @@ func (s *server) NewAddress(_ context.Context, request *pb.NewAddressRequest) (*
 
 func (s *server) walletAddressString(wAddr *walletAddress) (string, error) {
 	path := s.walletAddressPath(wAddr)
-	addr, err := libpyrinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+	addr, err := libwaglaylawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 	if err != nil {
 		return "", err
 	}
