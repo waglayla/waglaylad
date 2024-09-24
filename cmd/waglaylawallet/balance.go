@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/client"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/daemon/pb"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/utils"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/client"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/daemon/pb"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/utils"
 )
 
 func balance(conf *balanceConfig) error {
