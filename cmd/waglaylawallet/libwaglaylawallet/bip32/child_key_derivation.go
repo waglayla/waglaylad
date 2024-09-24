@@ -2,7 +2,7 @@ package bip32
 
 import (
 	"encoding/binary"
-	"github.com/waglayla/go-secp256k1"
+	"github.com/Pyrinpyi/go-secp256k1"
 	"github.com/pkg/errors"
 )
 
