@@ -9,7 +9,7 @@ import (
 	"github.com/waglayla/waglaylad/version"
 
 	"github.com/waglayla/waglaylad/app/appmessage"
-	"github.com/waglayla/waglaylad/cmd/pyrinminer/templatemanager"
+	"github.com/waglayla/waglaylad/cmd/waglaylaminer/templatemanager"
 	"github.com/waglayla/waglaylad/domain/consensus/model/externalapi"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/consensushashing"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/pow"
