@@ -11,7 +11,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/waglayla/go-secp256k1"
+	"github.com/Pyrinpyi/go-secp256k1"
 	"github.com/waglayla/waglaylad/app/appmessage"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/mining"
 	"github.com/waglayla/waglaylad/util"
