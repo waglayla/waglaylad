@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
 	"github.com/waglayla/waglaylad/util"
 )
 
