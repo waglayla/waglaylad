@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/bip32"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/utils"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/bip32"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/utils"
 	"github.com/pkg/errors"
 
 	"github.com/waglayla/waglaylad/cmd/pyrinwallet/keys"
