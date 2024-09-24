@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/waglayla/go-secp256k1"
+	"github.com/Pyrinpyi/go-secp256k1"
 	"github.com/pkg/errors"
 
 	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet"
