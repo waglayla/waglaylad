@@ -3,8 +3,8 @@ package bip32
 import (
 	"encoding/binary"
 
-	"github.com/waglayla/go-secp256k1"
-	"github.com/waglayla/waglaylad/cmd/pyrinwallet/libpyrinwallet/bip32/base58"
+	"github.com/Pyrinpyi/go-secp256k1"
+	"github.com/waglayla/waglaylad/cmd/waglaylawallet/libwaglaylawallet/bip32/base58"
 	"github.com/pkg/errors"
 )
 
