@@ -50,7 +50,7 @@ const (
 	defaultMergeSetSizeLimit                       = defaultGHOSTDAGK * 10
 	defaultSubsidyGenesisReward                    = 1 * constants.LeorPerWaglayla
 	defaultPreDeflationaryPhaseBaseSubsidy         = 500 * constants.LeorPerWaglayla
-	defaultDeflationaryPhaseBaseSubsidy            = 500 * constants.LeorPerWaglayla
+	defaultDeflationaryPhaseBaseSubsidy            = 456.25737738 * constants.LeorPerWaglayla
 	defaultCoinbasePayloadScriptPublicKeyMaxLength = 150
 	// defaultDifficultyAdjustmentWindowSize is the number of blocks in a block's past used to calculate its difficulty
 	// target.
