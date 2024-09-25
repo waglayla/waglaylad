@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-// DomainTransaction represents a Pyrin transaction
+// DomainTransaction represents a Waglayla transaction
 type DomainTransaction struct {
 	Version      uint16
 	Inputs       []*DomainTransactionInput
@@ -127,7 +127,7 @@ func (tx *DomainTransaction) Equal(other *DomainTransaction) bool {
 	return true
 }
 
-// DomainTransactionInput represents a Pyrin transaction input
+// DomainTransactionInput represents a Waglayla transaction input
 type DomainTransactionInput struct {
 	PreviousOutpoint DomainOutpoint
 	SignatureScript  []byte
@@ -184,7 +184,7 @@ func (input *DomainTransactionInput) Clone() *DomainTransactionInput {
 	}
 }
 
-// DomainOutpoint represents a Pyrin transaction outpoint
+// DomainOutpoint represents a Waglayla transaction outpoint
 type DomainOutpoint struct {
 	TransactionID DomainTransactionID
 	Index         uint32
@@ -296,7 +296,7 @@ func (output *DomainTransactionOutput) Clone() *DomainTransactionOutput {
 	}
 }
 
-// DomainTransactionID represents the ID of a Pyrin transaction
+// DomainTransactionID represents the ID of a Waglayla transaction
 type DomainTransactionID DomainHash
 
 // NewDomainTransactionIDFromByteArray constructs a new TransactionID out of a byte array

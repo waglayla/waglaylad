@@ -9,10 +9,10 @@ type converter interface {
 	toAppMessage() (appmessage.Message, error)
 }
 
-// ToAppMessage converts a PyipadMessage to its appmessage.Message representation
-func (x *PyipadMessage) ToAppMessage() (appmessage.Message, error) {
+// ToAppMessage converts a WaglayladMessage to its appmessage.Message representation
+func (x *WaglayladMessage) ToAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "pyipadMessage is nil")
+		return nil, errors.Wrapf(errorNil, "waglayladMessage is nil")
 	}
 	converter, ok := x.Payload.(converter)
 	if !ok {
@@ -25,18 +25,18 @@ func (x *PyipadMessage) ToAppMessage() (appmessage.Message, error) {
 	return appMessage, nil
 }
 
-// FromAppMessage creates a PyipadMessage from a appmessage.Message
-func FromAppMessage(message appmessage.Message) (*PyipadMessage, error) {
+// FromAppMessage creates a WaglayladMessage from a appmessage.Message
+func FromAppMessage(message appmessage.Message) (*WaglayladMessage, error) {
 	payload, err := toPayload(message)
 	if err != nil {
 		return nil, err
 	}
-	return &PyipadMessage{
+	return &WaglayladMessage{
 		Payload: payload,
 	}, nil
 }
 
-func toPayload(message appmessage.Message) (isPyipadMessage_Payload, error) {
+func toPayload(message appmessage.Message) (isWaglayladMessage_Payload, error) {
 	p2pPayload, err := toP2PPayload(message)
 	if err != nil {
 		return nil, err
@@ -56,304 +56,304 @@ func toPayload(message appmessage.Message) (isPyipadMessage_Payload, error) {
 	return nil, errors.Errorf("unknown message type %T", message)
 }
 
-func toP2PPayload(message appmessage.Message) (isPyipadMessage_Payload, error) {
+func toP2PPayload(message appmessage.Message) (isWaglayladMessage_Payload, error) {
 	switch message := message.(type) {
 	case *appmessage.MsgAddresses:
-		payload := new(PyipadMessage_Addresses)
+		payload := new(WaglayladMessage_Addresses)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlock:
-		payload := new(PyipadMessage_Block)
+		payload := new(WaglayladMessage_Block)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestBlockLocator:
-		payload := new(PyipadMessage_RequestBlockLocator)
+		payload := new(WaglayladMessage_RequestBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlockLocator:
-		payload := new(PyipadMessage_BlockLocator)
+		payload := new(WaglayladMessage_BlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestAddresses:
-		payload := new(PyipadMessage_RequestAddresses)
+		payload := new(WaglayladMessage_RequestAddresses)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestIBDBlocks:
-		payload := new(PyipadMessage_RequestIBDBlocks)
+		payload := new(WaglayladMessage_RequestIBDBlocks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestNextHeaders:
-		payload := new(PyipadMessage_RequestNextHeaders)
+		payload := new(WaglayladMessage_RequestNextHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgDoneHeaders:
-		payload := new(PyipadMessage_DoneHeaders)
+		payload := new(WaglayladMessage_DoneHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestRelayBlocks:
-		payload := new(PyipadMessage_RequestRelayBlocks)
+		payload := new(WaglayladMessage_RequestRelayBlocks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestTransactions:
-		payload := new(PyipadMessage_RequestTransactions)
+		payload := new(WaglayladMessage_RequestTransactions)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgTransactionNotFound:
-		payload := new(PyipadMessage_TransactionNotFound)
+		payload := new(WaglayladMessage_TransactionNotFound)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgInvRelayBlock:
-		payload := new(PyipadMessage_InvRelayBlock)
+		payload := new(WaglayladMessage_InvRelayBlock)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgInvTransaction:
-		payload := new(PyipadMessage_InvTransactions)
+		payload := new(WaglayladMessage_InvTransactions)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPing:
-		payload := new(PyipadMessage_Ping)
+		payload := new(WaglayladMessage_Ping)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPong:
-		payload := new(PyipadMessage_Pong)
+		payload := new(WaglayladMessage_Pong)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgTx:
-		payload := new(PyipadMessage_Transaction)
+		payload := new(WaglayladMessage_Transaction)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgVerAck:
-		payload := new(PyipadMessage_Verack)
+		payload := new(WaglayladMessage_Verack)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgVersion:
-		payload := new(PyipadMessage_Version)
+		payload := new(WaglayladMessage_Version)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgReject:
-		payload := new(PyipadMessage_Reject)
+		payload := new(WaglayladMessage_Reject)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestPruningPointUTXOSet:
-		payload := new(PyipadMessage_RequestPruningPointUTXOSet)
+		payload := new(WaglayladMessage_RequestPruningPointUTXOSet)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPruningPointUTXOSetChunk:
-		payload := new(PyipadMessage_PruningPointUtxoSetChunk)
+		payload := new(WaglayladMessage_PruningPointUtxoSetChunk)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgUnexpectedPruningPoint:
-		payload := new(PyipadMessage_UnexpectedPruningPoint)
+		payload := new(WaglayladMessage_UnexpectedPruningPoint)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlockLocator:
-		payload := new(PyipadMessage_IbdBlockLocator)
+		payload := new(WaglayladMessage_IbdBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlockLocatorHighestHash:
-		payload := new(PyipadMessage_IbdBlockLocatorHighestHash)
+		payload := new(WaglayladMessage_IbdBlockLocatorHighestHash)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlockLocatorHighestHashNotFound:
-		payload := new(PyipadMessage_IbdBlockLocatorHighestHashNotFound)
+		payload := new(WaglayladMessage_IbdBlockLocatorHighestHashNotFound)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BlockHeadersMessage:
-		payload := new(PyipadMessage_BlockHeaders)
+		payload := new(WaglayladMessage_BlockHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestNextPruningPointUTXOSetChunk:
-		payload := new(PyipadMessage_RequestNextPruningPointUtxoSetChunk)
+		payload := new(WaglayladMessage_RequestNextPruningPointUtxoSetChunk)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgDonePruningPointUTXOSetChunks:
-		payload := new(PyipadMessage_DonePruningPointUtxoSetChunks)
+		payload := new(WaglayladMessage_DonePruningPointUtxoSetChunks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlockWithTrustedData:
-		payload := new(PyipadMessage_BlockWithTrustedData)
+		payload := new(WaglayladMessage_BlockWithTrustedData)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestPruningPointAndItsAnticone:
-		payload := new(PyipadMessage_RequestPruningPointAndItsAnticone)
+		payload := new(WaglayladMessage_RequestPruningPointAndItsAnticone)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgDoneBlocksWithTrustedData:
-		payload := new(PyipadMessage_DoneBlocksWithTrustedData)
+		payload := new(WaglayladMessage_DoneBlocksWithTrustedData)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlock:
-		payload := new(PyipadMessage_IbdBlock)
+		payload := new(WaglayladMessage_IbdBlock)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestHeaders:
-		payload := new(PyipadMessage_RequestHeaders)
+		payload := new(WaglayladMessage_RequestHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPruningPoints:
-		payload := new(PyipadMessage_PruningPoints)
+		payload := new(WaglayladMessage_PruningPoints)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestPruningPointProof:
-		payload := new(PyipadMessage_RequestPruningPointProof)
+		payload := new(WaglayladMessage_RequestPruningPointProof)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPruningPointProof:
-		payload := new(PyipadMessage_PruningPointProof)
+		payload := new(WaglayladMessage_PruningPointProof)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgReady:
-		payload := new(PyipadMessage_Ready)
+		payload := new(WaglayladMessage_Ready)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgTrustedData:
-		payload := new(PyipadMessage_TrustedData)
+		payload := new(WaglayladMessage_TrustedData)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlockWithTrustedDataV4:
-		payload := new(PyipadMessage_BlockWithTrustedDataV4)
+		payload := new(WaglayladMessage_BlockWithTrustedDataV4)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestNextPruningPointAndItsAnticoneBlocks:
-		payload := new(PyipadMessage_RequestNextPruningPointAndItsAnticoneBlocks)
+		payload := new(WaglayladMessage_RequestNextPruningPointAndItsAnticoneBlocks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestIBDChainBlockLocator:
-		payload := new(PyipadMessage_RequestIBDChainBlockLocator)
+		payload := new(WaglayladMessage_RequestIBDChainBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDChainBlockLocator:
-		payload := new(PyipadMessage_IbdChainBlockLocator)
+		payload := new(WaglayladMessage_IbdChainBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestAnticone:
-		payload := new(PyipadMessage_RequestAnticone)
+		payload := new(WaglayladMessage_RequestAnticone)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
@@ -364,605 +364,605 @@ func toP2PPayload(message appmessage.Message) (isPyipadMessage_Payload, error) {
 	}
 }
 
-func toRPCPayload(message appmessage.Message) (isPyipadMessage_Payload, error) {
+func toRPCPayload(message appmessage.Message) (isWaglayladMessage_Payload, error) {
 	switch message := message.(type) {
 	case *appmessage.GetCurrentNetworkRequestMessage:
-		payload := new(PyipadMessage_GetCurrentNetworkRequest)
+		payload := new(WaglayladMessage_GetCurrentNetworkRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetCurrentNetworkResponseMessage:
-		payload := new(PyipadMessage_GetCurrentNetworkResponse)
+		payload := new(WaglayladMessage_GetCurrentNetworkResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitBlockRequestMessage:
-		payload := new(PyipadMessage_SubmitBlockRequest)
+		payload := new(WaglayladMessage_SubmitBlockRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitBlockResponseMessage:
-		payload := new(PyipadMessage_SubmitBlockResponse)
+		payload := new(WaglayladMessage_SubmitBlockResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockTemplateRequestMessage:
-		payload := new(PyipadMessage_GetBlockTemplateRequest)
+		payload := new(WaglayladMessage_GetBlockTemplateRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockTemplateResponseMessage:
-		payload := new(PyipadMessage_GetBlockTemplateResponse)
+		payload := new(WaglayladMessage_GetBlockTemplateResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyBlockAddedRequestMessage:
-		payload := new(PyipadMessage_NotifyBlockAddedRequest)
+		payload := new(WaglayladMessage_NotifyBlockAddedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyBlockAddedResponseMessage:
-		payload := new(PyipadMessage_NotifyBlockAddedResponse)
+		payload := new(WaglayladMessage_NotifyBlockAddedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BlockAddedNotificationMessage:
-		payload := new(PyipadMessage_BlockAddedNotification)
+		payload := new(WaglayladMessage_BlockAddedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetPeerAddressesRequestMessage:
-		payload := new(PyipadMessage_GetPeerAddressesRequest)
+		payload := new(WaglayladMessage_GetPeerAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetPeerAddressesResponseMessage:
-		payload := new(PyipadMessage_GetPeerAddressesResponse)
+		payload := new(WaglayladMessage_GetPeerAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSelectedTipHashRequestMessage:
-		payload := new(PyipadMessage_GetSelectedTipHashRequest)
+		payload := new(WaglayladMessage_GetSelectedTipHashRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSelectedTipHashResponseMessage:
-		payload := new(PyipadMessage_GetSelectedTipHashResponse)
+		payload := new(WaglayladMessage_GetSelectedTipHashResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntryRequestMessage:
-		payload := new(PyipadMessage_GetMempoolEntryRequest)
+		payload := new(WaglayladMessage_GetMempoolEntryRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntryResponseMessage:
-		payload := new(PyipadMessage_GetMempoolEntryResponse)
+		payload := new(WaglayladMessage_GetMempoolEntryResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetConnectedPeerInfoRequestMessage:
-		payload := new(PyipadMessage_GetConnectedPeerInfoRequest)
+		payload := new(WaglayladMessage_GetConnectedPeerInfoRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetConnectedPeerInfoResponseMessage:
-		payload := new(PyipadMessage_GetConnectedPeerInfoResponse)
+		payload := new(WaglayladMessage_GetConnectedPeerInfoResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.AddPeerRequestMessage:
-		payload := new(PyipadMessage_AddPeerRequest)
+		payload := new(WaglayladMessage_AddPeerRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.AddPeerResponseMessage:
-		payload := new(PyipadMessage_AddPeerResponse)
+		payload := new(WaglayladMessage_AddPeerResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitTransactionRequestMessage:
-		payload := new(PyipadMessage_SubmitTransactionRequest)
+		payload := new(WaglayladMessage_SubmitTransactionRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitTransactionResponseMessage:
-		payload := new(PyipadMessage_SubmitTransactionResponse)
+		payload := new(WaglayladMessage_SubmitTransactionResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentChainChangedRequestMessage:
-		payload := new(PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest)
+		payload := new(WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentChainChangedResponseMessage:
-		payload := new(PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse)
+		payload := new(WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.VirtualSelectedParentChainChangedNotificationMessage:
-		payload := new(PyipadMessage_VirtualSelectedParentChainChangedNotification)
+		payload := new(WaglayladMessage_VirtualSelectedParentChainChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockRequestMessage:
-		payload := new(PyipadMessage_GetBlockRequest)
+		payload := new(WaglayladMessage_GetBlockRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockResponseMessage:
-		payload := new(PyipadMessage_GetBlockResponse)
+		payload := new(WaglayladMessage_GetBlockResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSubnetworkRequestMessage:
-		payload := new(PyipadMessage_GetSubnetworkRequest)
+		payload := new(WaglayladMessage_GetSubnetworkRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSubnetworkResponseMessage:
-		payload := new(PyipadMessage_GetSubnetworkResponse)
+		payload := new(WaglayladMessage_GetSubnetworkResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentChainFromBlockRequestMessage:
-		payload := new(PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest)
+		payload := new(WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentChainFromBlockResponseMessage:
-		payload := new(PyipadMessage_GetVirtualSelectedParentChainFromBlockResponse)
+		payload := new(WaglayladMessage_GetVirtualSelectedParentChainFromBlockResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlocksRequestMessage:
-		payload := new(PyipadMessage_GetBlocksRequest)
+		payload := new(WaglayladMessage_GetBlocksRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlocksResponseMessage:
-		payload := new(PyipadMessage_GetBlocksResponse)
+		payload := new(WaglayladMessage_GetBlocksResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockCountRequestMessage:
-		payload := new(PyipadMessage_GetBlockCountRequest)
+		payload := new(WaglayladMessage_GetBlockCountRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockCountResponseMessage:
-		payload := new(PyipadMessage_GetBlockCountResponse)
+		payload := new(WaglayladMessage_GetBlockCountResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockDAGInfoRequestMessage:
-		payload := new(PyipadMessage_GetBlockDagInfoRequest)
+		payload := new(WaglayladMessage_GetBlockDagInfoRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockDAGInfoResponseMessage:
-		payload := new(PyipadMessage_GetBlockDagInfoResponse)
+		payload := new(WaglayladMessage_GetBlockDagInfoResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ResolveFinalityConflictRequestMessage:
-		payload := new(PyipadMessage_ResolveFinalityConflictRequest)
+		payload := new(WaglayladMessage_ResolveFinalityConflictRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ResolveFinalityConflictResponseMessage:
-		payload := new(PyipadMessage_ResolveFinalityConflictResponse)
+		payload := new(WaglayladMessage_ResolveFinalityConflictResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyFinalityConflictsRequestMessage:
-		payload := new(PyipadMessage_NotifyFinalityConflictsRequest)
+		payload := new(WaglayladMessage_NotifyFinalityConflictsRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyFinalityConflictsResponseMessage:
-		payload := new(PyipadMessage_NotifyFinalityConflictsResponse)
+		payload := new(WaglayladMessage_NotifyFinalityConflictsResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.FinalityConflictNotificationMessage:
-		payload := new(PyipadMessage_FinalityConflictNotification)
+		payload := new(WaglayladMessage_FinalityConflictNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.FinalityConflictResolvedNotificationMessage:
-		payload := new(PyipadMessage_FinalityConflictResolvedNotification)
+		payload := new(WaglayladMessage_FinalityConflictResolvedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesRequestMessage:
-		payload := new(PyipadMessage_GetMempoolEntriesRequest)
+		payload := new(WaglayladMessage_GetMempoolEntriesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesResponseMessage:
-		payload := new(PyipadMessage_GetMempoolEntriesResponse)
+		payload := new(WaglayladMessage_GetMempoolEntriesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ShutDownRequestMessage:
-		payload := new(PyipadMessage_ShutDownRequest)
+		payload := new(WaglayladMessage_ShutDownRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ShutDownResponseMessage:
-		payload := new(PyipadMessage_ShutDownResponse)
+		payload := new(WaglayladMessage_ShutDownResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetHeadersRequestMessage:
-		payload := new(PyipadMessage_GetHeadersRequest)
+		payload := new(WaglayladMessage_GetHeadersRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetHeadersResponseMessage:
-		payload := new(PyipadMessage_GetHeadersResponse)
+		payload := new(WaglayladMessage_GetHeadersResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyUTXOsChangedRequestMessage:
-		payload := new(PyipadMessage_NotifyUtxosChangedRequest)
+		payload := new(WaglayladMessage_NotifyUtxosChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyUTXOsChangedResponseMessage:
-		payload := new(PyipadMessage_NotifyUtxosChangedResponse)
+		payload := new(WaglayladMessage_NotifyUtxosChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.UTXOsChangedNotificationMessage:
-		payload := new(PyipadMessage_UtxosChangedNotification)
+		payload := new(WaglayladMessage_UtxosChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.StopNotifyingUTXOsChangedRequestMessage:
-		payload := new(PyipadMessage_StopNotifyingUtxosChangedRequest)
+		payload := new(WaglayladMessage_StopNotifyingUtxosChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.StopNotifyingUTXOsChangedResponseMessage:
-		payload := new(PyipadMessage_StopNotifyingUtxosChangedResponse)
+		payload := new(WaglayladMessage_StopNotifyingUtxosChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetUTXOsByAddressesRequestMessage:
-		payload := new(PyipadMessage_GetUtxosByAddressesRequest)
+		payload := new(WaglayladMessage_GetUtxosByAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetUTXOsByAddressesResponseMessage:
-		payload := new(PyipadMessage_GetUtxosByAddressesResponse)
+		payload := new(WaglayladMessage_GetUtxosByAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalanceByAddressRequestMessage:
-		payload := new(PyipadMessage_GetBalanceByAddressRequest)
+		payload := new(WaglayladMessage_GetBalanceByAddressRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalanceByAddressResponseMessage:
-		payload := new(PyipadMessage_GetBalanceByAddressResponse)
+		payload := new(WaglayladMessage_GetBalanceByAddressResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentBlueScoreRequestMessage:
-		payload := new(PyipadMessage_GetVirtualSelectedParentBlueScoreRequest)
+		payload := new(WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentBlueScoreResponseMessage:
-		payload := new(PyipadMessage_GetVirtualSelectedParentBlueScoreResponse)
+		payload := new(WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage:
-		payload := new(PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)
+		payload := new(WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage:
-		payload := new(PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)
+		payload := new(WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.VirtualSelectedParentBlueScoreChangedNotificationMessage:
-		payload := new(PyipadMessage_VirtualSelectedParentBlueScoreChangedNotification)
+		payload := new(WaglayladMessage_VirtualSelectedParentBlueScoreChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BanRequestMessage:
-		payload := new(PyipadMessage_BanRequest)
+		payload := new(WaglayladMessage_BanRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BanResponseMessage:
-		payload := new(PyipadMessage_BanResponse)
+		payload := new(WaglayladMessage_BanResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.UnbanRequestMessage:
-		payload := new(PyipadMessage_UnbanRequest)
+		payload := new(WaglayladMessage_UnbanRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.UnbanResponseMessage:
-		payload := new(PyipadMessage_UnbanResponse)
+		payload := new(WaglayladMessage_UnbanResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetInfoRequestMessage:
-		payload := new(PyipadMessage_GetInfoRequest)
+		payload := new(WaglayladMessage_GetInfoRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetInfoResponseMessage:
-		payload := new(PyipadMessage_GetInfoResponse)
+		payload := new(WaglayladMessage_GetInfoResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyPruningPointUTXOSetOverrideRequestMessage:
-		payload := new(PyipadMessage_NotifyPruningPointUTXOSetOverrideRequest)
+		payload := new(WaglayladMessage_NotifyPruningPointUTXOSetOverrideRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyPruningPointUTXOSetOverrideResponseMessage:
-		payload := new(PyipadMessage_NotifyPruningPointUTXOSetOverrideResponse)
+		payload := new(WaglayladMessage_NotifyPruningPointUTXOSetOverrideResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.PruningPointUTXOSetOverrideNotificationMessage:
-		payload := new(PyipadMessage_PruningPointUTXOSetOverrideNotification)
+		payload := new(WaglayladMessage_PruningPointUTXOSetOverrideNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.StopNotifyingPruningPointUTXOSetOverrideRequestMessage:
-		payload := new(PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)
+		payload := new(WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.EstimateNetworkHashesPerSecondRequestMessage:
-		payload := new(PyipadMessage_EstimateNetworkHashesPerSecondRequest)
+		payload := new(WaglayladMessage_EstimateNetworkHashesPerSecondRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.EstimateNetworkHashesPerSecondResponseMessage:
-		payload := new(PyipadMessage_EstimateNetworkHashesPerSecondResponse)
+		payload := new(WaglayladMessage_EstimateNetworkHashesPerSecondResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualDaaScoreChangedRequestMessage:
-		payload := new(PyipadMessage_NotifyVirtualDaaScoreChangedRequest)
+		payload := new(WaglayladMessage_NotifyVirtualDaaScoreChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualDaaScoreChangedResponseMessage:
-		payload := new(PyipadMessage_NotifyVirtualDaaScoreChangedResponse)
+		payload := new(WaglayladMessage_NotifyVirtualDaaScoreChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.VirtualDaaScoreChangedNotificationMessage:
-		payload := new(PyipadMessage_VirtualDaaScoreChangedNotification)
+		payload := new(WaglayladMessage_VirtualDaaScoreChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalancesByAddressesRequestMessage:
-		payload := new(PyipadMessage_GetBalancesByAddressesRequest)
+		payload := new(WaglayladMessage_GetBalancesByAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalancesByAddressesResponseMessage:
-		payload := new(PyipadMessage_GetBalancesByAddressesResponse)
+		payload := new(WaglayladMessage_GetBalancesByAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyNewBlockTemplateRequestMessage:
-		payload := new(PyipadMessage_NotifyNewBlockTemplateRequest)
+		payload := new(WaglayladMessage_NotifyNewBlockTemplateRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyNewBlockTemplateResponseMessage:
-		payload := new(PyipadMessage_NotifyNewBlockTemplateResponse)
+		payload := new(WaglayladMessage_NotifyNewBlockTemplateResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NewBlockTemplateNotificationMessage:
-		payload := new(PyipadMessage_NewBlockTemplateNotification)
+		payload := new(WaglayladMessage_NewBlockTemplateNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesByAddressesRequestMessage:
-		payload := new(PyipadMessage_GetMempoolEntriesByAddressesRequest)
+		payload := new(WaglayladMessage_GetMempoolEntriesByAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesByAddressesResponseMessage:
-		payload := new(PyipadMessage_GetMempoolEntriesByAddressesResponse)
+		payload := new(WaglayladMessage_GetMempoolEntriesByAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetCoinSupplyRequestMessage:
-		payload := new(PyipadMessage_GetCoinSupplyRequest)
+		payload := new(WaglayladMessage_GetCoinSupplyRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetCoinSupplyResponseMessage:
-		payload := new(PyipadMessage_GetCoinSupplyResponse)
+		payload := new(WaglayladMessage_GetCoinSupplyResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err

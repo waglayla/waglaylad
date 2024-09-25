@@ -73,7 +73,7 @@ func versionFromParams(params *dagconfig.Params) ([4]byte, error) {
 	case dagconfig.TestnetParams.Name:
 		return bip32.PyrinTestnetPrivate, nil
 	case dagconfig.DevnetParams.Name:
-		return bip32.PyipadevnetPrivate, nil
+		return bip32.WaglayladevnetPrivate, nil
 	case dagconfig.SimnetParams.Name:
 		return bip32.PyrinSimnetPrivate, nil
 	}

@@ -12,7 +12,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-func parseCommand(args []string, commandDescs []*commandDescription) (*protowire.PyipadMessage, error) {
+func parseCommand(args []string, commandDescs []*commandDescription) (*protowire.WaglayladMessage, error) {
 	commandName, parameterStrings := args[0], args[1:]
 
 	var commandDesc *commandDescription
@@ -39,7 +39,7 @@ func parseCommand(args []string, commandDescs []*commandDescription) (*protowire
 		setField(commandValue, parameterValue, parameterDesc)
 	}
 
-	return generatepyipadMessage(commandValue, commandDesc)
+	return generatewaglayladMessage(commandValue, commandDesc)
 }
 
 func setField(commandValue reflect.Value, parameterValue reflect.Value, parameterDesc *parameterDescription) {

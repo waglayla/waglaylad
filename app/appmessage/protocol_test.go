@@ -33,16 +33,16 @@ func TestServiceFlagStringer(t *testing.T) {
 	}
 }
 
-// TestPyrinpyiNetStringer tests the stringized output for waglayla net types.
-func TestPyrinpyiStringer(t *testing.T) {
+// TestWaglaylaNetStringer tests the stringized output for waglayla net types.
+func TestWaglaylaStringer(t *testing.T) {
 	tests := []struct {
-		in   PyrinpyiNet
+		in   WaglaylaNet
 		want string
 	}{
 		{Mainnet, "Mainnet"},
 		{Testnet, "Testnet"},
 		{Simnet, "Simnet"},
-		{0xffffffff, "Unknown PyrinpyiNet (4294967295)"},
+		{0xffffffff, "Unknown WaglaylaNet (4294967295)"},
 	}
 
 	t.Logf("Running %d tests", len(tests))

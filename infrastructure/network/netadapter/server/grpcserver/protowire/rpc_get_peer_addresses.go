@@ -5,25 +5,25 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetPeerAddressesRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetPeerAddressesRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetPeerAddressesRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetPeerAddressesRequest is nil")
 	}
 	return &appmessage.GetPeerAddressesRequestMessage{}, nil
 }
 
-func (x *PyipadMessage_GetPeerAddressesRequest) fromAppMessage(_ *appmessage.GetPeerAddressesRequestMessage) error {
+func (x *WaglayladMessage_GetPeerAddressesRequest) fromAppMessage(_ *appmessage.GetPeerAddressesRequestMessage) error {
 	return nil
 }
 
-func (x *PyipadMessage_GetPeerAddressesResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetPeerAddressesResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetPeerAddressesResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetPeerAddressesResponse is nil")
 	}
 	return x.GetPeerAddressesResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetPeerAddressesResponse) fromAppMessage(message *appmessage.GetPeerAddressesResponseMessage) error {
+func (x *WaglayladMessage_GetPeerAddressesResponse) fromAppMessage(message *appmessage.GetPeerAddressesResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

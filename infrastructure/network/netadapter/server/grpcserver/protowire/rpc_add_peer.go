@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_AddPeerRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_AddPeerRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_AddPeerRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_AddPeerRequest is nil")
 	}
 	return x.AddPeerRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_AddPeerRequest) fromAppMessage(message *appmessage.AddPeerRequestMessage) error {
+func (x *WaglayladMessage_AddPeerRequest) fromAppMessage(message *appmessage.AddPeerRequestMessage) error {
 	x.AddPeerRequest = &AddPeerRequestMessage{
 		Address:     message.Address,
 		IsPermanent: message.IsPermanent,
@@ -30,14 +30,14 @@ func (x *AddPeerRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_AddPeerResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_AddPeerResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_AddPeerResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_AddPeerResponse is nil")
 	}
 	return x.AddPeerResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_AddPeerResponse) fromAppMessage(message *appmessage.AddPeerResponseMessage) error {
+func (x *WaglayladMessage_AddPeerResponse) fromAppMessage(message *appmessage.AddPeerResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

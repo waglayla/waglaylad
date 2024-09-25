@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_DonePruningPointUtxoSetChunks) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_DonePruningPointUtxoSetChunks) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_DonePruningPointUtxoSetChunks is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_DonePruningPointUtxoSetChunks is nil")
 	}
 	return &appmessage.MsgDonePruningPointUTXOSetChunks{}, nil
 }
 
-func (x *PyipadMessage_DonePruningPointUtxoSetChunks) fromAppMessage(_ *appmessage.MsgDonePruningPointUTXOSetChunks) error {
+func (x *WaglayladMessage_DonePruningPointUtxoSetChunks) fromAppMessage(_ *appmessage.MsgDonePruningPointUTXOSetChunks) error {
 	x.DonePruningPointUtxoSetChunks = &DonePruningPointUtxoSetChunksMessage{}
 	return nil
 }

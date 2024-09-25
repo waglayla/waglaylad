@@ -57,7 +57,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			Sequence:         constants.MaxTxInSequenceNum,
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				100_000_000, // 1 PYI
+				100_000_000, // 1 WALA
 				scriptPublicKey,
 				true,
 				uint64(5)),
@@ -67,7 +67,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			SignatureScript:  []byte{},
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				100_000_000, // 1 PYI
+				100_000_000, // 1 WALA
 				scriptPublicKey,
 				true,
 				uint64(5)),
@@ -78,7 +78,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			Sequence:         constants.MaxTxInSequenceNum,
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				100_000_000, // 1 PYI
+				100_000_000, // 1 WALA
 				scriptPublicKey,
 				true,
 				uint64(6)),
@@ -109,11 +109,11 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 		}
 
 		txOutput := externalapi.DomainTransactionOutput{
-			Value:           100000000, // 1 PYI
+			Value:           100000000, // 1 WALA
 			ScriptPublicKey: scriptPublicKey,
 		}
 		txOutputBigValue := externalapi.DomainTransactionOutput{
-			Value:           200_000_000, // 2 PYI
+			Value:           200_000_000, // 2 WALA
 			ScriptPublicKey: scriptPublicKey,
 		}
 

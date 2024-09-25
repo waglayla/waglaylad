@@ -21,33 +21,33 @@ type AmountUnit int
 // These constants define various units used when describing a waglayla
 // monetary amount.
 const (
-	AmountMegaPYI  AmountUnit = 6
-	AmountKiloPYI  AmountUnit = 3
-	AmountPYI      AmountUnit = 0
-	AmountMilliPYI AmountUnit = -3
-	AmountMicroPYI AmountUnit = -6
+	AmountMegaWALA  AmountUnit = 6
+	AmountKiloWALA  AmountUnit = 3
+	AmountWALA      AmountUnit = 0
+	AmountMilliWALA AmountUnit = -3
+	AmountMicroWALA AmountUnit = -6
 	AmountLeor     AmountUnit = -8
 )
 
 // String returns the unit as a string. For recognized units, the SI
 // prefix is used, or "Leor" for the base unit. For all unrecognized
-// units, "1eN PYI" is returned, where N is the AmountUnit.
+// units, "1eN WALA" is returned, where N is the AmountUnit.
 func (u AmountUnit) String() string {
 	switch u {
-	case AmountMegaPYI:
-		return "MPYI"
-	case AmountKiloPYI:
-		return "kPYI"
-	case AmountPYI:
-		return "PYI"
-	case AmountMilliPYI:
-		return "mPYI"
-	case AmountMicroPYI:
-		return "μPYI"
+	case AmountMegaWALA:
+		return "MWALA"
+	case AmountKiloWALA:
+		return "kWALA"
+	case AmountWALA:
+		return "WALA"
+	case AmountMilliWALA:
+		return "mWALA"
+	case AmountMicroWALA:
+		return "μWALA"
 	case AmountLeor:
 		return "Leor"
 	default:
-		return "1e" + strconv.FormatInt(int64(u), 10) + " PYI"
+		return "1e" + strconv.FormatInt(int64(u), 10) + " WALA"
 	}
 }
 
@@ -71,10 +71,10 @@ func round(f float64) Amount {
 // does not check that the amount is within the total amount of waglayla
 // producible as f may not refer to an amount at a single moment in time.
 //
-// NewAmount is for specifically for converting PYI to Leor.
+// NewAmount is for specifically for converting WALA to Leor.
 // For creating a new Amount with an int64 value which denotes a quantity of Leor,
 // do a simple type conversion from type int64 to Amount.
-// TODO: Refactor NewAmount. When amounts are more than 1e9 PYI, the precision
+// TODO: Refactor NewAmount. When amounts are more than 1e9 WALA, the precision
 // can be higher than one leor (1e9 and 1e9+1e-8 will result as the same number)
 func NewAmount(f float64) (Amount, error) {
 	// The amount is only considered invalid if it cannot be represented
@@ -88,7 +88,7 @@ func NewAmount(f float64) (Amount, error) {
 		return 0, errors.New("invalid waglayla amount")
 	}
 
-	return round(f * constants.LeorPerPyrin), nil
+	return round(f * constants.LeorPerWaglayla), nil
 }
 
 // ToUnit converts a monetary amount counted in waglayla base units to a
@@ -97,9 +97,9 @@ func (a Amount) ToUnit(u AmountUnit) float64 {
 	return float64(a) / math.Pow10(int(u+8))
 }
 
-// ToPYI is the equivalent of calling ToUnit with AmountPYI.
-func (a Amount) ToPYI() float64 {
-	return a.ToUnit(AmountPYI)
+// ToWALA is the equivalent of calling ToUnit with AmountWALA.
+func (a Amount) ToWALA() float64 {
+	return a.ToUnit(AmountWALA)
 }
 
 // Format formats a monetary amount counted in waglayla base units as a
@@ -111,9 +111,9 @@ func (a Amount) Format(u AmountUnit) string {
 	return strconv.FormatFloat(a.ToUnit(u), 'f', -int(u+8), 64) + units
 }
 
-// String is the equivalent of calling Format with AmountPYI.
+// String is the equivalent of calling Format with AmountWALA.
 func (a Amount) String() string {
-	return a.Format(AmountPYI)
+	return a.Format(AmountWALA)
 }
 
 // MulF64 multiplies an Amount by a floating point value. While this is not

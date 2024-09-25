@@ -6,7 +6,7 @@ option go_package = "github.com/waglayla/waglaylad/protowire";
 import "p2p.proto";
 import "rpc.proto";
 
-message PyipadMessage {
+message WaglayladMessage {
   oneof payload {
     AddressesMessage addresses = 1;
     BlockMessage block = 2;
@@ -143,9 +143,9 @@ message PyipadMessage {
 }
 
 service P2P {
-  rpc MessageStream (stream PyipadMessage) returns (stream PyipadMessage) {}
+  rpc MessageStream (stream WaglayladMessage) returns (stream WaglayladMessage) {}
 }
 
 service RPC {
-  rpc MessageStream (stream PyipadMessage) returns (stream PyipadMessage) {}
+  rpc MessageStream (stream WaglayladMessage) returns (stream WaglayladMessage) {}
 }

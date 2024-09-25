@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_PruningPoints) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_PruningPoints) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_PruningPoints is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_PruningPoints is nil")
 	}
 
 	if x.PruningPoints == nil {
@@ -27,7 +27,7 @@ func (x *PyipadMessage_PruningPoints) toAppMessage() (appmessage.Message, error)
 	}, nil
 }
 
-func (x *PyipadMessage_PruningPoints) fromAppMessage(msgPruningPoints *appmessage.MsgPruningPoints) error {
+func (x *WaglayladMessage_PruningPoints) fromAppMessage(msgPruningPoints *appmessage.MsgPruningPoints) error {
 	blockHeaders := make([]*BlockHeader, len(msgPruningPoints.Headers))
 	for i, blockHeader := range msgPruningPoints.Headers {
 		blockHeaders[i] = &BlockHeader{}

@@ -5,9 +5,9 @@ import (
 	"github.com/waglayla/waglaylad/app/appmessage"
 )
 
-func (x *PyipadMessage_RequestAddresses) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_RequestAddresses) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_RequestAddresses is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_RequestAddresses is nil")
 	}
 	return x.RequestAddresses.toAppMessage()
 }
@@ -29,7 +29,7 @@ func (x *RequestAddressesMessage) toAppMessage() (appmessage.Message, error) {
 
 }
 
-func (x *PyipadMessage_RequestAddresses) fromAppMessage(msgGetAddresses *appmessage.MsgRequestAddresses) error {
+func (x *WaglayladMessage_RequestAddresses) fromAppMessage(msgGetAddresses *appmessage.MsgRequestAddresses) error {
 	x.RequestAddresses = &RequestAddressesMessage{
 		IncludeAllSubnetworks: msgGetAddresses.IncludeAllSubnetworks,
 		SubnetworkId:          domainSubnetworkIDToProto(msgGetAddresses.SubnetworkID),

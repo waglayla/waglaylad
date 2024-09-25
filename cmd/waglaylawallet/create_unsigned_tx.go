@@ -20,7 +20,7 @@ func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
 	ctx, cancel := context.WithTimeout(context.Background(), daemonTimeout)
 	defer cancel()
 
-	sendAmountLeor, err := utils.PyiToLeor(conf.SendAmount)
+	sendAmountLeor, err := utils.WalaToLeor(conf.SendAmount)
 
 	if err != nil {
 		return err

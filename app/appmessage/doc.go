@@ -6,7 +6,7 @@ supported waglayla messages to and from the appmessage. This package does not de
 with the specifics of message handling such as what to do when a message is
 received. This provides the caller with a high level of flexibility.
 
-# Pyrin Message Overview
+# Waglayla Message Overview
 
 The waglayla protocol consists of exchanging messages between peers. Each
 message is preceded by a header which identifies information about it such as
@@ -60,7 +60,7 @@ latest protocol version this package supports and is typically the value to use
 for all outbound connections before a potentially lower protocol version is
 negotiated.
 
-# Pyrin Network
+# Waglayla Network
 
 The waglayla network is a magic number which is used to identify the start of a
 message and which waglayla network the message applies to. This package provides

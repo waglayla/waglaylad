@@ -5,26 +5,26 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetBlockCountRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetBlockCountRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetBlockCountRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetBlockCountRequest is nil")
 	}
 	return &appmessage.GetBlockCountRequestMessage{}, nil
 }
 
-func (x *PyipadMessage_GetBlockCountRequest) fromAppMessage(_ *appmessage.GetBlockCountRequestMessage) error {
+func (x *WaglayladMessage_GetBlockCountRequest) fromAppMessage(_ *appmessage.GetBlockCountRequestMessage) error {
 	x.GetBlockCountRequest = &GetBlockCountRequestMessage{}
 	return nil
 }
 
-func (x *PyipadMessage_GetBlockCountResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetBlockCountResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetBlockCountResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetBlockCountResponse is nil")
 	}
 	return x.GetBlockCountResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetBlockCountResponse) fromAppMessage(message *appmessage.GetBlockCountResponseMessage) error {
+func (x *WaglayladMessage_GetBlockCountResponse) fromAppMessage(message *appmessage.GetBlockCountResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

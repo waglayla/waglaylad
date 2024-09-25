@@ -2,22 +2,22 @@
 rm -rf /tmp/waglaylad-temp
 
 waglaylad --devnet --appdir=/tmp/waglaylad-temp --profile=6061 &
-pyipad_PID=$!
+waglaylad_PID=$!
 
 sleep 1
 
-infra-level-garbage --devnet -alocalhost:16611 -m messages.dat --profile=7000
+infra-level-garbage --devnet -alocalhost:12611 -m messages.dat --profile=7000
 TEST_EXIT_CODE=$?
 
-kill $pyipad_PID
+kill $waglaylad_PID
 
-wait $pyipad_PID
-pyipad_EXIT_CODE=$?
+wait $waglaylad_PID
+waglaylad_EXIT_CODE=$?
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "waglaylad exit code: $pyipad_EXIT_CODE"
+echo "waglaylad exit code: $waglaylad_EXIT_CODE"
 
-if [ $TEST_EXIT_CODE -eq 0 ] && [ $pyipad_EXIT_CODE -eq 0 ]; then
+if [ $TEST_EXIT_CODE -eq 0 ] && [ $waglaylad_EXIT_CODE -eq 0 ]; then
   echo "infra-level-garbage test: PASSED"
   exit 0
 fi

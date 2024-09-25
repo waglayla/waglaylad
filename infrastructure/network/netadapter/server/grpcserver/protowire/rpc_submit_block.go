@@ -7,14 +7,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_SubmitBlockRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_SubmitBlockRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
 		return nil, errors.Wrapf(errorNil, "SubmitBlockRequestMessage is nil")
 	}
 	return x.SubmitBlockRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_SubmitBlockRequest) fromAppMessage(message *appmessage.SubmitBlockRequestMessage) error {
+func (x *WaglayladMessage_SubmitBlockRequest) fromAppMessage(message *appmessage.SubmitBlockRequestMessage) error {
 	x.SubmitBlockRequest = &SubmitBlockRequestMessage{Block: &RpcBlock{}}
 	x.SubmitBlockRequest.AllowNonDAABlocks = message.AllowNonDAABlocks
 	return x.SubmitBlockRequest.Block.fromAppMessage(message.Block)
@@ -34,14 +34,14 @@ func (x *SubmitBlockRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_SubmitBlockResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_SubmitBlockResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_SubmitBlockResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_SubmitBlockResponse is nil")
 	}
 	return x.SubmitBlockResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_SubmitBlockResponse) fromAppMessage(message *appmessage.SubmitBlockResponseMessage) error {
+func (x *WaglayladMessage_SubmitBlockResponse) fromAppMessage(message *appmessage.SubmitBlockResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

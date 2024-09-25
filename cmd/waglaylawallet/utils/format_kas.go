@@ -11,17 +11,17 @@ import (
 	"github.com/pkg/errors"
 )
 
-// FormatPyi takes the amount of leors as uint64, and returns amount of PYI with 8  decimal places
-func FormatPyi(amount uint64) string {
+// FormatWala takes the amount of leors as uint64, and returns amount of WALA with 8  decimal places
+func FormatWala(amount uint64) string {
 	res := "                   "
 	if amount > 0 {
-		res = fmt.Sprintf("%19.8f", float64(amount)/constants.LeorPerPyrin)
+		res = fmt.Sprintf("%19.8f", float64(amount)/constants.LeorPerWaglayla)
 	}
 	return res
 }
 
-// PyiToLeor takes in a string representation of the Kas value to convert to Sompi
-func PyiToLeor(amount string) (uint64, error) {
+// WalaToLeor takes in a string representation of the Kas value to convert to Sompi
+func WalaToLeor(amount string) (uint64, error) {
 	err := validateKASAmountFormat(amount)
 
 	if err != nil {
@@ -33,11 +33,11 @@ func PyiToLeor(amount string) (uint64, error) {
 	parts := strings.Split(amount, ".")
 	amountStr := ""
 
-	if constants.LeorPerPyrin%10 != 0 {
-		return 0, errors.Errorf("Unable to convert to leor when LeorPerPyrin is not a multiple of 10")
+	if constants.LeorPerWaglayla%10 != 0 {
+		return 0, errors.Errorf("Unable to convert to leor when LeorPerWaglayla is not a multiple of 10")
 	}
 
-	decimalPlaces := int(math.Log10(constants.LeorPerPyrin))
+	decimalPlaces := int(math.Log10(constants.LeorPerWaglayla))
 	decimalStr := ""
 
 	if len(parts) == 2 {

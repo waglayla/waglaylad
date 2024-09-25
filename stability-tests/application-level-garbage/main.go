@@ -25,10 +25,10 @@ func main() {
 		profiling.Start(cfg.Profile, log)
 	}
 
-	pyipadConfig := config.DefaultConfig()
-	pyipadConfig.NetworkFlags = cfg.NetworkFlags
+	waglayladConfig := config.DefaultConfig()
+	waglayladConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(pyipadConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(waglayladConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating minimalNetAdapter: %+v", err)
 		backendLog.Close()

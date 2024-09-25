@@ -8,9 +8,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_BlockWithTrustedData) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_BlockWithTrustedData) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_BlockWithTrustedData is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_BlockWithTrustedData is nil")
 	}
 
 	msgBlock, err := x.BlockWithTrustedData.Block.toAppMessage()
@@ -52,7 +52,7 @@ func (x *PyipadMessage_BlockWithTrustedData) toAppMessage() (appmessage.Message,
 	}, nil
 }
 
-func (x *PyipadMessage_BlockWithTrustedData) fromAppMessage(msgBlockWithTrustedData *appmessage.MsgBlockWithTrustedData) error {
+func (x *WaglayladMessage_BlockWithTrustedData) fromAppMessage(msgBlockWithTrustedData *appmessage.MsgBlockWithTrustedData) error {
 	x.BlockWithTrustedData = &BlockWithTrustedDataMessage{
 		Block:        &BlockMessage{},
 		DaaScore:     msgBlockWithTrustedData.DAAScore,

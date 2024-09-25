@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetMempoolEntriesRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetMempoolEntriesRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetMempoolEntriesRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetMempoolEntriesRequest is nil")
 	}
 	return x.GetMempoolEntriesRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_GetMempoolEntriesRequest) fromAppMessage(message *appmessage.GetMempoolEntriesRequestMessage) error {
+func (x *WaglayladMessage_GetMempoolEntriesRequest) fromAppMessage(message *appmessage.GetMempoolEntriesRequestMessage) error {
 	x.GetMempoolEntriesRequest = &GetMempoolEntriesRequestMessage{
 		IncludeOrphanPool:     message.IncludeOrphanPool,
 		FilterTransactionPool: message.FilterTransactionPool,
@@ -30,14 +30,14 @@ func (x *GetMempoolEntriesRequestMessage) toAppMessage() (appmessage.Message, er
 	}, nil
 }
 
-func (x *PyipadMessage_GetMempoolEntriesResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetMempoolEntriesResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetMempoolEntriesResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetMempoolEntriesResponse is nil")
 	}
 	return x.GetMempoolEntriesResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetMempoolEntriesResponse) fromAppMessage(message *appmessage.GetMempoolEntriesResponseMessage) error {
+func (x *WaglayladMessage_GetMempoolEntriesResponse) fromAppMessage(message *appmessage.GetMempoolEntriesResponseMessage) error {
 	var rpcErr *RPCError
 	if message.Error != nil {
 		rpcErr = &RPCError{Message: message.Error.Message}

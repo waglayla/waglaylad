@@ -9,38 +9,38 @@ import (
 )
 
 var commandTypes = []reflect.Type{
-	reflect.TypeOf(protowire.PyipadMessage_AddPeerRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetConnectedPeerInfoRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetPeerAddressesRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetCurrentNetworkRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetInfoRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_AddPeerRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetConnectedPeerInfoRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetPeerAddressesRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetCurrentNetworkRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetInfoRequest{}),
 
-	reflect.TypeOf(protowire.PyipadMessage_GetBlockRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetBlocksRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetHeadersRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetBlockCountRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetBlockDagInfoRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetSelectedTipHashRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetVirtualSelectedParentBlueScoreRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_ResolveFinalityConflictRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_EstimateNetworkHashesPerSecondRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetBlockRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetBlocksRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetHeadersRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetBlockCountRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetBlockDagInfoRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetSelectedTipHashRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_ResolveFinalityConflictRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_EstimateNetworkHashesPerSecondRequest{}),
 
-	reflect.TypeOf(protowire.PyipadMessage_GetBlockTemplateRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_SubmitBlockRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetBlockTemplateRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_SubmitBlockRequest{}),
 
-	reflect.TypeOf(protowire.PyipadMessage_GetMempoolEntryRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetMempoolEntriesRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetMempoolEntriesByAddressesRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetMempoolEntryRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetMempoolEntriesRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetMempoolEntriesByAddressesRequest{}),
 
-	reflect.TypeOf(protowire.PyipadMessage_SubmitTransactionRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_SubmitTransactionRequest{}),
 
-	reflect.TypeOf(protowire.PyipadMessage_GetUtxosByAddressesRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetBalanceByAddressRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_GetCoinSupplyRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetUtxosByAddressesRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetBalanceByAddressRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_GetCoinSupplyRequest{}),
 
-	reflect.TypeOf(protowire.PyipadMessage_BanRequest{}),
-	reflect.TypeOf(protowire.PyipadMessage_UnbanRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_BanRequest{}),
+	reflect.TypeOf(protowire.WaglayladMessage_UnbanRequest{}),
 }
 
 type commandDescription struct {

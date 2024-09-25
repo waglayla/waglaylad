@@ -48,9 +48,9 @@ const (
 	// (Higher values make pruning attacks easier by a constant, lower values make merging after a split or a spike
 	// in block take longer)
 	defaultMergeSetSizeLimit                       = defaultGHOSTDAGK * 10
-	defaultSubsidyGenesisReward                    = 1 * constants.LeorPerPyrin
-	defaultPreDeflationaryPhaseBaseSubsidy         = 17 * constants.LeorPerPyrin
-	defaultDeflationaryPhaseBaseSubsidy            = 14 * constants.LeorPerPyrin
+	defaultSubsidyGenesisReward                    = 1 * constants.LeorPerWaglayla
+	defaultPreDeflationaryPhaseBaseSubsidy         = 500 * constants.LeorPerWaglayla
+	defaultDeflationaryPhaseBaseSubsidy            = 500 * constants.LeorPerWaglayla
 	defaultCoinbasePayloadScriptPublicKeyMaxLength = 150
 	// defaultDifficultyAdjustmentWindowSize is the number of blocks in a block's past used to calculate its difficulty
 	// target.
@@ -82,7 +82,7 @@ const (
 	// Half a year in seconds = 365.25 / 2 * 24 * 60 * 60 = 15778800
 	// The network was down for three days shortly after launch
 	// Three days in seconds = 3 * 24 * 60 * 60 = 259200
-	defaultDeflationaryPhaseDaaScore = 15778800 - 259200
+	defaultDeflationaryPhaseDaaScore = 7889400 // 3 months
 
 	defaultMergeDepth = 3600
 )

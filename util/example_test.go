@@ -21,9 +21,9 @@ func ExampleAmount() {
 	a = util.Amount(1e5)
 	fmt.Println("100,000 Leor:", a)
 	// Output:
-	// Zero Leor: 0 PYI
-	// 100,000,000 Leor: 1 PYI
-	// 100,000 Leor: 0.001 PYI
+	// Zero Leor: 0 WALA
+	// 100,000,000 Leor: 1 WALA
+	// 100,000 Leor: 0.001 WALA
 }
 
 func ExampleNewAmount() {
@@ -55,26 +55,26 @@ func ExampleNewAmount() {
 	}
 	fmt.Println(amountNaN) //Output 4
 
-	// Output: 1 PYI
-	// 0.01234567 PYI
-	// 0 PYI
+	// Output: 1 WALA
+	// 0.01234567 WALA
+	// 0 WALA
 	// invalid waglayla amount
 }
 
 func ExampleAmount_unitConversions() {
 	amount := util.Amount(44433322211100)
 
-	fmt.Println("Leor to kPYI:", amount.Format(util.AmountKiloPYI))
-	fmt.Println("Leor to PYI:", amount)
-	fmt.Println("Leor to MilliPYI:", amount.Format(util.AmountMilliPYI))
-	fmt.Println("Leor to MicroPYI:", amount.Format(util.AmountMicroPYI))
+	fmt.Println("Leor to kWALA:", amount.Format(util.AmountKiloWALA))
+	fmt.Println("Leor to WALA:", amount)
+	fmt.Println("Leor to MilliWALA:", amount.Format(util.AmountMilliWALA))
+	fmt.Println("Leor to MicroWALA:", amount.Format(util.AmountMicroWALA))
 	fmt.Println("Leor to Leor:", amount.Format(util.AmountLeor))
 
 	// Output:
-	// Leor to kPYI: 444.333222111 kPYI
-	// Leor to PYI: 444333.222111 PYI
-	// Leor to MilliPYI: 444333222.111 mPYI
-	// Leor to MicroPYI: 444333222111 μPYI
+	// Leor to kWALA: 444.333222111 kWALA
+	// Leor to WALA: 444333.222111 WALA
+	// Leor to MilliWALA: 444333222.111 mWALA
+	// Leor to MicroWALA: 444333222111 μWALA
 	// Leor to Leor: 44433322211100 Leor
 }
 

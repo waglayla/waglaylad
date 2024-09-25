@@ -7,9 +7,9 @@ import (
 	"github.com/waglayla/waglaylad/util/mstime"
 )
 
-func (x *PyipadMessage_Version) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_Version) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_Version is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_Version is nil")
 	}
 	return x.Version.toAppMessage()
 }
@@ -57,7 +57,7 @@ func (x *VersionMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_Version) fromAppMessage(msgVersion *appmessage.MsgVersion) error {
+func (x *WaglayladMessage_Version) fromAppMessage(msgVersion *appmessage.MsgVersion) error {
 	err := appmessage.ValidateUserAgent(msgVersion.UserAgent)
 	if err != nil {
 		return err

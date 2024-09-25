@@ -35,7 +35,7 @@ func TestAmountCreation(t *testing.T) {
 			name:     "one hundred",
 			amount:   100,
 			valid:    true,
-			expected: 100 * constants.LeorPerPyrin,
+			expected: 100 * constants.LeorPerWaglayla,
 		},
 		{
 			name:     "fraction",
@@ -47,13 +47,13 @@ func TestAmountCreation(t *testing.T) {
 			name:     "rounding up",
 			amount:   54.999999999999943157,
 			valid:    true,
-			expected: 55 * constants.LeorPerPyrin,
+			expected: 55 * constants.LeorPerWaglayla,
 		},
 		{
 			name:     "rounding down",
 			amount:   55.000000000000056843,
 			valid:    true,
-			expected: 55 * constants.LeorPerPyrin,
+			expected: 55 * constants.LeorPerWaglayla,
 		},
 
 		// Negative tests.
@@ -101,40 +101,40 @@ func TestAmountUnitConversions(t *testing.T) {
 		s         string
 	}{
 		{
-			name:      "MPYI",
+			name:      "MWALA",
 			amount:    Amount(constants.MaxLeor),
-			unit:      AmountMegaPYI,
+			unit:      AmountMegaWALA,
 			converted: 29000,
-			s:         "29000 MPYI",
+			s:         "29000 MWALA",
 		},
 		{
-			name:      "kPYI",
+			name:      "kWALA",
 			amount:    44433322211100,
-			unit:      AmountKiloPYI,
+			unit:      AmountKiloWALA,
 			converted: 444.33322211100,
-			s:         "444.333222111 kPYI",
+			s:         "444.333222111 kWALA",
 		},
 		{
-			name:      "PYI",
+			name:      "WALA",
 			amount:    44433322211100,
-			unit:      AmountPYI,
+			unit:      AmountWALA,
 			converted: 444333.22211100,
-			s:         "444333.222111 PYI",
+			s:         "444333.222111 WALA",
 		},
 		{
-			name:      "mPYI",
+			name:      "mWALA",
 			amount:    44433322211100,
-			unit:      AmountMilliPYI,
+			unit:      AmountMilliWALA,
 			converted: 444333222.11100,
-			s:         "444333222.111 mPYI",
+			s:         "444333222.111 mWALA",
 		},
 		{
 
-			name:      "μPYI",
+			name:      "μWALA",
 			amount:    44433322211100,
-			unit:      AmountMicroPYI,
+			unit:      AmountMicroWALA,
 			converted: 444333222111.00,
-			s:         "444333222111 μPYI",
+			s:         "444333222111 μWALA",
 		},
 		{
 
@@ -150,7 +150,7 @@ func TestAmountUnitConversions(t *testing.T) {
 			amount:    44433322211100,
 			unit:      AmountUnit(-1),
 			converted: 4443332.2211100,
-			s:         "4443332.22111 1e-1 PYI",
+			s:         "4443332.22111 1e-1 WALA",
 		},
 	}
 
@@ -167,18 +167,18 @@ func TestAmountUnitConversions(t *testing.T) {
 			continue
 		}
 
-		// Verify that Amount.ToPYI works as advertised.
-		f1 := test.amount.ToUnit(AmountPYI)
-		f2 := test.amount.ToPYI()
+		// Verify that Amount.ToWALA works as advertised.
+		f1 := test.amount.ToUnit(AmountWALA)
+		f2 := test.amount.ToWALA()
 		if f1 != f2 {
-			t.Errorf("%v: ToPYI does not match ToUnit(AmountPYI): %v != %v", test.name, f1, f2)
+			t.Errorf("%v: ToWALA does not match ToUnit(AmountWALA): %v != %v", test.name, f1, f2)
 		}
 
 		// Verify that Amount.String works as advertised.
-		s1 := test.amount.Format(AmountPYI)
+		s1 := test.amount.Format(AmountWALA)
 		s2 := test.amount.String()
 		if s1 != s2 {
-			t.Errorf("%v: String does not match Format(AmountPYI): %v != %v", test.name, s1, s2)
+			t.Errorf("%v: String does not match Format(AmountWALA): %v != %v", test.name, s1, s2)
 		}
 	}
 }
@@ -191,16 +191,16 @@ func TestAmountMulF64(t *testing.T) {
 		res  Amount
 	}{
 		{
-			name: "Multiply 0.1 PYI by 2",
-			amt:  100e5, // 0.1 PYI
+			name: "Multiply 0.1 WALA by 2",
+			amt:  100e5, // 0.1 WALA
 			mul:  2,
-			res:  200e5, // 0.2 PYI
+			res:  200e5, // 0.2 WALA
 		},
 		{
-			name: "Multiply 0.2 PYI by 0.02",
-			amt:  200e5, // 0.2 PYI
+			name: "Multiply 0.2 WALA by 0.02",
+			amt:  200e5, // 0.2 WALA
 			mul:  1.02,
-			res:  204e5, // 0.204 PYI
+			res:  204e5, // 0.204 WALA
 		},
 		{
 			name: "Round down",
@@ -216,9 +216,9 @@ func TestAmountMulF64(t *testing.T) {
 		},
 		{
 			name: "Multiply by 0.",
-			amt:  1e8, // 1 PYI
+			amt:  1e8, // 1 WALA
 			mul:  0,
-			res:  0, // 0 PYI
+			res:  0, // 0 WALA
 		},
 		{
 			name: "Multiply 1 by 0.5.",

@@ -5,23 +5,23 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_NotifyNewBlockTemplateRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NotifyNewBlockTemplateRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.NotifyNewBlockTemplateRequestMessage{}, nil
 }
 
-func (x *PyipadMessage_NotifyNewBlockTemplateRequest) fromAppMessage(_ *appmessage.NotifyNewBlockTemplateRequestMessage) error {
+func (x *WaglayladMessage_NotifyNewBlockTemplateRequest) fromAppMessage(_ *appmessage.NotifyNewBlockTemplateRequestMessage) error {
 	x.NotifyNewBlockTemplateRequest = &NotifyNewBlockTemplateRequestMessage{}
 	return nil
 }
 
-func (x *PyipadMessage_NotifyNewBlockTemplateResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NotifyNewBlockTemplateResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_NotifyNewBlockTemplateResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_NotifyNewBlockTemplateResponse is nil")
 	}
 	return x.NotifyNewBlockTemplateResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_NotifyNewBlockTemplateResponse) fromAppMessage(message *appmessage.NotifyNewBlockTemplateResponseMessage) error {
+func (x *WaglayladMessage_NotifyNewBlockTemplateResponse) fromAppMessage(message *appmessage.NotifyNewBlockTemplateResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -46,14 +46,14 @@ func (x *NotifyNewBlockTemplateResponseMessage) toAppMessage() (appmessage.Messa
 	}, nil
 }
 
-func (x *PyipadMessage_NewBlockTemplateNotification) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NewBlockTemplateNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_NewBlockTemplateNotification is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_NewBlockTemplateNotification is nil")
 	}
 	return x.NewBlockTemplateNotification.toAppMessage()
 }
 
-func (x *PyipadMessage_NewBlockTemplateNotification) fromAppMessage(message *appmessage.NewBlockTemplateNotificationMessage) error {
+func (x *WaglayladMessage_NewBlockTemplateNotification) fromAppMessage(message *appmessage.NewBlockTemplateNotificationMessage) error {
 	x.NewBlockTemplateNotification = &NewBlockTemplateNotificationMessage{}
 	return nil
 }

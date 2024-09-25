@@ -11,10 +11,10 @@ import (
 func connectToNode() *standalone.Routes {
 	cfg := activeConfig()
 
-	pyipadConfig := config.DefaultConfig()
-	pyipadConfig.NetworkFlags = cfg.NetworkFlags
+	waglayladConfig := config.DefaultConfig()
+	waglayladConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(pyipadConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(waglayladConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error creating minimalNetAdapter: %+v", err)
 		os.Exit(1)

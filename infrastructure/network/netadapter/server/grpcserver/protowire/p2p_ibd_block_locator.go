@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_IbdBlockLocator) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_IbdBlockLocator) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_IbdBlockLocator is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_IbdBlockLocator is nil")
 	}
 	return x.IbdBlockLocator.toAppMessage()
 }
@@ -30,7 +30,7 @@ func (x *IbdBlockLocatorMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_IbdBlockLocator) fromAppMessage(message *appmessage.MsgIBDBlockLocator) error {
+func (x *WaglayladMessage_IbdBlockLocator) fromAppMessage(message *appmessage.MsgIBDBlockLocator) error {
 	x.IbdBlockLocator = &IbdBlockLocatorMessage{
 		TargetHash:         domainHashToProto(message.TargetHash),
 		BlockLocatorHashes: domainHashesToProto(message.BlockLocatorHashes),

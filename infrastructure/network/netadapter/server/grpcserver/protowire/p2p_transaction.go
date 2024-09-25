@@ -7,14 +7,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_Transaction) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_Transaction) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_Transaction is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_Transaction is nil")
 	}
 	return x.Transaction.toAppMessage()
 }
 
-func (x *PyipadMessage_Transaction) fromAppMessage(msgTx *appmessage.MsgTx) error {
+func (x *WaglayladMessage_Transaction) fromAppMessage(msgTx *appmessage.MsgTx) error {
 	x.Transaction = new(TransactionMessage)
 	x.Transaction.fromAppMessage(msgTx)
 	return nil

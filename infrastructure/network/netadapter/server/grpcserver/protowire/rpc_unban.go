@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_UnbanRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_UnbanRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_UnbanRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_UnbanRequest is nil")
 	}
 	return x.UnbanRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_UnbanRequest) fromAppMessage(message *appmessage.UnbanRequestMessage) error {
+func (x *WaglayladMessage_UnbanRequest) fromAppMessage(message *appmessage.UnbanRequestMessage) error {
 	x.UnbanRequest = &UnbanRequestMessage{Ip: message.IP}
 	return nil
 }
@@ -26,14 +26,14 @@ func (x *UnbanRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_UnbanResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_UnbanResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_UnbanResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_UnbanResponse is nil")
 	}
 	return x.UnbanResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_UnbanResponse) fromAppMessage(message *appmessage.UnbanResponseMessage) error {
+func (x *WaglayladMessage_UnbanResponse) fromAppMessage(message *appmessage.UnbanResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

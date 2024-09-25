@@ -62,20 +62,20 @@ var PyrinTestnetPublic = [4]byte{
 	0x41,
 }
 
-// PyipadevnetPrivate is the version that is used for
+// WaglayladevnetPrivate is the version that is used for
 // waglayla devnet bip32 public extended keys.
 // Ecnodes to kdrv in base58.
-var PyipadevnetPrivate = [4]byte{
+var WaglayladevnetPrivate = [4]byte{
 	0x03,
 	0x8b,
 	0x3d,
 	0x80,
 }
 
-// PyipadevnetPublic is the version that is used for
+// WaglayladevnetPublic is the version that is used for
 // waglayla devnet bip32 public extended keys.
 // Ecnodes to xdub in base58.
-var PyipadevnetPublic = [4]byte{
+var WaglayladevnetPublic = [4]byte{
 	0x03,
 	0x8b,
 	0x41,
@@ -110,8 +110,8 @@ func toPublicVersion(version [4]byte) ([4]byte, error) {
 		return PyrinMainnetPublic, nil
 	case PyrinTestnetPrivate:
 		return PyrinTestnetPublic, nil
-	case PyipadevnetPrivate:
-		return PyipadevnetPublic, nil
+	case WaglayladevnetPrivate:
+		return WaglayladevnetPublic, nil
 	case PyrinSimnetPrivate:
 		return PyrinSimnetPublic, nil
 	}
@@ -127,7 +127,7 @@ func isPrivateVersion(version [4]byte) bool {
 		return true
 	case PyrinTestnetPrivate:
 		return true
-	case PyipadevnetPrivate:
+	case WaglayladevnetPrivate:
 		return true
 	case PyrinSimnetPrivate:
 		return true

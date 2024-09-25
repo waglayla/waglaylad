@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_Block) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_Block) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrap(errorNil, "PyipadMessage_Block is nil")
+		return nil, errors.Wrap(errorNil, "WaglayladMessage_Block is nil")
 	}
 	return x.Block.toAppMessage()
 }
 
-func (x *PyipadMessage_Block) fromAppMessage(msgBlock *appmessage.MsgBlock) error {
+func (x *WaglayladMessage_Block) fromAppMessage(msgBlock *appmessage.MsgBlock) error {
 	x.Block = new(BlockMessage)
 	return x.Block.fromAppMessage(msgBlock)
 }

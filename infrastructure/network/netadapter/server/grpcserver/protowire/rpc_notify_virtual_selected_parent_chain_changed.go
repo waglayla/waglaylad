@@ -5,30 +5,30 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest is nil")
 	}
 	return &appmessage.NotifyVirtualSelectedParentChainChangedRequestMessage{
 		IncludeAcceptedTransactionIDs: x.NotifyVirtualSelectedParentChainChangedRequest.IncludeAcceptedTransactionIds,
 	}, nil
 }
 
-func (x *PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest) fromAppMessage(appmessage *appmessage.NotifyVirtualSelectedParentChainChangedRequestMessage) error {
+func (x *WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest) fromAppMessage(appmessage *appmessage.NotifyVirtualSelectedParentChainChangedRequestMessage) error {
 	x.NotifyVirtualSelectedParentChainChangedRequest = &NotifyVirtualSelectedParentChainChangedRequestMessage{
 		IncludeAcceptedTransactionIds: appmessage.IncludeAcceptedTransactionIDs,
 	}
 	return nil
 }
 
-func (x *PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse is nil")
 	}
 	return x.NotifyVirtualSelectedParentChainChangedResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse) fromAppMessage(message *appmessage.NotifyVirtualSelectedParentChainChangedResponseMessage) error {
+func (x *WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse) fromAppMessage(message *appmessage.NotifyVirtualSelectedParentChainChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -53,14 +53,14 @@ func (x *NotifyVirtualSelectedParentChainChangedResponseMessage) toAppMessage() 
 	}, nil
 }
 
-func (x *PyipadMessage_VirtualSelectedParentChainChangedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_VirtualSelectedParentChainChangedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_VirtualSelectedParentChainChangedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_VirtualSelectedParentChainChangedNotification is nil")
 	}
 	return x.VirtualSelectedParentChainChangedNotification.toAppMessage()
 }
 
-func (x *PyipadMessage_VirtualSelectedParentChainChangedNotification) fromAppMessage(message *appmessage.VirtualSelectedParentChainChangedNotificationMessage) error {
+func (x *WaglayladMessage_VirtualSelectedParentChainChangedNotification) fromAppMessage(message *appmessage.VirtualSelectedParentChainChangedNotificationMessage) error {
 	x.VirtualSelectedParentChainChangedNotification = &VirtualSelectedParentChainChangedNotificationMessage{
 		RemovedChainBlockHashes: message.RemovedChainBlockHashes,
 		AddedChainBlockHashes:   message.AddedChainBlockHashes,

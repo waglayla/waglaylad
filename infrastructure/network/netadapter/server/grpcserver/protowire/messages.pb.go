@@ -20,148 +20,148 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type PyipadMessage struct {
+type WaglayladMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Payload:
 	//
-	//	*PyipadMessage_Addresses
-	//	*PyipadMessage_Block
-	//	*PyipadMessage_Transaction
-	//	*PyipadMessage_BlockLocator
-	//	*PyipadMessage_RequestAddresses
-	//	*PyipadMessage_RequestRelayBlocks
-	//	*PyipadMessage_RequestTransactions
-	//	*PyipadMessage_IbdBlock
-	//	*PyipadMessage_InvRelayBlock
-	//	*PyipadMessage_InvTransactions
-	//	*PyipadMessage_Ping
-	//	*PyipadMessage_Pong
-	//	*PyipadMessage_Verack
-	//	*PyipadMessage_Version
-	//	*PyipadMessage_TransactionNotFound
-	//	*PyipadMessage_Reject
-	//	*PyipadMessage_PruningPointUtxoSetChunk
-	//	*PyipadMessage_RequestIBDBlocks
-	//	*PyipadMessage_UnexpectedPruningPoint
-	//	*PyipadMessage_IbdBlockLocator
-	//	*PyipadMessage_IbdBlockLocatorHighestHash
-	//	*PyipadMessage_RequestNextPruningPointUtxoSetChunk
-	//	*PyipadMessage_DonePruningPointUtxoSetChunks
-	//	*PyipadMessage_IbdBlockLocatorHighestHashNotFound
-	//	*PyipadMessage_BlockWithTrustedData
-	//	*PyipadMessage_DoneBlocksWithTrustedData
-	//	*PyipadMessage_RequestPruningPointAndItsAnticone
-	//	*PyipadMessage_BlockHeaders
-	//	*PyipadMessage_RequestNextHeaders
-	//	*PyipadMessage_DoneHeaders
-	//	*PyipadMessage_RequestPruningPointUTXOSet
-	//	*PyipadMessage_RequestHeaders
-	//	*PyipadMessage_RequestBlockLocator
-	//	*PyipadMessage_PruningPoints
-	//	*PyipadMessage_RequestPruningPointProof
-	//	*PyipadMessage_PruningPointProof
-	//	*PyipadMessage_Ready
-	//	*PyipadMessage_BlockWithTrustedDataV4
-	//	*PyipadMessage_TrustedData
-	//	*PyipadMessage_RequestIBDChainBlockLocator
-	//	*PyipadMessage_IbdChainBlockLocator
-	//	*PyipadMessage_RequestAnticone
-	//	*PyipadMessage_RequestNextPruningPointAndItsAnticoneBlocks
-	//	*PyipadMessage_GetCurrentNetworkRequest
-	//	*PyipadMessage_GetCurrentNetworkResponse
-	//	*PyipadMessage_SubmitBlockRequest
-	//	*PyipadMessage_SubmitBlockResponse
-	//	*PyipadMessage_GetBlockTemplateRequest
-	//	*PyipadMessage_GetBlockTemplateResponse
-	//	*PyipadMessage_NotifyBlockAddedRequest
-	//	*PyipadMessage_NotifyBlockAddedResponse
-	//	*PyipadMessage_BlockAddedNotification
-	//	*PyipadMessage_GetPeerAddressesRequest
-	//	*PyipadMessage_GetPeerAddressesResponse
-	//	*PyipadMessage_GetSelectedTipHashRequest
-	//	*PyipadMessage_GetSelectedTipHashResponse
-	//	*PyipadMessage_GetMempoolEntryRequest
-	//	*PyipadMessage_GetMempoolEntryResponse
-	//	*PyipadMessage_GetConnectedPeerInfoRequest
-	//	*PyipadMessage_GetConnectedPeerInfoResponse
-	//	*PyipadMessage_AddPeerRequest
-	//	*PyipadMessage_AddPeerResponse
-	//	*PyipadMessage_SubmitTransactionRequest
-	//	*PyipadMessage_SubmitTransactionResponse
-	//	*PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest
-	//	*PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse
-	//	*PyipadMessage_VirtualSelectedParentChainChangedNotification
-	//	*PyipadMessage_GetBlockRequest
-	//	*PyipadMessage_GetBlockResponse
-	//	*PyipadMessage_GetSubnetworkRequest
-	//	*PyipadMessage_GetSubnetworkResponse
-	//	*PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest
-	//	*PyipadMessage_GetVirtualSelectedParentChainFromBlockResponse
-	//	*PyipadMessage_GetBlocksRequest
-	//	*PyipadMessage_GetBlocksResponse
-	//	*PyipadMessage_GetBlockCountRequest
-	//	*PyipadMessage_GetBlockCountResponse
-	//	*PyipadMessage_GetBlockDagInfoRequest
-	//	*PyipadMessage_GetBlockDagInfoResponse
-	//	*PyipadMessage_ResolveFinalityConflictRequest
-	//	*PyipadMessage_ResolveFinalityConflictResponse
-	//	*PyipadMessage_NotifyFinalityConflictsRequest
-	//	*PyipadMessage_NotifyFinalityConflictsResponse
-	//	*PyipadMessage_FinalityConflictNotification
-	//	*PyipadMessage_FinalityConflictResolvedNotification
-	//	*PyipadMessage_GetMempoolEntriesRequest
-	//	*PyipadMessage_GetMempoolEntriesResponse
-	//	*PyipadMessage_ShutDownRequest
-	//	*PyipadMessage_ShutDownResponse
-	//	*PyipadMessage_GetHeadersRequest
-	//	*PyipadMessage_GetHeadersResponse
-	//	*PyipadMessage_NotifyUtxosChangedRequest
-	//	*PyipadMessage_NotifyUtxosChangedResponse
-	//	*PyipadMessage_UtxosChangedNotification
-	//	*PyipadMessage_GetUtxosByAddressesRequest
-	//	*PyipadMessage_GetUtxosByAddressesResponse
-	//	*PyipadMessage_GetVirtualSelectedParentBlueScoreRequest
-	//	*PyipadMessage_GetVirtualSelectedParentBlueScoreResponse
-	//	*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
-	//	*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
-	//	*PyipadMessage_VirtualSelectedParentBlueScoreChangedNotification
-	//	*PyipadMessage_BanRequest
-	//	*PyipadMessage_BanResponse
-	//	*PyipadMessage_UnbanRequest
-	//	*PyipadMessage_UnbanResponse
-	//	*PyipadMessage_GetInfoRequest
-	//	*PyipadMessage_GetInfoResponse
-	//	*PyipadMessage_StopNotifyingUtxosChangedRequest
-	//	*PyipadMessage_StopNotifyingUtxosChangedResponse
-	//	*PyipadMessage_NotifyPruningPointUTXOSetOverrideRequest
-	//	*PyipadMessage_NotifyPruningPointUTXOSetOverrideResponse
-	//	*PyipadMessage_PruningPointUTXOSetOverrideNotification
-	//	*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
-	//	*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
-	//	*PyipadMessage_EstimateNetworkHashesPerSecondRequest
-	//	*PyipadMessage_EstimateNetworkHashesPerSecondResponse
-	//	*PyipadMessage_NotifyVirtualDaaScoreChangedRequest
-	//	*PyipadMessage_NotifyVirtualDaaScoreChangedResponse
-	//	*PyipadMessage_VirtualDaaScoreChangedNotification
-	//	*PyipadMessage_GetBalanceByAddressRequest
-	//	*PyipadMessage_GetBalanceByAddressResponse
-	//	*PyipadMessage_GetBalancesByAddressesRequest
-	//	*PyipadMessage_GetBalancesByAddressesResponse
-	//	*PyipadMessage_NotifyNewBlockTemplateRequest
-	//	*PyipadMessage_NotifyNewBlockTemplateResponse
-	//	*PyipadMessage_NewBlockTemplateNotification
-	//	*PyipadMessage_GetMempoolEntriesByAddressesRequest
-	//	*PyipadMessage_GetMempoolEntriesByAddressesResponse
-	//	*PyipadMessage_GetCoinSupplyRequest
-	//	*PyipadMessage_GetCoinSupplyResponse
-	Payload isPyipadMessage_Payload `protobuf_oneof:"payload"`
+	//	*WaglayladMessage_Addresses
+	//	*WaglayladMessage_Block
+	//	*WaglayladMessage_Transaction
+	//	*WaglayladMessage_BlockLocator
+	//	*WaglayladMessage_RequestAddresses
+	//	*WaglayladMessage_RequestRelayBlocks
+	//	*WaglayladMessage_RequestTransactions
+	//	*WaglayladMessage_IbdBlock
+	//	*WaglayladMessage_InvRelayBlock
+	//	*WaglayladMessage_InvTransactions
+	//	*WaglayladMessage_Ping
+	//	*WaglayladMessage_Pong
+	//	*WaglayladMessage_Verack
+	//	*WaglayladMessage_Version
+	//	*WaglayladMessage_TransactionNotFound
+	//	*WaglayladMessage_Reject
+	//	*WaglayladMessage_PruningPointUtxoSetChunk
+	//	*WaglayladMessage_RequestIBDBlocks
+	//	*WaglayladMessage_UnexpectedPruningPoint
+	//	*WaglayladMessage_IbdBlockLocator
+	//	*WaglayladMessage_IbdBlockLocatorHighestHash
+	//	*WaglayladMessage_RequestNextPruningPointUtxoSetChunk
+	//	*WaglayladMessage_DonePruningPointUtxoSetChunks
+	//	*WaglayladMessage_IbdBlockLocatorHighestHashNotFound
+	//	*WaglayladMessage_BlockWithTrustedData
+	//	*WaglayladMessage_DoneBlocksWithTrustedData
+	//	*WaglayladMessage_RequestPruningPointAndItsAnticone
+	//	*WaglayladMessage_BlockHeaders
+	//	*WaglayladMessage_RequestNextHeaders
+	//	*WaglayladMessage_DoneHeaders
+	//	*WaglayladMessage_RequestPruningPointUTXOSet
+	//	*WaglayladMessage_RequestHeaders
+	//	*WaglayladMessage_RequestBlockLocator
+	//	*WaglayladMessage_PruningPoints
+	//	*WaglayladMessage_RequestPruningPointProof
+	//	*WaglayladMessage_PruningPointProof
+	//	*WaglayladMessage_Ready
+	//	*WaglayladMessage_BlockWithTrustedDataV4
+	//	*WaglayladMessage_TrustedData
+	//	*WaglayladMessage_RequestIBDChainBlockLocator
+	//	*WaglayladMessage_IbdChainBlockLocator
+	//	*WaglayladMessage_RequestAnticone
+	//	*WaglayladMessage_RequestNextPruningPointAndItsAnticoneBlocks
+	//	*WaglayladMessage_GetCurrentNetworkRequest
+	//	*WaglayladMessage_GetCurrentNetworkResponse
+	//	*WaglayladMessage_SubmitBlockRequest
+	//	*WaglayladMessage_SubmitBlockResponse
+	//	*WaglayladMessage_GetBlockTemplateRequest
+	//	*WaglayladMessage_GetBlockTemplateResponse
+	//	*WaglayladMessage_NotifyBlockAddedRequest
+	//	*WaglayladMessage_NotifyBlockAddedResponse
+	//	*WaglayladMessage_BlockAddedNotification
+	//	*WaglayladMessage_GetPeerAddressesRequest
+	//	*WaglayladMessage_GetPeerAddressesResponse
+	//	*WaglayladMessage_GetSelectedTipHashRequest
+	//	*WaglayladMessage_GetSelectedTipHashResponse
+	//	*WaglayladMessage_GetMempoolEntryRequest
+	//	*WaglayladMessage_GetMempoolEntryResponse
+	//	*WaglayladMessage_GetConnectedPeerInfoRequest
+	//	*WaglayladMessage_GetConnectedPeerInfoResponse
+	//	*WaglayladMessage_AddPeerRequest
+	//	*WaglayladMessage_AddPeerResponse
+	//	*WaglayladMessage_SubmitTransactionRequest
+	//	*WaglayladMessage_SubmitTransactionResponse
+	//	*WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest
+	//	*WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse
+	//	*WaglayladMessage_VirtualSelectedParentChainChangedNotification
+	//	*WaglayladMessage_GetBlockRequest
+	//	*WaglayladMessage_GetBlockResponse
+	//	*WaglayladMessage_GetSubnetworkRequest
+	//	*WaglayladMessage_GetSubnetworkResponse
+	//	*WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest
+	//	*WaglayladMessage_GetVirtualSelectedParentChainFromBlockResponse
+	//	*WaglayladMessage_GetBlocksRequest
+	//	*WaglayladMessage_GetBlocksResponse
+	//	*WaglayladMessage_GetBlockCountRequest
+	//	*WaglayladMessage_GetBlockCountResponse
+	//	*WaglayladMessage_GetBlockDagInfoRequest
+	//	*WaglayladMessage_GetBlockDagInfoResponse
+	//	*WaglayladMessage_ResolveFinalityConflictRequest
+	//	*WaglayladMessage_ResolveFinalityConflictResponse
+	//	*WaglayladMessage_NotifyFinalityConflictsRequest
+	//	*WaglayladMessage_NotifyFinalityConflictsResponse
+	//	*WaglayladMessage_FinalityConflictNotification
+	//	*WaglayladMessage_FinalityConflictResolvedNotification
+	//	*WaglayladMessage_GetMempoolEntriesRequest
+	//	*WaglayladMessage_GetMempoolEntriesResponse
+	//	*WaglayladMessage_ShutDownRequest
+	//	*WaglayladMessage_ShutDownResponse
+	//	*WaglayladMessage_GetHeadersRequest
+	//	*WaglayladMessage_GetHeadersResponse
+	//	*WaglayladMessage_NotifyUtxosChangedRequest
+	//	*WaglayladMessage_NotifyUtxosChangedResponse
+	//	*WaglayladMessage_UtxosChangedNotification
+	//	*WaglayladMessage_GetUtxosByAddressesRequest
+	//	*WaglayladMessage_GetUtxosByAddressesResponse
+	//	*WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest
+	//	*WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse
+	//	*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
+	//	*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
+	//	*WaglayladMessage_VirtualSelectedParentBlueScoreChangedNotification
+	//	*WaglayladMessage_BanRequest
+	//	*WaglayladMessage_BanResponse
+	//	*WaglayladMessage_UnbanRequest
+	//	*WaglayladMessage_UnbanResponse
+	//	*WaglayladMessage_GetInfoRequest
+	//	*WaglayladMessage_GetInfoResponse
+	//	*WaglayladMessage_StopNotifyingUtxosChangedRequest
+	//	*WaglayladMessage_StopNotifyingUtxosChangedResponse
+	//	*WaglayladMessage_NotifyPruningPointUTXOSetOverrideRequest
+	//	*WaglayladMessage_NotifyPruningPointUTXOSetOverrideResponse
+	//	*WaglayladMessage_PruningPointUTXOSetOverrideNotification
+	//	*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
+	//	*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
+	//	*WaglayladMessage_EstimateNetworkHashesPerSecondRequest
+	//	*WaglayladMessage_EstimateNetworkHashesPerSecondResponse
+	//	*WaglayladMessage_NotifyVirtualDaaScoreChangedRequest
+	//	*WaglayladMessage_NotifyVirtualDaaScoreChangedResponse
+	//	*WaglayladMessage_VirtualDaaScoreChangedNotification
+	//	*WaglayladMessage_GetBalanceByAddressRequest
+	//	*WaglayladMessage_GetBalanceByAddressResponse
+	//	*WaglayladMessage_GetBalancesByAddressesRequest
+	//	*WaglayladMessage_GetBalancesByAddressesResponse
+	//	*WaglayladMessage_NotifyNewBlockTemplateRequest
+	//	*WaglayladMessage_NotifyNewBlockTemplateResponse
+	//	*WaglayladMessage_NewBlockTemplateNotification
+	//	*WaglayladMessage_GetMempoolEntriesByAddressesRequest
+	//	*WaglayladMessage_GetMempoolEntriesByAddressesResponse
+	//	*WaglayladMessage_GetCoinSupplyRequest
+	//	*WaglayladMessage_GetCoinSupplyResponse
+	Payload isWaglayladMessage_Payload `protobuf_oneof:"payload"`
 }
 
-func (x *PyipadMessage) Reset() {
-	*x = PyipadMessage{}
+func (x *WaglayladMessage) Reset() {
+	*x = WaglayladMessage{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_messages_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -169,13 +169,13 @@ func (x *PyipadMessage) Reset() {
 	}
 }
 
-func (x *PyipadMessage) String() string {
+func (x *WaglayladMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*PyipadMessage) ProtoMessage() {}
+func (*WaglayladMessage) ProtoMessage() {}
 
-func (x *PyipadMessage) ProtoReflect() protoreflect.Message {
+func (x *WaglayladMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_messages_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -187,1711 +187,1711 @@ func (x *PyipadMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PyipadMessage.ProtoReflect.Descriptor instead.
-func (*PyipadMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use WaglayladMessage.ProtoReflect.Descriptor instead.
+func (*WaglayladMessage) Descriptor() ([]byte, []int) {
 	return file_messages_proto_rawDescGZIP(), []int{0}
 }
 
-func (m *PyipadMessage) GetPayload() isPyipadMessage_Payload {
+func (m *WaglayladMessage) GetPayload() isWaglayladMessage_Payload {
 	if m != nil {
 		return m.Payload
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetAddresses() *AddressesMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Addresses); ok {
+func (x *WaglayladMessage) GetAddresses() *AddressesMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Addresses); ok {
 		return x.Addresses
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Block); ok {
+func (x *WaglayladMessage) GetBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Block); ok {
 		return x.Block
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetTransaction() *TransactionMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Transaction); ok {
+func (x *WaglayladMessage) GetTransaction() *TransactionMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Transaction); ok {
 		return x.Transaction
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBlockLocator() *BlockLocatorMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_BlockLocator); ok {
+func (x *WaglayladMessage) GetBlockLocator() *BlockLocatorMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BlockLocator); ok {
 		return x.BlockLocator
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestAddresses() *RequestAddressesMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestAddresses); ok {
+func (x *WaglayladMessage) GetRequestAddresses() *RequestAddressesMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestAddresses); ok {
 		return x.RequestAddresses
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestRelayBlocks); ok {
+func (x *WaglayladMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestRelayBlocks); ok {
 		return x.RequestRelayBlocks
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestTransactions() *RequestTransactionsMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestTransactions); ok {
+func (x *WaglayladMessage) GetRequestTransactions() *RequestTransactionsMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestTransactions); ok {
 		return x.RequestTransactions
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetIbdBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_IbdBlock); ok {
+func (x *WaglayladMessage) GetIbdBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_IbdBlock); ok {
 		return x.IbdBlock
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetInvRelayBlock() *InvRelayBlockMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_InvRelayBlock); ok {
+func (x *WaglayladMessage) GetInvRelayBlock() *InvRelayBlockMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_InvRelayBlock); ok {
 		return x.InvRelayBlock
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetInvTransactions() *InvTransactionsMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_InvTransactions); ok {
+func (x *WaglayladMessage) GetInvTransactions() *InvTransactionsMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_InvTransactions); ok {
 		return x.InvTransactions
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetPing() *PingMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Ping); ok {
+func (x *WaglayladMessage) GetPing() *PingMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Ping); ok {
 		return x.Ping
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetPong() *PongMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Pong); ok {
+func (x *WaglayladMessage) GetPong() *PongMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Pong); ok {
 		return x.Pong
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetVerack() *VerackMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Verack); ok {
+func (x *WaglayladMessage) GetVerack() *VerackMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Verack); ok {
 		return x.Verack
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetVersion() *VersionMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Version); ok {
+func (x *WaglayladMessage) GetVersion() *VersionMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Version); ok {
 		return x.Version
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_TransactionNotFound); ok {
+func (x *WaglayladMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_TransactionNotFound); ok {
 		return x.TransactionNotFound
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetReject() *RejectMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Reject); ok {
+func (x *WaglayladMessage) GetReject() *RejectMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Reject); ok {
 		return x.Reject
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_PruningPointUtxoSetChunk); ok {
+func (x *WaglayladMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_PruningPointUtxoSetChunk); ok {
 		return x.PruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestIBDBlocks); ok {
+func (x *WaglayladMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestIBDBlocks); ok {
 		return x.RequestIBDBlocks
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_UnexpectedPruningPoint); ok {
+func (x *WaglayladMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_UnexpectedPruningPoint); ok {
 		return x.UnexpectedPruningPoint
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_IbdBlockLocator); ok {
+func (x *WaglayladMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_IbdBlockLocator); ok {
 		return x.IbdBlockLocator
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_IbdBlockLocatorHighestHash); ok {
+func (x *WaglayladMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_IbdBlockLocatorHighestHash); ok {
 		return x.IbdBlockLocatorHighestHash
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestNextPruningPointUtxoSetChunk); ok {
+func (x *WaglayladMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestNextPruningPointUtxoSetChunk); ok {
 		return x.RequestNextPruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_DonePruningPointUtxoSetChunks); ok {
+func (x *WaglayladMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_DonePruningPointUtxoSetChunks); ok {
 		return x.DonePruningPointUtxoSetChunks
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_IbdBlockLocatorHighestHashNotFound); ok {
+func (x *WaglayladMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_IbdBlockLocatorHighestHashNotFound); ok {
 		return x.IbdBlockLocatorHighestHashNotFound
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_BlockWithTrustedData); ok {
+func (x *WaglayladMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BlockWithTrustedData); ok {
 		return x.BlockWithTrustedData
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_DoneBlocksWithTrustedData); ok {
+func (x *WaglayladMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_DoneBlocksWithTrustedData); ok {
 		return x.DoneBlocksWithTrustedData
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestPruningPointAndItsAnticone); ok {
+func (x *WaglayladMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestPruningPointAndItsAnticone); ok {
 		return x.RequestPruningPointAndItsAnticone
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBlockHeaders() *BlockHeadersMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_BlockHeaders); ok {
+func (x *WaglayladMessage) GetBlockHeaders() *BlockHeadersMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BlockHeaders); ok {
 		return x.BlockHeaders
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestNextHeaders); ok {
+func (x *WaglayladMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestNextHeaders); ok {
 		return x.RequestNextHeaders
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetDoneHeaders() *DoneHeadersMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_DoneHeaders); ok {
+func (x *WaglayladMessage) GetDoneHeaders() *DoneHeadersMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_DoneHeaders); ok {
 		return x.DoneHeaders
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestPruningPointUTXOSet); ok {
+func (x *WaglayladMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestPruningPointUTXOSet); ok {
 		return x.RequestPruningPointUTXOSet
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestHeaders() *RequestHeadersMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestHeaders); ok {
+func (x *WaglayladMessage) GetRequestHeaders() *RequestHeadersMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestHeaders); ok {
 		return x.RequestHeaders
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestBlockLocator); ok {
+func (x *WaglayladMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestBlockLocator); ok {
 		return x.RequestBlockLocator
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetPruningPoints() *PruningPointsMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_PruningPoints); ok {
+func (x *WaglayladMessage) GetPruningPoints() *PruningPointsMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_PruningPoints); ok {
 		return x.PruningPoints
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestPruningPointProof); ok {
+func (x *WaglayladMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestPruningPointProof); ok {
 		return x.RequestPruningPointProof
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetPruningPointProof() *PruningPointProofMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_PruningPointProof); ok {
+func (x *WaglayladMessage) GetPruningPointProof() *PruningPointProofMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_PruningPointProof); ok {
 		return x.PruningPointProof
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetReady() *ReadyMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_Ready); ok {
+func (x *WaglayladMessage) GetReady() *ReadyMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_Ready); ok {
 		return x.Ready
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
-	if x, ok := x.GetPayload().(*PyipadMessage_BlockWithTrustedDataV4); ok {
+func (x *WaglayladMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BlockWithTrustedDataV4); ok {
 		return x.BlockWithTrustedDataV4
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetTrustedData() *TrustedDataMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_TrustedData); ok {
+func (x *WaglayladMessage) GetTrustedData() *TrustedDataMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_TrustedData); ok {
 		return x.TrustedData
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestIBDChainBlockLocator); ok {
+func (x *WaglayladMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestIBDChainBlockLocator); ok {
 		return x.RequestIBDChainBlockLocator
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_IbdChainBlockLocator); ok {
+func (x *WaglayladMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_IbdChainBlockLocator); ok {
 		return x.IbdChainBlockLocator
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestAnticone() *RequestAnticoneMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestAnticone); ok {
+func (x *WaglayladMessage) GetRequestAnticone() *RequestAnticoneMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestAnticone); ok {
 		return x.RequestAnticone
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
+func (x *WaglayladMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
 		return x.RequestNextPruningPointAndItsAnticoneBlocks
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetCurrentNetworkRequest); ok {
+func (x *WaglayladMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetCurrentNetworkRequest); ok {
 		return x.GetCurrentNetworkRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetCurrentNetworkResponse); ok {
+func (x *WaglayladMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetCurrentNetworkResponse); ok {
 		return x.GetCurrentNetworkResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_SubmitBlockRequest); ok {
+func (x *WaglayladMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_SubmitBlockRequest); ok {
 		return x.SubmitBlockRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_SubmitBlockResponse); ok {
+func (x *WaglayladMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_SubmitBlockResponse); ok {
 		return x.SubmitBlockResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockTemplateRequest); ok {
+func (x *WaglayladMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockTemplateRequest); ok {
 		return x.GetBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockTemplateResponse); ok {
+func (x *WaglayladMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockTemplateResponse); ok {
 		return x.GetBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyBlockAddedRequest); ok {
+func (x *WaglayladMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyBlockAddedRequest); ok {
 		return x.NotifyBlockAddedRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyBlockAddedResponse); ok {
+func (x *WaglayladMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyBlockAddedResponse); ok {
 		return x.NotifyBlockAddedResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_BlockAddedNotification); ok {
+func (x *WaglayladMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BlockAddedNotification); ok {
 		return x.BlockAddedNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetPeerAddressesRequest); ok {
+func (x *WaglayladMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetPeerAddressesRequest); ok {
 		return x.GetPeerAddressesRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetPeerAddressesResponse); ok {
+func (x *WaglayladMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetPeerAddressesResponse); ok {
 		return x.GetPeerAddressesResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetSelectedTipHashRequest); ok {
+func (x *WaglayladMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetSelectedTipHashRequest); ok {
 		return x.GetSelectedTipHashRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetSelectedTipHashResponse); ok {
+func (x *WaglayladMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetSelectedTipHashResponse); ok {
 		return x.GetSelectedTipHashResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetMempoolEntryRequest); ok {
+func (x *WaglayladMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetMempoolEntryRequest); ok {
 		return x.GetMempoolEntryRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetMempoolEntryResponse); ok {
+func (x *WaglayladMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetMempoolEntryResponse); ok {
 		return x.GetMempoolEntryResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetConnectedPeerInfoRequest); ok {
+func (x *WaglayladMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetConnectedPeerInfoRequest); ok {
 		return x.GetConnectedPeerInfoRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetConnectedPeerInfoResponse); ok {
+func (x *WaglayladMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetConnectedPeerInfoResponse); ok {
 		return x.GetConnectedPeerInfoResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetAddPeerRequest() *AddPeerRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_AddPeerRequest); ok {
+func (x *WaglayladMessage) GetAddPeerRequest() *AddPeerRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_AddPeerRequest); ok {
 		return x.AddPeerRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetAddPeerResponse() *AddPeerResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_AddPeerResponse); ok {
+func (x *WaglayladMessage) GetAddPeerResponse() *AddPeerResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_AddPeerResponse); ok {
 		return x.AddPeerResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_SubmitTransactionRequest); ok {
+func (x *WaglayladMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_SubmitTransactionRequest); ok {
 		return x.SubmitTransactionRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_SubmitTransactionResponse); ok {
+func (x *WaglayladMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_SubmitTransactionResponse); ok {
 		return x.SubmitTransactionResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
+func (x *WaglayladMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentChainChangedRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
+func (x *WaglayladMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentChainChangedResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_VirtualSelectedParentChainChangedNotification); ok {
+func (x *WaglayladMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_VirtualSelectedParentChainChangedNotification); ok {
 		return x.VirtualSelectedParentChainChangedNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockRequest() *GetBlockRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockRequest); ok {
+func (x *WaglayladMessage) GetGetBlockRequest() *GetBlockRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockRequest); ok {
 		return x.GetBlockRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockResponse() *GetBlockResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockResponse); ok {
+func (x *WaglayladMessage) GetGetBlockResponse() *GetBlockResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockResponse); ok {
 		return x.GetBlockResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetSubnetworkRequest); ok {
+func (x *WaglayladMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetSubnetworkRequest); ok {
 		return x.GetSubnetworkRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetSubnetworkResponse); ok {
+func (x *WaglayladMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetSubnetworkResponse); ok {
 		return x.GetSubnetworkResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
+func (x *WaglayladMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
 		return x.GetVirtualSelectedParentChainFromBlockRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
+func (x *WaglayladMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
 		return x.GetVirtualSelectedParentChainFromBlockResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlocksRequest); ok {
+func (x *WaglayladMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlocksRequest); ok {
 		return x.GetBlocksRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlocksResponse); ok {
+func (x *WaglayladMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlocksResponse); ok {
 		return x.GetBlocksResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockCountRequest); ok {
+func (x *WaglayladMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockCountRequest); ok {
 		return x.GetBlockCountRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockCountResponse); ok {
+func (x *WaglayladMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockCountResponse); ok {
 		return x.GetBlockCountResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockDagInfoRequest); ok {
+func (x *WaglayladMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockDagInfoRequest); ok {
 		return x.GetBlockDagInfoRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBlockDagInfoResponse); ok {
+func (x *WaglayladMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBlockDagInfoResponse); ok {
 		return x.GetBlockDagInfoResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_ResolveFinalityConflictRequest); ok {
+func (x *WaglayladMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_ResolveFinalityConflictRequest); ok {
 		return x.ResolveFinalityConflictRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_ResolveFinalityConflictResponse); ok {
+func (x *WaglayladMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_ResolveFinalityConflictResponse); ok {
 		return x.ResolveFinalityConflictResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyFinalityConflictsRequest); ok {
+func (x *WaglayladMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyFinalityConflictsRequest); ok {
 		return x.NotifyFinalityConflictsRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyFinalityConflictsResponse); ok {
+func (x *WaglayladMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyFinalityConflictsResponse); ok {
 		return x.NotifyFinalityConflictsResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_FinalityConflictNotification); ok {
+func (x *WaglayladMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_FinalityConflictNotification); ok {
 		return x.FinalityConflictNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_FinalityConflictResolvedNotification); ok {
+func (x *WaglayladMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_FinalityConflictResolvedNotification); ok {
 		return x.FinalityConflictResolvedNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetMempoolEntriesRequest); ok {
+func (x *WaglayladMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetMempoolEntriesRequest); ok {
 		return x.GetMempoolEntriesRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetMempoolEntriesResponse); ok {
+func (x *WaglayladMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetMempoolEntriesResponse); ok {
 		return x.GetMempoolEntriesResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetShutDownRequest() *ShutDownRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_ShutDownRequest); ok {
+func (x *WaglayladMessage) GetShutDownRequest() *ShutDownRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_ShutDownRequest); ok {
 		return x.ShutDownRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetShutDownResponse() *ShutDownResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_ShutDownResponse); ok {
+func (x *WaglayladMessage) GetShutDownResponse() *ShutDownResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_ShutDownResponse); ok {
 		return x.ShutDownResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetHeadersRequest); ok {
+func (x *WaglayladMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetHeadersRequest); ok {
 		return x.GetHeadersRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetHeadersResponse); ok {
+func (x *WaglayladMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetHeadersResponse); ok {
 		return x.GetHeadersResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyUtxosChangedRequest); ok {
+func (x *WaglayladMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyUtxosChangedRequest); ok {
 		return x.NotifyUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyUtxosChangedResponse); ok {
+func (x *WaglayladMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyUtxosChangedResponse); ok {
 		return x.NotifyUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_UtxosChangedNotification); ok {
+func (x *WaglayladMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_UtxosChangedNotification); ok {
 		return x.UtxosChangedNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetUtxosByAddressesRequest); ok {
+func (x *WaglayladMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetUtxosByAddressesRequest); ok {
 		return x.GetUtxosByAddressesRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetUtxosByAddressesResponse); ok {
+func (x *WaglayladMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetUtxosByAddressesResponse); ok {
 		return x.GetUtxosByAddressesResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
+func (x *WaglayladMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
 		return x.GetVirtualSelectedParentBlueScoreRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
+func (x *WaglayladMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
 		return x.GetVirtualSelectedParentBlueScoreResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
+func (x *WaglayladMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
+func (x *WaglayladMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
+func (x *WaglayladMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
 		return x.VirtualSelectedParentBlueScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBanRequest() *BanRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_BanRequest); ok {
+func (x *WaglayladMessage) GetBanRequest() *BanRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BanRequest); ok {
 		return x.BanRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetBanResponse() *BanResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_BanResponse); ok {
+func (x *WaglayladMessage) GetBanResponse() *BanResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_BanResponse); ok {
 		return x.BanResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetUnbanRequest() *UnbanRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_UnbanRequest); ok {
+func (x *WaglayladMessage) GetUnbanRequest() *UnbanRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_UnbanRequest); ok {
 		return x.UnbanRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetUnbanResponse() *UnbanResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_UnbanResponse); ok {
+func (x *WaglayladMessage) GetUnbanResponse() *UnbanResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_UnbanResponse); ok {
 		return x.UnbanResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetInfoRequest() *GetInfoRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetInfoRequest); ok {
+func (x *WaglayladMessage) GetGetInfoRequest() *GetInfoRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetInfoRequest); ok {
 		return x.GetInfoRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetInfoResponse() *GetInfoResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetInfoResponse); ok {
+func (x *WaglayladMessage) GetGetInfoResponse() *GetInfoResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetInfoResponse); ok {
 		return x.GetInfoResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_StopNotifyingUtxosChangedRequest); ok {
+func (x *WaglayladMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_StopNotifyingUtxosChangedRequest); ok {
 		return x.StopNotifyingUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_StopNotifyingUtxosChangedResponse); ok {
+func (x *WaglayladMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_StopNotifyingUtxosChangedResponse); ok {
 		return x.StopNotifyingUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
+func (x *WaglayladMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
 		return x.NotifyPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
+func (x *WaglayladMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
 		return x.NotifyPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_PruningPointUTXOSetOverrideNotification); ok {
+func (x *WaglayladMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_PruningPointUTXOSetOverrideNotification); ok {
 		return x.PruningPointUTXOSetOverrideNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
+func (x *WaglayladMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
+func (x *WaglayladMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_EstimateNetworkHashesPerSecondRequest); ok {
+func (x *WaglayladMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_EstimateNetworkHashesPerSecondRequest); ok {
 		return x.EstimateNetworkHashesPerSecondRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_EstimateNetworkHashesPerSecondResponse); ok {
+func (x *WaglayladMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_EstimateNetworkHashesPerSecondResponse); ok {
 		return x.EstimateNetworkHashesPerSecondResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyVirtualDaaScoreChangedRequest); ok {
+func (x *WaglayladMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyVirtualDaaScoreChangedRequest); ok {
 		return x.NotifyVirtualDaaScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyVirtualDaaScoreChangedResponse); ok {
+func (x *WaglayladMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyVirtualDaaScoreChangedResponse); ok {
 		return x.NotifyVirtualDaaScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_VirtualDaaScoreChangedNotification); ok {
+func (x *WaglayladMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_VirtualDaaScoreChangedNotification); ok {
 		return x.VirtualDaaScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBalanceByAddressRequest); ok {
+func (x *WaglayladMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBalanceByAddressRequest); ok {
 		return x.GetBalanceByAddressRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBalanceByAddressResponse); ok {
+func (x *WaglayladMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBalanceByAddressResponse); ok {
 		return x.GetBalanceByAddressResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBalancesByAddressesRequest); ok {
+func (x *WaglayladMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBalancesByAddressesRequest); ok {
 		return x.GetBalancesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetBalancesByAddressesResponse); ok {
+func (x *WaglayladMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetBalancesByAddressesResponse); ok {
 		return x.GetBalancesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyNewBlockTemplateRequest); ok {
+func (x *WaglayladMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyNewBlockTemplateRequest); ok {
 		return x.NotifyNewBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NotifyNewBlockTemplateResponse); ok {
+func (x *WaglayladMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NotifyNewBlockTemplateResponse); ok {
 		return x.NotifyNewBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_NewBlockTemplateNotification); ok {
+func (x *WaglayladMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_NewBlockTemplateNotification); ok {
 		return x.NewBlockTemplateNotification
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetMempoolEntriesByAddressesRequest); ok {
+func (x *WaglayladMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetMempoolEntriesByAddressesRequest); ok {
 		return x.GetMempoolEntriesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetMempoolEntriesByAddressesResponse); ok {
+func (x *WaglayladMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetMempoolEntriesByAddressesResponse); ok {
 		return x.GetMempoolEntriesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetCoinSupplyRequest); ok {
+func (x *WaglayladMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetCoinSupplyRequest); ok {
 		return x.GetCoinSupplyRequest
 	}
 	return nil
 }
 
-func (x *PyipadMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
-	if x, ok := x.GetPayload().(*PyipadMessage_GetCoinSupplyResponse); ok {
+func (x *WaglayladMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
+	if x, ok := x.GetPayload().(*WaglayladMessage_GetCoinSupplyResponse); ok {
 		return x.GetCoinSupplyResponse
 	}
 	return nil
 }
 
-type isPyipadMessage_Payload interface {
-	isPyipadMessage_Payload()
+type isWaglayladMessage_Payload interface {
+	isWaglayladMessage_Payload()
 }
 
-type PyipadMessage_Addresses struct {
+type WaglayladMessage_Addresses struct {
 	Addresses *AddressesMessage `protobuf:"bytes,1,opt,name=addresses,proto3,oneof"`
 }
 
-type PyipadMessage_Block struct {
+type WaglayladMessage_Block struct {
 	Block *BlockMessage `protobuf:"bytes,2,opt,name=block,proto3,oneof"`
 }
 
-type PyipadMessage_Transaction struct {
+type WaglayladMessage_Transaction struct {
 	Transaction *TransactionMessage `protobuf:"bytes,3,opt,name=transaction,proto3,oneof"`
 }
 
-type PyipadMessage_BlockLocator struct {
+type WaglayladMessage_BlockLocator struct {
 	BlockLocator *BlockLocatorMessage `protobuf:"bytes,5,opt,name=blockLocator,proto3,oneof"`
 }
 
-type PyipadMessage_RequestAddresses struct {
+type WaglayladMessage_RequestAddresses struct {
 	RequestAddresses *RequestAddressesMessage `protobuf:"bytes,6,opt,name=requestAddresses,proto3,oneof"`
 }
 
-type PyipadMessage_RequestRelayBlocks struct {
+type WaglayladMessage_RequestRelayBlocks struct {
 	RequestRelayBlocks *RequestRelayBlocksMessage `protobuf:"bytes,10,opt,name=requestRelayBlocks,proto3,oneof"`
 }
 
-type PyipadMessage_RequestTransactions struct {
+type WaglayladMessage_RequestTransactions struct {
 	RequestTransactions *RequestTransactionsMessage `protobuf:"bytes,12,opt,name=requestTransactions,proto3,oneof"`
 }
 
-type PyipadMessage_IbdBlock struct {
+type WaglayladMessage_IbdBlock struct {
 	IbdBlock *BlockMessage `protobuf:"bytes,13,opt,name=ibdBlock,proto3,oneof"`
 }
 
-type PyipadMessage_InvRelayBlock struct {
+type WaglayladMessage_InvRelayBlock struct {
 	InvRelayBlock *InvRelayBlockMessage `protobuf:"bytes,14,opt,name=invRelayBlock,proto3,oneof"`
 }
 
-type PyipadMessage_InvTransactions struct {
+type WaglayladMessage_InvTransactions struct {
 	InvTransactions *InvTransactionsMessage `protobuf:"bytes,15,opt,name=invTransactions,proto3,oneof"`
 }
 
-type PyipadMessage_Ping struct {
+type WaglayladMessage_Ping struct {
 	Ping *PingMessage `protobuf:"bytes,16,opt,name=ping,proto3,oneof"`
 }
 
-type PyipadMessage_Pong struct {
+type WaglayladMessage_Pong struct {
 	Pong *PongMessage `protobuf:"bytes,17,opt,name=pong,proto3,oneof"`
 }
 
-type PyipadMessage_Verack struct {
+type WaglayladMessage_Verack struct {
 	Verack *VerackMessage `protobuf:"bytes,19,opt,name=verack,proto3,oneof"`
 }
 
-type PyipadMessage_Version struct {
+type WaglayladMessage_Version struct {
 	Version *VersionMessage `protobuf:"bytes,20,opt,name=version,proto3,oneof"`
 }
 
-type PyipadMessage_TransactionNotFound struct {
+type WaglayladMessage_TransactionNotFound struct {
 	TransactionNotFound *TransactionNotFoundMessage `protobuf:"bytes,21,opt,name=transactionNotFound,proto3,oneof"`
 }
 
-type PyipadMessage_Reject struct {
+type WaglayladMessage_Reject struct {
 	Reject *RejectMessage `protobuf:"bytes,22,opt,name=reject,proto3,oneof"`
 }
 
-type PyipadMessage_PruningPointUtxoSetChunk struct {
+type WaglayladMessage_PruningPointUtxoSetChunk struct {
 	PruningPointUtxoSetChunk *PruningPointUtxoSetChunkMessage `protobuf:"bytes,25,opt,name=pruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type PyipadMessage_RequestIBDBlocks struct {
+type WaglayladMessage_RequestIBDBlocks struct {
 	RequestIBDBlocks *RequestIBDBlocksMessage `protobuf:"bytes,26,opt,name=requestIBDBlocks,proto3,oneof"`
 }
 
-type PyipadMessage_UnexpectedPruningPoint struct {
+type WaglayladMessage_UnexpectedPruningPoint struct {
 	UnexpectedPruningPoint *UnexpectedPruningPointMessage `protobuf:"bytes,27,opt,name=unexpectedPruningPoint,proto3,oneof"`
 }
 
-type PyipadMessage_IbdBlockLocator struct {
+type WaglayladMessage_IbdBlockLocator struct {
 	IbdBlockLocator *IbdBlockLocatorMessage `protobuf:"bytes,30,opt,name=ibdBlockLocator,proto3,oneof"`
 }
 
-type PyipadMessage_IbdBlockLocatorHighestHash struct {
+type WaglayladMessage_IbdBlockLocatorHighestHash struct {
 	IbdBlockLocatorHighestHash *IbdBlockLocatorHighestHashMessage `protobuf:"bytes,31,opt,name=ibdBlockLocatorHighestHash,proto3,oneof"`
 }
 
-type PyipadMessage_RequestNextPruningPointUtxoSetChunk struct {
+type WaglayladMessage_RequestNextPruningPointUtxoSetChunk struct {
 	RequestNextPruningPointUtxoSetChunk *RequestNextPruningPointUtxoSetChunkMessage `protobuf:"bytes,33,opt,name=requestNextPruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type PyipadMessage_DonePruningPointUtxoSetChunks struct {
+type WaglayladMessage_DonePruningPointUtxoSetChunks struct {
 	DonePruningPointUtxoSetChunks *DonePruningPointUtxoSetChunksMessage `protobuf:"bytes,34,opt,name=donePruningPointUtxoSetChunks,proto3,oneof"`
 }
 
-type PyipadMessage_IbdBlockLocatorHighestHashNotFound struct {
+type WaglayladMessage_IbdBlockLocatorHighestHashNotFound struct {
 	IbdBlockLocatorHighestHashNotFound *IbdBlockLocatorHighestHashNotFoundMessage `protobuf:"bytes,35,opt,name=ibdBlockLocatorHighestHashNotFound,proto3,oneof"`
 }
 
-type PyipadMessage_BlockWithTrustedData struct {
+type WaglayladMessage_BlockWithTrustedData struct {
 	BlockWithTrustedData *BlockWithTrustedDataMessage `protobuf:"bytes,36,opt,name=blockWithTrustedData,proto3,oneof"`
 }
 
-type PyipadMessage_DoneBlocksWithTrustedData struct {
+type WaglayladMessage_DoneBlocksWithTrustedData struct {
 	DoneBlocksWithTrustedData *DoneBlocksWithTrustedDataMessage `protobuf:"bytes,37,opt,name=doneBlocksWithTrustedData,proto3,oneof"`
 }
 
-type PyipadMessage_RequestPruningPointAndItsAnticone struct {
+type WaglayladMessage_RequestPruningPointAndItsAnticone struct {
 	RequestPruningPointAndItsAnticone *RequestPruningPointAndItsAnticoneMessage `protobuf:"bytes,40,opt,name=requestPruningPointAndItsAnticone,proto3,oneof"`
 }
 
-type PyipadMessage_BlockHeaders struct {
+type WaglayladMessage_BlockHeaders struct {
 	BlockHeaders *BlockHeadersMessage `protobuf:"bytes,41,opt,name=blockHeaders,proto3,oneof"`
 }
 
-type PyipadMessage_RequestNextHeaders struct {
+type WaglayladMessage_RequestNextHeaders struct {
 	RequestNextHeaders *RequestNextHeadersMessage `protobuf:"bytes,42,opt,name=requestNextHeaders,proto3,oneof"`
 }
 
-type PyipadMessage_DoneHeaders struct {
+type WaglayladMessage_DoneHeaders struct {
 	DoneHeaders *DoneHeadersMessage `protobuf:"bytes,43,opt,name=DoneHeaders,proto3,oneof"`
 }
 
-type PyipadMessage_RequestPruningPointUTXOSet struct {
+type WaglayladMessage_RequestPruningPointUTXOSet struct {
 	RequestPruningPointUTXOSet *RequestPruningPointUTXOSetMessage `protobuf:"bytes,44,opt,name=requestPruningPointUTXOSet,proto3,oneof"`
 }
 
-type PyipadMessage_RequestHeaders struct {
+type WaglayladMessage_RequestHeaders struct {
 	RequestHeaders *RequestHeadersMessage `protobuf:"bytes,45,opt,name=requestHeaders,proto3,oneof"`
 }
 
-type PyipadMessage_RequestBlockLocator struct {
+type WaglayladMessage_RequestBlockLocator struct {
 	RequestBlockLocator *RequestBlockLocatorMessage `protobuf:"bytes,46,opt,name=requestBlockLocator,proto3,oneof"`
 }
 
-type PyipadMessage_PruningPoints struct {
+type WaglayladMessage_PruningPoints struct {
 	PruningPoints *PruningPointsMessage `protobuf:"bytes,47,opt,name=pruningPoints,proto3,oneof"`
 }
 
-type PyipadMessage_RequestPruningPointProof struct {
+type WaglayladMessage_RequestPruningPointProof struct {
 	RequestPruningPointProof *RequestPruningPointProofMessage `protobuf:"bytes,48,opt,name=requestPruningPointProof,proto3,oneof"`
 }
 
-type PyipadMessage_PruningPointProof struct {
+type WaglayladMessage_PruningPointProof struct {
 	PruningPointProof *PruningPointProofMessage `protobuf:"bytes,49,opt,name=pruningPointProof,proto3,oneof"`
 }
 
-type PyipadMessage_Ready struct {
+type WaglayladMessage_Ready struct {
 	Ready *ReadyMessage `protobuf:"bytes,50,opt,name=ready,proto3,oneof"`
 }
 
-type PyipadMessage_BlockWithTrustedDataV4 struct {
+type WaglayladMessage_BlockWithTrustedDataV4 struct {
 	BlockWithTrustedDataV4 *BlockWithTrustedDataV4Message `protobuf:"bytes,51,opt,name=blockWithTrustedDataV4,proto3,oneof"`
 }
 
-type PyipadMessage_TrustedData struct {
+type WaglayladMessage_TrustedData struct {
 	TrustedData *TrustedDataMessage `protobuf:"bytes,52,opt,name=trustedData,proto3,oneof"`
 }
 
-type PyipadMessage_RequestIBDChainBlockLocator struct {
+type WaglayladMessage_RequestIBDChainBlockLocator struct {
 	RequestIBDChainBlockLocator *RequestIBDChainBlockLocatorMessage `protobuf:"bytes,53,opt,name=requestIBDChainBlockLocator,proto3,oneof"`
 }
 
-type PyipadMessage_IbdChainBlockLocator struct {
+type WaglayladMessage_IbdChainBlockLocator struct {
 	IbdChainBlockLocator *IbdChainBlockLocatorMessage `protobuf:"bytes,54,opt,name=ibdChainBlockLocator,proto3,oneof"`
 }
 
-type PyipadMessage_RequestAnticone struct {
+type WaglayladMessage_RequestAnticone struct {
 	RequestAnticone *RequestAnticoneMessage `protobuf:"bytes,55,opt,name=requestAnticone,proto3,oneof"`
 }
 
-type PyipadMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
+type WaglayladMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
 	RequestNextPruningPointAndItsAnticoneBlocks *RequestNextPruningPointAndItsAnticoneBlocksMessage `protobuf:"bytes,56,opt,name=requestNextPruningPointAndItsAnticoneBlocks,proto3,oneof"`
 }
 
-type PyipadMessage_GetCurrentNetworkRequest struct {
+type WaglayladMessage_GetCurrentNetworkRequest struct {
 	GetCurrentNetworkRequest *GetCurrentNetworkRequestMessage `protobuf:"bytes,1001,opt,name=getCurrentNetworkRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetCurrentNetworkResponse struct {
+type WaglayladMessage_GetCurrentNetworkResponse struct {
 	GetCurrentNetworkResponse *GetCurrentNetworkResponseMessage `protobuf:"bytes,1002,opt,name=getCurrentNetworkResponse,proto3,oneof"`
 }
 
-type PyipadMessage_SubmitBlockRequest struct {
+type WaglayladMessage_SubmitBlockRequest struct {
 	SubmitBlockRequest *SubmitBlockRequestMessage `protobuf:"bytes,1003,opt,name=submitBlockRequest,proto3,oneof"`
 }
 
-type PyipadMessage_SubmitBlockResponse struct {
+type WaglayladMessage_SubmitBlockResponse struct {
 	SubmitBlockResponse *SubmitBlockResponseMessage `protobuf:"bytes,1004,opt,name=submitBlockResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockTemplateRequest struct {
+type WaglayladMessage_GetBlockTemplateRequest struct {
 	GetBlockTemplateRequest *GetBlockTemplateRequestMessage `protobuf:"bytes,1005,opt,name=getBlockTemplateRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockTemplateResponse struct {
+type WaglayladMessage_GetBlockTemplateResponse struct {
 	GetBlockTemplateResponse *GetBlockTemplateResponseMessage `protobuf:"bytes,1006,opt,name=getBlockTemplateResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyBlockAddedRequest struct {
+type WaglayladMessage_NotifyBlockAddedRequest struct {
 	NotifyBlockAddedRequest *NotifyBlockAddedRequestMessage `protobuf:"bytes,1007,opt,name=notifyBlockAddedRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyBlockAddedResponse struct {
+type WaglayladMessage_NotifyBlockAddedResponse struct {
 	NotifyBlockAddedResponse *NotifyBlockAddedResponseMessage `protobuf:"bytes,1008,opt,name=notifyBlockAddedResponse,proto3,oneof"`
 }
 
-type PyipadMessage_BlockAddedNotification struct {
+type WaglayladMessage_BlockAddedNotification struct {
 	BlockAddedNotification *BlockAddedNotificationMessage `protobuf:"bytes,1009,opt,name=blockAddedNotification,proto3,oneof"`
 }
 
-type PyipadMessage_GetPeerAddressesRequest struct {
+type WaglayladMessage_GetPeerAddressesRequest struct {
 	GetPeerAddressesRequest *GetPeerAddressesRequestMessage `protobuf:"bytes,1010,opt,name=getPeerAddressesRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetPeerAddressesResponse struct {
+type WaglayladMessage_GetPeerAddressesResponse struct {
 	GetPeerAddressesResponse *GetPeerAddressesResponseMessage `protobuf:"bytes,1011,opt,name=getPeerAddressesResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetSelectedTipHashRequest struct {
+type WaglayladMessage_GetSelectedTipHashRequest struct {
 	GetSelectedTipHashRequest *GetSelectedTipHashRequestMessage `protobuf:"bytes,1012,opt,name=getSelectedTipHashRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetSelectedTipHashResponse struct {
+type WaglayladMessage_GetSelectedTipHashResponse struct {
 	GetSelectedTipHashResponse *GetSelectedTipHashResponseMessage `protobuf:"bytes,1013,opt,name=getSelectedTipHashResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetMempoolEntryRequest struct {
+type WaglayladMessage_GetMempoolEntryRequest struct {
 	GetMempoolEntryRequest *GetMempoolEntryRequestMessage `protobuf:"bytes,1014,opt,name=getMempoolEntryRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetMempoolEntryResponse struct {
+type WaglayladMessage_GetMempoolEntryResponse struct {
 	GetMempoolEntryResponse *GetMempoolEntryResponseMessage `protobuf:"bytes,1015,opt,name=getMempoolEntryResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetConnectedPeerInfoRequest struct {
+type WaglayladMessage_GetConnectedPeerInfoRequest struct {
 	GetConnectedPeerInfoRequest *GetConnectedPeerInfoRequestMessage `protobuf:"bytes,1016,opt,name=getConnectedPeerInfoRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetConnectedPeerInfoResponse struct {
+type WaglayladMessage_GetConnectedPeerInfoResponse struct {
 	GetConnectedPeerInfoResponse *GetConnectedPeerInfoResponseMessage `protobuf:"bytes,1017,opt,name=getConnectedPeerInfoResponse,proto3,oneof"`
 }
 
-type PyipadMessage_AddPeerRequest struct {
+type WaglayladMessage_AddPeerRequest struct {
 	AddPeerRequest *AddPeerRequestMessage `protobuf:"bytes,1018,opt,name=addPeerRequest,proto3,oneof"`
 }
 
-type PyipadMessage_AddPeerResponse struct {
+type WaglayladMessage_AddPeerResponse struct {
 	AddPeerResponse *AddPeerResponseMessage `protobuf:"bytes,1019,opt,name=addPeerResponse,proto3,oneof"`
 }
 
-type PyipadMessage_SubmitTransactionRequest struct {
+type WaglayladMessage_SubmitTransactionRequest struct {
 	SubmitTransactionRequest *SubmitTransactionRequestMessage `protobuf:"bytes,1020,opt,name=submitTransactionRequest,proto3,oneof"`
 }
 
-type PyipadMessage_SubmitTransactionResponse struct {
+type WaglayladMessage_SubmitTransactionResponse struct {
 	SubmitTransactionResponse *SubmitTransactionResponseMessage `protobuf:"bytes,1021,opt,name=submitTransactionResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
+type WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
 	NotifyVirtualSelectedParentChainChangedRequest *NotifyVirtualSelectedParentChainChangedRequestMessage `protobuf:"bytes,1022,opt,name=notifyVirtualSelectedParentChainChangedRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
+type WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
 	NotifyVirtualSelectedParentChainChangedResponse *NotifyVirtualSelectedParentChainChangedResponseMessage `protobuf:"bytes,1023,opt,name=notifyVirtualSelectedParentChainChangedResponse,proto3,oneof"`
 }
 
-type PyipadMessage_VirtualSelectedParentChainChangedNotification struct {
+type WaglayladMessage_VirtualSelectedParentChainChangedNotification struct {
 	VirtualSelectedParentChainChangedNotification *VirtualSelectedParentChainChangedNotificationMessage `protobuf:"bytes,1024,opt,name=virtualSelectedParentChainChangedNotification,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockRequest struct {
+type WaglayladMessage_GetBlockRequest struct {
 	GetBlockRequest *GetBlockRequestMessage `protobuf:"bytes,1025,opt,name=getBlockRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockResponse struct {
+type WaglayladMessage_GetBlockResponse struct {
 	GetBlockResponse *GetBlockResponseMessage `protobuf:"bytes,1026,opt,name=getBlockResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetSubnetworkRequest struct {
+type WaglayladMessage_GetSubnetworkRequest struct {
 	GetSubnetworkRequest *GetSubnetworkRequestMessage `protobuf:"bytes,1027,opt,name=getSubnetworkRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetSubnetworkResponse struct {
+type WaglayladMessage_GetSubnetworkResponse struct {
 	GetSubnetworkResponse *GetSubnetworkResponseMessage `protobuf:"bytes,1028,opt,name=getSubnetworkResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
+type WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
 	GetVirtualSelectedParentChainFromBlockRequest *GetVirtualSelectedParentChainFromBlockRequestMessage `protobuf:"bytes,1029,opt,name=getVirtualSelectedParentChainFromBlockRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
+type WaglayladMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
 	GetVirtualSelectedParentChainFromBlockResponse *GetVirtualSelectedParentChainFromBlockResponseMessage `protobuf:"bytes,1030,opt,name=getVirtualSelectedParentChainFromBlockResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlocksRequest struct {
+type WaglayladMessage_GetBlocksRequest struct {
 	GetBlocksRequest *GetBlocksRequestMessage `protobuf:"bytes,1031,opt,name=getBlocksRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlocksResponse struct {
+type WaglayladMessage_GetBlocksResponse struct {
 	GetBlocksResponse *GetBlocksResponseMessage `protobuf:"bytes,1032,opt,name=getBlocksResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockCountRequest struct {
+type WaglayladMessage_GetBlockCountRequest struct {
 	GetBlockCountRequest *GetBlockCountRequestMessage `protobuf:"bytes,1033,opt,name=getBlockCountRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockCountResponse struct {
+type WaglayladMessage_GetBlockCountResponse struct {
 	GetBlockCountResponse *GetBlockCountResponseMessage `protobuf:"bytes,1034,opt,name=getBlockCountResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockDagInfoRequest struct {
+type WaglayladMessage_GetBlockDagInfoRequest struct {
 	GetBlockDagInfoRequest *GetBlockDagInfoRequestMessage `protobuf:"bytes,1035,opt,name=getBlockDagInfoRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBlockDagInfoResponse struct {
+type WaglayladMessage_GetBlockDagInfoResponse struct {
 	GetBlockDagInfoResponse *GetBlockDagInfoResponseMessage `protobuf:"bytes,1036,opt,name=getBlockDagInfoResponse,proto3,oneof"`
 }
 
-type PyipadMessage_ResolveFinalityConflictRequest struct {
+type WaglayladMessage_ResolveFinalityConflictRequest struct {
 	ResolveFinalityConflictRequest *ResolveFinalityConflictRequestMessage `protobuf:"bytes,1037,opt,name=resolveFinalityConflictRequest,proto3,oneof"`
 }
 
-type PyipadMessage_ResolveFinalityConflictResponse struct {
+type WaglayladMessage_ResolveFinalityConflictResponse struct {
 	ResolveFinalityConflictResponse *ResolveFinalityConflictResponseMessage `protobuf:"bytes,1038,opt,name=resolveFinalityConflictResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyFinalityConflictsRequest struct {
+type WaglayladMessage_NotifyFinalityConflictsRequest struct {
 	NotifyFinalityConflictsRequest *NotifyFinalityConflictsRequestMessage `protobuf:"bytes,1039,opt,name=notifyFinalityConflictsRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyFinalityConflictsResponse struct {
+type WaglayladMessage_NotifyFinalityConflictsResponse struct {
 	NotifyFinalityConflictsResponse *NotifyFinalityConflictsResponseMessage `protobuf:"bytes,1040,opt,name=notifyFinalityConflictsResponse,proto3,oneof"`
 }
 
-type PyipadMessage_FinalityConflictNotification struct {
+type WaglayladMessage_FinalityConflictNotification struct {
 	FinalityConflictNotification *FinalityConflictNotificationMessage `protobuf:"bytes,1041,opt,name=finalityConflictNotification,proto3,oneof"`
 }
 
-type PyipadMessage_FinalityConflictResolvedNotification struct {
+type WaglayladMessage_FinalityConflictResolvedNotification struct {
 	FinalityConflictResolvedNotification *FinalityConflictResolvedNotificationMessage `protobuf:"bytes,1042,opt,name=finalityConflictResolvedNotification,proto3,oneof"`
 }
 
-type PyipadMessage_GetMempoolEntriesRequest struct {
+type WaglayladMessage_GetMempoolEntriesRequest struct {
 	GetMempoolEntriesRequest *GetMempoolEntriesRequestMessage `protobuf:"bytes,1043,opt,name=getMempoolEntriesRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetMempoolEntriesResponse struct {
+type WaglayladMessage_GetMempoolEntriesResponse struct {
 	GetMempoolEntriesResponse *GetMempoolEntriesResponseMessage `protobuf:"bytes,1044,opt,name=getMempoolEntriesResponse,proto3,oneof"`
 }
 
-type PyipadMessage_ShutDownRequest struct {
+type WaglayladMessage_ShutDownRequest struct {
 	ShutDownRequest *ShutDownRequestMessage `protobuf:"bytes,1045,opt,name=shutDownRequest,proto3,oneof"`
 }
 
-type PyipadMessage_ShutDownResponse struct {
+type WaglayladMessage_ShutDownResponse struct {
 	ShutDownResponse *ShutDownResponseMessage `protobuf:"bytes,1046,opt,name=shutDownResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetHeadersRequest struct {
+type WaglayladMessage_GetHeadersRequest struct {
 	GetHeadersRequest *GetHeadersRequestMessage `protobuf:"bytes,1047,opt,name=getHeadersRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetHeadersResponse struct {
+type WaglayladMessage_GetHeadersResponse struct {
 	GetHeadersResponse *GetHeadersResponseMessage `protobuf:"bytes,1048,opt,name=getHeadersResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyUtxosChangedRequest struct {
+type WaglayladMessage_NotifyUtxosChangedRequest struct {
 	NotifyUtxosChangedRequest *NotifyUtxosChangedRequestMessage `protobuf:"bytes,1049,opt,name=notifyUtxosChangedRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyUtxosChangedResponse struct {
+type WaglayladMessage_NotifyUtxosChangedResponse struct {
 	NotifyUtxosChangedResponse *NotifyUtxosChangedResponseMessage `protobuf:"bytes,1050,opt,name=notifyUtxosChangedResponse,proto3,oneof"`
 }
 
-type PyipadMessage_UtxosChangedNotification struct {
+type WaglayladMessage_UtxosChangedNotification struct {
 	UtxosChangedNotification *UtxosChangedNotificationMessage `protobuf:"bytes,1051,opt,name=utxosChangedNotification,proto3,oneof"`
 }
 
-type PyipadMessage_GetUtxosByAddressesRequest struct {
+type WaglayladMessage_GetUtxosByAddressesRequest struct {
 	GetUtxosByAddressesRequest *GetUtxosByAddressesRequestMessage `protobuf:"bytes,1052,opt,name=getUtxosByAddressesRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetUtxosByAddressesResponse struct {
+type WaglayladMessage_GetUtxosByAddressesResponse struct {
 	GetUtxosByAddressesResponse *GetUtxosByAddressesResponseMessage `protobuf:"bytes,1053,opt,name=getUtxosByAddressesResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetVirtualSelectedParentBlueScoreRequest struct {
+type WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest struct {
 	GetVirtualSelectedParentBlueScoreRequest *GetVirtualSelectedParentBlueScoreRequestMessage `protobuf:"bytes,1054,opt,name=getVirtualSelectedParentBlueScoreRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetVirtualSelectedParentBlueScoreResponse struct {
+type WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse struct {
 	GetVirtualSelectedParentBlueScoreResponse *GetVirtualSelectedParentBlueScoreResponseMessage `protobuf:"bytes,1055,opt,name=getVirtualSelectedParentBlueScoreResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
+type WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
 	NotifyVirtualSelectedParentBlueScoreChangedRequest *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage `protobuf:"bytes,1056,opt,name=notifyVirtualSelectedParentBlueScoreChangedRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
+type WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
 	NotifyVirtualSelectedParentBlueScoreChangedResponse *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage `protobuf:"bytes,1057,opt,name=notifyVirtualSelectedParentBlueScoreChangedResponse,proto3,oneof"`
 }
 
-type PyipadMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
+type WaglayladMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
 	VirtualSelectedParentBlueScoreChangedNotification *VirtualSelectedParentBlueScoreChangedNotificationMessage `protobuf:"bytes,1058,opt,name=virtualSelectedParentBlueScoreChangedNotification,proto3,oneof"`
 }
 
-type PyipadMessage_BanRequest struct {
+type WaglayladMessage_BanRequest struct {
 	BanRequest *BanRequestMessage `protobuf:"bytes,1059,opt,name=banRequest,proto3,oneof"`
 }
 
-type PyipadMessage_BanResponse struct {
+type WaglayladMessage_BanResponse struct {
 	BanResponse *BanResponseMessage `protobuf:"bytes,1060,opt,name=banResponse,proto3,oneof"`
 }
 
-type PyipadMessage_UnbanRequest struct {
+type WaglayladMessage_UnbanRequest struct {
 	UnbanRequest *UnbanRequestMessage `protobuf:"bytes,1061,opt,name=unbanRequest,proto3,oneof"`
 }
 
-type PyipadMessage_UnbanResponse struct {
+type WaglayladMessage_UnbanResponse struct {
 	UnbanResponse *UnbanResponseMessage `protobuf:"bytes,1062,opt,name=unbanResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetInfoRequest struct {
+type WaglayladMessage_GetInfoRequest struct {
 	GetInfoRequest *GetInfoRequestMessage `protobuf:"bytes,1063,opt,name=getInfoRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetInfoResponse struct {
+type WaglayladMessage_GetInfoResponse struct {
 	GetInfoResponse *GetInfoResponseMessage `protobuf:"bytes,1064,opt,name=getInfoResponse,proto3,oneof"`
 }
 
-type PyipadMessage_StopNotifyingUtxosChangedRequest struct {
+type WaglayladMessage_StopNotifyingUtxosChangedRequest struct {
 	StopNotifyingUtxosChangedRequest *StopNotifyingUtxosChangedRequestMessage `protobuf:"bytes,1065,opt,name=stopNotifyingUtxosChangedRequest,proto3,oneof"`
 }
 
-type PyipadMessage_StopNotifyingUtxosChangedResponse struct {
+type WaglayladMessage_StopNotifyingUtxosChangedResponse struct {
 	StopNotifyingUtxosChangedResponse *StopNotifyingUtxosChangedResponseMessage `protobuf:"bytes,1066,opt,name=stopNotifyingUtxosChangedResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
+type WaglayladMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
 	NotifyPruningPointUTXOSetOverrideRequest *NotifyPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1067,opt,name=notifyPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
+type WaglayladMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
 	NotifyPruningPointUTXOSetOverrideResponse *NotifyPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1068,opt,name=notifyPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type PyipadMessage_PruningPointUTXOSetOverrideNotification struct {
+type WaglayladMessage_PruningPointUTXOSetOverrideNotification struct {
 	PruningPointUTXOSetOverrideNotification *PruningPointUTXOSetOverrideNotificationMessage `protobuf:"bytes,1069,opt,name=pruningPointUTXOSetOverrideNotification,proto3,oneof"`
 }
 
-type PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
+type WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
 	StopNotifyingPruningPointUTXOSetOverrideRequest *StopNotifyingPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1070,opt,name=stopNotifyingPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
+type WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
 	StopNotifyingPruningPointUTXOSetOverrideResponse *StopNotifyingPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1071,opt,name=stopNotifyingPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type PyipadMessage_EstimateNetworkHashesPerSecondRequest struct {
+type WaglayladMessage_EstimateNetworkHashesPerSecondRequest struct {
 	EstimateNetworkHashesPerSecondRequest *EstimateNetworkHashesPerSecondRequestMessage `protobuf:"bytes,1072,opt,name=estimateNetworkHashesPerSecondRequest,proto3,oneof"`
 }
 
-type PyipadMessage_EstimateNetworkHashesPerSecondResponse struct {
+type WaglayladMessage_EstimateNetworkHashesPerSecondResponse struct {
 	EstimateNetworkHashesPerSecondResponse *EstimateNetworkHashesPerSecondResponseMessage `protobuf:"bytes,1073,opt,name=estimateNetworkHashesPerSecondResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyVirtualDaaScoreChangedRequest struct {
+type WaglayladMessage_NotifyVirtualDaaScoreChangedRequest struct {
 	NotifyVirtualDaaScoreChangedRequest *NotifyVirtualDaaScoreChangedRequestMessage `protobuf:"bytes,1074,opt,name=notifyVirtualDaaScoreChangedRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyVirtualDaaScoreChangedResponse struct {
+type WaglayladMessage_NotifyVirtualDaaScoreChangedResponse struct {
 	NotifyVirtualDaaScoreChangedResponse *NotifyVirtualDaaScoreChangedResponseMessage `protobuf:"bytes,1075,opt,name=notifyVirtualDaaScoreChangedResponse,proto3,oneof"`
 }
 
-type PyipadMessage_VirtualDaaScoreChangedNotification struct {
+type WaglayladMessage_VirtualDaaScoreChangedNotification struct {
 	VirtualDaaScoreChangedNotification *VirtualDaaScoreChangedNotificationMessage `protobuf:"bytes,1076,opt,name=virtualDaaScoreChangedNotification,proto3,oneof"`
 }
 
-type PyipadMessage_GetBalanceByAddressRequest struct {
+type WaglayladMessage_GetBalanceByAddressRequest struct {
 	GetBalanceByAddressRequest *GetBalanceByAddressRequestMessage `protobuf:"bytes,1077,opt,name=getBalanceByAddressRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBalanceByAddressResponse struct {
+type WaglayladMessage_GetBalanceByAddressResponse struct {
 	GetBalanceByAddressResponse *GetBalanceByAddressResponseMessage `protobuf:"bytes,1078,opt,name=getBalanceByAddressResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetBalancesByAddressesRequest struct {
+type WaglayladMessage_GetBalancesByAddressesRequest struct {
 	GetBalancesByAddressesRequest *GetBalancesByAddressesRequestMessage `protobuf:"bytes,1079,opt,name=getBalancesByAddressesRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetBalancesByAddressesResponse struct {
+type WaglayladMessage_GetBalancesByAddressesResponse struct {
 	GetBalancesByAddressesResponse *GetBalancesByAddressesResponseMessage `protobuf:"bytes,1080,opt,name=getBalancesByAddressesResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyNewBlockTemplateRequest struct {
+type WaglayladMessage_NotifyNewBlockTemplateRequest struct {
 	NotifyNewBlockTemplateRequest *NotifyNewBlockTemplateRequestMessage `protobuf:"bytes,1081,opt,name=notifyNewBlockTemplateRequest,proto3,oneof"`
 }
 
-type PyipadMessage_NotifyNewBlockTemplateResponse struct {
+type WaglayladMessage_NotifyNewBlockTemplateResponse struct {
 	NotifyNewBlockTemplateResponse *NotifyNewBlockTemplateResponseMessage `protobuf:"bytes,1082,opt,name=notifyNewBlockTemplateResponse,proto3,oneof"`
 }
 
-type PyipadMessage_NewBlockTemplateNotification struct {
+type WaglayladMessage_NewBlockTemplateNotification struct {
 	NewBlockTemplateNotification *NewBlockTemplateNotificationMessage `protobuf:"bytes,1083,opt,name=newBlockTemplateNotification,proto3,oneof"`
 }
 
-type PyipadMessage_GetMempoolEntriesByAddressesRequest struct {
+type WaglayladMessage_GetMempoolEntriesByAddressesRequest struct {
 	GetMempoolEntriesByAddressesRequest *GetMempoolEntriesByAddressesRequestMessage `protobuf:"bytes,1084,opt,name=getMempoolEntriesByAddressesRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetMempoolEntriesByAddressesResponse struct {
+type WaglayladMessage_GetMempoolEntriesByAddressesResponse struct {
 	GetMempoolEntriesByAddressesResponse *GetMempoolEntriesByAddressesResponseMessage `protobuf:"bytes,1085,opt,name=getMempoolEntriesByAddressesResponse,proto3,oneof"`
 }
 
-type PyipadMessage_GetCoinSupplyRequest struct {
+type WaglayladMessage_GetCoinSupplyRequest struct {
 	GetCoinSupplyRequest *GetCoinSupplyRequestMessage `protobuf:"bytes,1086,opt,name=getCoinSupplyRequest,proto3,oneof"`
 }
 
-type PyipadMessage_GetCoinSupplyResponse struct {
+type WaglayladMessage_GetCoinSupplyResponse struct {
 	GetCoinSupplyResponse *GetCoinSupplyResponseMessage `protobuf:"bytes,1087,opt,name=getCoinSupplyResponse,proto3,oneof"`
 }
 
-func (*PyipadMessage_Addresses) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Addresses) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Block) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Block) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Transaction) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Transaction) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BlockLocator) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BlockLocator) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestAddresses) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestAddresses) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestRelayBlocks) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestRelayBlocks) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestTransactions) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestTransactions) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_IbdBlock) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_IbdBlock) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_InvRelayBlock) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_InvRelayBlock) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_InvTransactions) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_InvTransactions) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Ping) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Ping) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Pong) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Pong) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Verack) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Verack) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Version) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Version) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_TransactionNotFound) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_TransactionNotFound) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Reject) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Reject) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_PruningPointUtxoSetChunk) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_PruningPointUtxoSetChunk) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestIBDBlocks) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestIBDBlocks) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_UnexpectedPruningPoint) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_UnexpectedPruningPoint) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_IbdBlockLocator) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_IbdBlockLocator) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_IbdBlockLocatorHighestHash) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_IbdBlockLocatorHighestHash) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestNextPruningPointUtxoSetChunk) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestNextPruningPointUtxoSetChunk) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_DonePruningPointUtxoSetChunks) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_DonePruningPointUtxoSetChunks) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_IbdBlockLocatorHighestHashNotFound) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_IbdBlockLocatorHighestHashNotFound) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BlockWithTrustedData) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BlockWithTrustedData) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_DoneBlocksWithTrustedData) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_DoneBlocksWithTrustedData) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestPruningPointAndItsAnticone) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestPruningPointAndItsAnticone) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BlockHeaders) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BlockHeaders) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestNextHeaders) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestNextHeaders) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_DoneHeaders) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_DoneHeaders) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestPruningPointUTXOSet) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestPruningPointUTXOSet) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestHeaders) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestHeaders) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestBlockLocator) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestBlockLocator) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_PruningPoints) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_PruningPoints) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestPruningPointProof) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestPruningPointProof) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_PruningPointProof) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_PruningPointProof) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_Ready) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_Ready) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BlockWithTrustedDataV4) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BlockWithTrustedDataV4) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_TrustedData) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_TrustedData) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestIBDChainBlockLocator) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestIBDChainBlockLocator) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_IbdChainBlockLocator) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_IbdChainBlockLocator) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestAnticone) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestAnticone) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_RequestNextPruningPointAndItsAnticoneBlocks) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_RequestNextPruningPointAndItsAnticoneBlocks) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetCurrentNetworkRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetCurrentNetworkRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetCurrentNetworkResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetCurrentNetworkResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_SubmitBlockRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_SubmitBlockRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_SubmitBlockResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_SubmitBlockResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockTemplateRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockTemplateRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockTemplateResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockTemplateResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyBlockAddedRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyBlockAddedRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyBlockAddedResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyBlockAddedResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BlockAddedNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BlockAddedNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetPeerAddressesRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetPeerAddressesRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetPeerAddressesResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetPeerAddressesResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetSelectedTipHashRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetSelectedTipHashRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetSelectedTipHashResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetSelectedTipHashResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetMempoolEntryRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetMempoolEntryRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetMempoolEntryResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetMempoolEntryResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetConnectedPeerInfoRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetConnectedPeerInfoRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetConnectedPeerInfoResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetConnectedPeerInfoResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_AddPeerRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_AddPeerRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_AddPeerResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_AddPeerResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_SubmitTransactionRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_SubmitTransactionRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_SubmitTransactionResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_SubmitTransactionResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_VirtualSelectedParentChainChangedNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_VirtualSelectedParentChainChangedNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetSubnetworkRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetSubnetworkRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetSubnetworkResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetSubnetworkResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetVirtualSelectedParentChainFromBlockResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetVirtualSelectedParentChainFromBlockResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlocksRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlocksRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlocksResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlocksResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockCountRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockCountRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockCountResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockCountResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockDagInfoRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockDagInfoRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBlockDagInfoResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBlockDagInfoResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_ResolveFinalityConflictRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_ResolveFinalityConflictRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_ResolveFinalityConflictResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_ResolveFinalityConflictResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyFinalityConflictsRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyFinalityConflictsRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyFinalityConflictsResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyFinalityConflictsResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_FinalityConflictNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_FinalityConflictNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_FinalityConflictResolvedNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_FinalityConflictResolvedNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetMempoolEntriesRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetMempoolEntriesRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetMempoolEntriesResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetMempoolEntriesResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_ShutDownRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_ShutDownRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_ShutDownResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_ShutDownResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetHeadersRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetHeadersRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetHeadersResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetHeadersResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyUtxosChangedRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyUtxosChangedRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyUtxosChangedResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyUtxosChangedResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_UtxosChangedNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_UtxosChangedNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetUtxosByAddressesRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetUtxosByAddressesRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetUtxosByAddressesResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetUtxosByAddressesResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetVirtualSelectedParentBlueScoreRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetVirtualSelectedParentBlueScoreResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_VirtualSelectedParentBlueScoreChangedNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_VirtualSelectedParentBlueScoreChangedNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BanRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BanRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_BanResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_BanResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_UnbanRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_UnbanRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_UnbanResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_UnbanResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetInfoRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetInfoRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetInfoResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetInfoResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_StopNotifyingUtxosChangedRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_StopNotifyingUtxosChangedRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_StopNotifyingUtxosChangedResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_StopNotifyingUtxosChangedResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyPruningPointUTXOSetOverrideRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyPruningPointUTXOSetOverrideRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyPruningPointUTXOSetOverrideResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyPruningPointUTXOSetOverrideResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_PruningPointUTXOSetOverrideNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_PruningPointUTXOSetOverrideNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_EstimateNetworkHashesPerSecondRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_EstimateNetworkHashesPerSecondRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_EstimateNetworkHashesPerSecondResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_EstimateNetworkHashesPerSecondResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyVirtualDaaScoreChangedRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyVirtualDaaScoreChangedRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyVirtualDaaScoreChangedResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyVirtualDaaScoreChangedResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_VirtualDaaScoreChangedNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_VirtualDaaScoreChangedNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBalanceByAddressRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBalanceByAddressRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBalanceByAddressResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBalanceByAddressResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBalancesByAddressesRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBalancesByAddressesRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetBalancesByAddressesResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetBalancesByAddressesResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyNewBlockTemplateRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyNewBlockTemplateRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NotifyNewBlockTemplateResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NotifyNewBlockTemplateResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_NewBlockTemplateNotification) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_NewBlockTemplateNotification) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetMempoolEntriesByAddressesRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetMempoolEntriesByAddressesRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetMempoolEntriesByAddressesResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetMempoolEntriesByAddressesResponse) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetCoinSupplyRequest) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetCoinSupplyRequest) isWaglayladMessage_Payload() {}
 
-func (*PyipadMessage_GetCoinSupplyResponse) isPyipadMessage_Payload() {}
+func (*WaglayladMessage_GetCoinSupplyResponse) isWaglayladMessage_Payload() {}
 
 var File_messages_proto protoreflect.FileDescriptor
 
@@ -2805,7 +2805,7 @@ func file_messages_proto_rawDescGZIP() []byte {
 
 var file_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_messages_proto_goTypes = []interface{}{
-	(*PyipadMessage)(nil),                                              // 0: protowire.PyipadMessage
+	(*WaglayladMessage)(nil),                                              // 0: protowire.WaglayladMessage
 	(*AddressesMessage)(nil),                                           // 1: protowire.AddressesMessage
 	(*BlockMessage)(nil),                                               // 2: protowire.BlockMessage
 	(*TransactionMessage)(nil),                                         // 3: protowire.TransactionMessage
@@ -2937,140 +2937,140 @@ var file_messages_proto_goTypes = []interface{}{
 	(*GetCoinSupplyResponseMessage)(nil),                               // 129: protowire.GetCoinSupplyResponseMessage
 }
 var file_messages_proto_depIdxs = []int32{
-	1,   // 0: protowire.PyipadMessage.addresses:type_name -> protowire.AddressesMessage
-	2,   // 1: protowire.PyipadMessage.block:type_name -> protowire.BlockMessage
-	3,   // 2: protowire.PyipadMessage.transaction:type_name -> protowire.TransactionMessage
-	4,   // 3: protowire.PyipadMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
-	5,   // 4: protowire.PyipadMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
-	6,   // 5: protowire.PyipadMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
-	7,   // 6: protowire.PyipadMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
-	2,   // 7: protowire.PyipadMessage.ibdBlock:type_name -> protowire.BlockMessage
-	8,   // 8: protowire.PyipadMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
-	9,   // 9: protowire.PyipadMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
-	10,  // 10: protowire.PyipadMessage.ping:type_name -> protowire.PingMessage
-	11,  // 11: protowire.PyipadMessage.pong:type_name -> protowire.PongMessage
-	12,  // 12: protowire.PyipadMessage.verack:type_name -> protowire.VerackMessage
-	13,  // 13: protowire.PyipadMessage.version:type_name -> protowire.VersionMessage
-	14,  // 14: protowire.PyipadMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
-	15,  // 15: protowire.PyipadMessage.reject:type_name -> protowire.RejectMessage
-	16,  // 16: protowire.PyipadMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
-	17,  // 17: protowire.PyipadMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
-	18,  // 18: protowire.PyipadMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
-	19,  // 19: protowire.PyipadMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
-	20,  // 20: protowire.PyipadMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
-	21,  // 21: protowire.PyipadMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
-	22,  // 22: protowire.PyipadMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
-	23,  // 23: protowire.PyipadMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
-	24,  // 24: protowire.PyipadMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
-	25,  // 25: protowire.PyipadMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
-	26,  // 26: protowire.PyipadMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
-	27,  // 27: protowire.PyipadMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
-	28,  // 28: protowire.PyipadMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
-	29,  // 29: protowire.PyipadMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
-	30,  // 30: protowire.PyipadMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
-	31,  // 31: protowire.PyipadMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
-	32,  // 32: protowire.PyipadMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
-	33,  // 33: protowire.PyipadMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
-	34,  // 34: protowire.PyipadMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
-	35,  // 35: protowire.PyipadMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
-	36,  // 36: protowire.PyipadMessage.ready:type_name -> protowire.ReadyMessage
-	37,  // 37: protowire.PyipadMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
-	38,  // 38: protowire.PyipadMessage.trustedData:type_name -> protowire.TrustedDataMessage
-	39,  // 39: protowire.PyipadMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
-	40,  // 40: protowire.PyipadMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
-	41,  // 41: protowire.PyipadMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
-	42,  // 42: protowire.PyipadMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
-	43,  // 43: protowire.PyipadMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
-	44,  // 44: protowire.PyipadMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
-	45,  // 45: protowire.PyipadMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
-	46,  // 46: protowire.PyipadMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
-	47,  // 47: protowire.PyipadMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
-	48,  // 48: protowire.PyipadMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
-	49,  // 49: protowire.PyipadMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
-	50,  // 50: protowire.PyipadMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
-	51,  // 51: protowire.PyipadMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
-	52,  // 52: protowire.PyipadMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
-	53,  // 53: protowire.PyipadMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
-	54,  // 54: protowire.PyipadMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
-	55,  // 55: protowire.PyipadMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
-	56,  // 56: protowire.PyipadMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
-	57,  // 57: protowire.PyipadMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
-	58,  // 58: protowire.PyipadMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
-	59,  // 59: protowire.PyipadMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
-	60,  // 60: protowire.PyipadMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
-	61,  // 61: protowire.PyipadMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
-	62,  // 62: protowire.PyipadMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
-	63,  // 63: protowire.PyipadMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
-	64,  // 64: protowire.PyipadMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
-	65,  // 65: protowire.PyipadMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
-	66,  // 66: protowire.PyipadMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
-	67,  // 67: protowire.PyipadMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
-	68,  // 68: protowire.PyipadMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
-	69,  // 69: protowire.PyipadMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
-	70,  // 70: protowire.PyipadMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
-	71,  // 71: protowire.PyipadMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
-	72,  // 72: protowire.PyipadMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
-	73,  // 73: protowire.PyipadMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
-	74,  // 74: protowire.PyipadMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
-	75,  // 75: protowire.PyipadMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
-	76,  // 76: protowire.PyipadMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
-	77,  // 77: protowire.PyipadMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
-	78,  // 78: protowire.PyipadMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
-	79,  // 79: protowire.PyipadMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
-	80,  // 80: protowire.PyipadMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
-	81,  // 81: protowire.PyipadMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
-	82,  // 82: protowire.PyipadMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
-	83,  // 83: protowire.PyipadMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
-	84,  // 84: protowire.PyipadMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
-	85,  // 85: protowire.PyipadMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
-	86,  // 86: protowire.PyipadMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
-	87,  // 87: protowire.PyipadMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
-	88,  // 88: protowire.PyipadMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
-	89,  // 89: protowire.PyipadMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
-	90,  // 90: protowire.PyipadMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
-	91,  // 91: protowire.PyipadMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
-	92,  // 92: protowire.PyipadMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
-	93,  // 93: protowire.PyipadMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
-	94,  // 94: protowire.PyipadMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
-	95,  // 95: protowire.PyipadMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
-	96,  // 96: protowire.PyipadMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
-	97,  // 97: protowire.PyipadMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
-	98,  // 98: protowire.PyipadMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
-	99,  // 99: protowire.PyipadMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
-	100, // 100: protowire.PyipadMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
-	101, // 101: protowire.PyipadMessage.banRequest:type_name -> protowire.BanRequestMessage
-	102, // 102: protowire.PyipadMessage.banResponse:type_name -> protowire.BanResponseMessage
-	103, // 103: protowire.PyipadMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
-	104, // 104: protowire.PyipadMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
-	105, // 105: protowire.PyipadMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
-	106, // 106: protowire.PyipadMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
-	107, // 107: protowire.PyipadMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
-	108, // 108: protowire.PyipadMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
-	109, // 109: protowire.PyipadMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
-	110, // 110: protowire.PyipadMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
-	111, // 111: protowire.PyipadMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
-	112, // 112: protowire.PyipadMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
-	113, // 113: protowire.PyipadMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
-	114, // 114: protowire.PyipadMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
-	115, // 115: protowire.PyipadMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
-	116, // 116: protowire.PyipadMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
-	117, // 117: protowire.PyipadMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
-	118, // 118: protowire.PyipadMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
-	119, // 119: protowire.PyipadMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
-	120, // 120: protowire.PyipadMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
-	121, // 121: protowire.PyipadMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
-	122, // 122: protowire.PyipadMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
-	123, // 123: protowire.PyipadMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
-	124, // 124: protowire.PyipadMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
-	125, // 125: protowire.PyipadMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
-	126, // 126: protowire.PyipadMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
-	127, // 127: protowire.PyipadMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
-	128, // 128: protowire.PyipadMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
-	129, // 129: protowire.PyipadMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
-	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.PyipadMessage
-	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.PyipadMessage
-	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.PyipadMessage
-	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.PyipadMessage
+	1,   // 0: protowire.WaglayladMessage.addresses:type_name -> protowire.AddressesMessage
+	2,   // 1: protowire.WaglayladMessage.block:type_name -> protowire.BlockMessage
+	3,   // 2: protowire.WaglayladMessage.transaction:type_name -> protowire.TransactionMessage
+	4,   // 3: protowire.WaglayladMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
+	5,   // 4: protowire.WaglayladMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
+	6,   // 5: protowire.WaglayladMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
+	7,   // 6: protowire.WaglayladMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
+	2,   // 7: protowire.WaglayladMessage.ibdBlock:type_name -> protowire.BlockMessage
+	8,   // 8: protowire.WaglayladMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
+	9,   // 9: protowire.WaglayladMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
+	10,  // 10: protowire.WaglayladMessage.ping:type_name -> protowire.PingMessage
+	11,  // 11: protowire.WaglayladMessage.pong:type_name -> protowire.PongMessage
+	12,  // 12: protowire.WaglayladMessage.verack:type_name -> protowire.VerackMessage
+	13,  // 13: protowire.WaglayladMessage.version:type_name -> protowire.VersionMessage
+	14,  // 14: protowire.WaglayladMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
+	15,  // 15: protowire.WaglayladMessage.reject:type_name -> protowire.RejectMessage
+	16,  // 16: protowire.WaglayladMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
+	17,  // 17: protowire.WaglayladMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
+	18,  // 18: protowire.WaglayladMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
+	19,  // 19: protowire.WaglayladMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
+	20,  // 20: protowire.WaglayladMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
+	21,  // 21: protowire.WaglayladMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
+	22,  // 22: protowire.WaglayladMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
+	23,  // 23: protowire.WaglayladMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
+	24,  // 24: protowire.WaglayladMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
+	25,  // 25: protowire.WaglayladMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
+	26,  // 26: protowire.WaglayladMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
+	27,  // 27: protowire.WaglayladMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
+	28,  // 28: protowire.WaglayladMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
+	29,  // 29: protowire.WaglayladMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
+	30,  // 30: protowire.WaglayladMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
+	31,  // 31: protowire.WaglayladMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
+	32,  // 32: protowire.WaglayladMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
+	33,  // 33: protowire.WaglayladMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
+	34,  // 34: protowire.WaglayladMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
+	35,  // 35: protowire.WaglayladMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
+	36,  // 36: protowire.WaglayladMessage.ready:type_name -> protowire.ReadyMessage
+	37,  // 37: protowire.WaglayladMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
+	38,  // 38: protowire.WaglayladMessage.trustedData:type_name -> protowire.TrustedDataMessage
+	39,  // 39: protowire.WaglayladMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
+	40,  // 40: protowire.WaglayladMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
+	41,  // 41: protowire.WaglayladMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
+	42,  // 42: protowire.WaglayladMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
+	43,  // 43: protowire.WaglayladMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
+	44,  // 44: protowire.WaglayladMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
+	45,  // 45: protowire.WaglayladMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
+	46,  // 46: protowire.WaglayladMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
+	47,  // 47: protowire.WaglayladMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
+	48,  // 48: protowire.WaglayladMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
+	49,  // 49: protowire.WaglayladMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
+	50,  // 50: protowire.WaglayladMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
+	51,  // 51: protowire.WaglayladMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
+	52,  // 52: protowire.WaglayladMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
+	53,  // 53: protowire.WaglayladMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
+	54,  // 54: protowire.WaglayladMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
+	55,  // 55: protowire.WaglayladMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
+	56,  // 56: protowire.WaglayladMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
+	57,  // 57: protowire.WaglayladMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
+	58,  // 58: protowire.WaglayladMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
+	59,  // 59: protowire.WaglayladMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
+	60,  // 60: protowire.WaglayladMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
+	61,  // 61: protowire.WaglayladMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
+	62,  // 62: protowire.WaglayladMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
+	63,  // 63: protowire.WaglayladMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
+	64,  // 64: protowire.WaglayladMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
+	65,  // 65: protowire.WaglayladMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
+	66,  // 66: protowire.WaglayladMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
+	67,  // 67: protowire.WaglayladMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
+	68,  // 68: protowire.WaglayladMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
+	69,  // 69: protowire.WaglayladMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
+	70,  // 70: protowire.WaglayladMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
+	71,  // 71: protowire.WaglayladMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
+	72,  // 72: protowire.WaglayladMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
+	73,  // 73: protowire.WaglayladMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
+	74,  // 74: protowire.WaglayladMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
+	75,  // 75: protowire.WaglayladMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
+	76,  // 76: protowire.WaglayladMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
+	77,  // 77: protowire.WaglayladMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
+	78,  // 78: protowire.WaglayladMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
+	79,  // 79: protowire.WaglayladMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
+	80,  // 80: protowire.WaglayladMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
+	81,  // 81: protowire.WaglayladMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
+	82,  // 82: protowire.WaglayladMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
+	83,  // 83: protowire.WaglayladMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
+	84,  // 84: protowire.WaglayladMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
+	85,  // 85: protowire.WaglayladMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
+	86,  // 86: protowire.WaglayladMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
+	87,  // 87: protowire.WaglayladMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
+	88,  // 88: protowire.WaglayladMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
+	89,  // 89: protowire.WaglayladMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
+	90,  // 90: protowire.WaglayladMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
+	91,  // 91: protowire.WaglayladMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
+	92,  // 92: protowire.WaglayladMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
+	93,  // 93: protowire.WaglayladMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
+	94,  // 94: protowire.WaglayladMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
+	95,  // 95: protowire.WaglayladMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
+	96,  // 96: protowire.WaglayladMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
+	97,  // 97: protowire.WaglayladMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
+	98,  // 98: protowire.WaglayladMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
+	99,  // 99: protowire.WaglayladMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
+	100, // 100: protowire.WaglayladMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
+	101, // 101: protowire.WaglayladMessage.banRequest:type_name -> protowire.BanRequestMessage
+	102, // 102: protowire.WaglayladMessage.banResponse:type_name -> protowire.BanResponseMessage
+	103, // 103: protowire.WaglayladMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
+	104, // 104: protowire.WaglayladMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
+	105, // 105: protowire.WaglayladMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
+	106, // 106: protowire.WaglayladMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
+	107, // 107: protowire.WaglayladMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
+	108, // 108: protowire.WaglayladMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
+	109, // 109: protowire.WaglayladMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
+	110, // 110: protowire.WaglayladMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
+	111, // 111: protowire.WaglayladMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
+	112, // 112: protowire.WaglayladMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
+	113, // 113: protowire.WaglayladMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
+	114, // 114: protowire.WaglayladMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
+	115, // 115: protowire.WaglayladMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
+	116, // 116: protowire.WaglayladMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
+	117, // 117: protowire.WaglayladMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
+	118, // 118: protowire.WaglayladMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
+	119, // 119: protowire.WaglayladMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
+	120, // 120: protowire.WaglayladMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
+	121, // 121: protowire.WaglayladMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
+	122, // 122: protowire.WaglayladMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
+	123, // 123: protowire.WaglayladMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
+	124, // 124: protowire.WaglayladMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
+	125, // 125: protowire.WaglayladMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
+	126, // 126: protowire.WaglayladMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
+	127, // 127: protowire.WaglayladMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
+	128, // 128: protowire.WaglayladMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
+	129, // 129: protowire.WaglayladMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
+	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.WaglayladMessage
+	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.WaglayladMessage
+	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.WaglayladMessage
+	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.WaglayladMessage
 	132, // [132:134] is the sub-list for method output_type
 	130, // [130:132] is the sub-list for method input_type
 	130, // [130:130] is the sub-list for extension type_name
@@ -3087,7 +3087,7 @@ func file_messages_proto_init() {
 	file_rpc_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_messages_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PyipadMessage); i {
+			switch v := v.(*WaglayladMessage); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3100,136 +3100,136 @@ func file_messages_proto_init() {
 		}
 	}
 	file_messages_proto_msgTypes[0].OneofWrappers = []interface{}{
-		(*PyipadMessage_Addresses)(nil),
-		(*PyipadMessage_Block)(nil),
-		(*PyipadMessage_Transaction)(nil),
-		(*PyipadMessage_BlockLocator)(nil),
-		(*PyipadMessage_RequestAddresses)(nil),
-		(*PyipadMessage_RequestRelayBlocks)(nil),
-		(*PyipadMessage_RequestTransactions)(nil),
-		(*PyipadMessage_IbdBlock)(nil),
-		(*PyipadMessage_InvRelayBlock)(nil),
-		(*PyipadMessage_InvTransactions)(nil),
-		(*PyipadMessage_Ping)(nil),
-		(*PyipadMessage_Pong)(nil),
-		(*PyipadMessage_Verack)(nil),
-		(*PyipadMessage_Version)(nil),
-		(*PyipadMessage_TransactionNotFound)(nil),
-		(*PyipadMessage_Reject)(nil),
-		(*PyipadMessage_PruningPointUtxoSetChunk)(nil),
-		(*PyipadMessage_RequestIBDBlocks)(nil),
-		(*PyipadMessage_UnexpectedPruningPoint)(nil),
-		(*PyipadMessage_IbdBlockLocator)(nil),
-		(*PyipadMessage_IbdBlockLocatorHighestHash)(nil),
-		(*PyipadMessage_RequestNextPruningPointUtxoSetChunk)(nil),
-		(*PyipadMessage_DonePruningPointUtxoSetChunks)(nil),
-		(*PyipadMessage_IbdBlockLocatorHighestHashNotFound)(nil),
-		(*PyipadMessage_BlockWithTrustedData)(nil),
-		(*PyipadMessage_DoneBlocksWithTrustedData)(nil),
-		(*PyipadMessage_RequestPruningPointAndItsAnticone)(nil),
-		(*PyipadMessage_BlockHeaders)(nil),
-		(*PyipadMessage_RequestNextHeaders)(nil),
-		(*PyipadMessage_DoneHeaders)(nil),
-		(*PyipadMessage_RequestPruningPointUTXOSet)(nil),
-		(*PyipadMessage_RequestHeaders)(nil),
-		(*PyipadMessage_RequestBlockLocator)(nil),
-		(*PyipadMessage_PruningPoints)(nil),
-		(*PyipadMessage_RequestPruningPointProof)(nil),
-		(*PyipadMessage_PruningPointProof)(nil),
-		(*PyipadMessage_Ready)(nil),
-		(*PyipadMessage_BlockWithTrustedDataV4)(nil),
-		(*PyipadMessage_TrustedData)(nil),
-		(*PyipadMessage_RequestIBDChainBlockLocator)(nil),
-		(*PyipadMessage_IbdChainBlockLocator)(nil),
-		(*PyipadMessage_RequestAnticone)(nil),
-		(*PyipadMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
-		(*PyipadMessage_GetCurrentNetworkRequest)(nil),
-		(*PyipadMessage_GetCurrentNetworkResponse)(nil),
-		(*PyipadMessage_SubmitBlockRequest)(nil),
-		(*PyipadMessage_SubmitBlockResponse)(nil),
-		(*PyipadMessage_GetBlockTemplateRequest)(nil),
-		(*PyipadMessage_GetBlockTemplateResponse)(nil),
-		(*PyipadMessage_NotifyBlockAddedRequest)(nil),
-		(*PyipadMessage_NotifyBlockAddedResponse)(nil),
-		(*PyipadMessage_BlockAddedNotification)(nil),
-		(*PyipadMessage_GetPeerAddressesRequest)(nil),
-		(*PyipadMessage_GetPeerAddressesResponse)(nil),
-		(*PyipadMessage_GetSelectedTipHashRequest)(nil),
-		(*PyipadMessage_GetSelectedTipHashResponse)(nil),
-		(*PyipadMessage_GetMempoolEntryRequest)(nil),
-		(*PyipadMessage_GetMempoolEntryResponse)(nil),
-		(*PyipadMessage_GetConnectedPeerInfoRequest)(nil),
-		(*PyipadMessage_GetConnectedPeerInfoResponse)(nil),
-		(*PyipadMessage_AddPeerRequest)(nil),
-		(*PyipadMessage_AddPeerResponse)(nil),
-		(*PyipadMessage_SubmitTransactionRequest)(nil),
-		(*PyipadMessage_SubmitTransactionResponse)(nil),
-		(*PyipadMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
-		(*PyipadMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
-		(*PyipadMessage_VirtualSelectedParentChainChangedNotification)(nil),
-		(*PyipadMessage_GetBlockRequest)(nil),
-		(*PyipadMessage_GetBlockResponse)(nil),
-		(*PyipadMessage_GetSubnetworkRequest)(nil),
-		(*PyipadMessage_GetSubnetworkResponse)(nil),
-		(*PyipadMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
-		(*PyipadMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
-		(*PyipadMessage_GetBlocksRequest)(nil),
-		(*PyipadMessage_GetBlocksResponse)(nil),
-		(*PyipadMessage_GetBlockCountRequest)(nil),
-		(*PyipadMessage_GetBlockCountResponse)(nil),
-		(*PyipadMessage_GetBlockDagInfoRequest)(nil),
-		(*PyipadMessage_GetBlockDagInfoResponse)(nil),
-		(*PyipadMessage_ResolveFinalityConflictRequest)(nil),
-		(*PyipadMessage_ResolveFinalityConflictResponse)(nil),
-		(*PyipadMessage_NotifyFinalityConflictsRequest)(nil),
-		(*PyipadMessage_NotifyFinalityConflictsResponse)(nil),
-		(*PyipadMessage_FinalityConflictNotification)(nil),
-		(*PyipadMessage_FinalityConflictResolvedNotification)(nil),
-		(*PyipadMessage_GetMempoolEntriesRequest)(nil),
-		(*PyipadMessage_GetMempoolEntriesResponse)(nil),
-		(*PyipadMessage_ShutDownRequest)(nil),
-		(*PyipadMessage_ShutDownResponse)(nil),
-		(*PyipadMessage_GetHeadersRequest)(nil),
-		(*PyipadMessage_GetHeadersResponse)(nil),
-		(*PyipadMessage_NotifyUtxosChangedRequest)(nil),
-		(*PyipadMessage_NotifyUtxosChangedResponse)(nil),
-		(*PyipadMessage_UtxosChangedNotification)(nil),
-		(*PyipadMessage_GetUtxosByAddressesRequest)(nil),
-		(*PyipadMessage_GetUtxosByAddressesResponse)(nil),
-		(*PyipadMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
-		(*PyipadMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
-		(*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
-		(*PyipadMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
-		(*PyipadMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
-		(*PyipadMessage_BanRequest)(nil),
-		(*PyipadMessage_BanResponse)(nil),
-		(*PyipadMessage_UnbanRequest)(nil),
-		(*PyipadMessage_UnbanResponse)(nil),
-		(*PyipadMessage_GetInfoRequest)(nil),
-		(*PyipadMessage_GetInfoResponse)(nil),
-		(*PyipadMessage_StopNotifyingUtxosChangedRequest)(nil),
-		(*PyipadMessage_StopNotifyingUtxosChangedResponse)(nil),
-		(*PyipadMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
-		(*PyipadMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
-		(*PyipadMessage_PruningPointUTXOSetOverrideNotification)(nil),
-		(*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
-		(*PyipadMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
-		(*PyipadMessage_EstimateNetworkHashesPerSecondRequest)(nil),
-		(*PyipadMessage_EstimateNetworkHashesPerSecondResponse)(nil),
-		(*PyipadMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
-		(*PyipadMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
-		(*PyipadMessage_VirtualDaaScoreChangedNotification)(nil),
-		(*PyipadMessage_GetBalanceByAddressRequest)(nil),
-		(*PyipadMessage_GetBalanceByAddressResponse)(nil),
-		(*PyipadMessage_GetBalancesByAddressesRequest)(nil),
-		(*PyipadMessage_GetBalancesByAddressesResponse)(nil),
-		(*PyipadMessage_NotifyNewBlockTemplateRequest)(nil),
-		(*PyipadMessage_NotifyNewBlockTemplateResponse)(nil),
-		(*PyipadMessage_NewBlockTemplateNotification)(nil),
-		(*PyipadMessage_GetMempoolEntriesByAddressesRequest)(nil),
-		(*PyipadMessage_GetMempoolEntriesByAddressesResponse)(nil),
-		(*PyipadMessage_GetCoinSupplyRequest)(nil),
-		(*PyipadMessage_GetCoinSupplyResponse)(nil),
+		(*WaglayladMessage_Addresses)(nil),
+		(*WaglayladMessage_Block)(nil),
+		(*WaglayladMessage_Transaction)(nil),
+		(*WaglayladMessage_BlockLocator)(nil),
+		(*WaglayladMessage_RequestAddresses)(nil),
+		(*WaglayladMessage_RequestRelayBlocks)(nil),
+		(*WaglayladMessage_RequestTransactions)(nil),
+		(*WaglayladMessage_IbdBlock)(nil),
+		(*WaglayladMessage_InvRelayBlock)(nil),
+		(*WaglayladMessage_InvTransactions)(nil),
+		(*WaglayladMessage_Ping)(nil),
+		(*WaglayladMessage_Pong)(nil),
+		(*WaglayladMessage_Verack)(nil),
+		(*WaglayladMessage_Version)(nil),
+		(*WaglayladMessage_TransactionNotFound)(nil),
+		(*WaglayladMessage_Reject)(nil),
+		(*WaglayladMessage_PruningPointUtxoSetChunk)(nil),
+		(*WaglayladMessage_RequestIBDBlocks)(nil),
+		(*WaglayladMessage_UnexpectedPruningPoint)(nil),
+		(*WaglayladMessage_IbdBlockLocator)(nil),
+		(*WaglayladMessage_IbdBlockLocatorHighestHash)(nil),
+		(*WaglayladMessage_RequestNextPruningPointUtxoSetChunk)(nil),
+		(*WaglayladMessage_DonePruningPointUtxoSetChunks)(nil),
+		(*WaglayladMessage_IbdBlockLocatorHighestHashNotFound)(nil),
+		(*WaglayladMessage_BlockWithTrustedData)(nil),
+		(*WaglayladMessage_DoneBlocksWithTrustedData)(nil),
+		(*WaglayladMessage_RequestPruningPointAndItsAnticone)(nil),
+		(*WaglayladMessage_BlockHeaders)(nil),
+		(*WaglayladMessage_RequestNextHeaders)(nil),
+		(*WaglayladMessage_DoneHeaders)(nil),
+		(*WaglayladMessage_RequestPruningPointUTXOSet)(nil),
+		(*WaglayladMessage_RequestHeaders)(nil),
+		(*WaglayladMessage_RequestBlockLocator)(nil),
+		(*WaglayladMessage_PruningPoints)(nil),
+		(*WaglayladMessage_RequestPruningPointProof)(nil),
+		(*WaglayladMessage_PruningPointProof)(nil),
+		(*WaglayladMessage_Ready)(nil),
+		(*WaglayladMessage_BlockWithTrustedDataV4)(nil),
+		(*WaglayladMessage_TrustedData)(nil),
+		(*WaglayladMessage_RequestIBDChainBlockLocator)(nil),
+		(*WaglayladMessage_IbdChainBlockLocator)(nil),
+		(*WaglayladMessage_RequestAnticone)(nil),
+		(*WaglayladMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
+		(*WaglayladMessage_GetCurrentNetworkRequest)(nil),
+		(*WaglayladMessage_GetCurrentNetworkResponse)(nil),
+		(*WaglayladMessage_SubmitBlockRequest)(nil),
+		(*WaglayladMessage_SubmitBlockResponse)(nil),
+		(*WaglayladMessage_GetBlockTemplateRequest)(nil),
+		(*WaglayladMessage_GetBlockTemplateResponse)(nil),
+		(*WaglayladMessage_NotifyBlockAddedRequest)(nil),
+		(*WaglayladMessage_NotifyBlockAddedResponse)(nil),
+		(*WaglayladMessage_BlockAddedNotification)(nil),
+		(*WaglayladMessage_GetPeerAddressesRequest)(nil),
+		(*WaglayladMessage_GetPeerAddressesResponse)(nil),
+		(*WaglayladMessage_GetSelectedTipHashRequest)(nil),
+		(*WaglayladMessage_GetSelectedTipHashResponse)(nil),
+		(*WaglayladMessage_GetMempoolEntryRequest)(nil),
+		(*WaglayladMessage_GetMempoolEntryResponse)(nil),
+		(*WaglayladMessage_GetConnectedPeerInfoRequest)(nil),
+		(*WaglayladMessage_GetConnectedPeerInfoResponse)(nil),
+		(*WaglayladMessage_AddPeerRequest)(nil),
+		(*WaglayladMessage_AddPeerResponse)(nil),
+		(*WaglayladMessage_SubmitTransactionRequest)(nil),
+		(*WaglayladMessage_SubmitTransactionResponse)(nil),
+		(*WaglayladMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
+		(*WaglayladMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
+		(*WaglayladMessage_VirtualSelectedParentChainChangedNotification)(nil),
+		(*WaglayladMessage_GetBlockRequest)(nil),
+		(*WaglayladMessage_GetBlockResponse)(nil),
+		(*WaglayladMessage_GetSubnetworkRequest)(nil),
+		(*WaglayladMessage_GetSubnetworkResponse)(nil),
+		(*WaglayladMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
+		(*WaglayladMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
+		(*WaglayladMessage_GetBlocksRequest)(nil),
+		(*WaglayladMessage_GetBlocksResponse)(nil),
+		(*WaglayladMessage_GetBlockCountRequest)(nil),
+		(*WaglayladMessage_GetBlockCountResponse)(nil),
+		(*WaglayladMessage_GetBlockDagInfoRequest)(nil),
+		(*WaglayladMessage_GetBlockDagInfoResponse)(nil),
+		(*WaglayladMessage_ResolveFinalityConflictRequest)(nil),
+		(*WaglayladMessage_ResolveFinalityConflictResponse)(nil),
+		(*WaglayladMessage_NotifyFinalityConflictsRequest)(nil),
+		(*WaglayladMessage_NotifyFinalityConflictsResponse)(nil),
+		(*WaglayladMessage_FinalityConflictNotification)(nil),
+		(*WaglayladMessage_FinalityConflictResolvedNotification)(nil),
+		(*WaglayladMessage_GetMempoolEntriesRequest)(nil),
+		(*WaglayladMessage_GetMempoolEntriesResponse)(nil),
+		(*WaglayladMessage_ShutDownRequest)(nil),
+		(*WaglayladMessage_ShutDownResponse)(nil),
+		(*WaglayladMessage_GetHeadersRequest)(nil),
+		(*WaglayladMessage_GetHeadersResponse)(nil),
+		(*WaglayladMessage_NotifyUtxosChangedRequest)(nil),
+		(*WaglayladMessage_NotifyUtxosChangedResponse)(nil),
+		(*WaglayladMessage_UtxosChangedNotification)(nil),
+		(*WaglayladMessage_GetUtxosByAddressesRequest)(nil),
+		(*WaglayladMessage_GetUtxosByAddressesResponse)(nil),
+		(*WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
+		(*WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
+		(*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
+		(*WaglayladMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
+		(*WaglayladMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
+		(*WaglayladMessage_BanRequest)(nil),
+		(*WaglayladMessage_BanResponse)(nil),
+		(*WaglayladMessage_UnbanRequest)(nil),
+		(*WaglayladMessage_UnbanResponse)(nil),
+		(*WaglayladMessage_GetInfoRequest)(nil),
+		(*WaglayladMessage_GetInfoResponse)(nil),
+		(*WaglayladMessage_StopNotifyingUtxosChangedRequest)(nil),
+		(*WaglayladMessage_StopNotifyingUtxosChangedResponse)(nil),
+		(*WaglayladMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
+		(*WaglayladMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
+		(*WaglayladMessage_PruningPointUTXOSetOverrideNotification)(nil),
+		(*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
+		(*WaglayladMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
+		(*WaglayladMessage_EstimateNetworkHashesPerSecondRequest)(nil),
+		(*WaglayladMessage_EstimateNetworkHashesPerSecondResponse)(nil),
+		(*WaglayladMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
+		(*WaglayladMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
+		(*WaglayladMessage_VirtualDaaScoreChangedNotification)(nil),
+		(*WaglayladMessage_GetBalanceByAddressRequest)(nil),
+		(*WaglayladMessage_GetBalanceByAddressResponse)(nil),
+		(*WaglayladMessage_GetBalancesByAddressesRequest)(nil),
+		(*WaglayladMessage_GetBalancesByAddressesResponse)(nil),
+		(*WaglayladMessage_NotifyNewBlockTemplateRequest)(nil),
+		(*WaglayladMessage_NotifyNewBlockTemplateResponse)(nil),
+		(*WaglayladMessage_NewBlockTemplateNotification)(nil),
+		(*WaglayladMessage_GetMempoolEntriesByAddressesRequest)(nil),
+		(*WaglayladMessage_GetMempoolEntriesByAddressesResponse)(nil),
+		(*WaglayladMessage_GetCoinSupplyRequest)(nil),
+		(*WaglayladMessage_GetCoinSupplyResponse)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

@@ -9,14 +9,14 @@ import (
 	"testing"
 )
 
-// RunpyipadForTesting runs waglaylad for testing purposes
-func RunpyipadForTesting(t *testing.T, testName string, rpcAddress string) func() {
+// RunwaglayladForTesting runs waglaylad for testing purposes
+func RunwaglayladForTesting(t *testing.T, testName string, rpcAddress string) func() {
 	appDir, err := TempDir(testName)
 	if err != nil {
 		t.Fatalf("TempDir: %s", err)
 	}
 
-	pyipadRunCommand, err := StartCmd("waglaylad",
+	waglayladRunCommand, err := StartCmd("waglaylad",
 		"waglaylad",
 		NetworkCliArgumentFromNetParams(&dagconfig.DevnetParams),
 		"--appdir", appDir,
@@ -30,7 +30,7 @@ func RunpyipadForTesting(t *testing.T, testName string, rpcAddress string) func(
 
 	isShutdown := uint64(0)
 	go func() {
-		err := pyipadRunCommand.Wait()
+		err := waglayladRunCommand.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&isShutdown) == 0 {
 				panic(fmt.Sprintf("waglaylad closed unexpectedly: %s. See logs at: %s", err, appDir))
@@ -39,7 +39,7 @@ func RunpyipadForTesting(t *testing.T, testName string, rpcAddress string) func(
 	}()
 
 	return func() {
-		err := pyipadRunCommand.Process.Signal(syscall.SIGTERM)
+		err := waglayladRunCommand.Process.Signal(syscall.SIGTERM)
 		if err != nil {
 			t.Fatalf("Signal: %s", err)
 		}

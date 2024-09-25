@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_RequestBlockLocator) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_RequestBlockLocator) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_RequestBlockLocator is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_RequestBlockLocator is nil")
 	}
 	return x.RequestBlockLocator.toAppMessage()
 }
@@ -29,7 +29,7 @@ func (x *RequestBlockLocatorMessage) toAppMessage() (appmessage.Message, error) 
 
 }
 
-func (x *PyipadMessage_RequestBlockLocator) fromAppMessage(msgGetBlockLocator *appmessage.MsgRequestBlockLocator) error {
+func (x *WaglayladMessage_RequestBlockLocator) fromAppMessage(msgGetBlockLocator *appmessage.MsgRequestBlockLocator) error {
 	x.RequestBlockLocator = &RequestBlockLocatorMessage{
 		HighHash: domainHashToProto(msgGetBlockLocator.HighHash),
 		Limit:    msgGetBlockLocator.Limit,

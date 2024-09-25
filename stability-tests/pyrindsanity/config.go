@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	defaultLogFilename    = "pyipadsanity.log"
-	defaultErrLogFilename = "pyipadsanity_err.log"
+	defaultLogFilename    = "waglayladsanity.log"
+	defaultErrLogFilename = "waglayladsanity_err.log"
 )
 
 var (

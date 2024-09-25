@@ -5,12 +5,12 @@ waglaylad
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/waglayla/waglaylad)
 
-waglaylad is the reference full node Pyrin implementation written in Go (golang).
+waglaylad is the reference full node Waglayla implementation written in Go (golang).
 (Fork of https://github.com/kaspanet/kaspad)
 
 ## What is waglayla
 
-Pyrin is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
+Waglayla is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
 
 ## Requirements
 

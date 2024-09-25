@@ -347,7 +347,7 @@ func generateTxs() (nativeTx, subnetworkTx *externalapi.DomainTransaction, err e
 	genesisCoinbaseTransactionID := consensushashing.TransactionID(genesisCoinbase)
 
 	address1Str := "waglaylasim:qzpj2cfa9m40w9m2cmr8pvfuqpp32mzzwsuw6ukhfduqpp32mzzws59e8fapc"
-	address1, err := util.DecodeAddress(address1Str, util.Bech32PrefixPyrinSim)
+	address1, err := util.DecodeAddress(address1Str, util.Bech32PrefixWaglaylaSim)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error decoding address1: %+v", err)
 	}
@@ -357,7 +357,7 @@ func generateTxs() (nativeTx, subnetworkTx *externalapi.DomainTransaction, err e
 	}
 
 	address2Str := "waglaylasim:qr7w7nqsdnc3zddm6u8s9fex4ysk95hm3v30q353ymuqpp32mzzws59e8fapc"
-	address2, err := util.DecodeAddress(address2Str, util.Bech32PrefixPyrinSim)
+	address2, err := util.DecodeAddress(address2Str, util.Bech32PrefixWaglaylaSim)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error decoding address2: %+v", err)
 	}
@@ -500,7 +500,7 @@ func generateInputs(size int, sourceScript *externalapi.ScriptPublicKey) []*exte
 func getSourceScript(b *testing.B) *externalapi.ScriptPublicKey {
 	sourceAddressStr := "waglaylasim:qz6f9z6l3x4v3lf9mgf0t934th4nx5kgzu663x9yjh"
 
-	sourceAddress, err := util.DecodeAddress(sourceAddressStr, util.Bech32PrefixPyrinSim)
+	sourceAddress, err := util.DecodeAddress(sourceAddressStr, util.Bech32PrefixWaglaylaSim)
 	if err != nil {
 		b.Fatalf("Error from DecodeAddress: %+v", err)
 	}

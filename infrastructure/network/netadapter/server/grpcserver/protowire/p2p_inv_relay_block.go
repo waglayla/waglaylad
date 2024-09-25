@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_InvRelayBlock) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_InvRelayBlock) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_InvRelayBlock is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_InvRelayBlock is nil")
 	}
 	return x.InvRelayBlock.toAppMessage()
 }
@@ -25,7 +25,7 @@ func (x *InvRelayBlockMessage) toAppMessage() (appmessage.Message, error) {
 
 }
 
-func (x *PyipadMessage_InvRelayBlock) fromAppMessage(msgInvRelayBlock *appmessage.MsgInvRelayBlock) error {
+func (x *WaglayladMessage_InvRelayBlock) fromAppMessage(msgInvRelayBlock *appmessage.MsgInvRelayBlock) error {
 	x.InvRelayBlock = &InvRelayBlockMessage{
 		Hash: domainHashToProto(msgInvRelayBlock.Hash),
 	}

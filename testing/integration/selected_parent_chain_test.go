@@ -11,12 +11,12 @@ import (
 
 func TestVirtualSelectedParentChain(t *testing.T) {
 	// Setup a couple of waglaylad instances
-	pyipad1, pyipad2, _, teardown := standardSetup(t)
+	waglaylad1, waglaylad2, _, teardown := standardSetup(t)
 	defer teardown()
 
 	// Register to virtual selected parent chain changes
 	onVirtualSelectedParentChainChangedChan := make(chan *appmessage.VirtualSelectedParentChainChangedNotificationMessage)
-	err := pyipad1.rpcClient.RegisterForVirtualSelectedParentChainChangedNotifications(true,
+	err := waglaylad1.rpcClient.RegisterForVirtualSelectedParentChainChangedNotifications(true,
 		func(notification *appmessage.VirtualSelectedParentChainChangedNotificationMessage) {
 			onVirtualSelectedParentChainChangedChan <- notification
 		})
@@ -24,14 +24,14 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 		t.Fatalf("Failed to register for virtual selected parent chain change notifications: %s", err)
 	}
 
-	// In pyipad1, mine a chain over the genesis and make sure
+	// In waglaylad1, mine a chain over the genesis and make sure
 	// each chain changed notifications contains only one entry
 	// in `added` and nothing in `removed`
-	chain1TipHash := consensushashing.BlockHash(pyipad1.config.NetParams().GenesisBlock)
+	chain1TipHash := consensushashing.BlockHash(waglaylad1.config.NetParams().GenesisBlock)
 	chain1TipHashString := chain1TipHash.String()
 	const blockAmountToMine = 10
 	for i := 0; i < blockAmountToMine; i++ {
-		minedBlock := mineNextBlock(t, pyipad1)
+		minedBlock := mineNextBlock(t, waglaylad1)
 		notification := <-onVirtualSelectedParentChainChangedChan
 		if len(notification.RemovedChainBlockHashes) > 0 {
 			t.Fatalf("RemovedChainBlockHashes is unexpectedly not empty")
@@ -50,16 +50,16 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 		chain1TipHashString = minedBlockHashString
 	}
 
-	// In pyipad2, mine a different chain of `blockAmountToMine` + 1
+	// In waglaylad2, mine a different chain of `blockAmountToMine` + 1
 	// blocks over the genesis
 	var chain2Tip *externalapi.DomainBlock
 	for i := 0; i < blockAmountToMine+1; i++ {
-		chain2Tip = mineNextBlock(t, pyipad2)
+		chain2Tip = mineNextBlock(t, waglaylad2)
 	}
 
-	// Connect the two pyipads. This should trigger sync
+	// Connect the two waglaylads. This should trigger sync
 	// between the two nodes
-	connect(t, pyipad1, pyipad2)
+	connect(t, waglaylad1, waglaylad2)
 
 	chain2TipHash := consensushashing.BlockHash(chain2Tip)
 	chain2TipHashString := chain2TipHash.String()
@@ -79,7 +79,7 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 
 	// Get the virtual selected parent chain from the tip of
 	// the first chain
-	virtualSelectedParentChainFromChain1Tip, err := pyipad1.rpcClient.GetVirtualSelectedParentChainFromBlock(
+	virtualSelectedParentChainFromChain1Tip, err := waglaylad1.rpcClient.GetVirtualSelectedParentChainFromBlock(
 		chain1TipHashString, true)
 	if err != nil {
 		t.Fatalf("GetVirtualSelectedParentChainFromBlock failed: %s", err)

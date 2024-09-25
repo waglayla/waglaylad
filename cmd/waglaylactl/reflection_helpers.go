@@ -9,8 +9,8 @@ import (
 
 // protobuf generates the command types with two types:
 // 1. A concrete type that holds the fields of the command bearing the name of the command with `RequestMessage` as suffix
-// 2. A wrapper that implements isPyipadMessage_Payload, having a single field pointing to the concrete command
-//    bearing the name of the command with `PyipadMessage_` prefix and `Request` suffix
+// 2. A wrapper that implements isWaglayladMessage_Payload, having a single field pointing to the concrete command
+//    bearing the name of the command with `WaglayladMessage_` prefix and `Request` suffix
 
 // unwrapCommandType converts a reflect.Type signifying a wrapper type into the concrete request type
 func unwrapCommandType(requestTypeWrapped reflect.Type) reflect.Type {
@@ -28,14 +28,14 @@ func isFieldExported(field reflect.StructField) bool {
 	return unicode.IsUpper(rune(field.Name[0]))
 }
 
-// generatepyipadMessage generates a wrapped pyipadMessage with the given `commandValue`
-func generatepyipadMessage(commandValue reflect.Value, commandDesc *commandDescription) (*protowire.PyipadMessage, error) {
+// generatewaglayladMessage generates a wrapped waglayladMessage with the given `commandValue`
+func generatewaglayladMessage(commandValue reflect.Value, commandDesc *commandDescription) (*protowire.WaglayladMessage, error) {
 	commandWrapper := reflect.New(commandDesc.typeof)
 	unwrapCommandValue(commandWrapper).Set(commandValue)
 
-	pyipadMessage := reflect.New(reflect.TypeOf(protowire.PyipadMessage{}))
-	pyipadMessage.Elem().FieldByName("Payload").Set(commandWrapper)
-	return pyipadMessage.Interface().(*protowire.PyipadMessage), nil
+	waglayladMessage := reflect.New(reflect.TypeOf(protowire.WaglayladMessage{}))
+	waglayladMessage.Elem().FieldByName("Payload").Set(commandWrapper)
+	return waglayladMessage.Interface().(*protowire.WaglayladMessage), nil
 }
 
 // pointerToValue returns a reflect.Value that represents a pointer to the given value

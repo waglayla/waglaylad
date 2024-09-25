@@ -5,26 +5,26 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetVirtualSelectedParentBlueScoreRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetVirtualSelectedParentBlueScoreRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest is nil")
 	}
 	return &appmessage.GetVirtualSelectedParentBlueScoreRequestMessage{}, nil
 }
 
-func (x *PyipadMessage_GetVirtualSelectedParentBlueScoreRequest) fromAppMessage(message *appmessage.GetVirtualSelectedParentBlueScoreRequestMessage) error {
+func (x *WaglayladMessage_GetVirtualSelectedParentBlueScoreRequest) fromAppMessage(message *appmessage.GetVirtualSelectedParentBlueScoreRequestMessage) error {
 	x.GetVirtualSelectedParentBlueScoreRequest = &GetVirtualSelectedParentBlueScoreRequestMessage{}
 	return nil
 }
 
-func (x *PyipadMessage_GetVirtualSelectedParentBlueScoreResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetVirtualSelectedParentBlueScoreResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse is nil")
 	}
 	return x.GetVirtualSelectedParentBlueScoreResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetVirtualSelectedParentBlueScoreResponse) fromAppMessage(message *appmessage.GetVirtualSelectedParentBlueScoreResponseMessage) error {
+func (x *WaglayladMessage_GetVirtualSelectedParentBlueScoreResponse) fromAppMessage(message *appmessage.GetVirtualSelectedParentBlueScoreResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

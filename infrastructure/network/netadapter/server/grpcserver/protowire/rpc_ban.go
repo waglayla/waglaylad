@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_BanRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_BanRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_BanRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_BanRequest is nil")
 	}
 	return x.BanRequest.toAppMessage()
 }
@@ -21,14 +21,14 @@ func (x *BanRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_BanRequest) fromAppMessage(message *appmessage.BanRequestMessage) error {
+func (x *WaglayladMessage_BanRequest) fromAppMessage(message *appmessage.BanRequestMessage) error {
 	x.BanRequest = &BanRequestMessage{Ip: message.IP}
 	return nil
 }
 
-func (x *PyipadMessage_BanResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_BanResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_BanResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_BanResponse is nil")
 	}
 	return x.BanResponse.toAppMessage()
 }
@@ -47,7 +47,7 @@ func (x *BanResponseMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_BanResponse) fromAppMessage(message *appmessage.BanResponseMessage) error {
+func (x *WaglayladMessage_BanResponse) fromAppMessage(message *appmessage.BanResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

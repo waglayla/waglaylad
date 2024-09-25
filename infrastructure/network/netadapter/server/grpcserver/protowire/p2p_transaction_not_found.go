@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_TransactionNotFound) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_TransactionNotFound) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_TransactionNotFound is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_TransactionNotFound is nil")
 	}
 	return x.TransactionNotFound.toAppMessage()
 }
@@ -23,7 +23,7 @@ func (x *TransactionNotFoundMessage) toAppMessage() (appmessage.Message, error) 
 	return appmessage.NewMsgTransactionNotFound(id), nil
 }
 
-func (x *PyipadMessage_TransactionNotFound) fromAppMessage(msgTransactionsNotFound *appmessage.MsgTransactionNotFound) error {
+func (x *WaglayladMessage_TransactionNotFound) fromAppMessage(msgTransactionsNotFound *appmessage.MsgTransactionNotFound) error {
 	x.TransactionNotFound = &TransactionNotFoundMessage{
 		Id: domainTransactionIDToProto(msgTransactionsNotFound.ID),
 	}

@@ -25,19 +25,19 @@ var (
 	// the overhead of creating it multiple times.
 	bigOne = big.NewInt(1)
 
-	// mainPowMax is the highest proof of work value a Pyrin block can
+	// mainPowMax is the highest proof of work value a Waglayla block can
 	// have for the main network. It is the value 2^255 - 1.
 	mainPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// testnetPowMax is the highest proof of work value a Pyrin block
+	// testnetPowMax is the highest proof of work value a Waglayla block
 	// can have for the test network. It is the value 2^255 - 1.
 	testnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// simnetPowMax is the highest proof of work value a Pyrin block
+	// simnetPowMax is the highest proof of work value a Waglayla block
 	// can have for the simulation test network. It is the value 2^255 - 1.
 	simnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// devnetPowMax is the highest proof of work value a Pyrin block
+	// devnetPowMax is the highest proof of work value a Waglayla block
 	// can have for the development network. It is the value
 	// 2^255 - 1.
 	devnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
@@ -46,8 +46,8 @@ var (
 // KType defines the size of GHOSTDAG consensus algorithm K parameter.
 type KType uint8
 
-// Params defines a Pyrin network by its parameters. These parameters may be
-// used by Pyrin applications to differentiate networks as well as addresses
+// Params defines a Waglayla network by its parameters. These parameters may be
+// used by Waglayla applications to differentiate networks as well as addresses
 // and keys for one network from those intended for use on another network.
 type Params struct {
 	// K defines the K parameter for GHOSTDAG consensus algorithm.
@@ -58,7 +58,7 @@ type Params struct {
 	Name string
 
 	// Net defines the magic bytes used to identify the network.
-	Net appmessage.PyrinpyiNet
+	Net appmessage.WaglaylaNet
 
 	// RPCPort defines the rpc server port
 	RPCPort string
@@ -207,13 +207,13 @@ func (p *Params) PruningDepth() uint64 {
 	return 2*p.FinalityDepth() + 4*p.MergeSetSizeLimit*uint64(p.K) + 2*uint64(p.K) + 2
 }
 
-// MainnetParams defines the network parameters for the main Pyrin network.
+// MainnetParams defines the network parameters for the main Waglayla network.
 var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "waglayla-mainnet",
 	Net:         appmessage.Mainnet,
-	RPCPort:     "13110",
-	DefaultPort: "13111",
+	RPCPort:     "12110",
+	DefaultPort: "12111",
 	DNSSeeds: []string{
 		"seeder1-mainnet.waglayla.network",
 		"seeder2-mainnet.waglayla.network",
@@ -249,7 +249,7 @@ var MainnetParams = Params{
 	AcceptUnroutable: false,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixPyrin,
+	Prefix: util.Bech32PrefixWaglayla,
 
 	// Address encoding magics
 	PrivateKeyID: 0x80, // starts with 5 (uncompressed) or K (compressed)
@@ -279,13 +279,13 @@ var MainnetParams = Params{
 	HFActivationDAAScore: 23_804_844,
 }
 
-// TestnetParams defines the network parameters for the test Pyrin network.
+// TestnetParams defines the network parameters for the test Waglayla network.
 var TestnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "waglayla-testnet-10",
 	Net:         appmessage.Testnet,
-	RPCPort:     "16210",
-	DefaultPort: "16211",
+	RPCPort:     "12210",
+	DefaultPort: "12211",
 	DNSSeeds: []string{
 		"seeder1.waglaylatestnet.network",
 	},
@@ -318,7 +318,7 @@ var TestnetParams = Params{
 	AcceptUnroutable: false,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixPyrinTest,
+	Prefix: util.Bech32PrefixWaglaylaTest,
 
 	// Address encoding magics
 	PrivateKeyID: 0xef, // starts with 9 (uncompressed) or c (compressed)
@@ -343,7 +343,7 @@ var TestnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// SimnetParams defines the network parameters for the simulation test Pyrin
+// SimnetParams defines the network parameters for the simulation test Waglayla
 // network. This network is similar to the normal test network except it is
 // intended for private use within a group of individuals doing simulation
 // testing. The functionality is intended to differ in that the only nodes
@@ -354,8 +354,8 @@ var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "waglayla-simnet",
 	Net:         appmessage.Simnet,
-	RPCPort:     "16510",
-	DefaultPort: "16511",
+	RPCPort:     "12510",
+	DefaultPort: "12511",
 	DNSSeeds:    []string{}, // NOTE: There must NOT be any seeds.
 
 	// DAG parameters
@@ -387,7 +387,7 @@ var SimnetParams = Params{
 
 	PrivateKeyID: 0x64, // starts with 4 (uncompressed) or F (compressed)
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixPyrinSim,
+	Prefix: util.Bech32PrefixWaglaylaSim,
 
 	// EnableNonNativeSubnetworks enables non-native/coinbase transactions
 	EnableNonNativeSubnetworks: false,
@@ -409,13 +409,13 @@ var SimnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// DevnetParams defines the network parameters for the development Pyrin network.
+// DevnetParams defines the network parameters for the development Waglayla network.
 var DevnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "waglayla-devnet",
 	Net:         appmessage.Devnet,
-	RPCPort:     "16610",
-	DefaultPort: "16611",
+	RPCPort:     "12610",
+	DefaultPort: "12611",
 	DNSSeeds:    []string{}, // NOTE: There must NOT be any seeds.
 
 	// DAG parameters
@@ -446,7 +446,7 @@ var DevnetParams = Params{
 	AcceptUnroutable: true,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32Prefixpyipadev,
+	Prefix: util.Bech32Prefixwaglayladev,
 
 	// Address encoding magics
 	PrivateKeyID: 0xef, // starts with 9 (uncompressed) or c (compressed)
@@ -471,14 +471,14 @@ var DevnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// ErrDuplicateNet describes an error where the parameters for a Pyrin
+// ErrDuplicateNet describes an error where the parameters for a Waglayla
 // network could not be set due to the network already being a standard
 // network or previously-registered into this package.
-var ErrDuplicateNet = errors.New("duplicate Pyrin network")
+var ErrDuplicateNet = errors.New("duplicate Waglayla network")
 
-var registeredNets = make(map[appmessage.PyrinpyiNet]struct{})
+var registeredNets = make(map[appmessage.WaglaylaNet]struct{})
 
-// Register registers the network parameters for a Pyrin network. This may
+// Register registers the network parameters for a Waglayla network. This may
 // error with ErrDuplicateNet if the network is already registered (either
 // due to a previous Register call, or the network being one of the default
 // networks).

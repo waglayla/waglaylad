@@ -51,20 +51,20 @@ func (s *Service) Start() error {
 
 // Execute is the main entry point the winsvc package calls when receiving
 // information from the Windows service control manager. It launches the
-// long-running pyipadMain (which is the real meat of waglaylad), handles service
+// long-running waglayladMain (which is the real meat of waglaylad), handles service
 // change requests, and notifies the service control manager of changes.
 func (s *Service) Execute(args []string, r <-chan svc.ChangeRequest, changes chan<- svc.Status) (bool, uint32) {
 	// Service start is pending.
 	const cmdsAccepted = svc.AcceptStop | svc.AcceptShutdown
 	changes <- svc.Status{State: svc.StartPending}
 
-	// Start pyipadMain in a separate goroutine so the service can start
+	// Start waglayladMain in a separate goroutine so the service can start
 	// quickly. Shutdown (along with a potential error) is reported via
 	// doneChan. startedChan is notified once waglaylad is started so this can
 	// be properly logged
 	doneChan := make(chan error)
 	startedChan := make(chan struct{})
-	spawn("pyipadMain-windows", func() {
+	spawn("waglayladMain-windows", func() {
 		err := s.main(startedChan)
 		doneChan <- err
 	})

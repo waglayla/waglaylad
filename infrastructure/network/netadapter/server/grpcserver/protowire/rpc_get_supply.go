@@ -5,23 +5,23 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetCoinSupplyRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetCoinSupplyRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.GetCoinSupplyRequestMessage{}, nil
 }
 
-func (x *PyipadMessage_GetCoinSupplyRequest) fromAppMessage(_ *appmessage.GetCoinSupplyRequestMessage) error {
+func (x *WaglayladMessage_GetCoinSupplyRequest) fromAppMessage(_ *appmessage.GetCoinSupplyRequestMessage) error {
 	x.GetCoinSupplyRequest = &GetCoinSupplyRequestMessage{}
 	return nil
 }
 
-func (x *PyipadMessage_GetCoinSupplyResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetCoinSupplyResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetCoinSupplyResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetCoinSupplyResponse is nil")
 	}
 	return x.GetCoinSupplyResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetCoinSupplyResponse) fromAppMessage(message *appmessage.GetCoinSupplyResponseMessage) error {
+func (x *WaglayladMessage_GetCoinSupplyResponse) fromAppMessage(message *appmessage.GetCoinSupplyResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

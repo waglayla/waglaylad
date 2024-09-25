@@ -89,8 +89,8 @@ func (f ServiceFlag) String() string {
 	return s
 }
 
-// PyrinpyiNet represents which waglayla network a message belongs to.
-type PyrinpyiNet uint32
+// WaglaylaNet represents which waglayla network a message belongs to.
+type WaglaylaNet uint32
 
 // Constants used to indicate the message waglayla network. They can also be
 // used to seek to the next message when a stream's state is unknown, but
@@ -98,32 +98,32 @@ type PyrinpyiNet uint32
 // better idea to simply disconnect clients that are misbehaving over TCP.
 const (
 	// Mainnet represents the main waglayla network.
-	Mainnet PyrinpyiNet = 0x3ddcf71d
+	Mainnet WaglaylaNet = 0x3ddcf71d
 
 	// Testnet represents the test network.
-	Testnet PyrinpyiNet = 0xddb8af8f
+	Testnet WaglaylaNet = 0xddb8af8f
 
 	// Simnet represents the simulation test network.
-	Simnet PyrinpyiNet = 0x374dcf1c
+	Simnet WaglaylaNet = 0x374dcf1c
 
 	// Devnet represents the development test network.
-	Devnet PyrinpyiNet = 0x732d87e1
+	Devnet WaglaylaNet = 0x732d87e1
 )
 
 // bnStrings is a map of waglayla networks back to their constant names for
 // pretty printing.
-var bnStrings = map[PyrinpyiNet]string{
+var bnStrings = map[WaglaylaNet]string{
 	Mainnet: "Mainnet",
 	Testnet: "Testnet",
 	Simnet:  "Simnet",
 	Devnet:  "Devnet",
 }
 
-// String returns the PyrinpyiNet in human-readable form.
-func (n PyrinpyiNet) String() string {
+// String returns the WaglaylaNet in human-readable form.
+func (n WaglaylaNet) String() string {
 	if s, ok := bnStrings[n]; ok {
 		return s
 	}
 
-	return fmt.Sprintf("Unknown PyrinpyiNet (%d)", uint32(n))
+	return fmt.Sprintf("Unknown WaglaylaNet (%d)", uint32(n))
 }

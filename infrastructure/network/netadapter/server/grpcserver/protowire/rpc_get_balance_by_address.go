@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetBalanceByAddressRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetBalanceByAddressRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetBalanceByAddressRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetBalanceByAddressRequest is nil")
 	}
 	return x.GetBalanceByAddressRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_GetBalanceByAddressRequest) fromAppMessage(message *appmessage.GetBalanceByAddressRequestMessage) error {
+func (x *WaglayladMessage_GetBalanceByAddressRequest) fromAppMessage(message *appmessage.GetBalanceByAddressRequestMessage) error {
 	x.GetBalanceByAddressRequest = &GetBalanceByAddressRequestMessage{
 		Address: message.Address,
 	}
@@ -28,14 +28,14 @@ func (x *GetBalanceByAddressRequestMessage) toAppMessage() (appmessage.Message, 
 	}, nil
 }
 
-func (x *PyipadMessage_GetBalanceByAddressResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetBalanceByAddressResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
 		return nil, errors.Wrapf(errorNil, "GetBalanceByAddressResponse is nil")
 	}
 	return x.GetBalanceByAddressResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetBalanceByAddressResponse) fromAppMessage(message *appmessage.GetBalanceByAddressResponseMessage) error {
+func (x *WaglayladMessage_GetBalanceByAddressResponse) fromAppMessage(message *appmessage.GetBalanceByAddressResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

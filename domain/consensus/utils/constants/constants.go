@@ -12,11 +12,11 @@ const (
 	// MaxScriptPublicKeyVersion is the current latest supported public key script version.
 	MaxScriptPublicKeyVersion uint16 = 0
 
-	// LeorPerPyrin is the number of leor in one waglayla (1 PYI).
-	LeorPerPyrin = 100_000_000
+	// LeorPerWaglayla is the number of leor in one waglayla (1 WALA).
+	LeorPerWaglayla = 100_000_000
 
 	// MaxLeor is the maximum transaction amount allowed in leor.
-	MaxLeor = uint64(1_000_000_000 * LeorPerPyrin)
+	MaxLeor = uint64(17_500_000_000 * LeorPerWaglayla)
 
 	// MaxTxInSequenceNum is the maximum sequence number the sequence field
 	// of a transaction input can be.

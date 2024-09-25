@@ -21,7 +21,7 @@ var (
 type configFlags struct {
 	LogLevel         string `long:"loglevel" description:"Set log level {trace, debug, info, warn, error, critical}"`
 	Profile          string `long:"profile" description:"Enable HTTP profiling on given port -- NOTE port must be between 1024 and 65536"`
-	pyipadRPCAddress string `long:"rpc-address" description:"RPC address of the waglaylad node"`
+	waglayladRPCAddress string `long:"rpc-address" description:"RPC address of the waglaylad node"`
 }
 
 var cfg *configFlags

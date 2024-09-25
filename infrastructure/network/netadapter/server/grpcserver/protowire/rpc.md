@@ -125,10 +125,10 @@
 ## rpc.proto
 RPC-related types. Request messages, response messages, and dependant types.
 
-Clients are expected to build RequestMessages and wrap them in PyipadMessage. (see messages.proto)
+Clients are expected to build RequestMessages and wrap them in WaglayladMessage. (see messages.proto)
 
-Having received a RequestMessage, (wrapped in a PyipadMessage) the RPC server will respond with a
-ResponseMessage (likewise wrapped in a PyipadMessage) respective to the original RequestMessage.
+Having received a RequestMessage, (wrapped in a WaglayladMessage) the RPC server will respond with a
+ResponseMessage (likewise wrapped in a WaglayladMessage) respective to the original RequestMessage.
 
 **IMPORTANT:** This API is a work in progress and is subject to break between versions.
 

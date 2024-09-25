@@ -36,13 +36,13 @@ func main() {
 	defer client.Disconnect()
 
 	if !cfg.AllowConnectionToDifferentVersions {
-		pyipadMessage, err := client.Post(&protowire.PyipadMessage{Payload: &protowire.PyipadMessage_GetInfoRequest{GetInfoRequest: &protowire.GetInfoRequestMessage{}}})
+		waglayladMessage, err := client.Post(&protowire.WaglayladMessage{Payload: &protowire.WaglayladMessage_GetInfoRequest{GetInfoRequest: &protowire.GetInfoRequestMessage{}}})
 		if err != nil {
 			printErrorAndExit(fmt.Sprintf("Cannot post GetInfo message: %s", err))
 		}
 
 		localVersion := version.Version()
-		remoteVersion := pyipadMessage.GetGetInfoResponse().ServerVersion
+		remoteVersion := waglayladMessage.GetGetInfoResponse().ServerVersion
 
 		if localVersion != remoteVersion {
 			printErrorAndExit(fmt.Sprintf("Server version mismatch, expect: %s, got: %s", localVersion, remoteVersion))
@@ -101,8 +101,8 @@ func postJSON(cfg *configFlags, client *grpcclient.GRPCClient, doneChan chan str
 }
 
 func prettifyResponse(response string) string {
-	pyipadMessage := &protowire.PyipadMessage{}
-	err := protojson.Unmarshal([]byte(response), pyipadMessage)
+	waglayladMessage := &protowire.WaglayladMessage{}
+	err := protojson.Unmarshal([]byte(response), waglayladMessage)
 	if err != nil {
 		printErrorAndExit(fmt.Sprintf("error parsing the response from the RPC server: %s", err))
 	}
@@ -110,7 +110,7 @@ func prettifyResponse(response string) string {
 	marshalOptions := &protojson.MarshalOptions{}
 	marshalOptions.Indent = "    "
 	marshalOptions.EmitUnpopulated = true
-	return marshalOptions.Format(pyipadMessage)
+	return marshalOptions.Format(waglayladMessage)
 }
 
 func printErrorAndExit(message string) {

@@ -38,24 +38,24 @@ const (
 	Bech32PrefixUnknown Bech32Prefix = iota
 
 	// Prefix for the main network.
-	Bech32PrefixPyrin
+	Bech32PrefixWaglayla
 
 	// Prefix for the dev network.
-	Bech32Prefixpyipadev
+	Bech32Prefixwaglayladev
 
 	// Prefix for the test network.
-	Bech32PrefixPyrinTest
+	Bech32PrefixWaglaylaTest
 
 	// Prefix for the simulation network.
-	Bech32PrefixPyrinSim
+	Bech32PrefixWaglaylaSim
 )
 
 // Map from strings to Bech32 address prefix constants for parsing purposes.
 var stringsToBech32Prefixes = map[string]Bech32Prefix{
-	"waglayla":     Bech32PrefixPyrin,
-	"pyipadev":     Bech32Prefixpyipadev,
-	"waglaylatest": Bech32PrefixPyrinTest,
-	"waglaylasim":  Bech32PrefixPyrinSim,
+	"waglayla":     Bech32PrefixWaglayla,
+	"waglayladev":     Bech32Prefixwaglayladev,
+	"waglaylatest": Bech32PrefixWaglaylaTest,
+	"waglaylasim":  Bech32PrefixWaglaylaSim,
 }
 
 // ParsePrefix attempts to parse a Bech32 address prefix.

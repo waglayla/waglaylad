@@ -9,4 +9,4 @@ import (
 	"github.com/waglayla/waglaylad/infrastructure/logger"
 )
 
-var log = logger.RegisterSubSystem("PYID")
+var log = logger.RegisterSubSystem("WALAD")

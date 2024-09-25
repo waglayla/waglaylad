@@ -35,7 +35,7 @@ func send(conf *sendConfig) error {
 
 	var sendAmountLeor uint64
 	if !conf.IsSendAll {
-		sendAmountLeor, err = utils.PyiToLeor(conf.SendAmount)
+		sendAmountLeor, err = utils.WalaToLeor(conf.SendAmount)
 
 		if err != nil {
 			return err

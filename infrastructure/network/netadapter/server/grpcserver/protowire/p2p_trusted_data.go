@@ -5,9 +5,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_TrustedData) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_TrustedData) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_TrustedDataMessage is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_TrustedDataMessage is nil")
 	}
 
 	daaWindow := make([]*appmessage.TrustedDataDAAHeader, len(x.TrustedData.DaaWindow))
@@ -43,7 +43,7 @@ func (x *PyipadMessage_TrustedData) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_TrustedData) fromAppMessage(msgTrustedData *appmessage.MsgTrustedData) error {
+func (x *WaglayladMessage_TrustedData) fromAppMessage(msgTrustedData *appmessage.MsgTrustedData) error {
 	x.TrustedData = &TrustedDataMessage{
 		DaaWindow:    make([]*DaaBlockV4, len(msgTrustedData.DAAWindow)),
 		GhostdagData: make([]*BlockGhostdagDataHashPair, len(msgTrustedData.GHOSTDAGData)),

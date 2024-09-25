@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_EstimateNetworkHashesPerSecondRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_EstimateNetworkHashesPerSecondRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_EstimateNetworkHashesPerSecondRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_EstimateNetworkHashesPerSecondRequest is nil")
 	}
 	return x.EstimateNetworkHashesPerSecondRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_EstimateNetworkHashesPerSecondRequest) fromAppMessage(message *appmessage.EstimateNetworkHashesPerSecondRequestMessage) error {
+func (x *WaglayladMessage_EstimateNetworkHashesPerSecondRequest) fromAppMessage(message *appmessage.EstimateNetworkHashesPerSecondRequestMessage) error {
 	x.EstimateNetworkHashesPerSecondRequest = &EstimateNetworkHashesPerSecondRequestMessage{
 		WindowSize: message.WindowSize,
 		StartHash:  message.StartHash,
@@ -30,14 +30,14 @@ func (x *EstimateNetworkHashesPerSecondRequestMessage) toAppMessage() (appmessag
 	}, nil
 }
 
-func (x *PyipadMessage_EstimateNetworkHashesPerSecondResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_EstimateNetworkHashesPerSecondResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_EstimateNetworkHashesPerSecondResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_EstimateNetworkHashesPerSecondResponse is nil")
 	}
 	return x.EstimateNetworkHashesPerSecondResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_EstimateNetworkHashesPerSecondResponse) fromAppMessage(message *appmessage.EstimateNetworkHashesPerSecondResponseMessage) error {
+func (x *WaglayladMessage_EstimateNetworkHashesPerSecondResponse) fromAppMessage(message *appmessage.EstimateNetworkHashesPerSecondResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

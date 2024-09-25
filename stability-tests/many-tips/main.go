@@ -109,7 +109,7 @@ func startNode() (teardown func(), err error) {
 	}
 	log.Infof("waglaylad datadir: %s", dataDir)
 
-	pyipadCmd, err := common.StartCmd("waglaylad",
+	waglayladCmd, err := common.StartCmd("waglaylad",
 		"waglaylad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
@@ -125,15 +125,15 @@ func startNode() (teardown func(), err error) {
 
 	processesStoppedWg := sync.WaitGroup{}
 	processesStoppedWg.Add(1)
-	spawn("startNode-pyipadCmd.Wait", func() {
-		err := pyipadCmd.Wait()
+	spawn("startNode-waglayladCmd.Wait", func() {
+		err := waglayladCmd.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&shutdown) == 0 {
-				panics.Exit(log, fmt.Sprintf("pyipadCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
+				panics.Exit(log, fmt.Sprintf("waglayladCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
 			}
 			if !strings.Contains(err.Error(), "signal: killed") {
 				// TODO: Panic here and check why sometimes waglaylad closes ungracefully
-				log.Errorf("pyipadCmd closed with an error: %s. See logs at: %s", err, dataDir)
+				log.Errorf("waglayladCmd closed with an error: %s. See logs at: %s", err, dataDir)
 			}
 		}
 		processesStoppedWg.Done()
@@ -141,7 +141,7 @@ func startNode() (teardown func(), err error) {
 	return func() {
 		log.Infof("defer start-node")
 		atomic.StoreUint64(&shutdown, 1)
-		killWithSigterm(pyipadCmd, "pyipadCmd")
+		killWithSigterm(waglayladCmd, "waglayladCmd")
 
 		processesStoppedChan := make(chan struct{})
 		spawn("startNode-processStoppedWg.Wait", func() {

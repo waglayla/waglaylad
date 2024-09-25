@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_GetBlocksRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetBlocksRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetBlocksRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetBlocksRequest is nil")
 	}
 	return x.GetBlocksRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_GetBlocksRequest) fromAppMessage(message *appmessage.GetBlocksRequestMessage) error {
+func (x *WaglayladMessage_GetBlocksRequest) fromAppMessage(message *appmessage.GetBlocksRequestMessage) error {
 	x.GetBlocksRequest = &GetBlocksRequestMessage{
 		LowHash:             message.LowHash,
 		IncludeBlocks:       message.IncludeBlocks,
@@ -32,14 +32,14 @@ func (x *GetBlocksRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *PyipadMessage_GetBlocksResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_GetBlocksResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_GetBlocksResponse is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_GetBlocksResponse is nil")
 	}
 	return x.GetBlocksResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_GetBlocksResponse) fromAppMessage(message *appmessage.GetBlocksResponseMessage) error {
+func (x *WaglayladMessage_GetBlocksResponse) fromAppMessage(message *appmessage.GetBlocksResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 )
 
-func (x *PyipadMessage_NotifyUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NotifyUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_NotifyUtxosChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_NotifyUtxosChangedRequest is nil")
 	}
 	return x.NotifyUtxosChangedRequest.toAppMessage()
 }
 
-func (x *PyipadMessage_NotifyUtxosChangedRequest) fromAppMessage(message *appmessage.NotifyUTXOsChangedRequestMessage) error {
+func (x *WaglayladMessage_NotifyUtxosChangedRequest) fromAppMessage(message *appmessage.NotifyUTXOsChangedRequestMessage) error {
 	x.NotifyUtxosChangedRequest = &NotifyUtxosChangedRequestMessage{
 		Addresses: message.Addresses,
 	}
@@ -28,14 +28,14 @@ func (x *NotifyUtxosChangedRequestMessage) toAppMessage() (appmessage.Message, e
 	}, nil
 }
 
-func (x *PyipadMessage_NotifyUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_NotifyUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
 		return nil, errors.Wrapf(errorNil, "NotifyUtxosChangedResponseMessage is nil")
 	}
 	return x.NotifyUtxosChangedResponse.toAppMessage()
 }
 
-func (x *PyipadMessage_NotifyUtxosChangedResponse) fromAppMessage(message *appmessage.NotifyUTXOsChangedResponseMessage) error {
+func (x *WaglayladMessage_NotifyUtxosChangedResponse) fromAppMessage(message *appmessage.NotifyUTXOsChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -60,14 +60,14 @@ func (x *NotifyUtxosChangedResponseMessage) toAppMessage() (appmessage.Message, 
 	}, nil
 }
 
-func (x *PyipadMessage_UtxosChangedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *WaglayladMessage_UtxosChangedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "PyipadMessage_UtxosChangedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "WaglayladMessage_UtxosChangedNotification is nil")
 	}
 	return x.UtxosChangedNotification.toAppMessage()
 }
 
-func (x *PyipadMessage_UtxosChangedNotification) fromAppMessage(message *appmessage.UTXOsChangedNotificationMessage) error {
+func (x *WaglayladMessage_UtxosChangedNotification) fromAppMessage(message *appmessage.UTXOsChangedNotificationMessage) error {
 	added := make([]*UtxosByAddressesEntry, len(message.Added))
 	for i, entry := range message.Added {
 		added[i] = &UtxosByAddressesEntry{}
