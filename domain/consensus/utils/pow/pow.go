@@ -6,10 +6,10 @@ import (
 	"github.com/waglayla/waglaylad/domain/consensus/utils/hashes"
 	"github.com/waglayla/waglaylad/domain/consensus/utils/serialization"
 	"github.com/waglayla/waglaylad/util/difficulty"
-
+	"golang.org/x/crypto/sha3"
 	"math/big"
-
 	"github.com/pkg/errors"
+	
 )
 
 // State is an intermediate data structure with pre-computed values to speed up mining.
