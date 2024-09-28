@@ -287,7 +287,7 @@ var TestnetParams = Params{
 	RPCPort:     "12210",
 	DefaultPort: "12211",
 	DNSSeeds: []string{
-		"seeder1.waglaylatestnet.network",
+		"arcadoom.net",
 	},
 
 	// DAG parameters
