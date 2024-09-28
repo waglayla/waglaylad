@@ -2,7 +2,6 @@ package hashes
 
 import (
 	"crypto/sha256"
-	"golang.org/x/crypto/sha3"
 	"lukechampine.com/blake3"
 )
 
