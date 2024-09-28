@@ -67,18 +67,6 @@ func PoWHashWriter() HashWriter {
 	return HashWriter{blake}
 }
 
-// NewPoWHashWriter Returns a new HashWriter used for the PoW function
-func NewPoWHashWriter() ShakeHashWriter {
-	shake256 := sha3.NewCShake256(nil, []byte(proofOfWorkDomain))
-	return ShakeHashWriter{shake256}
-}
-
-// NewHeavyHashWriter Returns a new HashWriter used for the HeavyHash function
-func NewHeavyHashWriter() ShakeHashWriter {
-	shake256 := sha3.NewCShake256(nil, []byte(heavyHashDomain))
-	return ShakeHashWriter{shake256}
-}
-
 // NewHeavyHashWriter Returns a new HashWriter used for the HeavyHash function
 func HeavyHashWriter() HashWriter {
 	blake := blake3.New(32, nil)
