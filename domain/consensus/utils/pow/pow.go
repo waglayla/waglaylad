@@ -61,7 +61,7 @@ func (state *State) CalculateProofOfWorkValue() *big.Int {
 
 	//SHA3-256
 	sha3Hasher := sha3.New256()
-	sha3Hasher.Write(powHash.Byte(slice())
+	sha3Hasher.Write(powHash.ByteSlice())
 	sha3HashBytes := sha3Hasher.Sum(nil)
 
 	// DomainHash
