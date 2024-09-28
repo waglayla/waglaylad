@@ -58,7 +58,19 @@ func (state *State) CalculateProofOfWorkValue() *big.Int {
 		panic(errors.Wrap(err, "this should never happen. Hash digest should never return an error"))
 	}
 	powHash := writer.Finalize()
-	heavyHash := state.mat.HeavyHash(powHash)
+
+	//SHA3-256
+	sha3Hasher := sha3.New256()
+	sha3Hasher.Write(powHash.Byte(slice())
+	sha3HashBytes := sha3Hasher.Sum(nil)
+
+	// DomainHash
+	sha3DomainHash, err := externalapi.NewDomainHashFromByteSlice(sha3HashBytes)
+	if err != nil {
+		panic(errors.Wrap(err, "failed to create DomainHash from SHA3 hash bytes"))
+	}
+	
+	heavyHash := state.mat.HeavyHash(sha3DomainHash)
 	return toBig(heavyHash)
 }
 
