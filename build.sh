@@ -1,3 +1,0 @@
-#!/bin/bash
-mkdir -p build/bin
-go build $FLAGS -o build/bin ./cmd/...
