@@ -1,22 +1,9 @@
 
-waglaylad
+waglaylad - Only for Stratum Bridge & Pool Operators (Deprecated)
 ====
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/waglayla/waglaylad)
-
-waglaylad is the reference full node Waglayla implementation written in Go (golang).
-(Fork of https://github.com/kaspanet/kaspad)
-
-## What is waglayla
-
-Waglayla is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
-
-## Requirements
-
-Go 1.18 or later.
-
-## Installation
 
 #### Build from Source
 
@@ -50,18 +37,6 @@ of the basic operations work with zero configuration.
 ```bash
 $ waglaylad
 ```
-
-## Discord
-Join our discord server using the following link: https://discord.gg/sFSASsgx
-
-## Issue Tracker
-
-The [integrated github issue tracker](https://github.com/waglayla/waglaylad/issues)
-is used for this project.
-
-## Documentation
-
-The [documentation](https://github.com/waglayla/docs) is a work-in-progress
 
 ## License
 
