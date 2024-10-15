@@ -1,5 +1,5 @@
 
-waglaylad - Only for Stratum Bridge & Pool Operators (Deprecated)
+waglaylad - Deprecated - Only for Stratum Bridge & Pool Operators
 ====
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
