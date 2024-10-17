@@ -1,5 +1,5 @@
 
-waglaylad - Deprecated - Only for Stratum Bridge & Pool Operators
+waglaylad - CPU Miner - Compile and run waglaylaminer
 ====
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
