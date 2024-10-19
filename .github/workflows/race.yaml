@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        branch: [ main, latest, feature/automated-building ]
+        branch: [ main, latest ]
     name: Race detection on ${{ matrix.branch }}
     steps:
       - name: Check out code into the Go module directory
