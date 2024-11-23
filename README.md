@@ -1,5 +1,5 @@
 
-waglaylad - CPU Miner - Compile and run waglaylaminer
+waglaylad - Only for Pool Operators & the Stratum Bridge - Do Not Run the Golang Node
 ====
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
